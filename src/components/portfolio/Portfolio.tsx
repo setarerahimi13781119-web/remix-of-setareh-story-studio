@@ -236,12 +236,16 @@ export function About() {
       <Reveal>
         <div className="grid grid-cols-12 gap-6">
           <p className="col-span-12 md:col-start-4 md:col-span-6 font-display text-2xl md:text-3xl leading-snug">
-            A background in history informs how I approach content — with attention to context, narrative and the people a story is for.
+            {about.bio}
           </p>
           <dl className="col-span-12 md:col-start-4 md:col-span-9 mt-8 grid gap-8 border-t border-border pt-8 sm:grid-cols-2">
             <div>
               <dt className="eyebrow">Education</dt>
-              <dd className="mt-2">{about.education.degree}<br /><span className="text-muted-foreground">{about.education.school}</span></dd>
+              <dd className="mt-2">
+                {about.education.degree}<br />
+                <span className="text-muted-foreground">{about.education.school}</span><br />
+                <span className="text-muted-foreground">{about.education.period} · {about.education.gpa}</span>
+              </dd>
             </div>
             <div>
               <dt className="eyebrow">Languages</dt>
