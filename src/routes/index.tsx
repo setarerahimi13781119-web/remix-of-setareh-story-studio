@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { About, Capabilities, Contact, Experience, Header, Hero, Work } from "@/components/portfolio/Portfolio";
 
-const title = "Setareh Rahimi — Creative Content & Storytelling";
+const title = "Setareh Rahimi — Content Specialist | Content Production & Coordination";
 const description =
-  "Portfolio of Setareh Rahimi: content development, creative concepts and social storytelling for digital platforms.";
+  "Portfolio of Setareh Rahimi, Content Specialist with experience in media content production and publishing operations — coordination, task follow-up and audience communication.";
 
 export const Route = createFileRoute("/")({
   head: () => ({

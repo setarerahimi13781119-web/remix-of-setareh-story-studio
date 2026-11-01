@@ -78,8 +78,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Setareh Rahimi — Creative Content & Storytelling" },
-      { name: "description", content: "Content development, creative concepts and social storytelling for digital platforms." },
+      { title: "Setareh Rahimi — Content Specialist | Content Production & Coordination" },
+      { name: "description", content: "Content Specialist with experience in media content production and publishing operations — coordination, task follow-up and audience communication." },
       { name: "author", content: "Setareh Rahimi" },
       { property: "og:site_name", content: "Setareh Rahimi" },
       { property: "og:type", content: "website" },
