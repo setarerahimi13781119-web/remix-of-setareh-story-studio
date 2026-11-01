@@ -16,7 +16,7 @@ function Reveal({ children, className = "" }: { children: ReactNode; className?:
     const el = ref.current;
     if (!el) return;
     const io = new IntersectionObserver(
-      ([e]) => e.isIntersecting && (setVisible(true), io.disconnect()),
+      ([e]) => e?.isIntersecting && (setVisible(true), io.disconnect()),
       { threshold: 0.12 },
     );
     io.observe(el);
@@ -123,6 +123,7 @@ export function Hero() {
 
 export function Work() {
   const [feature, ...reels] = work;
+  if (!feature) return null;
   return (
     <section aria-labelledby="work" className="mx-auto max-w-7xl px-5 pb-28 md:px-10">
       <SectionHead index="01" title="Selected Work" id="work" />
