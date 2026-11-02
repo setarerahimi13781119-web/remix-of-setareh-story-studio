@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep project case-study content in the typed portfolio data and render it through the SelectedWork component using accessible design-system dialogs; this separates verified scope from presentation and preserves the one-page portfolio structure.

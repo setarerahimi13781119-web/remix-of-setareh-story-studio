@@ -6,9 +6,12 @@
  * as part of her Content Specialist role at Nikmehr. Present this as content
  * coordination and publishing/distribution only — never as authorship,
  * copywriting, design, video editing, strategy, or account ownership.
- * "هزار و یک" intentionally has no URL yet; add one only when confirmed.
+ * Preserve each confirmed page URL exactly, including query parameters.
  * The four reels are selected published content examples from this work and are
  * NOT attributed to either page individually.
+ * The other projects are user-confirmed explorations, not client-delivery claims.
+ * Replace typographic covers only with verified project assets. Add fuller
+ * case-study details only when supplied; do not infer dates, results or ownership.
  */
 
 export const profile = {
@@ -48,6 +51,94 @@ export const work: WorkItem[] = [
   { id: "02", label: "Selected published content 02", platform: "Instagram", kind: "Reel", href: "https://www.instagram.com/reel/DGNOEYosMEl/" },
   { id: "03", label: "Selected published content 03", platform: "Instagram", kind: "Reel", href: "https://www.instagram.com/reel/DHN8T5PsF3a/" },
   { id: "04", label: "Selected published content 04", platform: "Instagram", kind: "Reel", href: "https://www.instagram.com/reel/DG0vrqaID2v/" },
+];
+
+export type PortfolioProject = {
+  id: string;
+  title: string;
+  coverLabel: string;
+  category: string;
+  role: string;
+  summary: string;
+  context: string;
+  scope: string[];
+  status: "exploration" | "verified-role";
+  note: string;
+};
+
+export const projects: PortfolioProject[] = [
+  {
+    id: "khaneh-shalvar",
+    title: "Khaneh Shalvar",
+    coverLabel: "Autumn campaign",
+    category: "Fashion · Ecommerce",
+    role: "Art direction & visual design exploration",
+    summary: "Autumn fashion campaign visuals explored across desktop and mobile ecommerce hero banners.",
+    context: "A seasonal fashion direction for Khaneh Shalvar, exploring how a campaign visual translates into desktop and mobile banner formats.",
+    scope: ["Autumn fashion campaign art direction", "Desktop ecommerce hero banner exploration", "Mobile campaign banner exploration"],
+    status: "exploration",
+    note: "Presented as a design exploration; client delivery and ownership are not claimed.",
+  },
+  {
+    id: "khaneh-mod-setareh",
+    title: "Khaneh Mod Setareh",
+    coverLabel: "Fashion storefront",
+    category: "Fashion · Ecommerce",
+    role: "Ecommerce visual design exploration",
+    summary: "Desktop and mobile store headers, campaign visuals and a LinkedIn presentation for a separate fashion ecommerce project.",
+    context: "A fashion storefront visual project for Khaneh Mod Setareh, separate from the Khaneh Shalvar autumn campaign.",
+    scope: ["Desktop and mobile store header / banner design", "Fashion campaign visual exploration", "LinkedIn presentation"],
+    status: "exploration",
+    note: "The LinkedIn presentation is part of the project scope; no publication or client-delivery claim is made.",
+  },
+  {
+    id: "junoon-podcast",
+    title: "Junoon Podcast",
+    coverLabel: "Crime podcast",
+    category: "Podcast · Visual identity",
+    role: "Visual identity & art direction exploration",
+    summary: "A crime-podcast visual direction with documentary portraits, high contrast and a coordinated social cover system.",
+    context: "An identity exploration using high-contrast documentary portrait treatments and red, black and white accents for a crime-podcast setting.",
+    scope: ["Documentary portrait visual treatment", "Red / black / white identity accents", "Highlight cover system", "Reels cover system"],
+    status: "exploration",
+    note: "Presented as visual identity and art direction exploration, not a fully delivered client identity.",
+  },
+  {
+    id: "ai-visual-storytelling",
+    title: "AI-assisted visual storytelling",
+    coverLabel: "Pennsylvania, 1950",
+    category: "AI-assisted · Image production",
+    role: "AI-assisted visual storytelling & image production",
+    summary: "Photoreal character scenes of historical Iranian immigrants in 1950 Pennsylvania, with vintage photographic treatments.",
+    context: "AI-assisted scene production exploring historical Iranian immigrant characters in Pennsylvania in 1950, with a vintage photographic visual language.",
+    scope: ["Historical Iranian immigrant character scenes", "Photoreal visual production", "Vintage photographic treatments"],
+    status: "exploration",
+    note: "These are AI-assisted images, not photographs or documentary records.",
+  },
+  {
+    id: "cafe-social-content",
+    title: "Cafe & food social content",
+    coverLabel: "Social carousel",
+    category: "Social content · Image editing",
+    role: "Social content design & image editing exploration",
+    summary: "Original cafe and restaurant image editing, Pinterest-inspired doodles and 3:4 carousel layouts for visual merchandising.",
+    context: "A social content exploration combining cafe and restaurant image editing with illustrated accents and carousel-based visual merchandising.",
+    scope: ["Original cafe / restaurant image editing", "Pinterest-inspired doodle treatment", "3:4 carousel slide design", "Visual merchandising"],
+    status: "exploration",
+    note: "Presented as social content design and image editing exploration; publication and client delivery are not claimed.",
+  },
+  {
+    id: "nikmehr",
+    title: "Nikmehr",
+    coverLabel: "Content publishing",
+    category: "Media · Content operations",
+    role: "Content coordination & publishing",
+    summary: nikmehrWork.description,
+    context: "As part of the Content Specialist role at Nikmehr, coordinated and published posts and stories for the Jenab Khan and 1001 Instagram pages.",
+    scope: ["Coordination of posts and stories", "Publishing / distribution for Jenab Khan and 1001"],
+    status: "verified-role",
+    note: "The role was coordination and publishing, not authorship, copywriting, graphic design, video editing, strategy ownership or account ownership. The selected reels relate to this Nikmehr work overall and are not assigned to either page individually.",
+  },
 ];
 
 export const capabilities = [
