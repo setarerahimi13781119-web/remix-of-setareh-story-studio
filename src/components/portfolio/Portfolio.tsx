@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { about, capabilities, experience, nikmehrWork, profile, work } from "@/data/portfolio";
+import { about, capabilities, experience, profile } from "@/data/portfolio";
+import { SelectedWork } from "./SelectedWork";
 
 const nav = [
   { href: "#work", label: "Work" },
@@ -125,72 +126,7 @@ export function Work() {
   return (
     <section aria-labelledby="work" className="mx-auto max-w-7xl px-5 pb-28 md:px-10">
       <SectionHead index="01" title="Selected Work" id="work" />
-      <Reveal>
-        <div className="grid grid-cols-12 items-end gap-6 border border-rule bg-card p-6 md:p-10">
-          <span aria-hidden className="col-span-12 font-display text-[clamp(5rem,16vw,12rem)] leading-none text-accent/80 md:col-span-5">
-            @
-          </span>
-          <div className="col-span-12 md:col-span-7">
-            <p className="eyebrow">{nikmehrWork.org} · Content coordination & publishing</p>
-            <h3 className="mt-3 font-display text-3xl md:text-5xl">{nikmehrWork.title}</h3>
-            <p className="mt-3 text-muted-foreground">{nikmehrWork.description}</p>
-            <ul className="mt-6 flex flex-wrap gap-3">
-              {nikmehrWork.pages.map((p) => (
-                <li key={p.name}>
-                  {p.href ? (
-                    <a
-                      href={p.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group inline-flex items-center gap-2 border border-foreground px-4 py-2 text-sm transition-colors hover:bg-foreground hover:text-background"
-                    >
-                      <span dir="rtl">{p.name}</span>
-                      <span aria-hidden className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
-                      <span className="sr-only">(opens Instagram in a new tab)</span>
-                    </a>
-                  ) : (
-                    <span className="inline-flex items-center border border-rule px-4 py-2 text-sm text-muted-foreground">
-                      <span dir="rtl">{p.name}</span>
-                    </span>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </Reveal>
-      <p className="eyebrow mt-10">Selected published content from this work</p>
-      <ul className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {work.map((r, i) => (
-          <li key={r.id}>
-            <Reveal className={i % 2 ? "lg:mt-12" : ""}>
-              <a
-                href={r.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group block border border-rule p-5 transition-colors hover:border-accent"
-              >
-                <div aria-hidden className="relative flex aspect-[9/14] items-end overflow-hidden bg-card p-4">
-                  <span className="absolute top-3 left-4 eyebrow">{r.kind}</span>
-                  <span className="absolute inset-x-4 top-1/2 h-px bg-rule" />
-                  <span className="font-display text-8xl leading-none transition-all duration-500 group-hover:text-accent group-hover:-translate-y-2">
-                    {r.id}
-                  </span>
-                </div>
-                <div className="mt-4 flex items-start justify-between gap-3">
-                  <div>
-                    <p className="eyebrow">{r.platform}</p>
-                    <h3 className="mt-1 font-display text-xl">{r.title ?? r.label}</h3>
-                    {r.description && <p className="mt-1 text-sm text-muted-foreground">{r.description}</p>}
-                  </div>
-                  <span aria-hidden className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
-                </div>
-                <span className="sr-only">Open on Instagram (opens in a new tab)</span>
-              </a>
-            </Reveal>
-          </li>
-        ))}
-      </ul>
+      <SelectedWork />
     </section>
   );
 }
