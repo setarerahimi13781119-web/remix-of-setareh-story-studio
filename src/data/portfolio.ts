@@ -1,10 +1,14 @@
 /**
  * Portfolio content.
  *
- * EDITORIAL NOTE: Work entries below use neutral labels on purpose.
- * The contribution/role for each Instagram link has not yet been verified.
- * When verified, fill in `title`, `role` and `description` for each entry
- * (they render automatically when present). Do not add claims that can't be backed up.
+ * EDITORIAL NOTE: The Nikmehr work below is verified: Setareh coordinated and
+ * published posts and stories for the Instagram pages "جناب خان" and "هزار و یک"
+ * as part of her Content Specialist role at Nikmehr. Present this as content
+ * coordination and publishing/distribution only — never as authorship,
+ * copywriting, design, video editing, strategy, or account ownership.
+ * "هزار و یک" intentionally has no URL yet; add one only when confirmed.
+ * The four reels are selected published content examples from this work and are
+ * NOT attributed to either page individually.
  */
 
 export const profile = {
@@ -28,12 +32,23 @@ export type WorkItem = {
   description?: string;
 };
 
+export const nikmehrWork = {
+  org: "Nikmehr",
+  title: "Instagram content coordination & publishing",
+  description:
+    "As Content Specialist at Nikmehr, coordinated the content workflow and published posts and stories for two Instagram pages.",
+  pages: [
+    { name: "جناب خان", href: "https://www.instagram.com/jenabkhan/" },
+    // No verified URL for this page yet — display the name only.
+    { name: "هزار و یک" },
+  ] as { name: string; href?: string }[],
+};
+
 export const work: WorkItem[] = [
-  { id: "00", label: "Instagram account reference", platform: "Instagram", kind: "Account", href: "https://www.instagram.com/jenabkhan/" },
-  { id: "01", label: "Selected video reference 01", platform: "Instagram", kind: "Reel", href: "https://www.instagram.com/reel/DHBNnH_sr1q/" },
-  { id: "02", label: "Selected video reference 02", platform: "Instagram", kind: "Reel", href: "https://www.instagram.com/reel/DGNOEYosMEl/" },
-  { id: "03", label: "Selected video reference 03", platform: "Instagram", kind: "Reel", href: "https://www.instagram.com/reel/DHN8T5PsF3a/" },
-  { id: "04", label: "Selected video reference 04", platform: "Instagram", kind: "Reel", href: "https://www.instagram.com/reel/DG0vrqaID2v/" },
+  { id: "01", label: "Selected published content 01", platform: "Instagram", kind: "Reel", href: "https://www.instagram.com/reel/DHBNnH_sr1q/" },
+  { id: "02", label: "Selected published content 02", platform: "Instagram", kind: "Reel", href: "https://www.instagram.com/reel/DGNOEYosMEl/" },
+  { id: "03", label: "Selected published content 03", platform: "Instagram", kind: "Reel", href: "https://www.instagram.com/reel/DHN8T5PsF3a/" },
+  { id: "04", label: "Selected published content 04", platform: "Instagram", kind: "Reel", href: "https://www.instagram.com/reel/DG0vrqaID2v/" },
 ];
 
 export const capabilities = [
