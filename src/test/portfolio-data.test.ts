@@ -1,0 +1,36 @@
+import { describe, expect, it } from "vitest";
+import { nikmehrWork, projects, work } from "@/data/portfolio";
+
+describe("Verified portfolio project boundaries", () => {
+  it("keeps both fashion explorations distinct within the six projects", () => {
+    expect(projects.map((project) => project.id)).toEqual([
+      "khaneh-shalvar", "khaneh-mod-setareh", "junoon-podcast",
+      "ai-visual-storytelling", "cafe-social-content", "nikmehr",
+    ]);
+    expect(new Set(projects.map((project) => project.id)).size).toBe(6);
+  });
+
+  it("treats the five visual projects as explorations, not verified delivered roles", () => {
+    expect(projects.filter((project) => project.status === "exploration").map((project) => project.id)).toEqual([
+      "khaneh-shalvar", "khaneh-mod-setareh", "junoon-podcast", "ai-visual-storytelling", "cafe-social-content",
+    ]);
+    expect(projects.filter((project) => project.status === "verified-role").map((project) => project.id)).toEqual(["nikmehr"]);
+  });
+
+  it("preserves both confirmed page destinations including the full 1001 query", () => {
+    expect(nikmehrWork.pages.map((page) => page.href)).toEqual([
+      "https://www.instagram.com/jenabkhan/",
+      "https://www.instagram.com/1001tvshow?srtk=MXE4MHU1ZDR4dTJwYg==",
+    ]);
+  });
+
+  it("retains the four published example URLs without an individual page attribution", () => {
+    expect(work.map((reel) => reel.href)).toEqual([
+      "https://www.instagram.com/reel/DHBNnH_sr1q/",
+      "https://www.instagram.com/reel/DGNOEYosMEl/",
+      "https://www.instagram.com/reel/DHN8T5PsF3a/",
+      "https://www.instagram.com/reel/DG0vrqaID2v/",
+    ]);
+    for (const reel of work) expect(reel).not.toHaveProperty("page");
+  });
+});
