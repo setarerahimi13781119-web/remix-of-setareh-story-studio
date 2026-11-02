@@ -39,8 +39,7 @@ export const nikmehrWork = {
     "As Content Specialist at Nikmehr, coordinated the content workflow and published posts and stories for two Instagram pages.",
   pages: [
     { name: "جناب خان", href: "https://www.instagram.com/jenabkhan/" },
-    // No verified URL for this page yet — display the name only.
-    { name: "هزار و یک" },
+    { name: "هزار و یک", href: "https://www.instagram.com/1001tvshow?srtk=MXE4MHU1ZDR4dTJwYg==" },
   ] as { name: string; href?: string }[],
 };
 
