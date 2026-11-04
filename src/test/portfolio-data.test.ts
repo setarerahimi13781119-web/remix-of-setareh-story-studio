@@ -21,7 +21,7 @@ describe("Verified portfolio project boundaries", () => {
   it("separates Junoon into video editing (Brian Yassipour) and visual exploration tracks", () => {
     const junoon = projects.find((p) => p.id === "junoon-podcast");
     expect(junoon?.tracks?.map((t) => t.title)).toEqual(["Video Editing", "Visual Design Exploration"]);
-    expect(junoon?.tracks?.[0].label).toContain("Brian Yassipour");
+    expect(junoon?.tracks?.[0]?.label).toContain("Brian Yassipour");
   });
 
   it("preserves both confirmed page destinations including the full 1001 query", () => {
