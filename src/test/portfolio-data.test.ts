@@ -12,9 +12,16 @@ describe("Verified portfolio project boundaries", () => {
 
   it("treats the five visual projects as explorations, not verified delivered roles", () => {
     expect(projects.filter((project) => project.status === "exploration").map((project) => project.id)).toEqual([
-      "khaneh-shalvar", "khaneh-mod-setareh", "junoon-podcast", "ai-visual-storytelling", "cafe-social-content",
+      "khaneh-shalvar", "khaneh-mod-setareh", "ai-visual-storytelling", "cafe-social-content",
     ]);
+    expect(projects.find((p) => p.id === "junoon-podcast")?.status).toBe("team-collaboration");
     expect(projects.filter((project) => project.status === "verified-role").map((project) => project.id)).toEqual(["nikmehr"]);
+  });
+
+  it("separates Junoon into video editing (Brian Yassipour) and visual exploration tracks", () => {
+    const junoon = projects.find((p) => p.id === "junoon-podcast");
+    expect(junoon?.tracks?.map((t) => t.title)).toEqual(["Video Editing", "Visual Design Exploration"]);
+    expect(junoon?.tracks?.[0].label).toContain("Brian Yassipour");
   });
 
   it("preserves both confirmed page destinations including the full 1001 query", () => {

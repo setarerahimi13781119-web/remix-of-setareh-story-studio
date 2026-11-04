@@ -81,7 +81,7 @@ export function SelectedWork() {
                 </div>
               </article>
               <DialogContent className="z-[70] max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-3xl gap-5 overflow-y-auto rounded-none p-6 shadow-none sm:rounded-none md:p-10">
-                <p className="eyebrow pr-8">{project.category} · {project.status === "exploration" ? "Exploration" : "Verified role"}</p>
+                <p className="eyebrow pr-8">{project.category} · {project.status === "exploration" ? "Exploration" : project.status === "team-collaboration" ? "Recent team collaboration" : "Verified role"}</p>
                 <DialogTitle className="pr-6 font-display text-3xl font-normal leading-tight tracking-normal md:text-5xl">{project.title}</DialogTitle>
                 <DialogDescription className="text-base leading-relaxed">{project.context}</DialogDescription>
                 <dl className="border-t border-rule pt-5">
@@ -90,6 +90,13 @@ export function SelectedWork() {
                   <dt className="eyebrow mt-6">Scope</dt>
                   <dd><ul className="mt-2 space-y-2">{project.scope.map((item) => <li key={item} className="flex gap-3 text-sm leading-relaxed"><span aria-hidden="true" className="text-accent">—</span>{item}</li>)}</ul></dd>
                 </dl>
+                {project.tracks?.map((track) => (
+                  <section key={track.title} className="border-t border-rule pt-5">
+                    <h3 className="font-display text-2xl">{track.title}</h3>
+                    <p className="eyebrow mt-2">{track.label}</p>
+                    <ul className="mt-3 space-y-2">{track.items.map((item) => <li key={item} className="flex gap-3 text-sm leading-relaxed"><span aria-hidden="true" className="text-accent">—</span>{item}</li>)}</ul>
+                  </section>
+                ))}
                 <p className="border-t border-rule pt-5 text-sm leading-relaxed text-muted-foreground">{project.note}</p>
                 {project.id === "nikmehr" && (
                   <div>

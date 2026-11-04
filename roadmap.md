@@ -1,6 +1,6 @@
-# Portfolio expansion
+# Portfolio
 
-- [ ] Add five distinct exploration projects and retain verified Nikmehr work as the sixth entry.
-- [ ] Provide context views, accurate category/role/scope labels, and only verified existing assets.
-- [ ] Verify project views, Instagram links, and desktop/mobile behavior; run available checks.
-- [ ] Report added entries and any missing visuals/details; leave the site unpublished.
+- [x] Expand Selected Work to six projects with context views.
+- [x] Junoon: split into Visual Design Exploration and Video Editing (first video: Brian Yassipour); clarify the podcast predates the owner's involvement.
+- [ ] Dedicated Junoon case-study page — on hold (plan superseded by scope update).
+- [ ] Junoon video/still assets — waiting on user upload.

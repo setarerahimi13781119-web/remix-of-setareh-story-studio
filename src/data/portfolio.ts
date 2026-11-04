@@ -62,8 +62,10 @@ export type PortfolioProject = {
   summary: string;
   context: string;
   scope: string[];
-  status: "exploration" | "verified-role";
+  status: "exploration" | "verified-role" | "team-collaboration";
   note: string;
+  /** Optional separately attributed work tracks shown in the detail view. */
+  tracks?: { title: string; label: string; items: string[] }[];
 };
 
 export const projects: PortfolioProject[] = [
@@ -94,14 +96,26 @@ export const projects: PortfolioProject[] = [
   {
     id: "junoon-podcast",
     title: "Junoon Podcast",
-    coverLabel: "Crime podcast",
-    category: "Podcast · Visual identity",
-    role: "Visual identity & art direction exploration",
-    summary: "A crime-podcast visual direction with documentary portraits, high contrast and a coordinated social cover system.",
-    context: "An identity exploration using high-contrast documentary portrait treatments and red, black and white accents for a crime-podcast setting.",
-    scope: ["Documentary portrait visual treatment", "Red / black / white identity accents", "Highlight cover system", "Reels cover system"],
-    status: "exploration",
-    note: "Presented as visual identity and art direction exploration, not a fully delivered client identity.",
+    coverLabel: "Recent team collaboration",
+    category: "Podcast · Video editing & visual design",
+    role: "Full video editing · Visual design exploration",
+    summary: "Recently joined the team of this long-running true-crime podcast: full editing of the first completed video, plus personal cover and social visual explorations.",
+    context: "Junoon is a long-running true-crime podcast that existed before this collaboration. Setareh recently joined the team; her contribution is limited to the two tracks below.",
+    scope: ["Full video editing — first completed video: Brian Yassipour", "Personal documentary crime-podcast cover and social visual explorations"],
+    status: "team-collaboration",
+    note: "The podcast, its original identity and its brand history predate this collaboration and are not claimed. No video file or still images have been added to this portfolio yet.",
+    tracks: [
+      {
+        title: "Video Editing",
+        label: "Full video editing · First completed video: Brian Yassipour (برایان یاسی‌پور)",
+        items: ["End-to-end editing of the episode video on the Brian Yassipour case", "Carried through from editing to final export"],
+      },
+      {
+        title: "Visual Design Exploration",
+        label: "Own contribution · Exploration",
+        items: ["Documentary crime-podcast cover explorations", "High-contrast portrait treatments with red / black / white accents", "Social visual treatments for highlight and reels covers"],
+      },
+    ],
   },
   {
     id: "ai-visual-storytelling",
