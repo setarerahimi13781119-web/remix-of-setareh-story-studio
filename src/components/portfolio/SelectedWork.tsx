@@ -2,6 +2,34 @@ import { ArrowUpRight, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { nikmehrWork, projects, work } from "@/data/portfolio";
+import junoonPoster from "@/assets/junoon_case_file_poster.jpg.asset.json";
+import junoonGhostship from "@/assets/junoon_case_ghostship.jpg.asset.json";
+import junoonMcnally from "@/assets/junoon_case_mcnally.jpg.asset.json";
+import junoonRogers from "@/assets/junoon_case_rogers.jpg.asset.json";
+import junoonUnterweger from "@/assets/junoon_case_unterweger.jpg.asset.json";
+
+const junoonSquares = [
+  { src: junoonGhostship.url, alt: "Monochrome ship illustration in a circular frame with red accents" },
+  { src: junoonMcnally.url, alt: "Documentary-style black-and-white portrait in a circular vignette with red strokes" },
+  { src: junoonRogers.url, alt: "Black-and-white family portrait in a circular frame with red marks" },
+  { src: junoonUnterweger.url, alt: "Black-and-white portrait in a circular frame with red slashes and Persian text" },
+];
+
+function JunoonGallery() {
+  return (
+    <figure className="mt-5">
+      <div className="grid gap-3 sm:grid-cols-2">
+        <img src={junoonPoster.url} alt="Vertical evidence-file style poster exploration with Junoon stamp" loading="lazy" className="h-full w-full bg-card object-contain" />
+        <div className="grid grid-cols-2 content-start gap-3">
+          {junoonSquares.map((img) => (
+            <img key={img.src} src={img.src} alt={img.alt} loading="lazy" className="aspect-square w-full bg-card object-contain" />
+          ))}
+        </div>
+      </div>
+      <figcaption className="mt-3 text-xs leading-relaxed text-muted-foreground">Visual design explorations by Setareh Rahimi · created during a recent team collaboration · not the podcast's original identity.</figcaption>
+    </figure>
+  );
+}
 
 function PageLinks() {
   return (
@@ -63,7 +91,11 @@ export function SelectedWork() {
                     <span className="eyebrow flex items-center justify-between gap-3">
                       <span>{project.coverLabel}</span><Plus className="shrink-0 text-foreground" aria-hidden="true" />
                     </span>
-                    <span className="font-display text-7xl leading-none text-accent/80 md:text-8xl" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+                    {project.id === "junoon-podcast" ? (
+                      <img src={junoonPoster.url} alt="" aria-hidden="true" className="min-h-0 flex-1 w-full object-contain" />
+                    ) : (
+                      <span className="font-display text-7xl leading-none text-accent/80 md:text-8xl" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+                    )}
                     <span className="border-t border-rule pt-4 font-display text-3xl leading-tight md:text-4xl">{project.title}</span>
                   </Button>
                 </DialogTrigger>
@@ -95,6 +127,7 @@ export function SelectedWork() {
                     <h3 className="font-display text-2xl">{track.title}</h3>
                     <p className="eyebrow mt-2">{track.label}</p>
                     <ul className="mt-3 space-y-2">{track.items.map((item) => <li key={item} className="flex gap-3 text-sm leading-relaxed"><span aria-hidden="true" className="text-accent">—</span>{item}</li>)}</ul>
+                    {project.id === "junoon-podcast" && track.title === "Visual Design Exploration" && <JunoonGallery />}
                   </section>
                 ))}
                 <p className="border-t border-rule pt-5 text-sm leading-relaxed text-muted-foreground">{project.note}</p>

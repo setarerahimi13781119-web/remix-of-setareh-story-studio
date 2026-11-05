@@ -103,7 +103,7 @@ export const projects: PortfolioProject[] = [
     context: "Junoon is a long-running true-crime podcast that existed before this collaboration. Setareh recently joined the team; her contribution is limited to the two tracks below.",
     scope: ["Full video editing — first completed video: Brian Yassipour", "Personal documentary crime-podcast cover and social visual explorations"],
     status: "team-collaboration",
-    note: "The podcast, its original identity and its brand history predate this collaboration and are not claimed. No video file or still images have been added to this portfolio yet.",
+    note: "The podcast, its original identity and its brand history predate this collaboration and are not claimed. The five images shown here are Setareh's own visual explorations from this collaboration; no video file has been added to this portfolio.",
     tracks: [
       {
         title: "Video Editing",
