@@ -7,6 +7,11 @@ import junoonGhostship from "@/assets/junoon_case_ghostship.jpg.asset.json";
 import junoonMcnally from "@/assets/junoon_case_mcnally.jpg.asset.json";
 import junoonRogers from "@/assets/junoon_case_rogers.jpg.asset.json";
 import junoonUnterweger from "@/assets/junoon_case_unterweger.jpg.asset.json";
+import kms1 from "@/assets/khaneh_mod_setareh_slide_01.png.asset.json";
+import kms2 from "@/assets/khaneh_mod_setareh_slide_02.png.asset.json";
+import kms3 from "@/assets/khaneh_mod_setareh_slide_03.png.asset.json";
+import kms4 from "@/assets/khaneh_mod_setareh_slide_04.png.asset.json";
+import kms5 from "@/assets/khaneh_mod_setareh_slide_05.png.asset.json";
 
 const junoonSquares = [
   { src: junoonGhostship.url, alt: "Monochrome ship illustration in a circular frame with red accents" },
@@ -14,6 +19,29 @@ const junoonSquares = [
   { src: junoonRogers.url, alt: "Black-and-white family portrait in a circular frame with red marks" },
   { src: junoonUnterweger.url, alt: "Black-and-white portrait in a circular frame with red slashes and Persian text" },
 ];
+
+const kmsSlides = [
+  { src: kms1.url, alt: "Slide 01 of 05: The digital experience — Khaneh Mod Setareh storefront cover" },
+  { src: kms2.url, alt: "Slide 02 of 05: One brand, two screens — desktop and mobile header side by side" },
+  { src: kms3.url, alt: "Slide 03 of 05: The visual system — colour palette, typeface and hierarchy" },
+  { src: kms4.url, alt: "Slide 04 of 05: The complete experience — full page layout" },
+  { src: kms5.url, alt: "Slide 05 of 05: The final note — closing slide" },
+];
+
+function KhanehModGallery() {
+  return (
+    <figure className="border-t border-rule pt-5">
+      <ol className="grid gap-3 sm:grid-cols-2">
+        {kmsSlides.map((img, i) => (
+          <li key={img.src} className={i === 0 ? "sm:col-span-2" : ""}>
+            <img src={img.src} alt={img.alt} loading="lazy" className="aspect-[4/5] w-full bg-card object-contain" />
+          </li>
+        ))}
+      </ol>
+      <figcaption className="mt-3 text-xs leading-relaxed text-muted-foreground">Presentation slides 01–05 · Khaneh Mod Setareh ecommerce visual design exploration by Setareh Rahimi.</figcaption>
+    </figure>
+  );
+}
 
 function JunoonGallery() {
   return (
@@ -93,6 +121,8 @@ export function SelectedWork() {
                     </span>
                     {project.id === "junoon-podcast" ? (
                       <img src={junoonPoster.url} alt="" aria-hidden="true" className="min-h-0 flex-1 w-full object-contain" />
+                    ) : project.id === "khaneh-mod-setareh" ? (
+                      <img src={kms1.url} alt="" aria-hidden="true" className="min-h-0 flex-1 w-full object-contain" />
                     ) : (
                       <span className="font-display text-7xl leading-none text-accent/80 md:text-8xl" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
                     )}
@@ -130,6 +160,7 @@ export function SelectedWork() {
                     {project.id === "junoon-podcast" && track.title === "Visual Design Exploration" && <JunoonGallery />}
                   </section>
                 ))}
+                {project.id === "khaneh-mod-setareh" && <KhanehModGallery />}
                 <p className="border-t border-rule pt-5 text-sm leading-relaxed text-muted-foreground">{project.note}</p>
                 {project.id === "nikmehr" && (
                   <div>
