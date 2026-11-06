@@ -1,39 +1,29 @@
-# Junoon case study page
+# Git branch and checks: what I could confirm
 
-Add one new page at `/work/junoon` for the Junoon true-crime visual exploration. The home page, its design, navigation, content and links all stay as they are. The only visible change on the home page is a new "Read case study" link on the Junoon card.
+## What I found (read-only checks)
+- **Current branch in my workspace:** `edit/edt-a649786c-…`. That's Lovable's own internal working branch. It is **not** `portfolio-metadata-polish`, and it isn't `main` either.
+- **Where my changes go:** Lovable's own internal code store. I don't push to GitHub myself. Git sync copies changes to the one GitHub branch picked in Project settings → Git. I can't see that setting or the GitHub connection from here.
+- **So I can't promise that edits will land only on `portfolio-metadata-polish`.** That depends on the branch picker in Project settings → Git. Only you can see and change it.
+- **Live URL:** this project shows **no published address**, only a preview address. I can't confirm that `setareh-creative-journal.lovable.app` belongs to this project, so I won't use it.
+- **Latest saved changes:** "Add project README", then the Khaneh Mod Setareh slide fix.
 
-## Page content (only what you supplied)
+## Checks I can run and read
+- Tests: the portfolio data test and the page routing test, run directly and read in full.
+- Lint: I can run it and read the output.
+- TypeScript and production build: these run automatically after each edit, and I read the result from the build log. I don't start them by hand.
+- Visual check: I can open the preview on phone and desktop sizes, take screenshots and look for console errors.
 
-1. **Top:** "Exploration" label, the title "Junoon — True Crime Visual Exploration", and a short introduction about documentary portraiture, stark contrast and a restrained use of red.
-2. **Project details** (label and value pairs):
-   - Project type: Visual identity and art direction exploration
-   - Focus: True-crime podcast visual direction
-   - Visual language: Monochrome portraiture, red accent
-3. **Visual direction:** six short items: monochrome portraits, deep blacks, grain, distressed print and collage textures, circular framing, and the red accent.
-4. **From portrait to case-file language:** the process section, written only from the points above.
-5. **Note:** the same wording the card already uses: "Presented as visual identity and art direction exploration, not a fully delivered client identity."
-6. **Gallery:** none for now. I'd rather not show empty boxes on a page clients will see. If you want spaces held for images, I can add 3 boxes labelled "Image pending — source artwork not yet uploaded".
-7. **Bottom:** a "Back to Selected Work" link and the existing contact section.
+## Before any edit, you need to
+1. Open Project settings → Git and check that the selected branch is `portfolio-metadata-polish`. Switch to it if it isn't.
+2. Tell me what the metadata polish should change.
 
-No testimonials, clients, dates, results or generated artwork.
+## Implementation and validation steps (after you approve)
+1. Make only the changes you ask for, and keep the design and content as they are.
+2. Run the tests and lint, then check that the build log says the build is OK.
+3. Check the preview on phone and desktop sizes.
+4. Don't merge, publish or deploy.
 
-## How people reach it
-
-- The Junoon card on the home page gets a "Read case study" link next to its "Project context" button. The pop-up stays as it is.
-- The new page has a small top bar with the name (links home) and "Back to work" (goes to the home page's work section). I won't reuse the home page menu as-is because its links jump to sections on the same page, so they wouldn't work from a separate page.
-
-## Technical details
-
-Files:
-- `src/data/portfolio.ts`: add an optional `caseStudy` field to `PortfolioProject` (intro, metadata, visualDirection[], process) and fill it in for `junoon-podcast` only. Update the editorial note at the top of the file.
-- `src/routes/work.junoon.tsx` (new): `createFileRoute("/work/junoon")`, with its own `head()` (title, description, og:title, og:description, og:type "article", twitter:card, relative canonical and og:url). No og:image. Content uses `<article>` with one `h1` and `h2`s for each section, a `<dl>` for the metadata, and the existing design tokens and classes (`eyebrow`, `font-display`, `border-rule`, `grain`). It reuses `Contact` from Portfolio.tsx.
-- `src/components/portfolio/SelectedWork.tsx`: when `project.caseStudy` is present, render a `<Link to="/work/junoon">` with the same styling as the existing link button. Use a slug field so the code isn't hardcoded.
-- `AGENTS.md`: replace the existing rule with: case studies live in typed data, are shown as dialogs, and get optional dedicated `/work/<slug>` routes when a full write-up exists.
-- Tests: in `app-routing.test.tsx`, check that `/work/junoon` matches a route. In `portfolio-data.test.ts`, check that only Junoon has a case study and that its status is still "exploration".
-
-## Uncertainties
-
-- **The rule that the portfolio stays one page.** A project rule says the site keeps a single-page structure. This plan is the first exception to it, and it only adds one linked page. Approving the plan approves that change, and I'll update the rule.
-- **The process section.** It will be 2–3 sentences built only from the visual elements listed above. Send any real process steps and I'll use those instead.
-- **Placeholder boxes for images.** Gallery boxes are left out by default. Tell me if you'd like them added.
-- **The home page link to the work section.** It relies on the browser jumping to that section after the page loads. I'll check this works on desktop and mobile.
+## Open questions
+- Which GitHub branch is selected (only visible to you).
+- Whether the live URL belongs to this project or to another one.
+- What exactly the metadata polish should cover.
