@@ -32,6 +32,9 @@ jobs:
       - name: Run tests
         run: bun run test
 
+      - name: Apply repository formatting
+        run: bunx prettier --write .
+
       - name: Run lint
         run: bun run lint
 
