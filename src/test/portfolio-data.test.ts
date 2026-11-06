@@ -1,5 +1,12 @@
 import { describe, expect, it } from "vitest";
-import { nikmehrWork, projects, work } from "@/data/portfolio";
+import { profile, nikmehrWork, projects, work } from "@/data/portfolio";
+
+describe("Profile contact links", () => {
+  it("keeps the confirmed LinkedIn and JobVision CV destinations", () => {
+    expect(profile.linkedin).toBe("https://linkedin.com/in/setare-rahimi-968a0a274");
+    expect(profile.cv).toBe("https://jobvision.ir/cv/setare-rahimi-174320");
+  });
+});
 
 describe("Verified portfolio project boundaries", () => {
   it("keeps both fashion explorations distinct within the six projects", () => {
