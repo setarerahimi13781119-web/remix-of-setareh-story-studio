@@ -20,6 +20,8 @@ export const profile = {
   intro:
     "Content professional with experience in media content production and publishing operations — focused on coordination, task follow-up and audience communication.",
   email: "setarerahimi1119@gmail.com",
+  linkedin: "https://linkedin.com/in/setare-rahimi-968a0a274",
+  cv: "https://jobvision.ir/cv/setare-rahimi-174320",
   // Availability preference, not a credential — keep phrasing as a preference.
   availability: "Currently open to conversations about freelance and in-house opportunities.",
 };
