@@ -16,6 +16,13 @@ function Reveal({ children, className = "" }: { children: ReactNode; className?:
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+
+    // Keep content visible in browsers that do not support IntersectionObserver.
+    if (typeof IntersectionObserver === "undefined") {
+      setVisible(true);
+      return;
+    }
+
     const io = new IntersectionObserver(
       ([e]) => e?.isIntersecting && (setVisible(true), io.disconnect()),
       { threshold: 0.12 },
