@@ -51,28 +51,28 @@ export const nikmehrWork = {
 export const work: WorkItem[] = [
   {
     id: "01",
-    label: "Selected published content 01",
+    label: "Published Reel 01",
     platform: "Instagram",
     kind: "Reel",
     href: "https://www.instagram.com/reel/DHBNnH_sr1q/",
   },
   {
     id: "02",
-    label: "Selected published content 02",
+    label: "Published Reel 02",
     platform: "Instagram",
     kind: "Reel",
     href: "https://www.instagram.com/reel/DGNOEYosMEl/",
   },
   {
     id: "03",
-    label: "Selected published content 03",
+    label: "Published Reel 03",
     platform: "Instagram",
     kind: "Reel",
     href: "https://www.instagram.com/reel/DHN8T5PsF3a/",
   },
   {
     id: "04",
-    label: "Selected published content 04",
+    label: "Published Reel 04",
     platform: "Instagram",
     kind: "Reel",
     href: "https://www.instagram.com/reel/DG0vrqaID2v/",
@@ -95,6 +95,22 @@ export type PortfolioProject = {
 };
 
 export const projects: PortfolioProject[] = [
+  {
+    id: "nikmehr",
+    title: "Nikmehr",
+    coverLabel: "Content publishing",
+    category: "Media · Content operations",
+    role: "Content coordination & publishing",
+    summary: nikmehrWork.description,
+    context:
+      "As part of the Content Specialist role at Nikmehr, coordinated and published posts and stories for the Jenab Khan and 1001 Instagram pages.",
+    scope: [
+      "Coordination of posts and stories",
+      "Publishing / distribution for Jenab Khan and 1001",
+    ],
+    status: "verified-role",
+    note: "The role was coordination and publishing, not authorship, copywriting, graphic design, video editing, strategy ownership or account ownership. The selected reels relate to this Nikmehr work overall and are not assigned to either page individually.",
+  },,
   {
     id: "khaneh-shalvar",
     title: "Khaneh Shalvar",
@@ -204,22 +220,7 @@ export const projects: PortfolioProject[] = [
     status: "exploration",
     note: "Presented as social content design and image editing exploration; publication and client delivery are not claimed.",
   },
-  {
-    id: "nikmehr",
-    title: "Nikmehr",
-    coverLabel: "Content publishing",
-    category: "Media · Content operations",
-    role: "Content coordination & publishing",
-    summary: nikmehrWork.description,
-    context:
-      "As part of the Content Specialist role at Nikmehr, coordinated and published posts and stories for the Jenab Khan and 1001 Instagram pages.",
-    scope: [
-      "Coordination of posts and stories",
-      "Publishing / distribution for Jenab Khan and 1001",
-    ],
-    status: "verified-role",
-    note: "The role was coordination and publishing, not authorship, copywriting, graphic design, video editing, strategy ownership or account ownership. The selected reels relate to this Nikmehr work overall and are not assigned to either page individually.",
-  },
+
 ];
 
 export const capabilities = [
