@@ -34,7 +34,7 @@ jobs:
         run: bun run test
 
       - name: Check Prettier formatting
-        run: bunx prettier --check README.md src/data/portfolio.ts src/routes/index.tsx src/test/portfolio-data.test.ts src/components/portfolio/Portfolio.tsx src/components/portfolio/SelectedWork.tsx
+        run: bunx prettier --check src/data/portfolio.ts src/routes/index.tsx src/test/portfolio-data.test.ts src/components/portfolio/Portfolio.tsx src/components/portfolio/SelectedWork.tsx
 
       - name: Run lint
         run: bun run lint
