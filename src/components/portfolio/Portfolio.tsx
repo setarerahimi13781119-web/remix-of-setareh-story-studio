@@ -237,6 +237,10 @@ export function Contact() {
           </button>
           <span className="sr-only" aria-live="polite">{copied ? "Email copied to clipboard" : ""}</span>
         </div>
+        <ul className="mt-8 flex flex-wrap gap-6 text-sm">
+          <li><a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="link-underline">LinkedIn ↗</a></li>
+          <li><a href={profile.cv} target="_blank" rel="noopener noreferrer" className="link-underline">CV on JobVision ↗</a></li>
+        </ul>
         <div className="mt-20 flex flex-wrap justify-between gap-4 eyebrow text-primary-foreground/60">
           <span>© {new Date().getFullYear()} Setareh Rahimi</span>
           <a href="#top" className="link-underline">Back to top ↑</a>
