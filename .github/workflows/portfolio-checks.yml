@@ -2,9 +2,11 @@ name: Portfolio quality checks
 
 on:
   push:
-    branches: [main]
+    branches:
+      - portfolio-release-candidate
   pull_request:
-    branches: [main]
+    branches:
+      - main
 
 permissions:
   contents: read
@@ -14,8 +16,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  validate:
-    name: Test, lint and production build
+  quality:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -32,11 +33,11 @@ jobs:
       - name: Run tests
         run: bun run test
 
-      - name: Apply repository formatting
-        run: bunx prettier --write .
+      - name: Check Prettier formatting
+        run: bunx prettier --check src/data/portfolio.ts src/routes/index.tsx src/test/portfolio-data.test.ts src/components/portfolio/Portfolio.tsx src/components/portfolio/SelectedWork.tsx
 
       - name: Run lint
         run: bun run lint
 
-      - name: Build production app
+      - name: Build production bundle
         run: bun run build

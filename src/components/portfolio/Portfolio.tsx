@@ -22,7 +22,6 @@ function Reveal({ children, className = "" }: { children: ReactNode; className?:
       setVisible(true);
       return;
     }
-
     const io = new IntersectionObserver(
       ([e]) => e?.isIntersecting && (setVisible(true), io.disconnect()),
       { threshold: 0.12 },
@@ -41,7 +40,10 @@ function SectionHead({ index, title, id }: { index: string; title: string; id: s
   return (
     <div className="grid grid-cols-12 gap-6 border-t border-rule pt-5 pb-12 md:pb-16">
       <p className="eyebrow col-span-4 md:col-span-3">§ {index}</p>
-      <h2 id={id} className="col-span-8 md:col-span-9 font-display text-4xl md:text-6xl leading-none tracking-tight">
+      <h2
+        id={id}
+        className="col-span-8 md:col-span-9 font-display text-4xl md:text-6xl leading-none tracking-tight"
+      >
         {title}
       </h2>
     </div>
@@ -60,7 +62,9 @@ export function Header() {
           <ul className="flex gap-8 text-sm">
             {nav.map((n) => (
               <li key={n.href}>
-                <a href={n.href} className="link-underline pb-0.5">{n.label}</a>
+                <a href={n.href} className="link-underline pb-0.5">
+                  {n.label}
+                </a>
               </li>
             ))}
           </ul>
@@ -75,11 +79,19 @@ export function Header() {
         </button>
       </div>
       {open && (
-        <nav id="mobile-nav" aria-label="Mobile" className="md:hidden border-t border-border animate-in fade-in slide-in-from-top-2 duration-200">
+        <nav
+          id="mobile-nav"
+          aria-label="Mobile"
+          className="md:hidden border-t border-border animate-in fade-in slide-in-from-top-2 duration-200"
+        >
           <ul className="px-5 py-4">
             {nav.map((n) => (
               <li key={n.href} className="border-b border-border last:border-0">
-                <a href={n.href} onClick={() => setOpen(false)} className="block py-3 font-display text-2xl">
+                <a
+                  href={n.href}
+                  onClick={() => setOpen(false)}
+                  className="block py-3 font-display text-2xl"
+                >
                   {n.label}
                 </a>
               </li>
@@ -93,26 +105,47 @@ export function Header() {
 
 export function Hero() {
   return (
-    <section id="top" aria-labelledby="hero-title" className="mx-auto max-w-7xl px-5 pt-16 pb-24 md:px-10 md:pt-28 md:pb-36">
+    <section
+      id="top"
+      aria-labelledby="hero-title"
+      className="mx-auto max-w-7xl px-5 pt-16 pb-24 md:px-10 md:pt-28 md:pb-36"
+    >
       <Reveal>
         <div className="grid grid-cols-12 gap-6">
-          <p className="eyebrow col-span-12 md:col-span-3 md:pt-6">Portfolio — {new Date().getFullYear()}</p>
+          <p className="eyebrow col-span-12 md:col-span-3 md:pt-6">
+            Portfolio — {new Date().getFullYear()}
+          </p>
           <div className="col-span-12 md:col-span-9">
-            <h1 id="hero-title" className="font-display text-[clamp(3.5rem,12vw,10rem)] leading-[0.88] tracking-[-0.02em]">
-              Setareh<br />
+            <h1
+              id="hero-title"
+              className="font-display text-[clamp(3.5rem,12vw,10rem)] leading-[0.88] tracking-[-0.02em]"
+            >
+              Setareh
+              <br />
               <em className="text-accent">Rahimi</em>
             </h1>
             <div className="mt-12 grid gap-8 border-t border-rule pt-6 md:grid-cols-2">
               <div>
                 <p className="font-display text-2xl md:text-3xl">{profile.headline}</p>
-                <p className="mt-3 max-w-md text-muted-foreground leading-relaxed">{profile.intro}</p>
+                <p className="mt-3 max-w-md text-muted-foreground leading-relaxed">
+                  {profile.intro}
+                </p>
               </div>
               <div className="flex flex-col justify-between gap-8">
                 <div className="flex flex-wrap gap-3">
-                  <a href="#work" className="group inline-flex items-center gap-2 bg-primary px-5 py-3 text-sm text-primary-foreground transition-colors hover:bg-accent">
-                    Explore selected work <span aria-hidden className="transition-transform group-hover:translate-y-0.5">↓</span>
+                  <a
+                    href="#work"
+                    className="group inline-flex items-center gap-2 bg-primary px-5 py-3 text-sm text-primary-foreground transition-colors hover:bg-accent"
+                  >
+                    Explore selected work{" "}
+                    <span aria-hidden className="transition-transform group-hover:translate-y-0.5">
+                      ↓
+                    </span>
                   </a>
-                  <a href="#contact" className="inline-flex items-center border border-foreground px-5 py-3 text-sm transition-colors hover:bg-foreground hover:text-background">
+                  <a
+                    href="#contact"
+                    className="inline-flex items-center border border-foreground px-5 py-3 text-sm transition-colors hover:bg-foreground hover:text-background"
+                  >
                     Contact
                   </a>
                 </div>
@@ -148,8 +181,12 @@ export function Capabilities() {
             <Reveal>
               <div className="group grid grid-cols-12 gap-4 border-b border-border py-6">
                 <span className="eyebrow col-span-2 pt-2">{String(i + 1).padStart(2, "0")}</span>
-                <h3 className="col-span-10 md:col-span-5 font-display text-2xl md:text-3xl transition-colors group-hover:text-accent">{c.name}</h3>
-                <p className="col-span-10 col-start-3 md:col-span-5 text-sm text-muted-foreground leading-relaxed md:pt-2">{c.note}</p>
+                <h3 className="col-span-10 md:col-span-5 font-display text-2xl md:text-3xl transition-colors group-hover:text-accent">
+                  {c.name}
+                </h3>
+                <p className="col-span-10 col-start-3 md:col-span-5 text-sm text-muted-foreground leading-relaxed md:pt-2">
+                  {c.note}
+                </p>
               </div>
             </Reveal>
           </li>
@@ -172,7 +209,9 @@ export function Experience() {
                 <div className="md:col-span-2">
                   <h3 className="font-display text-3xl">{e.role}</h3>
                   <p className="mt-1 text-accent">{e.org}</p>
-                  <p className="mt-4 max-w-prose text-muted-foreground leading-relaxed">{e.description}</p>
+                  <p className="mt-4 max-w-prose text-muted-foreground leading-relaxed">
+                    {e.description}
+                  </p>
                 </div>
               </article>
             </Reveal>
@@ -196,15 +235,21 @@ export function About() {
             <div>
               <dt className="eyebrow">Education</dt>
               <dd className="mt-2">
-                {about.education.degree}<br />
-                <span className="text-muted-foreground">{about.education.school}</span><br />
-                <span className="text-muted-foreground">{about.education.period} · {about.education.gpa}</span>
+                {about.education.degree}
+                <br />
+                <span className="text-muted-foreground">{about.education.school}</span>
+                <br />
+                <span className="text-muted-foreground">
+                  {about.education.period} · {about.education.gpa}
+                </span>
               </dd>
             </div>
             <div>
               <dt className="eyebrow">Languages</dt>
               {about.languages.map((l) => (
-                <dd key={l.name} className="mt-2">{l.name} <span className="text-muted-foreground">— {l.level}</span></dd>
+                <dd key={l.name} className="mt-2">
+                  {l.name} <span className="text-muted-foreground">— {l.level}</span>
+                </dd>
               ))}
             </div>
           </dl>
@@ -226,14 +271,24 @@ export function Contact() {
     }
   };
   return (
-    <footer id="contact" aria-labelledby="contact-title" className="bg-primary text-primary-foreground">
+    <footer
+      id="contact"
+      aria-labelledby="contact-title"
+      className="bg-primary text-primary-foreground"
+    >
       <div className="mx-auto max-w-7xl px-5 py-20 md:px-10 md:py-28">
         <p className="eyebrow text-primary-foreground/60">§ 05 — Contact</p>
-        <h2 id="contact-title" className="mt-6 font-display text-[clamp(3rem,9vw,7.5rem)] leading-[0.9] tracking-tight">
+        <h2
+          id="contact-title"
+          className="mt-6 font-display text-[clamp(3rem,9vw,7.5rem)] leading-[0.9] tracking-tight"
+        >
           Let’s talk about <em>your story</em>.
         </h2>
         <div className="mt-12 flex flex-col gap-4 border-t border-primary-foreground/20 pt-8 sm:flex-row sm:items-center sm:justify-between">
-          <a href={`mailto:${profile.email}`} className="link-underline break-all font-display text-2xl md:text-4xl">
+          <a
+            href={`mailto:${profile.email}`}
+            className="link-underline break-all font-display text-2xl md:text-4xl"
+          >
             {profile.email}
           </a>
           <button
@@ -242,15 +297,28 @@ export function Contact() {
           >
             {copied ? "Copied ✓" : "Copy email"}
           </button>
-          <span className="sr-only" aria-live="polite">{copied ? "Email copied to clipboard" : ""}</span>
+          <span className="sr-only" aria-live="polite">
+            {copied ? "Email copied to clipboard" : ""}
+          </span>
         </div>
-        <ul className="mt-8 flex flex-wrap gap-6 text-sm">
-          <li><a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="link-underline">LinkedIn ↗</a></li>
-          <li><a href={profile.cv} target="_blank" rel="noopener noreferrer" className="link-underline">CV on JobVision ↗</a></li>
-        </ul>
+        <div className="mt-5 flex flex-wrap gap-x-6 gap-y-3 text-sm">
+          <a
+            href={profile.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="link-underline"
+          >
+            LinkedIn ↗
+          </a>
+          <a href={profile.cv} target="_blank" rel="noopener noreferrer" className="link-underline">
+            CV on JobVision ↗
+          </a>
+        </div>
         <div className="mt-20 flex flex-wrap justify-between gap-4 eyebrow text-primary-foreground/60">
           <span>© {new Date().getFullYear()} Setareh Rahimi</span>
-          <a href="#top" className="link-underline">Back to top ↑</a>
+          <a href="#top" className="link-underline">
+            Back to top ↑
+          </a>
         </div>
       </div>
     </footer>
