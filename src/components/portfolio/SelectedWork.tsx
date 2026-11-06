@@ -180,7 +180,7 @@ export function SelectedWork() {
   return (
     <>
       <ol className="grid gap-6 md:grid-cols-2">
-        {projects.map((project, index) => (
+        {projects.map((project) => (
           <li key={project.id} className="min-w-0">
             <Dialog>
               <article className="flex h-full flex-col border border-rule p-5 md:p-6">
@@ -209,11 +209,21 @@ export function SelectedWork() {
                         className="min-h-0 flex-1 w-full object-contain"
                       />
                     ) : (
-                      <span
-                        className="font-display text-7xl leading-none text-accent/80 md:text-8xl"
-                        aria-hidden="true"
-                      >
-                        {String(index + 1).padStart(2, "0")}
+                      <span className="flex min-h-0 flex-1 flex-col justify-center gap-4 border-y border-rule py-6">
+                        <span className="eyebrow text-muted-foreground">{project.category}</span>
+                        <span className="font-display text-3xl leading-tight text-accent md:text-4xl">
+                          {project.coverLabel}
+                        </span>
+                        <span className="max-w-sm text-sm leading-relaxed text-muted-foreground">
+                          {project.role}
+                        </span>
+                        <span className="eyebrow">
+                          {project.status === "verified-role"
+                            ? "Verified experience"
+                            : project.status === "team-collaboration"
+                              ? "Team collaboration"
+                              : "Personal exploration"}
+                        </span>
                       </span>
                     )}
                     <span className="border-t border-rule pt-4 font-display text-3xl leading-tight md:text-4xl">
@@ -295,13 +305,7 @@ export function SelectedWork() {
                 <p className="border-t border-rule pt-5 text-sm leading-relaxed text-muted-foreground">
                   {project.note}
                 </p>
-                {project.id === "nikmehr" && (
-                  <div>
-                    <PageLinks />
-                    <p className="eyebrow mt-8">Selected published content · Nikmehr</p>
-                    <PublishedExamples compact />
-                  </div>
-                )}
+                {project.id === "nikmehr" && <PageLinks />}
               </DialogContent>
             </Dialog>
           </li>
