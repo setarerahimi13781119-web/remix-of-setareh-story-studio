@@ -180,7 +180,7 @@ export function SelectedWork() {
   return (
     <>
       <ol className="grid gap-6 md:grid-cols-2">
-        {projects.map((project, index) => (
+        {projects.map((project) => (
           <li key={project.id} className="min-w-0">
             <Dialog>
               <article className="flex h-full flex-col border border-rule p-5 md:p-6">
