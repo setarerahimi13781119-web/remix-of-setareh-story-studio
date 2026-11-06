@@ -49,10 +49,34 @@ export const nikmehrWork = {
 };
 
 export const work: WorkItem[] = [
-  { id: "01", label: "Selected published content 01", platform: "Instagram", kind: "Reel", href: "https://www.instagram.com/reel/DHBNnH_sr1q/" },
-  { id: "02", label: "Selected published content 02", platform: "Instagram", kind: "Reel", href: "https://www.instagram.com/reel/DGNOEYosMEl/" },
-  { id: "03", label: "Selected published content 03", platform: "Instagram", kind: "Reel", href: "https://www.instagram.com/reel/DHN8T5PsF3a/" },
-  { id: "04", label: "Selected published content 04", platform: "Instagram", kind: "Reel", href: "https://www.instagram.com/reel/DG0vrqaID2v/" },
+  {
+    id: "01",
+    label: "Selected published content 01",
+    platform: "Instagram",
+    kind: "Reel",
+    href: "https://www.instagram.com/reel/DHBNnH_sr1q/",
+  },
+  {
+    id: "02",
+    label: "Selected published content 02",
+    platform: "Instagram",
+    kind: "Reel",
+    href: "https://www.instagram.com/reel/DGNOEYosMEl/",
+  },
+  {
+    id: "03",
+    label: "Selected published content 03",
+    platform: "Instagram",
+    kind: "Reel",
+    href: "https://www.instagram.com/reel/DHN8T5PsF3a/",
+  },
+  {
+    id: "04",
+    label: "Selected published content 04",
+    platform: "Instagram",
+    kind: "Reel",
+    href: "https://www.instagram.com/reel/DG0vrqaID2v/",
+  },
 ];
 
 export type PortfolioProject = {
@@ -77,9 +101,15 @@ export const projects: PortfolioProject[] = [
     coverLabel: "Autumn campaign",
     category: "Fashion · Ecommerce",
     role: "Art direction & visual design exploration",
-    summary: "Autumn fashion campaign visuals explored across desktop and mobile ecommerce hero banners.",
-    context: "A seasonal fashion direction for Khaneh Shalvar, exploring how a campaign visual translates into desktop and mobile banner formats.",
-    scope: ["Autumn fashion campaign art direction", "Desktop ecommerce hero banner exploration", "Mobile campaign banner exploration"],
+    summary:
+      "Autumn fashion campaign visuals explored across desktop and mobile ecommerce hero banners.",
+    context:
+      "A seasonal fashion direction for Khaneh Shalvar, exploring how a campaign visual translates into desktop and mobile banner formats.",
+    scope: [
+      "Autumn fashion campaign art direction",
+      "Desktop ecommerce hero banner exploration",
+      "Mobile campaign banner exploration",
+    ],
     status: "exploration",
     note: "Presented as a design exploration; client delivery and ownership are not claimed.",
   },
@@ -89,9 +119,15 @@ export const projects: PortfolioProject[] = [
     coverLabel: "Fashion storefront",
     category: "Fashion · Ecommerce",
     role: "Ecommerce visual design exploration",
-    summary: "Desktop and mobile store headers, campaign visuals and a LinkedIn presentation for a separate fashion ecommerce project.",
-    context: "A fashion storefront visual project for Khaneh Mod Setareh, separate from the Khaneh Shalvar autumn campaign.",
-    scope: ["Desktop and mobile store header / banner design", "Fashion campaign visual exploration", "LinkedIn presentation"],
+    summary:
+      "Desktop and mobile store headers, campaign visuals and a LinkedIn presentation for a separate fashion ecommerce project.",
+    context:
+      "A fashion storefront visual project for Khaneh Mod Setareh, separate from the Khaneh Shalvar autumn campaign.",
+    scope: [
+      "Desktop and mobile store header / banner design",
+      "Fashion campaign visual exploration",
+      "LinkedIn presentation",
+    ],
     status: "exploration",
     note: "The LinkedIn presentation is part of the project scope; no publication or client-delivery claim is made.",
   },
@@ -101,21 +137,33 @@ export const projects: PortfolioProject[] = [
     coverLabel: "Recent team collaboration",
     category: "Podcast · Video editing & visual design",
     role: "Full video editing · Visual design exploration",
-    summary: "Recently joined the team of this long-running true-crime podcast: full editing of the first completed video, plus personal cover and social visual explorations.",
-    context: "Junoon is a long-running true-crime podcast that existed before this collaboration. Setareh recently joined the team; her contribution is limited to the two tracks below.",
-    scope: ["Full video editing — first completed video: Brian Yassipour", "Personal documentary crime-podcast cover and social visual explorations"],
+    summary:
+      "Recently joined the team of this long-running true-crime podcast: full editing of the first completed video, plus personal cover and social visual explorations.",
+    context:
+      "Junoon is a long-running true-crime podcast that existed before this collaboration. Setareh recently joined the team; her contribution is limited to the two tracks below.",
+    scope: [
+      "Full video editing — first completed video: Brian Yassipour",
+      "Personal documentary crime-podcast cover and social visual explorations",
+    ],
     status: "team-collaboration",
     note: "The podcast, its original identity and its brand history predate this collaboration and are not claimed. The five images shown here are Setareh's own visual explorations from this collaboration; no video file has been added to this portfolio.",
     tracks: [
       {
         title: "Video Editing",
         label: "Full video editing · First completed video: Brian Yassipour (برایان یاسی‌پور)",
-        items: ["End-to-end editing of the episode video on the Brian Yassipour case", "Carried through from editing to final export"],
+        items: [
+          "End-to-end editing of the episode video on the Brian Yassipour case",
+          "Carried through from editing to final export",
+        ],
       },
       {
         title: "Visual Design Exploration",
         label: "Own contribution · Exploration",
-        items: ["Documentary crime-podcast cover explorations", "High-contrast portrait treatments with red / black / white accents", "Social visual treatments for highlight and reels covers"],
+        items: [
+          "Documentary crime-podcast cover explorations",
+          "High-contrast portrait treatments with red / black / white accents",
+          "Social visual treatments for highlight and reels covers",
+        ],
       },
     ],
   },
@@ -125,9 +173,15 @@ export const projects: PortfolioProject[] = [
     coverLabel: "Pennsylvania, 1950",
     category: "AI-assisted · Image production",
     role: "AI-assisted visual storytelling & image production",
-    summary: "Photoreal character scenes of historical Iranian immigrants in 1950 Pennsylvania, with vintage photographic treatments.",
-    context: "AI-assisted scene production exploring historical Iranian immigrant characters in Pennsylvania in 1950, with a vintage photographic visual language.",
-    scope: ["Historical Iranian immigrant character scenes", "Photoreal visual production", "Vintage photographic treatments"],
+    summary:
+      "Photoreal character scenes of historical Iranian immigrants in 1950 Pennsylvania, with vintage photographic treatments.",
+    context:
+      "AI-assisted scene production exploring historical Iranian immigrant characters in Pennsylvania in 1950, with a vintage photographic visual language.",
+    scope: [
+      "Historical Iranian immigrant character scenes",
+      "Photoreal visual production",
+      "Vintage photographic treatments",
+    ],
     status: "exploration",
     note: "These are AI-assisted images, not photographs or documentary records.",
   },
@@ -137,9 +191,16 @@ export const projects: PortfolioProject[] = [
     coverLabel: "Social carousel",
     category: "Social content · Image editing",
     role: "Social content design & image editing exploration",
-    summary: "Original cafe and restaurant image editing, Pinterest-inspired doodles and 3:4 carousel layouts for visual merchandising.",
-    context: "A social content exploration combining cafe and restaurant image editing with illustrated accents and carousel-based visual merchandising.",
-    scope: ["Original cafe / restaurant image editing", "Pinterest-inspired doodle treatment", "3:4 carousel slide design", "Visual merchandising"],
+    summary:
+      "Original cafe and restaurant image editing, Pinterest-inspired doodles and 3:4 carousel layouts for visual merchandising.",
+    context:
+      "A social content exploration combining cafe and restaurant image editing with illustrated accents and carousel-based visual merchandising.",
+    scope: [
+      "Original cafe / restaurant image editing",
+      "Pinterest-inspired doodle treatment",
+      "3:4 carousel slide design",
+      "Visual merchandising",
+    ],
     status: "exploration",
     note: "Presented as social content design and image editing exploration; publication and client delivery are not claimed.",
   },
@@ -150,21 +211,43 @@ export const projects: PortfolioProject[] = [
     category: "Media · Content operations",
     role: "Content coordination & publishing",
     summary: nikmehrWork.description,
-    context: "As part of the Content Specialist role at Nikmehr, coordinated and published posts and stories for the Jenab Khan and 1001 Instagram pages.",
-    scope: ["Coordination of posts and stories", "Publishing / distribution for Jenab Khan and 1001"],
+    context:
+      "As part of the Content Specialist role at Nikmehr, coordinated and published posts and stories for the Jenab Khan and 1001 Instagram pages.",
+    scope: [
+      "Coordination of posts and stories",
+      "Publishing / distribution for Jenab Khan and 1001",
+    ],
     status: "verified-role",
     note: "The role was coordination and publishing, not authorship, copywriting, graphic design, video editing, strategy ownership or account ownership. The selected reels relate to this Nikmehr work overall and are not assigned to either page individually.",
   },
 ];
 
 export const capabilities = [
-  { name: "Content production coordination", note: "Coordinating with content teams to keep production moving from planning to publication." },
-  { name: "Task and workflow follow-up", note: "Tracking assigned tasks and execution details so nothing falls through." },
-  { name: "Media content planning support", note: "Participating in the planning and production of media content." },
-  { name: "Audience communication", note: "Keeping clear, consistent communication with audiences." },
+  {
+    name: "Content production coordination",
+    note: "Coordinating with content teams to keep production moving from planning to publication.",
+  },
+  {
+    name: "Task and workflow follow-up",
+    note: "Tracking assigned tasks and execution details so nothing falls through.",
+  },
+  {
+    name: "Media content planning support",
+    note: "Participating in the planning and production of media content.",
+  },
+  {
+    name: "Audience communication",
+    note: "Keeping clear, consistent communication with audiences.",
+  },
   { name: "Order follow-up", note: "Following up on orders and day-to-day operational tasks." },
-  { name: "Team collaboration", note: "Working closely with team members to keep shared work on track." },
-  { name: "Publishing operations support", note: "Supporting the continuity of day-to-day publishing workflows." },
+  {
+    name: "Team collaboration",
+    note: "Working closely with team members to keep shared work on track.",
+  },
+  {
+    name: "Publishing operations support",
+    note: "Supporting the continuity of day-to-day publishing workflows.",
+  },
 ];
 
 export const experience = [

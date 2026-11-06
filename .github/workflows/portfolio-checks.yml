@@ -2,29 +2,24 @@ name: Portfolio quality checks
 
 on:
   push:
-    branches: [main]
+    branches:
+      - portfolio-release-candidate
   pull_request:
-    branches: [main]
+    branches:
+      - main
 
 permissions:
   contents: read
 
-concurrency:
-  group: portfolio-checks-${{ github.ref }}
-  cancel-in-progress: true
-
 jobs:
-  validate:
-    name: Test, lint and production build
+  quality:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Set up Bun
+      -       - name: Set up Bun
         uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: latest
 
       - name: Install dependencies
         run: bun install --frozen-lockfile
@@ -32,11 +27,11 @@ jobs:
       - name: Run tests
         run: bun run test
 
-      - name: Apply repository formatting
-        run: bunx prettier --write .
+      - name: Check Prettier formatting
+        run: bunx prettier --check README.md src/data/portfolio.ts src/routes/index.tsx src/test/portfolio-data.test.ts src/components/portfolio/Portfolio.tsx src/components/portfolio/SelectedWork.tsx
 
       - name: Run lint
         run: bun run lint
 
-      - name: Build production app
+      - name: Build production bundle
         run: bun run build
