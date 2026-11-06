@@ -110,7 +110,7 @@ export const projects: PortfolioProject[] = [
     ],
     status: "verified-role",
     note: "The role was coordination and publishing, not authorship, copywriting, graphic design, video editing, strategy ownership or account ownership. The selected reels relate to this Nikmehr work overall and are not assigned to either page individually.",
-  },,
+  },
   {
     id: "khaneh-shalvar",
     title: "Khaneh Shalvar",
@@ -220,7 +220,6 @@ export const projects: PortfolioProject[] = [
     status: "exploration",
     note: "Presented as social content design and image editing exploration; publication and client delivery are not claimed.",
   },
-
 ];
 
 export const capabilities = [
