@@ -16,9 +16,9 @@
 
 export const profile = {
   name: "Setareh Rahimi",
-  headline: "Content Specialist | Content Production & Coordination",
+  headline: "Content Coordination · Video Editing · Visual Design",
   intro:
-    "Content professional with experience in media content production and publishing operations — focused on coordination, task follow-up and audience communication.",
+    "I coordinate media content and publishing workflows, with hands-on experience in full video editing and visual design exploration through collaborative and self-directed projects.",
   email: "setarerahimi1119@gmail.com",
   linkedin: "https://linkedin.com/in/setare-rahimi-968a0a274",
   cv: "https://jobvision.ir/cv/setare-rahimi-174320",
