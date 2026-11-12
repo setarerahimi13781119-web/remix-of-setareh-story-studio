@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - portfolio-release-candidate
+      - portfolio-completion
   pull_request:
     branches:
       - main
