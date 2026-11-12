@@ -208,6 +208,90 @@ export function SelectedWork() {
                         aria-hidden="true"
                         className="min-h-0 flex-1 w-full object-contain"
                       />
+                    ) : project.id === "khaneh-shalvar" ? (
+                      <span className="relative flex min-h-0 flex-1 flex-col justify-between overflow-hidden border-y border-rule py-5">
+                        <span className="eyebrow flex items-center justify-between">
+                          <span>FASHION / CAMPAIGN STUDY</span>
+                          <span>01 — 06</span>
+                        </span>
+                        <span className="relative -ml-1 font-display text-[clamp(3.5rem,9vw,6.5rem)] leading-[0.78] tracking-[-0.06em] text-accent">
+                          AUTUMN
+                          <span className="block pl-[16%] text-foreground">IN FORM</span>
+                        </span>
+                        <span className="flex items-end justify-between gap-3">
+                          <span className="max-w-[13rem] text-xs leading-relaxed text-muted-foreground">
+                            Desktop + mobile
+                            <br />
+                            Ecommerce hero exploration
+                          </span>
+                          <span className="font-mono text-3xl text-accent">01</span>
+                        </span>
+                      </span>
+                    ) : project.id === "ai-visual-storytelling" ? (
+                      <span className="relative flex min-h-0 flex-1 flex-col justify-between overflow-hidden border-y border-rule py-5">
+                        <span className="eyebrow flex items-center justify-between">
+                          <span>VISUAL ARCHIVE</span>
+                          <span>1950 / PA</span>
+                        </span>
+                        <span className="font-display text-[clamp(5rem,14vw,9rem)] leading-[0.8] tracking-[-0.07em] text-accent">
+                          1950
+                        </span>
+                        <span className="grid grid-cols-[1fr_auto] items-end gap-3 border-t border-rule pt-3">
+                          <span className="text-xs leading-relaxed text-muted-foreground">
+                            Historical Iranian immigrant scenes
+                            <br />
+                            AI-assisted image studies
+                          </span>
+                          <span className="eyebrow text-foreground">STUDY 04</span>
+                        </span>
+                      </span>
+                    ) : project.id === "cafe-social-content" ? (
+                      <span className="relative flex min-h-0 flex-1 flex-col justify-between overflow-hidden border-y border-rule py-5">
+                        <span className="eyebrow flex items-center justify-between">
+                          <span>CAFÉ / FOOD</span>
+                          <span>CONTENT SERIES</span>
+                        </span>
+                        <span className="grid grid-cols-[1fr_0.72fr] items-center gap-3">
+                          <span className="font-display text-[clamp(3rem,8vw,5.5rem)] leading-[0.82] tracking-[-0.05em] text-accent">
+                            GOOD
+                            <br />
+                            TASTE
+                          </span>
+                          <span className="grid aspect-square grid-cols-3 grid-rows-3 gap-1 border border-rule p-2">
+                            {Array.from({ length: 9 }, (_, i) => (
+                              <span
+                                key={i}
+                                className={i % 2 === 0 ? "bg-accent/70" : "bg-foreground/10"}
+                              />
+                            ))}
+                          </span>
+                        </span>
+                        <span className="border-t border-rule pt-3 text-xs leading-relaxed text-muted-foreground">
+                          Image editing · Illustrated accents · 3:4 carousel layouts
+                        </span>
+                      </span>
+                    ) : project.id === "nikmehr" ? (
+                      <span className="relative flex min-h-0 flex-1 flex-col justify-between overflow-hidden border-y border-rule py-5">
+                        <span className="eyebrow flex items-center justify-between">
+                          <span>MEDIA / OPERATIONS</span>
+                          <span>VERIFIED ROLE</span>
+                        </span>
+                        <span className="space-y-2">
+                          <span className="block font-display text-[clamp(2.8rem,7vw,5rem)] leading-[0.85] tracking-[-0.05em]">
+                            CONTENT
+                          </span>
+                          <span className="flex items-center gap-2 pl-[12%]">
+                            <span className="h-px flex-1 bg-accent" />
+                            <span className="font-mono text-xs tracking-[0.2em] text-accent">→</span>
+                          </span>
+                          <span className="block pl-[12%] font-display text-[clamp(2.8rem,7vw,5rem)] leading-[0.85] tracking-[-0.05em] text-accent">
+                            PUBLISH
+                          </span>
+                        </span>
+                        <span className="border-t border-rule pt-3 text-xs leading-relaxed text-muted-foreground">
+                          Posts + stories · Coordination & publishing
+                        </span>
+                      </span>
                     ) : (
                       <span className="flex min-h-0 flex-1 flex-col justify-center gap-4 border-y border-rule py-6">
                         <span className="eyebrow text-muted-foreground">{project.category}</span>
@@ -216,13 +300,6 @@ export function SelectedWork() {
                         </span>
                         <span className="max-w-sm text-sm leading-relaxed text-muted-foreground">
                           {project.role}
-                        </span>
-                        <span className="eyebrow">
-                          {project.status === "verified-role"
-                            ? "Verified experience"
-                            : project.status === "team-collaboration"
-                              ? "Team collaboration"
-                              : "Personal exploration"}
                         </span>
                       </span>
                     )}
