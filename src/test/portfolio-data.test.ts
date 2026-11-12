@@ -9,19 +9,20 @@ describe("Profile contact links", () => {
 });
 
 describe("Verified portfolio project boundaries", () => {
-  it("keeps both fashion explorations distinct within the six projects", () => {
+  it("keeps the portfolio project order and all seven projects", () => {
     expect(projects.map((project) => project.id)).toEqual([
       "khaneh-shalvar",
       "khaneh-mod-setareh",
       "junoon-podcast",
       "ai-visual-storytelling",
       "cafe-social-content",
+      "turquoise-jewelry-set",
       "nikmehr",
     ]);
-    expect(new Set(projects.map((project) => project.id)).size).toBe(6);
+    expect(new Set(projects.map((project) => project.id)).size).toBe(7);
   });
 
-  it("treats the five visual projects as explorations, not verified delivered roles", () => {
+  it("treats the five visual explorations as explorations, not verified delivered roles", () => {
     expect(
       projects.filter((project) => project.status === "exploration").map((project) => project.id),
     ).toEqual([
@@ -29,6 +30,7 @@ describe("Verified portfolio project boundaries", () => {
       "khaneh-mod-setareh",
       "ai-visual-storytelling",
       "cafe-social-content",
+      "turquoise-jewelry-set",
     ]);
     expect(projects.find((p) => p.id === "junoon-podcast")?.status).toBe("team-collaboration");
     expect(
