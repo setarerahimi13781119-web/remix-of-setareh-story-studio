@@ -136,7 +136,9 @@ function PublishedExamples({ compact = false }: { compact?: boolean }) {
   return (
     <ul
       className={
-        compact ? "mt-4 grid gap-3 sm:grid-cols-2" : "mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+        compact
+          ? "mt-4 grid gap-3 sm:grid-cols-2"
+          : "mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
       }
     >
       {work.map((reel) => (
