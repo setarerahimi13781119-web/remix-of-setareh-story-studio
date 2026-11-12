@@ -136,9 +136,7 @@ function PublishedExamples({ compact = false }: { compact?: boolean }) {
   return (
     <ul
       className={
-        compact
-          ? "mt-4 grid gap-3 sm:grid-cols-2"
-          : "mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+        compact ? "mt-4 grid gap-3 sm:grid-cols-2" : "mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
       }
     >
       {work.map((reel) => (
@@ -284,7 +282,9 @@ export function SelectedWork() {
                           </span>
                           <span className="flex items-center gap-2 pl-[12%]">
                             <span className="h-px flex-1 bg-accent" />
-                            <span className="font-mono text-xs tracking-[0.2em] text-accent">→</span>
+                            <span className="font-mono text-xs tracking-[0.2em] text-accent">
+                              →
+                            </span>
                           </span>
                           <span className="block pl-[12%] font-display text-[clamp(2.8rem,7vw,5rem)] leading-[0.85] tracking-[-0.05em] text-accent">
                             PUBLISH
