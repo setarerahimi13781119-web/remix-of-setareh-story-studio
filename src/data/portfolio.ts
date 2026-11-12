@@ -205,6 +205,25 @@ export const projects: PortfolioProject[] = [
     note: "Presented as social content design and image editing exploration; publication and client delivery are not claimed.",
   },
   {
+    id: "turquoise-jewelry-set",
+    title: "Turquoise Jewelry Set",
+    coverLabel: "AI-generated product concept",
+    category: "AI-assisted · Product visual design",
+    role: "AI Art Direction · Concept Development · Product Visual Creation",
+    summary:
+      "An end-to-end AI-generated turquoise jewelry concept, developed from the initial idea through the final product visuals.",
+    context:
+      "A self-directed AI product-visual project exploring a coordinated turquoise jewelry set. The concept, design development and final imagery were all created with AI tools.",
+    scope: [
+      "AI-assisted concept development",
+      "Jewelry set design exploration",
+      "AI-generated product and model imagery",
+      "Art direction and visual refinement",
+    ],
+    status: "exploration",
+    note: "All visuals are AI-generated concept imagery; they do not document a physically manufactured product or a real-life photoshoot.",
+  },
+  {
     id: "nikmehr",
     title: "Nikmehr",
     coverLabel: "Content publishing",
