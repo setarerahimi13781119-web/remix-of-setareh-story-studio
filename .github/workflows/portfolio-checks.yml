@@ -10,7 +10,7 @@ on:
       - main
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: portfolio-checks-${{ github.ref }}
@@ -37,18 +37,15 @@ jobs:
       - name: Format SelectedWork source
         run: bunx prettier --write src/components/portfolio/SelectedWork.tsx
 
-      - name: Upload formatted source for commit
-        uses: actions/upload-artifact@v4
-        with:
-          name: formatted-selected-work
-          path: src/components/portfolio/SelectedWork.tsx
-          if-no-files-found: error
-
-      - name: Print formatted source for retrieval
+      - name: Commit Prettier formatting
         run: |
-          echo "BEGIN_FORMATTED_SELECTED_WORK"
-          cat src/components/portfolio/SelectedWork.tsx
-          echo "END_FORMATTED_SELECTED_WORK"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/components/portfolio/SelectedWork.tsx
+          if ! git diff --cached --quiet; then
+            git commit -m "Format SelectedWork with Prettier"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
 
       - name: Check Prettier formatting
         run: bunx prettier --check src/data/portfolio.ts src/routes/index.tsx src/test/portfolio-data.test.ts src/components/portfolio/Portfolio.tsx src/components/portfolio/SelectedWork.tsx
