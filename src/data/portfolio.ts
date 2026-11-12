@@ -96,22 +96,6 @@ export type PortfolioProject = {
 
 export const projects: PortfolioProject[] = [
   {
-    id: "nikmehr",
-    title: "Nikmehr",
-    coverLabel: "Content publishing",
-    category: "Media · Content operations",
-    role: "Content coordination & publishing",
-    summary: nikmehrWork.description,
-    context:
-      "As part of the Content Specialist role at Nikmehr, coordinated and published posts and stories for the Jenab Khan and 1001 Instagram pages.",
-    scope: [
-      "Coordination of posts and stories",
-      "Publishing / distribution for Jenab Khan and 1001",
-    ],
-    status: "verified-role",
-    note: "The role was coordination and publishing, not authorship, copywriting, graphic design, video editing, strategy ownership or account ownership. The selected reels relate to this Nikmehr work overall and are not assigned to either page individually.",
-  },
-  {
     id: "khaneh-shalvar",
     title: "Khaneh Shalvar",
     coverLabel: "Autumn campaign",
@@ -219,6 +203,22 @@ export const projects: PortfolioProject[] = [
     ],
     status: "exploration",
     note: "Presented as social content design and image editing exploration; publication and client delivery are not claimed.",
+  },
+  {
+    id: "nikmehr",
+    title: "Nikmehr",
+    coverLabel: "Content publishing",
+    category: "Media · Content operations",
+    role: "Content coordination & publishing",
+    summary: nikmehrWork.description,
+    context:
+      "As part of the Content Specialist role at Nikmehr, coordinated and published posts and stories for the Jenab Khan and 1001 Instagram pages.",
+    scope: [
+      "Coordination of posts and stories",
+      "Publishing / distribution for Jenab Khan and 1001",
+    ],
+    status: "verified-role",
+    note: "The role was coordination and publishing, not authorship, copywriting, graphic design, video editing, strategy ownership or account ownership. The selected reels relate to this Nikmehr work overall and are not assigned to either page individually.",
   },
 ];
 
