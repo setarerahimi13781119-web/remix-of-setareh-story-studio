@@ -34,6 +34,16 @@ jobs:
       - name: Run tests
         run: bun run test
 
+      - name: Format SelectedWork source
+        run: bunx prettier --write src/components/portfolio/SelectedWork.tsx
+
+      - name: Upload formatted source for commit
+        uses: actions/upload-artifact@v4
+        with:
+          name: formatted-selected-work
+          path: src/components/portfolio/SelectedWork.tsx
+          if-no-files-found: error
+
       - name: Check Prettier formatting
         run: bunx prettier --check src/data/portfolio.ts src/routes/index.tsx src/test/portfolio-data.test.ts src/components/portfolio/Portfolio.tsx src/components/portfolio/SelectedWork.tsx
 
