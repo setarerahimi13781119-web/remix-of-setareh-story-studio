@@ -46,7 +46,6 @@ function TurquoiseJewelryGallery() {
   );
 }
 
-
 const junoonSquares = [
   {
     src: junoonGhostship.url,
