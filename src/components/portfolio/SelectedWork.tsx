@@ -273,6 +273,13 @@ export function SelectedWork() {
                         </span>
                       </span>
                     ) : project.id === "cafe-social-content" ? (
+                      <img
+                        src="https://screenshot2.lovable.dev/lovp_1h4v9rfq2v8c5t2hgfqsp74k92/5f6a8a905d7ec7c86a1f73fe87d4ca09_1794284897805.png"
+                        alt="Moodbean Coffee Finder interface preview"
+                        aria-hidden="true"
+                        className="min-h-0 flex-1 w-full bg-card object-contain"
+                      />
+                      ) : project.id === "__unused-cafe-old" ? (
                       <span className="relative flex min-h-0 flex-1 flex-col justify-between overflow-hidden border-y border-rule py-5">
                         <span className="eyebrow flex items-center justify-between">
                           <span>CAFÉ / FOOD</span>
@@ -414,6 +421,17 @@ export function SelectedWork() {
                       track.title === "Visual Design Exploration" && <JunoonGallery />}
                   </section>
                 ))}
+                {project.id === "cafe-social-content" && project.liveUrl && (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex w-fit items-center gap-2 border border-foreground px-4 py-3 text-sm transition-colors hover:bg-foreground hover:text-background"
+                  >
+                    Explore the live coffee finder
+                    <ArrowUpRight aria-hidden="true" className="size-4" />
+                  </a>
+                )}
                 {project.id === "khaneh-mod-setareh" && <KhanehModGallery />}
                 {project.id === "turquoise-jewelry-set" && <TurquoiseJewelryGallery />}
                 <p className="border-t border-rule pt-5 text-sm leading-relaxed text-muted-foreground">
