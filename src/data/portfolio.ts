@@ -92,6 +92,7 @@ export type PortfolioProject = {
   note: string;
   /** Optional separately attributed work tracks shown in the detail view. */
   tracks?: { title: string; label: string; items: string[] }[];
+  liveUrl?: string;
 };
 
 export const projects: PortfolioProject[] = [
@@ -187,22 +188,23 @@ export const projects: PortfolioProject[] = [
   },
   {
     id: "cafe-social-content",
-    title: "Cafe & food social content",
-    coverLabel: "Social carousel",
-    category: "Social content · Image editing",
-    role: "Social content design & image editing exploration",
+    title: "Moodbean — Coffee by Mood",
+    coverLabel: "Interactive coffee finder",
+    category: "Digital product · Coffee discovery",
+    role: "Product concept · UX/UI design exploration",
     summary:
-      "Original cafe and restaurant image editing, Pinterest-inspired doodles and 3:4 carousel layouts for visual merchandising.",
+      "An interactive specialty-coffee finder that helps people choose a coffee by mood, taste preference or occasion.",
     context:
-      "A social content exploration combining cafe and restaurant image editing with illustrated accents and carousel-based visual merchandising.",
+      "Moodbean presents a focused coffee catalogue with mood-based discovery. Visitors can explore four coffees, compare tasting notes and processing details, filter by needs such as morning energy, chocolate richness, creativity or relaxation, and add quantities to a cart.",
     scope: [
-      "Original cafe / restaurant image editing",
-      "Pinterest-inspired doodle treatment",
-      "3:4 carousel slide design",
-      "Visual merchandising",
+      "Mood- and occasion-based coffee discovery",
+      "Coffee cards with tasting notes, processing methods and growing elevations",
+      "Quick filters for distinct preferences and moments",
+      "Interactive cart quantities and order placement flow",
     ],
     status: "exploration",
-    note: "Presented as social content design and image editing exploration; publication and client delivery are not claimed.",
+    liveUrl: "https://moodbean-coffee-finder.lovable.app",
+    note: "An independently developed digital product concept. The live link opens the interactive project.",
   },
   {
     id: "turquoise-jewelry-set",
