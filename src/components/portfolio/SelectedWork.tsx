@@ -18,16 +18,30 @@ import kms2 from "@/assets/khaneh_mod_setareh_slide_02.png.asset.json";
 import kms3 from "@/assets/khaneh_mod_setareh_slide_03.png.asset.json";
 import kms4 from "@/assets/khaneh_mod_setareh_slide_04.png.asset.json";
 import kms5 from "@/assets/khaneh_mod_setareh_slide_05.png.asset.json";
-const turquoiseCover = "https://www.dropbox.com/scl/fi/xu02n0326lzvadfh33fp6/final_carousel_slide_2_profile.jpg?rlkey=4pt5kfu7ajf95ni41a1une5i8&raw=1";
-const turquoiseDetail = "https://www.dropbox.com/scl/fi/ysxlzqdqlbk000m10b36c/21c32000c543e8a70848b02e0dda227d65e0c2ee6d02316fd106f7308ff2c10f.png?rlkey=hgnv2et8heg9fassv18w175qt&raw=1";
+const turquoiseCover =
+  "https://www.dropbox.com/scl/fi/xu02n0326lzvadfh33fp6/final_carousel_slide_2_profile.jpg?rlkey=4pt5kfu7ajf95ni41a1une5i8&raw=1";
+const turquoiseDetail =
+  "https://www.dropbox.com/scl/fi/ysxlzqdqlbk000m10b36c/21c32000c543e8a70848b02e0dda227d65e0c2ee6d02316fd106f7308ff2c10f.png?rlkey=hgnv2et8heg9fassv18w175qt&raw=1";
 function TurquoiseJewelryGallery() {
   return (
     <figure className="border-t border-rule pt-5">
       <div className="grid gap-4 sm:grid-cols-2">
-        <img src={turquoiseCover} alt="AI-generated model image wearing the turquoise jewelry set" loading="lazy" className="w-full bg-card object-contain" />
-        <img src={turquoiseDetail} alt="Close-up AI-generated product visual showing details of the turquoise necklace" loading="lazy" className="w-full bg-card object-contain" />
+        <img
+          src={turquoiseCover}
+          alt="AI-generated model image wearing the turquoise jewelry set"
+          loading="lazy"
+          className="w-full bg-card object-contain"
+        />
+        <img
+          src={turquoiseDetail}
+          alt="Close-up AI-generated product visual showing details of the turquoise necklace"
+          loading="lazy"
+          className="w-full bg-card object-contain"
+        />
       </div>
-      <figcaption className="mt-3 text-xs leading-relaxed text-muted-foreground">AI-generated concept imagery · Model view and product detail · Self-initiated project</figcaption>
+      <figcaption className="mt-3 text-xs leading-relaxed text-muted-foreground">
+        AI-generated concept imagery · Model view and product detail · Self-initiated project
+      </figcaption>
     </figure>
   );
 }
@@ -285,7 +299,12 @@ export function SelectedWork() {
                         </span>
                       </span>
                     ) : project.id === "turquoise-jewelry-set" ? (
-                      <img src={turquoiseCover} alt="" aria-hidden="true" className="min-h-0 flex-1 w-full object-contain" />
+                      <img
+                        src={turquoiseCover}
+                        alt=""
+                        aria-hidden="true"
+                        className="min-h-0 flex-1 w-full object-contain"
+                      />
                     ) : project.id === "nikmehr" ? (
                       <span className="relative flex min-h-0 flex-1 flex-col justify-between overflow-hidden border-y border-rule py-5">
                         <span className="eyebrow flex items-center justify-between">
