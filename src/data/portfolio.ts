@@ -224,29 +224,32 @@ export const projects: PortfolioProject[] = [
 
 export const capabilities = [
   {
-    name: "Content production coordination",
-    note: "Coordinating with content teams to keep production moving from planning to publication.",
+    name: "Content coordination & publishing",
+    note: "Coordinating and publishing posts and stories across media social channels, based on the verified Nikmehr role.",
   },
   {
-    name: "Task and workflow follow-up",
-    note: "Tracking assigned tasks and execution details so nothing falls through.",
+    name: "Video editing",
+    note: "End-to-end editing and final export of the first completed Junoon Podcast episode on the Brian Yassipour case.",
   },
   {
-    name: "Media content planning support",
-    note: "Participating in the planning and production of media content.",
+    name: "Visual design exploration",
+    note: "Developing campaign, ecommerce and social visual directions through self-directed studies and recent team collaboration.",
   },
   {
-    name: "Audience communication",
-    note: "Keeping clear, consistent communication with audiences.",
-  },
-  { name: "Order follow-up", note: "Following up on orders and day-to-day operational tasks." },
-  {
-    name: "Team collaboration",
-    note: "Working closely with team members to keep shared work on track.",
+    name: "Image editing & social layouts",
+    note: "Editing cafe and restaurant imagery, adding illustrated accents and exploring 3:4 carousel compositions.",
   },
   {
-    name: "Publishing operations support",
-    note: "Supporting the continuity of day-to-day publishing workflows.",
+    name: "AI-assisted image production",
+    note: "Creating photoreal visual scenes and applying vintage photographic treatments for historical storytelling studies.",
+  },
+  {
+    name: "Production workflow support",
+    note: "Following up on assigned tasks and execution details while supporting content planning and production workflows.",
+  },
+  {
+    name: "Publishing operations & audience communication",
+    note: "Supporting day-to-day publishing operations, order follow-up and audience communication in a publishing-house environment.",
   },
 ];
 
