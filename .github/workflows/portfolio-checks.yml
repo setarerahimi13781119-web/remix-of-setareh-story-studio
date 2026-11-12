@@ -10,7 +10,7 @@ on:
       - main
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: portfolio-checks-${{ github.ref }}
@@ -34,7 +34,20 @@ jobs:
       - name: Run tests
         run: bun run test
 
-      - name: Check Prettier formatting
+      - name: Format portfolio files
+        run: bunx prettier --write src/data/portfolio.ts src/routes/index.tsx src/test/portfolio-data.test.ts src/components/portfolio/Portfolio.tsx src/components/portfolio/SelectedWork.tsx
+
+      - name: Commit formatting changes
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add src/data/portfolio.ts src/routes/index.tsx src/test/portfolio-data.test.ts src/components/portfolio/Portfolio.tsx src/components/portfolio/SelectedWork.tsx
+            git commit -m "Apply Prettier formatting to portfolio files"
+            git push
+          fi
+
+      - name: Verify Prettier formatting
         run: bunx prettier --check src/data/portfolio.ts src/routes/index.tsx src/test/portfolio-data.test.ts src/components/portfolio/Portfolio.tsx src/components/portfolio/SelectedWork.tsx
 
       - name: Run lint
