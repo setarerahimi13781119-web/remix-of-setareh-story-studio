@@ -44,6 +44,12 @@ jobs:
           path: src/components/portfolio/SelectedWork.tsx
           if-no-files-found: error
 
+      - name: Print formatted source for retrieval
+        run: |
+          echo "BEGIN_FORMATTED_SELECTED_WORK"
+          cat src/components/portfolio/SelectedWork.tsx
+          echo "END_FORMATTED_SELECTED_WORK"
+
       - name: Check Prettier formatting
         run: bunx prettier --check src/data/portfolio.ts src/routes/index.tsx src/test/portfolio-data.test.ts src/components/portfolio/Portfolio.tsx src/components/portfolio/SelectedWork.tsx
 
