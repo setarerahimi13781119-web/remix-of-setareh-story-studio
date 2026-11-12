@@ -279,31 +279,6 @@ export function SelectedWork() {
                         aria-hidden="true"
                         className="min-h-0 flex-1 w-full bg-card object-contain"
                       />
-                      ) : project.id === "__unused-cafe-old" ? (
-                      <span className="relative flex min-h-0 flex-1 flex-col justify-between overflow-hidden border-y border-rule py-5">
-                        <span className="eyebrow flex items-center justify-between">
-                          <span>CAFÉ / FOOD</span>
-                          <span>CONTENT SERIES</span>
-                        </span>
-                        <span className="grid grid-cols-[1fr_0.72fr] items-center gap-3">
-                          <span className="font-display text-[clamp(3rem,8vw,5.5rem)] leading-[0.82] tracking-[-0.05em] text-accent">
-                            GOOD
-                            <br />
-                            TASTE
-                          </span>
-                          <span className="grid aspect-square grid-cols-3 grid-rows-3 gap-1 border border-rule p-2">
-                            {Array.from({ length: 9 }, (_, i) => (
-                              <span
-                                key={i}
-                                className={i % 2 === 0 ? "bg-accent/70" : "bg-foreground/10"}
-                              />
-                            ))}
-                          </span>
-                        </span>
-                        <span className="border-t border-rule pt-3 text-xs leading-relaxed text-muted-foreground">
-                          Image editing · Illustrated accents · 3:4 carousel layouts
-                        </span>
-                      </span>
                     ) : project.id === "turquoise-jewelry-set" ? (
                       <img
                         src={turquoiseCover}
