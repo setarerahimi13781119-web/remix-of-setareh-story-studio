@@ -257,6 +257,7 @@ export const projects: PortfolioProject[] = [
     ],
     status: "exploration",
     note: "A self-initiated concept project. The three variants share the same design and differ only in color; no separate visual identities are claimed.",
+    liveUrl: "https://lnkd.in/p/eYKH42N3",
   },
   {
     id: "nikmehr",
