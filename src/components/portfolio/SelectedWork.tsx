@@ -47,24 +47,7 @@ function TurquoiseJewelryGallery() {
   );
 }
 
-const junoonSquares = [
-  {
-    src: junoonGhostship.url,
-    alt: "Monochrome ship illustration in a circular frame with red accents",
-  },
-  {
-    src: junoonMcnally.url,
-    alt: "Documentary-style black-and-white portrait in a circular vignette with red strokes",
-  },
-  {
-    src: junoonRogers.url,
-    alt: "Black-and-white family portrait in a circular frame with red marks",
-  },
-  {
-    src: junoonUnterweger.url,
-    alt: "Black-and-white portrait in a circular frame with red slashes and Persian text",
-  },
-];
+const junoonSquares: { src: string; alt: string }[] = [];
 
 const kmsSlides = [
   {
@@ -117,15 +100,9 @@ function JunoonGallery() {
           className="h-full w-full bg-card object-contain"
         />
         <div className="grid grid-cols-2 content-start gap-3">
-          {junoonSquares.map((img) => (
-            <img
-              key={img.src}
-              src={img.src}
-              alt={img.alt}
-              loading="lazy"
-              className="aspect-square w-full bg-card object-contain"
-            />
-          ))}
+          <p className="col-span-2 text-xs leading-relaxed text-muted-foreground">
+            Additional original Junoon visuals will be added once the correct uploaded files are recovered.
+          </p>
         </div>
       </div>
       <figcaption className="mt-3 text-xs leading-relaxed text-muted-foreground">
