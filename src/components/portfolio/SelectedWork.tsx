@@ -163,39 +163,32 @@ function PublishedExamples({ compact = false }: { compact?: boolean }) {
   return (
     <ul
       className={
-        compact ? "mt-4 grid gap-3 sm:grid-cols-2" : "mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+        compact ? "mt-4 grid gap-3 sm:grid-cols-2" : "mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4"
       }
     >
-      {work.map((reel) => (
+      {work.map((reel, index) => (
         <li key={reel.id}>
           <a
             href={reel.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="group block border border-rule p-5 transition-colors hover:border-accent"
+            className="group flex h-full min-h-44 flex-col justify-between border border-rule bg-card p-5 transition-all duration-300 hover:-translate-y-1 hover:border-accent hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
           >
-            {!compact && (
-              <div
-                aria-hidden="true"
-                className="relative flex aspect-[9/14] items-end overflow-hidden bg-card p-4"
-              >
-                <span className="absolute top-3 left-4 eyebrow">{reel.kind}</span>
-                <span className="absolute inset-x-4 top-1/2 h-px bg-rule" />
-                <span className="font-display text-8xl leading-none transition-all duration-500 group-hover:-translate-y-2 group-hover:text-accent">
-                  {reel.id}
+            <div className="flex items-center justify-between gap-3">
+              <span className="font-mono text-xs tracking-[0.18em] text-muted-foreground">
+                {String(index + 1).padStart(2, "0")} / 04
+              </span>
+              <span className="eyebrow">{reel.platform} · {reel.kind}</span>
+            </div>
+            <div className="mt-8 flex items-end justify-between gap-3">
+              <div>
+                <p className="font-display text-xl leading-tight">{reel.label}</p>
+                <span className="mt-3 inline-flex items-center gap-2 text-xs text-muted-foreground transition-colors group-hover:text-accent">
+                  View original reel <ArrowUpRight className="size-3" aria-hidden="true" />
                 </span>
               </div>
-            )}
-            <div className={`flex items-start justify-between gap-3 ${compact ? "" : "mt-4"}`}>
-              <div>
-                <p className="eyebrow">
-                  {reel.platform} · {reel.kind}
-                </p>
-                <p className="mt-1 font-display text-xl">{reel.label}</p>
-              </div>
-              <ArrowUpRight className="size-4 shrink-0" aria-hidden="true" />
+              <ArrowUpRight className="size-5 shrink-0 text-muted-foreground transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-accent" aria-hidden="true" />
             </div>
-            <span className="sr-only">(opens Instagram in a new tab)</span>
           </a>
         </li>
       ))}
