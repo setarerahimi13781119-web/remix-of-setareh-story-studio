@@ -22,6 +22,36 @@ const turquoiseCover =
   "https://www.dropbox.com/scl/fi/xu02n0326lzvadfh33fp6/final_carousel_slide_2_profile.jpg?rlkey=4pt5kfu7ajf95ni41a1une5i8&raw=1";
 const turquoiseDetail =
   "https://www.dropbox.com/scl/fi/ysxlzqdqlbk000m10b36c/21c32000c543e8a70848b02e0dda227d65e0c2ee6d02316fd106f7308ff2c10f.png?rlkey=hgnv2et8heg9fassv18w175qt&raw=1";
+
+const visualIdentityScreenshots = [
+  "https://www.dropbox.com/scl/fi/q5b3chrevm0bkm9b7f7ax/Screenshot_20261113_151524_LinkedIn.jpg?rlkey=f8ay38bx1g42unrc8b3izvxqz&raw=1",
+  "https://www.dropbox.com/scl/fi/4lbz0hygzbn3drbtjg7ur/Screenshot_20261113_151530_LinkedIn.jpg?rlkey=k94idxsvk5e6lfg7hn33ktgek&raw=1",
+  "https://www.dropbox.com/scl/fi/2yglyo7vws2cbihamou5x/Screenshot_20261113_151536_LinkedIn.jpg?rlkey=ay87rty3lilz1yaeuvzs5ijdw&raw=1",
+  "https://www.dropbox.com/scl/fi/1md9m1n4exyfqt8nfq5ke/Screenshot_20261113_151602_LinkedIn.jpg?rlkey=lp3s2fnnramq0jvl1faj2zrtd&raw=1",
+];
+
+function VisualIdentityGallery() {
+  return (
+    <figure className="mt-5 border-t border-rule pt-5">
+      <ol className="grid gap-3 sm:grid-cols-2">
+        {visualIdentityScreenshots.map((src, i) => (
+          <li key={src}>
+            <img
+              src={src}
+              alt={`Visual identity case study — LinkedIn post image ${i + 1}`}
+              loading="lazy"
+              className="w-full bg-card object-contain"
+            />
+          </li>
+        ))}
+      </ol>
+      <figcaption className="mt-3 text-xs leading-relaxed text-muted-foreground">
+        Four images from the original LinkedIn case-study post.
+      </figcaption>
+    </figure>
+  );
+}
+
 function TurquoiseJewelryGallery() {
   return (
     <figure className="border-t border-rule pt-5">
@@ -233,6 +263,13 @@ export function SelectedWork() {
                         aria-hidden="true"
                         className="min-h-0 flex-1 w-full object-contain"
                       />
+                    ) : project.id === "visual-identity-case-study" ? (
+                      <img
+                        src={visualIdentityScreenshots[0]}
+                        alt=""
+                        aria-hidden="true"
+                        className="min-h-0 flex-1 w-full bg-card object-contain"
+                      />
                     ) : project.id === "khaneh-shalvar" ? (
                       <span className="relative flex min-h-0 flex-1 flex-col justify-between overflow-hidden border-y border-rule py-5">
                         <span className="eyebrow flex items-center justify-between">
@@ -394,6 +431,18 @@ export function SelectedWork() {
                       track.title === "Visual Design Exploration" && <JunoonGallery />}
                   </section>
                 ))}
+                {project.id === "visual-identity-case-study" && <VisualIdentityGallery />}
+                {project.id === "visual-identity-case-study" && project.liveUrl && (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex w-fit items-center gap-2 border border-foreground px-4 py-3 text-sm transition-colors hover:bg-foreground hover:text-background"
+                  >
+                    View original LinkedIn case study
+                    <ArrowUpRight aria-hidden="true" className="size-4" />
+                  </a>
+                )}
                 {project.id === "moodbean" && project.liveUrl && (
                   <a
                     href={project.liveUrl}
