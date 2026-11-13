@@ -270,7 +270,7 @@ export function SelectedWork() {
                           <span className="eyebrow text-foreground">STUDY 04</span>
                         </span>
                       </span>
-                    ) : project.id === "cafe-social-content" ? (
+                    ) : project.id === "moodbean" ? (
                       <img
                         src="https://screenshot2.lovable.dev/lovp_1h4v9rfq2v8c5t2hgfqsp74k92/5f6a8a905d7ec7c86a1f73fe87d4ca09_1794284897805.png"
                         alt="Moodbean Coffee Finder interface preview"
@@ -394,7 +394,7 @@ export function SelectedWork() {
                       track.title === "Visual Design Exploration" && <JunoonGallery />}
                   </section>
                 ))}
-                {project.id === "cafe-social-content" && project.liveUrl && (
+                {project.id === "moodbean" && project.liveUrl && (
                   <a
                     href={project.liveUrl}
                     target="_blank"
