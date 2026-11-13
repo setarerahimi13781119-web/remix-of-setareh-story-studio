@@ -9,7 +9,7 @@ import {
   Work,
 } from "@/components/portfolio/Portfolio";
 
-const title = "Setareh Rahimi | Content Specialist & Content Coordination";
+const title = "Setareh Rahimi | Content Coordination, Video Editing & Visual Design";
 const description =
   "Explore the portfolio of Setareh Rahimi: media content coordination, publishing operations, video editing and visual storytelling projects.";
 
