@@ -187,8 +187,8 @@ export const projects: PortfolioProject[] = [
     note: "These are AI-assisted images, not photographs or documentary records.",
   },
   {
-    id: "cafe-social-content",
-    title: "Moodbean — Coffee by Mood",
+    id: "moodbean",
+    title: "Moodbean",
     coverLabel: "Interactive coffee finder",
     category: "Digital product · Coffee discovery",
     role: "Product concept · UX/UI design exploration",
