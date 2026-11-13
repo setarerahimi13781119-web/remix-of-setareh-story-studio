@@ -246,7 +246,7 @@ export const projects: PortfolioProject[] = [
 export const capabilities = [
   {
     name: "Content coordination & publishing",
-    note: "Coordinating and publishing posts and stories across media social channels, based on the verified Nikmehr role.",
+    note: "Coordinating and publishing posts and stories across social media channels, based on the verified Nikmehr role.",
   },
   {
     name: "Video editing",
