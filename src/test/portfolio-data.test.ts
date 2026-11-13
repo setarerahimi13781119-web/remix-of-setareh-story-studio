@@ -40,7 +40,7 @@ describe("Verified portfolio project boundaries", () => {
 
   it("describes Moodbean as an independent coffee discovery product, not generic cafe social content", () => {
     const moodbean = projects.find((p) => p.id === "moodbean");
-    expect(moodbean?.title).toBe("Moodbean — Coffee by Mood");
+    expect(moodbean?.title).toBe("Moodbean");
     expect(moodbean?.scope).toContain("Mood- and occasion-based coffee discovery");
     expect(moodbean?.scope).toContain("Interactive cart quantities and order placement flow");
     expect(projects.some((p) => p.id === "cafe-social-content")).toBe(false);
