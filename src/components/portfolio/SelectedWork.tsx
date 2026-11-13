@@ -429,6 +429,17 @@ export function SelectedWork() {
                     <ArrowUpRight aria-hidden="true" className="size-4" />
                   </a>
                 )}
+                {project.id === "turkish-coffee-packaging" && project.liveUrl && (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex w-fit items-center gap-2 border border-foreground px-4 py-3 text-sm transition-colors hover:bg-foreground hover:text-background"
+                  >
+                    View original LinkedIn packaging project
+                    <ArrowUpRight aria-hidden="true" className="size-4" />
+                  </a>
+                )}
                 {project.id === "moodbean" && project.liveUrl && (
                   <a
                     href={project.liveUrl}
