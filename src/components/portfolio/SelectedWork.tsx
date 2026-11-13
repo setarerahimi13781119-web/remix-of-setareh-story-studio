@@ -178,7 +178,9 @@ function PublishedExamples({ compact = false }: { compact?: boolean }) {
               <span className="font-mono text-xs tracking-[0.18em] text-muted-foreground">
                 {String(index + 1).padStart(2, "0")} / 04
               </span>
-              <span className="eyebrow">{reel.platform} · {reel.kind}</span>
+              <span className="eyebrow">
+                {reel.platform} · {reel.kind}
+              </span>
             </div>
             <div className="mt-8 flex items-end justify-between gap-3">
               <div>
@@ -187,7 +189,10 @@ function PublishedExamples({ compact = false }: { compact?: boolean }) {
                   View original reel <ArrowUpRight className="size-3" aria-hidden="true" />
                 </span>
               </div>
-              <ArrowUpRight className="size-5 shrink-0 text-muted-foreground transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-accent" aria-hidden="true" />
+              <ArrowUpRight
+                className="size-5 shrink-0 text-muted-foreground transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-accent"
+                aria-hidden="true"
+              />
             </div>
           </a>
         </li>
