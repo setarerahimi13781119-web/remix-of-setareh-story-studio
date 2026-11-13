@@ -47,7 +47,24 @@ function TurquoiseJewelryGallery() {
   );
 }
 
-const junoonSquares: { src: string; alt: string }[] = [];
+const junoonSquares = [
+  {
+    src: junoonGhostship.url,
+    alt: "Documentary crime-podcast cover exploration: Ghostship case",
+  },
+  {
+    src: junoonMcnally.url,
+    alt: "Documentary crime-podcast cover exploration: McNally case",
+  },
+  {
+    src: junoonRogers.url,
+    alt: "Documentary crime-podcast cover exploration: Rogers case",
+  },
+  {
+    src: junoonUnterweger.url,
+    alt: "Documentary crime-podcast cover exploration: Unterweger case",
+  },
+];
 
 const kmsSlides = [
   {
@@ -91,7 +108,7 @@ function KhanehModGallery() {
 
 function JunoonGallery() {
   return (
-    <figure className="mt-5">
+    <figure className="border-t border-rule pt-5">
       <div className="grid gap-3 sm:grid-cols-2">
         <img
           src={junoonPoster.url}
@@ -100,14 +117,19 @@ function JunoonGallery() {
           className="h-full w-full bg-card object-contain"
         />
         <div className="grid grid-cols-2 content-start gap-3">
-          <p className="col-span-2 text-xs leading-relaxed text-muted-foreground">
-            Additional original Junoon visuals will be added once the correct uploaded files are recovered.
-          </p>
+          {junoonSquares.map((img) => (
+            <img
+              key={img.src}
+              src={img.src}
+              alt={img.alt}
+              loading="lazy"
+              className="aspect-square w-full bg-card object-contain"
+            />
+          ))}
         </div>
       </div>
       <figcaption className="mt-3 text-xs leading-relaxed text-muted-foreground">
-        Visual design explorations by Setareh Rahimi · created during a recent team collaboration ·
-        not the podcast's original identity.
+        Visual design explorations by Setareh Rahimi · created during a recent team collaboration · not the podcast's original identity.
       </figcaption>
     </figure>
   );
@@ -310,7 +332,6 @@ export function SelectedWork() {
                 </DialogTrigger>
                 <div className="mt-5 flex flex-1 flex-col">
                   <p className="eyebrow">{project.category}</p>
-                  <h3 className="mt-2 font-display text-2xl">{project.title}</h3>
                   <p className="mt-2 text-sm text-accent">{project.role}</p>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                     {project.summary}
@@ -333,7 +354,6 @@ export function SelectedWork() {
                           </p>
                         </section>
                       </div>
-                      <JunoonGallery />
                     </div>
                   )}
                   {project.id === "nikmehr" && <PageLinks />}
@@ -381,6 +401,7 @@ export function SelectedWork() {
                     </ul>
                   </dd>
                 </dl>
+                {project.id === "junoon-podcast" && <JunoonGallery />}
                 {project.tracks?.map((track) => (
                   <section key={track.title} className="border-t border-rule pt-5">
                     <h3 className="font-display text-2xl">{track.title}</h3>
