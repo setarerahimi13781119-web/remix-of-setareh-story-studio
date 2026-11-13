@@ -280,7 +280,7 @@ export const experience = [
     org: "Nikmehr",
     period: "Mar 2025 — Mar 2026",
     description:
-      "Coordinated with the content team, followed up on assigned tasks, participated in the planning and production of media content, and tracked execution details.",
+      "Coordinated and published posts and stories for the Jenab Khan and 1001 Instagram pages as part of the content team.",
   },
   {
     role: "Content Production Assistant",
