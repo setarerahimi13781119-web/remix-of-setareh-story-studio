@@ -15,7 +15,7 @@ describe("Verified portfolio project boundaries", () => {
       "khaneh-mod-setareh",
       "junoon-podcast",
       "ai-visual-storytelling",
-      "cafe-social-content",
+      "moodbean",
       "turquoise-jewelry-set",
       "nikmehr",
     ]);
@@ -29,7 +29,7 @@ describe("Verified portfolio project boundaries", () => {
       "khaneh-shalvar",
       "khaneh-mod-setareh",
       "ai-visual-storytelling",
-      "cafe-social-content",
+      "moodbean",
       "turquoise-jewelry-set",
     ]);
     expect(projects.find((p) => p.id === "junoon-podcast")?.status).toBe("team-collaboration");
@@ -38,6 +38,13 @@ describe("Verified portfolio project boundaries", () => {
     ).toEqual(["nikmehr"]);
   });
 
+  it("describes Moodbean as an independent coffee discovery product, not generic cafe social content", () => {
+    const moodbean = projects.find((p) => p.id === "moodbean");
+    expect(moodbean?.title).toBe("Moodbean — Coffee by Mood");
+    expect(moodbean?.scope).toContain("Mood- and occasion-based coffee discovery");
+    expect(moodbean?.scope).toContain("Interactive cart quantities and order placement flow");
+    expect(projects.some((p) => p.id === "cafe-social-content")).toBe(false);
+  });
   it("separates Junoon into video editing (Brian Yassipour) and visual exploration tracks", () => {
     const junoon = projects.find((p) => p.id === "junoon-podcast");
     expect(junoon?.tracks?.map((t) => t.title)).toEqual([
