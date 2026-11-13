@@ -207,6 +207,24 @@ export const projects: PortfolioProject[] = [
     note: "An independently developed digital product concept. The live link opens the interactive project.",
   },
   {
+    id: "visual-identity-case-study",
+    title: "Visual Identity Case Study",
+    coverLabel: "LinkedIn case study",
+    category: "Visual Identity · Case Study",
+    role: "Visual identity design",
+    summary:
+      "A visual identity design case study presented through a four-part LinkedIn post.",
+    context:
+      "A visual identity case study shared on LinkedIn, presented here through the original post screenshots.",
+    scope: [
+      "Visual identity design case study",
+      "Four-part visual presentation",
+    ],
+    status: "exploration",
+    note: "Presented as a self-directed portfolio case study. The original LinkedIn post is linked below.",
+    liveUrl: "https://www.linkedin.com/posts/setare-rahimi-968a0a274_%D8%B7%D8%B1%D8%A7%D8%AD%DB%8C-%D9%87%D9%88%DB%8C%D8%AA-%D8%A8%D8%B5%D8%B1%DB%8C%DA%A9%DB%8C%D8%B3-%D8%A7%D8%B3%D8%AA%D8%A7%D8%AF%DB%8C-ugcPost-7507403874815737856-mTnE",
+  },
+  {
     id: "turquoise-jewelry-set",
     title: "Turquoise Jewelry Set",
     coverLabel: "AI-generated product concept",
