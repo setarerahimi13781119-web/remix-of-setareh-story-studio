@@ -202,23 +202,23 @@ export const projects: PortfolioProject[] = [
     note: "These are AI-assisted images, not photographs or documentary records.",
   },
   {
-    id: "cafe-social-content",
-    title: "Cafe & food social content",
-    coverLabel: "Social carousel",
-    category: "Social content · Image editing",
-    role: "Social content design & image editing exploration",
+    id: "moodbean",
+    title: "Moodbean",
+    coverLabel: "Specialty coffee, by mood",
+    category: "Digital product · Specialty coffee",
+    role: "Product concept, UX/UI & implementation",
     summary:
-      "Original cafe and restaurant image editing, Pinterest-inspired doodles and 3:4 carousel layouts for visual merchandising.",
+      "An independent specialty-coffee catalog and finder that helps people explore coffees by tasting notes, processing methods, growing elevation and the moment they want to drink them.",
     context:
-      "A social content exploration combining cafe and restaurant image editing with illustrated accents and carousel-based visual merchandising.",
+      "Moodbean is an independently developed coffee discovery experience, bringing product information and mood-based browsing together in a compact digital catalog.",
     scope: [
-      "Original cafe / restaurant image editing",
-      "Pinterest-inspired doodle treatment",
-      "3:4 carousel slide design",
-      "Visual merchandising",
+      "Catalog of four specialty coffees with tasting notes and origin / processing details",
+      "Mood and occasion-based coffee filters",
+      "Product quantity controls and cart interaction",
+      "Order placement flow",
     ],
     status: "exploration",
-    note: "Presented as social content design and image editing exploration; publication and client delivery are not claimed.",
+    note: "An independent digital product project, not client work. The catalog and ordering experience are presented as a product build; no sales, user or conversion metrics are claimed.",
   },
 ];
 
