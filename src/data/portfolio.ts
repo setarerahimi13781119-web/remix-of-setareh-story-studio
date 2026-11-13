@@ -209,20 +209,17 @@ export const projects: PortfolioProject[] = [
   {
     id: "visual-identity-case-study",
     title: "Visual Identity Case Study",
-    coverLabel: "LinkedIn case study",
-    category: "Visual Identity · Case Study",
+    coverLabel: "Original LinkedIn project",
+    category: "Visual Identity",
     role: "Visual identity design",
     summary:
-      "A visual identity design case study presented through a four-part LinkedIn post.",
+      "A visual identity project shared on LinkedIn. Open the original post to view the work in its intended presentation.",
     context:
-      "A visual identity case study shared on LinkedIn, presented here through the original post screenshots.",
-    scope: [
-      "Visual identity design case study",
-      "Four-part visual presentation",
-    ],
+      "This portfolio entry directs visitors to the original LinkedIn publication rather than reproducing interface screenshots.",
+    scope: ["Visual identity design"],
     status: "exploration",
-    note: "Presented as a self-directed portfolio case study. The original LinkedIn post is linked below.",
-    liveUrl: "https://www.linkedin.com/posts/setare-rahimi-968a0a274_%D8%B7%D8%B1%D8%A7%D8%AD%DB%8C-%D9%87%D9%88%DB%8C%D8%AA-%D8%A8%D8%B5%D8%B1%DB%8C%DA%A9%DB%8C%D8%B3-%D8%A7%D8%B3%D8%AA%D8%A7%D8%AF%DB%8C-ugcPost-7507403874815737856-mTnE",
+    note: "The original LinkedIn post is the source of the project visuals; no screenshots of the LinkedIn interface are used as portfolio artwork.",
+    liveUrl: "https://www.linkedin.com/posts/setare-rahimi-968a0a274_%D8%B7%D8%B1%D8%A7%D8%AD%DB%8C-%D9%87%D9%88%DB%8C%D8%AA-%D8%A8%D8%B5%D8%B1%DB%8C%D9%83%D9%8A%D8%B3-%D8%A7%D8%B3%D8%AA%D8%A7%D8%AF%DB%8C-ugcPost-7507403874815737856-mTnE",
   },
   {
     id: "turquoise-jewelry-set",
