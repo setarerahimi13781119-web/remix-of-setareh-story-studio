@@ -71,6 +71,7 @@ export function Header() {
         </nav>
         <button
           className="md:hidden eyebrow text-foreground"
+          aria-label={open ? "Close navigation" : "Open navigation"}
           aria-expanded={open}
           aria-controls="mobile-nav"
           onClick={() => setOpen((o) => !o)}
@@ -78,27 +79,26 @@ export function Header() {
           {open ? "Close" : "Menu"}
         </button>
       </div>
-      {open && (
-        <nav
-          id="mobile-nav"
-          aria-label="Mobile"
-          className="md:hidden border-t border-border animate-in fade-in slide-in-from-top-2 duration-200"
-        >
-          <ul className="px-5 py-4">
-            {nav.map((n) => (
-              <li key={n.href} className="border-b border-border last:border-0">
-                <a
-                  href={n.href}
-                  onClick={() => setOpen(false)}
-                  className="block py-3 font-display text-2xl"
-                >
-                  {n.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      )}
+      <nav
+        id="mobile-nav"
+        aria-label="Mobile"
+        hidden={!open}
+        className="md:hidden border-t border-border animate-in fade-in slide-in-from-top-2 duration-200"
+      >
+        <ul className="px-5 py-4">
+          {nav.map((n) => (
+            <li key={n.href} className="border-b border-border last:border-0">
+              <a
+                href={n.href}
+                onClick={() => setOpen(false)}
+                className="block py-3 font-display text-2xl"
+              >
+                {n.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </header>
   );
 }
