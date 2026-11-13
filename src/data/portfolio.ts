@@ -226,6 +226,24 @@ export const projects: PortfolioProject[] = [
     note: "All visuals are AI-generated concept imagery; they do not document a physically manufactured product or a real-life photoshoot.",
   },
   {
+    id: "turkish-coffee-packaging",
+    title: "Turkish Coffee Packaging Concept",
+    coverLabel: "Three roast colorways",
+    category: "Coffee · Packaging Design",
+    role: "Front-of-pack visual design",
+    summary:
+      "Front-of-pack design for a conceptual Turkish coffee brand, presented as a consistent three-product range with color variations for each roast.",
+    context:
+      "A self-initiated packaging concept for a Turkish coffee brand, exploring a unified visual system across three roast varieties.",
+    scope: [
+      "Front-of-pack design for three coffee roast varieties",
+      "Consistent layout and graphic system across the product range",
+      "Color variations to distinguish the three roasts",
+    ],
+    status: "exploration",
+    note: "A self-initiated concept project. The three variants share the same design and differ only in color; no separate visual identities are claimed.",
+  },
+  {
     id: "nikmehr",
     title: "Nikmehr",
     coverLabel: "Content publishing",
