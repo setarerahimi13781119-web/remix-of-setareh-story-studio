@@ -338,6 +338,27 @@ export function SelectedWork() {
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                     {project.summary}
                   </p>
+                  {project.id === "junoon-podcast" && (
+                    <div className="mt-5 border-t border-rule pt-5">
+                      <div className="grid gap-4 sm:grid-cols-2">
+                        <section>
+                          <p className="eyebrow">01 / Video editing</p>
+                          <p className="mt-2 text-sm font-medium">Brian Yassipour case</p>
+                          <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                            Full episode edit, carried through to final export.
+                          </p>
+                        </section>
+                        <section>
+                          <p className="eyebrow">02 / Visual exploration</p>
+                          <p className="mt-2 text-sm font-medium">Documentary crime-podcast visuals</p>
+                          <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                            Personal cover and social visual explorations — separate from Junoon's original identity.
+                          </p>
+                        </section>
+                      </div>
+                      <JunoonGallery />
+                    </div>
+                  )}
                   {project.id === "nikmehr" && <PageLinks />}
                   <DialogTrigger asChild>
                     <Button
@@ -397,8 +418,6 @@ export function SelectedWork() {
                         </li>
                       ))}
                     </ul>
-                    {project.id === "junoon-podcast" &&
-                      track.title === "Visual Design Exploration" && <JunoonGallery />}
                   </section>
                 ))}
                 {project.id === "visual-identity-case-study" && project.liveUrl && (
