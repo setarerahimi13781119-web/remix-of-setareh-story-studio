@@ -23,6 +23,16 @@ const turquoiseCover =
 const turquoiseDetail =
   "https://www.dropbox.com/scl/fi/ysxlzqdqlbk000m10b36c/21c32000c543e8a70848b02e0dda227d65e0c2ee6d02316fd106f7308ff2c10f.png?rlkey=hgnv2et8heg9fassv18w175qt&raw=1";
 
+const khanehShalvarImages = [
+  { src: "https://www.dropbox.com/scl/fi/tj2gt8xclv481hdxyyini/grok_1794593164081.jpg?rlkey=tmq9k2vxeu1rxjlb0v5z0iu0i&raw=1", alt: "Khaneh Shalvar autumn campaign visual 01" },
+  { src: "https://www.dropbox.com/scl/fi/sxdoctzwlc3rco09v2skp/IMG_20261113_211756_521.jpg?rlkey=fswq0c1qhe6yly5cc01uzz7g8&raw=1", alt: "Khaneh Shalvar autumn campaign visual 02" },
+  { src: "https://www.dropbox.com/scl/fi/fco3cuj6iehy23rt8k8go/IMG_20261113_211816_095.jpg?rlkey=qyjaayzcmam273jhzav06u2dy&raw=1", alt: "Khaneh Shalvar autumn campaign visual 03" },
+  { src: "https://www.dropbox.com/scl/fi/n4p2k6ic613vc2fk6tv5n/IMG_20261113_211915_319.jpg?rlkey=rzeg27hvku6wmijat6mem9vd4&raw=1", alt: "Khaneh Shalvar autumn campaign visual 04" },
+  { src: "https://www.dropbox.com/scl/fi/fiox9e6ibonzy1r88ry4p/IMG_20261113_211925_973.jpg?rlkey=7harvn76dtwvtk9nf0uxbw1nh&raw=1", alt: "Khaneh Shalvar autumn campaign visual 05" },
+  { src: "https://www.dropbox.com/scl/fi/vxb6xr81fejax5ga9qi95/IMG_20261113_211937_951.jpg?rlkey=ur02358bez5qia0jmfi7dx2r8&raw=1", alt: "Khaneh Shalvar autumn campaign visual 06" },
+  { src: "https://www.dropbox.com/scl/fi/pfyvapnem382ce2tm2q34/IMG_20261113_211945_305.jpg?rlkey=66ozr21hu7uilf5tqsxgwkcc9&raw=1", alt: "Khaneh Shalvar autumn campaign visual 07" },
+];
+
 function TurquoiseJewelryGallery() {
   return (
     <figure className="border-t border-rule pt-5">
@@ -101,6 +111,28 @@ function KhanehModGallery() {
       <figcaption className="mt-3 text-xs leading-relaxed text-muted-foreground">
         Presentation slides 01–05 · Khaneh Mod Setareh ecommerce visual design exploration by
         Setareh Rahimi.
+      </figcaption>
+    </figure>
+  );
+}
+
+function KhanehShalvarGallery() {
+  return (
+    <figure className="border-t border-rule pt-5">
+      <ol className="grid gap-3 sm:grid-cols-2">
+        {khanehShalvarImages.map((img, index) => (
+          <li key={img.src} className={index === 0 ? "sm:col-span-2" : ""}>
+            <img
+              src={img.src}
+              alt={img.alt}
+              loading="lazy"
+              className="max-h-[36rem] w-full bg-card object-contain"
+            />
+          </li>
+        ))}
+      </ol>
+      <figcaption className="mt-3 text-xs leading-relaxed text-muted-foreground">
+        Product and campaign visuals · Khaneh Shalvar autumn ecommerce campaign exploration.
       </figcaption>
     </figure>
   );
@@ -240,24 +272,12 @@ export function SelectedWork() {
                         <span className="text-xs text-muted-foreground">View original LinkedIn publication</span>
                       </span>
                     ) : project.id === "khaneh-shalvar" ? (
-                      <span className="relative flex min-h-0 flex-1 flex-col justify-between overflow-hidden border-y border-rule py-5">
-                        <span className="eyebrow flex items-center justify-between">
-                          <span>FASHION / CAMPAIGN STUDY</span>
-                          <span>01 — 06</span>
-                        </span>
-                        <span className="relative -ml-1 font-display text-[clamp(3.5rem,9vw,6.5rem)] leading-[0.78] tracking-[-0.06em] text-accent">
-                          AUTUMN
-                          <span className="block pl-[16%] text-foreground">IN FORM</span>
-                        </span>
-                        <span className="flex items-end justify-between gap-3">
-                          <span className="max-w-[13rem] text-xs leading-relaxed text-muted-foreground">
-                            Desktop + mobile
-                            <br />
-                            Ecommerce hero exploration
-                          </span>
-                          <span className="font-mono text-3xl text-accent">01</span>
-                        </span>
-                      </span>
+                      <img
+                        src={khanehShalvarImages[0].src}
+                        alt=""
+                        aria-hidden="true"
+                        className="min-h-0 flex-1 w-full bg-card object-contain"
+                      />
                     ) : project.id === "ai-visual-storytelling" ? (
                       <span className="relative flex min-h-0 flex-1 flex-col justify-between overflow-hidden border-y border-rule py-5">
                         <span className="eyebrow flex items-center justify-between">
@@ -401,6 +421,7 @@ export function SelectedWork() {
                     </ul>
                   </dd>
                 </dl>
+                {project.id === "khaneh-shalvar" && <KhanehShalvarGallery />}
                 {project.id === "junoon-podcast" && <JunoonGallery />}
                 {project.tracks?.map((track) => (
                   <section key={track.title} className="border-t border-rule pt-5">
