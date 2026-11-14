@@ -8,6 +8,13 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { nikmehrWork, projects, work } from "@/data/portfolio";
+
+// Lovable stores uploaded artwork behind its asset endpoint. On Vercel these
+// relative URLs would incorrectly resolve against the portfolio domain, so
+// keep the source host explicit while leaving the Lovable project untouched.
+const LOVABLE_ASSET_ORIGIN =
+  "https://id-preview--c40cda6a-8161-45d2-9902-76acbf71b9f3.lovable.app";
+const assetUrl = (path: string) => new URL(path, LOVABLE_ASSET_ORIGIN).toString();
 import junoonPoster from "@/assets/junoon_case_file_poster.jpg.asset.json";
 import junoonGhostship from "@/assets/junoon_case_ghostship.jpg.asset.json";
 import junoonMcnally from "@/assets/junoon_case_mcnally.jpg.asset.json";
@@ -59,38 +66,38 @@ function TurquoiseJewelryGallery() {
 
 const junoonSquares = [
   {
-    src: junoonGhostship.url,
+    src: assetUrl(junoonGhostship.url),
     alt: "Documentary crime-podcast cover exploration: Ghostship case",
   },
   {
-    src: junoonMcnally.url,
+    src: assetUrl(junoonMcnally.url),
     alt: "Documentary crime-podcast cover exploration: McNally case",
   },
   {
-    src: junoonRogers.url,
+    src: assetUrl(junoonRogers.url),
     alt: "Documentary crime-podcast cover exploration: Rogers case",
   },
   {
-    src: junoonUnterweger.url,
+    src: assetUrl(junoonUnterweger.url),
     alt: "Documentary crime-podcast cover exploration: Unterweger case",
   },
 ];
 
 const kmsSlides = [
   {
-    src: kms1.url,
+    src: assetUrl(kms1.url),
     alt: "Slide 01 of 05: The digital experience — Khaneh Mod Setareh storefront cover",
   },
   {
-    src: kms2.url,
+    src: assetUrl(kms2.url),
     alt: "Slide 02 of 05: One brand, two screens — desktop and mobile header side by side",
   },
   {
-    src: kms3.url,
+    src: assetUrl(kms3.url),
     alt: "Slide 03 of 05: The visual system — colour palette, typeface and hierarchy",
   },
-  { src: kms4.url, alt: "Slide 04 of 05: The complete experience — full page layout" },
-  { src: kms5.url, alt: "Slide 05 of 05: The final note — closing slide" },
+  { src: assetUrl(kms4.url), alt: "Slide 04 of 05: The complete experience — full page layout" },
+  { src: assetUrl(kms5.url), alt: "Slide 05 of 05: The final note — closing slide" },
 ];
 
 function KhanehModGallery() {
@@ -143,7 +150,7 @@ function JunoonGallery() {
     <figure className="border-t border-rule pt-5">
       <div className="grid gap-3 sm:grid-cols-2">
         <img
-          src={junoonPoster.url}
+          src={assetUrl(junoonPoster.url)}
           alt="Vertical evidence-file style poster exploration with Junoon stamp"
           loading="lazy"
           className="h-full w-full bg-card object-contain"
@@ -253,14 +260,14 @@ export function SelectedWork() {
                     </span>
                     {project.id === "junoon-podcast" ? (
                       <img
-                        src={junoonPoster.url}
+                        src={assetUrl(junoonPoster.url)}
                         alt=""
                         aria-hidden="true"
                         className="min-h-0 flex-1 w-full object-contain"
                       />
                     ) : project.id === "khaneh-mod-setareh" ? (
                       <img
-                        src={kms1.url}
+                        src={assetUrl(kms1.url)}
                         alt=""
                         aria-hidden="true"
                         className="min-h-0 flex-1 w-full object-contain"
