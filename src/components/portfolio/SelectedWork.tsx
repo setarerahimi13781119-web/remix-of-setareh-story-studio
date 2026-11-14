@@ -9,12 +9,6 @@ import {
 } from "@/components/ui/dialog";
 import { nikmehrWork, projects, work } from "@/data/portfolio";
 
-// Lovable stores uploaded artwork behind its asset endpoint. On Vercel these
-// relative URLs would incorrectly resolve against the portfolio domain, so
-// keep the source host explicit while leaving the Lovable project untouched.
-const LOVABLE_ASSET_ORIGIN =
-  "https://id-preview--c40cda6a-8161-45d2-9902-76acbf71b9f3.lovable.app";
-const assetUrl = (path: string) => new URL(path, LOVABLE_ASSET_ORIGIN).toString();
 import junoonPoster from "@/assets/junoon_case_file_poster.jpg.asset.json";
 import junoonGhostship from "@/assets/junoon_case_ghostship.jpg.asset.json";
 import junoonMcnally from "@/assets/junoon_case_mcnally.jpg.asset.json";
@@ -25,6 +19,13 @@ import kms2 from "@/assets/khaneh_mod_setareh_slide_02.png.asset.json";
 import kms3 from "@/assets/khaneh_mod_setareh_slide_03.png.asset.json";
 import kms4 from "@/assets/khaneh_mod_setareh_slide_04.png.asset.json";
 import kms5 from "@/assets/khaneh_mod_setareh_slide_05.png.asset.json";
+
+// Lovable stores uploaded artwork behind its asset endpoint. On Vercel these
+// relative URLs would incorrectly resolve against the portfolio domain, so
+// keep the source host explicit while leaving the Lovable project untouched.
+const LOVABLE_ASSET_ORIGIN =
+  "https://id-preview--c40cda6a-8161-45d2-9902-76acbf71b9f3.lovable.app";
+const assetUrl = (path: string) => new URL(path, LOVABLE_ASSET_ORIGIN).toString();
 const turquoiseCover =
   "https://www.dropbox.com/scl/fi/xu02n0326lzvadfh33fp6/final_carousel_slide_2_profile.jpg?rlkey=4pt5kfu7ajf95ni41a1une5i8&raw=1";
 const turquoiseDetail =
