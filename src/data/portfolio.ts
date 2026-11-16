@@ -169,24 +169,6 @@ export const projects: PortfolioProject[] = [
     ],
   },
   {
-    id: "ai-visual-storytelling",
-    title: "AI-assisted visual storytelling",
-    coverLabel: "Pennsylvania, 1950",
-    category: "AI-assisted · Image production",
-    role: "AI-assisted visual storytelling & image production",
-    summary:
-      "Photoreal character scenes of historical Iranian immigrants in 1950 Pennsylvania, with vintage photographic treatments.",
-    context:
-      "AI-assisted scene production exploring historical Iranian immigrant characters in Pennsylvania in 1950, with a vintage photographic visual language.",
-    scope: [
-      "Historical Iranian immigrant character scenes",
-      "Photoreal visual production",
-      "Vintage photographic treatments",
-    ],
-    status: "exploration",
-    note: "These are AI-assisted images, not photographs or documentary records.",
-  },
-  {
     id: "moodbean",
     title: "Moodbean",
     coverLabel: "Interactive coffee finder",
