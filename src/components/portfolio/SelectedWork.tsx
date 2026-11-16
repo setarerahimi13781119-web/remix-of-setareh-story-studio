@@ -326,7 +326,7 @@ export function SelectedWork() {
                       </span>
                     ) : project.id === "khaneh-shalvar" ? (
                       <img
-                        src={khanehShalvarImages[0].src}
+                        src="https://www.dropbox.com/scl/fi/9opb0khn2jedpgufmwtvl/copilot_image_1794860807764.png?rlkey=1rebrjfdhj9dqjbevync482ub&raw=1"
                         alt=""
                         aria-hidden="true"
                         className="min-h-0 flex-1 w-full bg-card object-contain"
