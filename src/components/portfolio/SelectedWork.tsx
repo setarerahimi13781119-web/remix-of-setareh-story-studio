@@ -125,22 +125,67 @@ function KhanehModGallery() {
 }
 
 function KhanehShalvarGallery() {
+  const looks = [
+    {
+      title: "Navy Ribbed Turtleneck",
+      images: [
+        {
+          label: "Original · Tailor’s Dummy",
+          src: "https://www.dropbox.com/scl/fi/fiox9e6ibonzy1r88ry4p/IMG_20261113_211925_973.jpg?rlkey=7harvn76dtwvtk9nf0uxbw1nh&raw=1",
+        },
+        {
+          label: "Ghost Mannequin",
+          src: "https://www.dropbox.com/scl/fi/pfyvapnem382ce2tm2q34/IMG_20261113_211945_305.jpg?rlkey=66ozr21hu7uilf5tqsxgwkcc9&raw=1",
+        },
+        {
+          label: "On-Model Fit",
+          src: "https://www.dropbox.com/scl/fi/vxb6xr81fejax5ga9qi95/IMG_20261113_211937_951.jpg?rlkey=ur02358bez5qia0jmfi7dx2r8&raw=1",
+        },
+      ],
+    },
+    {
+      title: "Grey Ribbed Turtleneck",
+      images: [
+        {
+          label: "Original · Tailor’s Dummy",
+          src: "https://www.dropbox.com/scl/fi/bl4e6trc55k9h83y23uoy/.jpg?rlkey=dynw62cfxsyajju4trmcsumrt&raw=1",
+        },
+        {
+          label: "Ghost Mannequin",
+          src: "https://www.dropbox.com/scl/fi/u05hhyzrg6ahlivriqpqo/.png?rlkey=hw438msqjd8fxoqm2iqfbw2ur&raw=1",
+        },
+        {
+          label: "On-Model Fit",
+          src: "https://www.dropbox.com/scl/fi/5c2hna2hvzuzv7fuz4cpr/.jpg?rlkey=26znd195tigvaudqhrxyfl5ln&raw=1",
+        },
+      ],
+    },
+  ];
+
   return (
-    <figure className="border-t border-rule pt-5">
-      <ol className="grid gap-3 sm:grid-cols-2">
-        {khanehShalvarImages.map((img, index) => (
-          <li key={img.src} className={index === 0 ? "sm:col-span-2" : ""}>
-            <img
-              src={img.src}
-              alt={img.alt}
-              loading="lazy"
-              className="max-h-[36rem] w-full bg-card object-contain"
-            />
-          </li>
-        ))}
-      </ol>
-      <figcaption className="mt-3 text-xs leading-relaxed text-muted-foreground">
-        Product and campaign visuals · Khaneh Shalvar autumn ecommerce campaign exploration.
+    <figure className="space-y-8 border-t border-rule pt-6">
+      {looks.map((look) => (
+        <section key={look.title} className="space-y-3">
+          <h3 className="eyebrow text-foreground">{look.title} · Product Transformation</h3>
+          <ol className="grid gap-3 sm:grid-cols-3">
+            {look.images.map((image) => (
+              <li key={image.label} className="border border-rule bg-card p-3">
+                <img
+                  src={image.src}
+                  alt={`${look.title} — ${image.label}`}
+                  loading="lazy"
+                  className="aspect-[3/4] w-full bg-background/50 object-contain"
+                />
+                <p className="mt-3 border-t border-rule pt-2 text-center font-mono text-xs text-muted-foreground">
+                  {image.label}
+                </p>
+              </li>
+            ))}
+          </ol>
+        </section>
+      ))}
+      <figcaption className="text-xs leading-relaxed text-muted-foreground">
+        Product image transformation · Original tailor’s dummy, ghost mannequin and on-model presentation.
       </figcaption>
     </figure>
   );
