@@ -30,6 +30,8 @@ const turquoiseCover =
   "https://www.dropbox.com/scl/fi/xu02n0326lzvadfh33fp6/final_carousel_slide_2_profile.jpg?rlkey=4pt5kfu7ajf95ni41a1une5i8&raw=1";
 const turquoiseDetail =
   "https://www.dropbox.com/scl/fi/ysxlzqdqlbk000m10b36c/21c32000c543e8a70848b02e0dda227d65e0c2ee6d02316fd106f7308ff2c10f.png?rlkey=hgnv2et8heg9fassv18w175qt&raw=1";
+const turquoiseVideo =
+  "https://www.dropbox.com/scl/fi/83wizcnapp7geg9n0t5j1/lv_0_20260924152412.mp4?rlkey=nfirr8y5k3tov77hodlhsbw2m&raw=1";
 const turkishCoffeeCover =
   "https://www.dropbox.com/scl/fi/kvfuw5kdovtngybol6ia0/lv_0_20260919130442.jpg?rlkey=h11cbdjbe82q6ztuygi7zq91g&raw=1";
 
@@ -60,8 +62,18 @@ function TurquoiseJewelryGallery() {
           className="w-full bg-card object-contain"
         />
       </div>
+      <video
+        controls
+        playsInline
+        preload="metadata"
+        poster={turquoiseCover}
+        className="mt-4 max-h-[560px] w-full bg-card"
+      >
+        <source src={turquoiseVideo} type="video/mp4" />
+        Your browser does not support the video element.
+      </video>
       <figcaption className="mt-3 text-xs leading-relaxed text-muted-foreground">
-        AI-generated concept imagery · Model view and product detail · Self-initiated project
+        AI-generated concept imagery · Model view, product detail and video · Self-initiated project
       </figcaption>
     </figure>
   );
