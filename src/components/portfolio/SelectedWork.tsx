@@ -331,24 +331,6 @@ export function SelectedWork() {
                         aria-hidden="true"
                         className="min-h-0 flex-1 w-full bg-card object-contain"
                       />
-                    ) : project.id === "ai-visual-storytelling" ? (
-                      <span className="relative flex min-h-0 flex-1 flex-col justify-between overflow-hidden border-y border-rule py-5">
-                        <span className="eyebrow flex items-center justify-between">
-                          <span>VISUAL ARCHIVE</span>
-                          <span>1950 / PA</span>
-                        </span>
-                        <span className="font-display text-[clamp(5rem,14vw,9rem)] leading-[0.8] tracking-[-0.07em] text-accent">
-                          1950
-                        </span>
-                        <span className="grid grid-cols-[1fr_auto] items-end gap-3 border-t border-rule pt-3">
-                          <span className="text-xs leading-relaxed text-muted-foreground">
-                            Historical Iranian immigrant scenes
-                            <br />
-                            AI-assisted image studies
-                          </span>
-                          <span className="eyebrow text-foreground">STUDY 04</span>
-                        </span>
-                      </span>
                     ) : project.id === "moodbean" ? (
                       <img
                         src="https://screenshot2.lovable.dev/lovp_1h4v9rfq2v8c5t2hgfqsp74k92/5f6a8a905d7ec7c86a1f73fe87d4ca09_1794284897805.png"
