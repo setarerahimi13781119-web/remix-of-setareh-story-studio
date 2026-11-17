@@ -277,10 +277,6 @@ export const capabilities = [
     note: "Editing cafe and restaurant imagery, adding illustrated accents and exploring 3:4 carousel compositions.",
   },
   {
-    name: "AI-assisted image production",
-    note: "Creating photoreal visual scenes and applying vintage photographic treatments for historical storytelling studies.",
-  },
-  {
     name: "Production workflow support",
     note: "Following up on assigned tasks and execution details while supporting content planning and production workflows.",
   },
