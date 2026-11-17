@@ -30,6 +30,8 @@ const turquoiseCover =
   "https://www.dropbox.com/scl/fi/xu02n0326lzvadfh33fp6/final_carousel_slide_2_profile.jpg?rlkey=4pt5kfu7ajf95ni41a1une5i8&raw=1";
 const turquoiseDetail =
   "https://www.dropbox.com/scl/fi/ysxlzqdqlbk000m10b36c/21c32000c543e8a70848b02e0dda227d65e0c2ee6d02316fd106f7308ff2c10f.png?rlkey=hgnv2et8heg9fassv18w175qt&raw=1";
+const turkishCoffeeCover =
+  "https://www.dropbox.com/scl/fi/kvfuw5kdovtngybol6ia0/lv_0_20260919130442.jpg?rlkey=h11cbdjbe82q6ztuygi7zq91g&raw=1";
 
 const khanehShalvarImages = [
   { src: "https://www.dropbox.com/scl/fi/tj2gt8xclv481hdxyyini/grok_1794593164081.jpg?rlkey=tmq9k2vxeu1rxjlb0v5z0iu0i&raw=1", alt: "Khaneh Shalvar autumn campaign visual 01" },
@@ -335,6 +337,13 @@ export function SelectedWork() {
                       <img
                         src="https://screenshot2.lovable.dev/lovp_1h4v9rfq2v8c5t2hgfqsp74k92/5f6a8a905d7ec7c86a1f73fe87d4ca09_1794284897805.png"
                         alt="Moodbean Coffee Finder interface preview"
+                        aria-hidden="true"
+                        className="min-h-0 flex-1 w-full bg-card object-contain"
+                      />
+                    ) : project.id === "turkish-coffee-packaging" ? (
+                      <img
+                        src={turkishCoffeeCover}
+                        alt=""
                         aria-hidden="true"
                         className="min-h-0 flex-1 w-full bg-card object-contain"
                       />
