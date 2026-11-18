@@ -34,6 +34,8 @@ const turquoiseVideo =
   "https://www.dropbox.com/scl/fi/83wizcnapp7geg9n0t5j1/lv_0_20260924152412.mp4?rlkey=nfirr8y5k3tov77hodlhsbw2m&raw=1";
 const turkishCoffeeCover =
   "https://www.dropbox.com/scl/fi/kvfuw5kdovtngybol6ia0/lv_0_20260919130442.jpg?rlkey=h11cbdjbe82q6ztuygi7zq91g&raw=1";
+const setareFashionFilmVideo =
+  "https://www.dropbox.com/scl/fi/ekhldz7uwyjlww1o6s5eq/VID_20261118_085945_038_bsl.mp4?rlkey=51mztc574pp8rb9faplrqyxq9&raw=1";
 
 const khanehShalvarImages = [
   { src: "https://www.dropbox.com/scl/fi/tj2gt8xclv481hdxyyini/grok_1794593164081.jpg?rlkey=tmq9k2vxeu1rxjlb0v5z0iu0i&raw=1", alt: "Khaneh Shalvar autumn campaign visual 01" },
@@ -74,6 +76,25 @@ function TurquoiseJewelryGallery() {
       </video>
       <figcaption className="mt-3 text-xs leading-relaxed text-muted-foreground">
         AI-generated concept imagery · Model view, product detail and video · Self-initiated project
+      </figcaption>
+    </figure>
+  );
+}
+
+function SetareFashionFilmGallery() {
+  return (
+    <figure className="border-t border-rule pt-5">
+      <video
+        controls
+        playsInline
+        preload="metadata"
+        className="mx-auto max-h-[720px] w-full bg-card object-contain"
+      >
+        <source src={setareFashionFilmVideo} type="video/mp4" />
+        Your browser does not support the video element.
+      </video>
+      <figcaption className="mt-3 text-xs leading-relaxed text-muted-foreground">
+        Setare Fashion House · Autumn Collection · Self-directed fashion film
       </figcaption>
     </figure>
   );
@@ -366,6 +387,18 @@ export function SelectedWork() {
                         aria-hidden="true"
                         className="min-h-0 flex-1 w-full object-contain"
                       />
+                    ) : project.id === "setare-fashion-house-film" ? (
+                      <span className="relative flex min-h-0 flex-1 flex-col justify-between overflow-hidden border-y border-rule py-5">
+                        <span className="eyebrow">FASHION FILM / PERSONAL PROJECT</span>
+                        <span className="font-display text-4xl leading-[0.95] tracking-tight text-accent md:text-5xl">
+                          SETARE
+                          <br />
+                          <span className="text-foreground">FASHION HOUSE</span>
+                        </span>
+                        <span className="border-t border-rule pt-3 text-xs tracking-[0.18em] text-muted-foreground">
+                          AUTUMN COLLECTION · VIDEO
+                        </span>
+                      </span>
                     ) : project.id === "nikmehr" ? (
                       <span className="relative flex min-h-0 flex-1 flex-col justify-between overflow-hidden border-y border-rule py-5">
                         <span className="eyebrow flex items-center justify-between">
@@ -530,6 +563,7 @@ export function SelectedWork() {
                 )}
                 {project.id === "khaneh-mod-setareh" && <KhanehModGallery />}
                 {project.id === "turquoise-jewelry-set" && <TurquoiseJewelryGallery />}
+                {project.id === "setare-fashion-house-film" && <SetareFashionFilmGallery />}
                 <p className="border-t border-rule pt-5 text-sm leading-relaxed text-muted-foreground">
                   {project.note}
                 </p>
