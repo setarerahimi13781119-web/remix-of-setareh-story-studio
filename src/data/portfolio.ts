@@ -97,6 +97,23 @@ export type PortfolioProject = {
 
 export const projects: PortfolioProject[] = [
   {
+    id: "setare-fashion-house-film",
+    title: "Setare Fashion House — Autumn Collection Film",
+    coverLabel: "Personal fashion film",
+    category: "Fashion · Video & Motion Content",
+    role: "Personal concept & video creation",
+    summary:
+      "A self-directed fashion film created around an autumn collection concept for Setare Fashion House.",
+    context:
+      "An independent fashion video project developed as a personal creative work, separate from the Khaneh Mod Setareh and Khaneh Shalvar projects.",
+    scope: [
+      "Autumn collection fashion-film concept",
+      "Video creation and visual presentation",
+    ],
+    status: "exploration",
+    note: "A self-directed personal project.",
+  },
+  {
     id: "khaneh-shalvar",
     title: "Khaneh Shalvar",
     coverLabel: "Autumn campaign",
