@@ -97,6 +97,23 @@ export type PortfolioProject = {
 
 export const projects: PortfolioProject[] = [
   {
+    id: "parla-perfume-ad",
+    title: "Parla — Perfume Campaign",
+    coverLabel: "Fragrance video ad",
+    category: "Fragrance · Video content",
+    role: "Video editing & visual content",
+    summary:
+      "A vertical short-form advertisement created for a Parla fragrance, presented as a finished video piece.",
+    context:
+      "A perfume advertising video for Parla, prepared in a vertical 9:16 format for social media placement.",
+    scope: [
+      "Short-form fragrance advertising video",
+      "Vertical 9:16 video presentation",
+    ],
+    status: "exploration",
+    note: "Presented as a video-content project. Production, scripting and art-direction responsibilities are not claimed.",
+  },
+  {
     id: "sayeh-character-design",
     title: "SAYEH — Character Design",
     coverLabel: "Original character design dossier",
