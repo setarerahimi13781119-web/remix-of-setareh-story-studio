@@ -81,6 +81,27 @@ function TurquoiseJewelryGallery() {
   );
 }
 
+
+function SayehGallery() {
+  return (
+    <figure className="border-t border-rule pt-5">
+      <div className="flex min-h-72 flex-col items-center justify-center border border-rule bg-card p-8 text-center">
+        <p className="eyebrow text-accent">CHARACTER DESIGN / VISUAL DEVELOPMENT</p>
+        <p className="mt-5 font-display text-5xl tracking-tight text-accent">SAYEH</p>
+        <p className="mt-3 max-w-md text-sm leading-relaxed text-muted-foreground">
+          Original character design · Turnaround · Expression studies · Detail development
+        </p>
+        <p className="mt-6 border-t border-rule pt-4 text-xs text-muted-foreground">
+          Character sheet artwork is awaiting its repository asset upload.
+        </p>
+      </div>
+      <figcaption className="mt-3 text-xs leading-relaxed text-muted-foreground">
+        Original character designed independently by Setareh Rahimi, from concept through final presentation.
+      </figcaption>
+    </figure>
+  );
+}
+
 function SetareFashionFilmGallery() {
   return (
     <figure className="border-t border-rule pt-5">
@@ -339,7 +360,13 @@ export function SelectedWork() {
                       <span>{project.coverLabel}</span>
                       <Plus className="shrink-0 text-foreground" aria-hidden="true" />
                     </span>
-                    {project.id === "junoon-podcast" ? (
+                    {project.id === "sayeh-character-design" ? (
+                      <span className="relative flex min-h-0 flex-1 flex-col justify-between overflow-hidden border-y border-rule py-5">
+                        <span className="eyebrow">CHARACTER DESIGN / VISUAL DEVELOPMENT</span>
+                        <span className="font-display text-6xl leading-none tracking-tight text-accent md:text-7xl">SAYEH</span>
+                        <span className="text-xs text-muted-foreground">Original character · Design dossier</span>
+                      </span>
+                    ) : project.id === "junoon-podcast" ? (
                       <img
                         src={assetUrl(junoonPoster.url)}
                         alt=""
@@ -525,6 +552,7 @@ export function SelectedWork() {
                     </ul>
                   </dd>
                 </dl>
+                {project.id === "sayeh-character-design" && <SayehGallery />}
                 {project.id === "khaneh-shalvar" && <KhanehShalvarGallery />}
                 {project.id === "junoon-podcast" && <JunoonGallery />}
                 {project.tracks?.map((track) => (
