@@ -84,18 +84,45 @@ function TurquoiseJewelryGallery() {
 const sayehArtwork =
   "https://www.dropbox.com/scl/fi/xxgfqf8ji9jqbjazo79kp/file_00000000056081f4a18d01e5b1e0b733.png?rlkey=t8lyhkljeu0gtoiqcrypvm1n9&raw=1";
 
+const sayehSlides = [
+  {
+    src: "https://www.dropbox.com/scl/fi/338le7nz1wjv5rxc46l61/file_00000000df408210917736c25bb0756f.png?rlkey=mbi1herhn9zd2sv6cqgu62qtn&raw=1",
+    alt: "SAYEH character development presentation — slide 1",
+  },
+  {
+    src: "https://www.dropbox.com/scl/fi/1wangkbv8gtuj8vuhl5z3/file_000000002d9c820a8826190870808e4b.png?rlkey=ouylmiopn4iz3eymb5v841sg1&raw=1",
+    alt: "SAYEH character development presentation — slide 2",
+  },
+  {
+    src: "https://www.dropbox.com/scl/fi/mijd2vm89oxq6nlwg372a/file_0000000052b481f49fd7a92a581f85e0.png?rlkey=nuwt9kpf2w46hzarc0sh9ctdz&raw=1",
+    alt: "SAYEH character development presentation — slide 3",
+  },
+];
+
 function SayehGallery() {
   return (
     <figure className="border-t border-rule pt-5">
       <img
         src={sayehArtwork}
-        alt="SAYEH original character design sheet showing turnarounds, proportions, expressions and detailed visual studies"
+        alt="SAYEH original character design overview"
         loading="lazy"
         className="max-h-[900px] w-full bg-card object-contain"
       />
+      <ol className="mt-5 grid gap-4 sm:grid-cols-2">
+        {sayehSlides.map((slide, index) => (
+          <li key={slide.src} className={index === 0 ? "sm:col-span-2" : ""}>
+            <img
+              src={slide.src}
+              alt={slide.alt}
+              loading="lazy"
+              className="max-h-[900px] w-full bg-card object-contain"
+            />
+          </li>
+        ))}
+      </ol>
       <figcaption className="mt-3 text-xs leading-relaxed text-muted-foreground">
         Original character designed independently by Setareh Rahimi, from
-        concept through final presentation.
+        concept through final presentation · Character development slides 01–03.
       </figcaption>
     </figure>
   );
