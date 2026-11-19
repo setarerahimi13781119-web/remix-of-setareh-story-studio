@@ -36,6 +36,8 @@ const turkishCoffeeCover =
   "https://www.dropbox.com/scl/fi/kvfuw5kdovtngybol6ia0/lv_0_20260919130442.jpg?rlkey=h11cbdjbe82q6ztuygi7zq91g&raw=1";
 const setareFashionFilmVideo =
   "https://www.dropbox.com/scl/fi/ekhldz7uwyjlww1o6s5eq/VID_20261118_085945_038_bsl.mp4?rlkey=51mztc574pp8rb9faplrqyxq9&raw=1";
+const parlaPerfumeVideo =
+  "https://www.dropbox.com/scl/fi/wvmeoxzb9rl1tybi39x1g/parla-story-9x16_v2.mp4?rlkey=fuwovke7lbhizfcrk4kcabyu9&raw=1";
 
 const khanehShalvarImages = [
   { src: "https://www.dropbox.com/scl/fi/tj2gt8xclv481hdxyyini/grok_1794593164081.jpg?rlkey=tmq9k2vxeu1rxjlb0v5z0iu0i&raw=1", alt: "Khaneh Shalvar autumn campaign visual 01" },
@@ -123,6 +125,25 @@ function SayehGallery() {
       <figcaption className="mt-3 text-xs leading-relaxed text-muted-foreground">
         Original character designed independently by Setareh Rahimi, from
         concept through final presentation · Character development slides 01–03.
+      </figcaption>
+    </figure>
+  );
+}
+
+function ParlaPerfumeGallery() {
+  return (
+    <figure className="border-t border-rule pt-5">
+      <video
+        controls
+        playsInline
+        preload="metadata"
+        className="mx-auto max-h-[720px] w-full bg-card object-contain"
+      >
+        <source src={parlaPerfumeVideo} type="video/mp4" />
+        Your browser does not support the video element.
+      </video>
+      <figcaption className="mt-3 text-xs leading-relaxed text-muted-foreground">
+        Parla fragrance · Vertical 9:16 advertising video
       </figcaption>
     </figure>
   );
@@ -441,6 +462,33 @@ export function SelectedWork() {
                         aria-hidden="true"
                         className="min-h-0 flex-1 w-full object-contain"
                       />
+                    ) : project.id === "parla-perfume-ad" ? (
+                      <span className="relative flex min-h-0 flex-1 flex-col justify-between overflow-hidden border-y border-rule py-5">
+                        <span className="eyebrow flex items-center justify-between gap-3">
+                          <span>FRAGRANCE / VIDEO AD</span>
+                          <span className="inline-flex items-center gap-1.5 text-accent">
+                            <Play className="size-3 fill-current" aria-hidden="true" />
+                            <span>VIDEO</span>
+                          </span>
+                        </span>
+                        <span className="font-display text-5xl leading-none tracking-tight text-accent md:text-7xl">
+                          PARLA
+                          <br />
+                          <span className="text-foreground">FRAGRANCE</span>
+                        </span>
+                        <span className="flex items-center justify-between border-t border-rule pt-3 text-xs tracking-[0.18em] text-muted-foreground">
+                          <span>VERTICAL 9:16</span>
+                          <span className="inline-flex items-center gap-2 text-accent">
+                            <Play className="size-3 fill-current" aria-hidden="true" />
+                            WATCH AD
+                          </span>
+                        </span>
+                        <span className="pointer-events-none absolute inset-0 flex items-center justify-center">
+                          <span className="flex size-14 items-center justify-center rounded-full border border-accent/70 bg-background/90 text-accent shadow-lg transition-transform duration-300 group-hover:scale-110">
+                            <Play className="ml-1 size-6 fill-current" aria-hidden="true" />
+                          </span>
+                        </span>
+                      </span>
                     ) : project.id === "setare-fashion-house-film" ? (
                       <span className="relative flex min-h-0 flex-1 flex-col justify-between overflow-hidden border-y border-rule py-5">
                         <span className="eyebrow flex items-center justify-between gap-3">
@@ -633,6 +681,7 @@ export function SelectedWork() {
                 )}
                 {project.id === "khaneh-mod-setareh" && <KhanehModGallery />}
                 {project.id === "turquoise-jewelry-set" && <TurquoiseJewelryGallery />}
+                {project.id === "parla-perfume-ad" && <ParlaPerfumeGallery />}
                 {project.id === "setare-fashion-house-film" && <SetareFashionFilmGallery />}
                 <p className="border-t border-rule pt-5 text-sm leading-relaxed text-muted-foreground">
                   {project.note}
