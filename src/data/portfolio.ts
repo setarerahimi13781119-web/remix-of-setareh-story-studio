@@ -115,7 +115,8 @@ export const projects: PortfolioProject[] = [
       "Material definition, color palette and final visual documentation",
     ],
     status: "exploration",
-    note: "An independently designed original character. All character design and visual development were completed by Setareh Rahimi.",
+    note:
+      "An independently designed original character. All character design and visual development were completed by Setareh Rahimi.",
   },
   {
     id: "setare-fashion-house-film",
