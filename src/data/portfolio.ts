@@ -97,6 +97,27 @@ export type PortfolioProject = {
 
 export const projects: PortfolioProject[] = [
   {
+    id: "sayeh-character-design",
+    title: "SAYEH — Character Design",
+    coverLabel: "Original character design dossier",
+    category: "Character Design · Visual Development",
+    role: "Independent Character Designer & Visual Developer",
+    summary:
+      "An original character developed independently from concept through final visual presentation, with a structured design dossier covering proportions, turnarounds, expressions and defining details.",
+    context:
+      "SAYEH is an original character design created entirely by Setareh Rahimi. The project documents the character’s visual development and consistency across multiple views, expressions and detail studies.",
+    scope: [
+      "Original character concept, appearance and styling",
+      "Front, three-quarter and profile turnaround views",
+      "Anatomical proportions and measurement sheet",
+      "Facial expression studies",
+      "Detail studies: eyes, ears, skin markings, hair, tail, accessories and clothing",
+      "Material definition, color palette and final visual documentation",
+    ],
+    status: "exploration",
+    note: "An independently designed original character. All character design and visual development were completed by Setareh Rahimi.",
+  },
+  {
     id: "setare-fashion-house-film",
     title: "Setare Fashion House — Autumn Collection Film",
     coverLabel: "Personal fashion film",
