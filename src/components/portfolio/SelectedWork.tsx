@@ -463,32 +463,13 @@ export function SelectedWork() {
                         className="min-h-0 flex-1 w-full object-contain"
                       />
                     ) : project.id === "parla-perfume-ad" ? (
-                      <span className="relative flex min-h-0 flex-1 flex-col justify-between overflow-hidden border-y border-rule py-5">
-                        <span className="eyebrow flex items-center justify-between gap-3">
-                          <span>FRAGRANCE / VIDEO AD</span>
-                          <span className="inline-flex items-center gap-1.5 text-accent">
-                            <Play className="size-3 fill-current" aria-hidden="true" />
-                            <span>VIDEO</span>
-                          </span>
-                        </span>
-                        <span className="font-display text-5xl leading-none tracking-tight text-accent md:text-7xl">
-                          PARLA
-                          <br />
-                          <span className="text-foreground">FRAGRANCE</span>
-                        </span>
-                        <span className="flex items-center justify-between border-t border-rule pt-3 text-xs tracking-[0.18em] text-muted-foreground">
-                          <span>VERTICAL 9:16</span>
-                          <span className="inline-flex items-center gap-2 text-accent">
-                            <Play className="size-3 fill-current" aria-hidden="true" />
-                            WATCH AD
-                          </span>
-                        </span>
-                        <span className="pointer-events-none absolute inset-0 flex items-center justify-center">
-                          <span className="flex size-14 items-center justify-center rounded-full border border-accent/70 bg-background/90 text-accent shadow-lg transition-transform duration-300 group-hover:scale-110">
-                            <Play className="ml-1 size-6 fill-current" aria-hidden="true" />
-                          </span>
-                        </span>
-                      </span>
+                      <img
+                        src="https://www.dropbox.com/scl/fi/giqocwvjqk6hvtyrt1dxh/1788420276941.png?rlkey=1j0fxhrytioryxpoumkkmvmof&raw=1"
+                        alt=""
+                        aria-hidden="true"
+                        loading="lazy"
+                        className="min-h-0 flex-1 w-full bg-card object-contain"
+                      />
                     ) : project.id === "setare-fashion-house-film" ? (
                       <span className="relative flex min-h-0 flex-1 flex-col justify-between overflow-hidden border-y border-rule py-5">
                         <span className="eyebrow flex items-center justify-between gap-3">
