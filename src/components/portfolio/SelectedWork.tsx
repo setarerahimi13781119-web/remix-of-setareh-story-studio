@@ -81,7 +81,6 @@ function TurquoiseJewelryGallery() {
   );
 }
 
-
 function SayehGallery() {
   return (
     <figure className="border-t border-rule pt-5">
@@ -91,12 +90,15 @@ function SayehGallery() {
         <p className="mt-3 max-w-md text-sm leading-relaxed text-muted-foreground">
           Original character design · Turnaround · Expression studies · Detail development
         </p>
-        <p className="mt-6 border-t border-rule pt-4 text-xs text-muted-foreground">
+        <p
+          className="mt-6 border-t border-rule pt-4 text-xs text-muted-foreground"
+        >
           Character sheet artwork is awaiting its repository asset upload.
         </p>
       </div>
       <figcaption className="mt-3 text-xs leading-relaxed text-muted-foreground">
-        Original character designed independently by Setareh Rahimi, from concept through final presentation.
+        Original character designed independently by Setareh Rahimi, from
+        concept through final presentation.
       </figcaption>
     </figure>
   );
