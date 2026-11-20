@@ -19,6 +19,8 @@ import kms3 from "@/assets/khaneh_mod_setareh_slide_03.png.asset.json";
 import kms4 from "@/assets/khaneh_mod_setareh_slide_04.png.asset.json";
 import kms5 from "@/assets/khaneh_mod_setareh_slide_05.png.asset.json";
 
+const touchUpsCover = "https://www.dropbox.com/scl/fi/520jlx8lb3onl7is5qyag/Duck-ai-image-2026-11-20-11-49.jpeg?rlkey=8xu096c7hfkhfzucp5upclhrq&raw=1";
+
 const junoonSquares = [
   {
     src: junoonGhostship.url,
@@ -194,7 +196,14 @@ export function SelectedWork() {
                       <span>{project.coverLabel}</span>
                       <Plus className="shrink-0 text-foreground" aria-hidden="true" />
                     </span>
-                    {project.id === "junoon-podcast" ? (
+                    {project.id === "touch-ups" ? (
+                      <img
+                        src={touchUpsCover}
+                        alt="Touch Ups cover showing a tea photograph before and its AI-assisted visual reconstruction after"
+                        loading="lazy"
+                        className="min-h-0 flex-1 w-full object-contain"
+                      />
+                    ) : project.id === "junoon-podcast" ? (
                       <img
                         src={junoonPoster.url}
                         alt=""
@@ -283,6 +292,19 @@ export function SelectedWork() {
                     </ul>
                   </dd>
                 </dl>
+                {project.id === "touch-ups" && (
+                  <figure className="border-t border-rule pt-5">
+                    <img
+                      src={touchUpsCover}
+                      alt="Before and after comparison of a tea photograph; the after image is an AI-assisted reconstruction"
+                      loading="lazy"
+                      className="w-full bg-card object-contain"
+                    />
+                    <figcaption className="mt-3 text-xs leading-relaxed text-muted-foreground">
+                      BEFORE / AFTER comparison · The AFTER is an AI-assisted visual reconstruction based on the original photograph.
+                    </figcaption>
+                  </figure>
+                )}
                 {project.tracks?.map((track) => (
                   <section key={track.title} className="border-t border-rule pt-5">
                     <h3 className="font-display text-2xl">{track.title}</h3>
