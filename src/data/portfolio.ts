@@ -311,7 +311,7 @@ export const projects: PortfolioProject[] = [
       "Logo motion — animated treatment of the Chenjeh logo",
     ],
     status: "exploration",
-    note: "Food image retouching examples are presented in original-to-retouched pairs. The Chenjeh logo animation is included as an additional motion piece in the same project.",
+    note: "The four food-photo pairs show direct retouching work, and the Chenjeh logo animation is a separate motion piece. The tea BEFORE/AFTER cover is an AI-assisted visual reconstruction based on the original photograph, not a pixel-level retouch of that file.",
   },
 ];
 
