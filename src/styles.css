@@ -977,3 +977,68 @@
 .work-card--parla:hover .work-card__trigger--parla > span:last-child {
   background: linear-gradient(112deg, #f6d2e0 0%, #efb4cc 58%, #f6d8e5 100%) !important;
 }
+
+
+/* PARLA v4 — vivid emerald, fresh jade, blush and brushed silver */
+.work-card--parla {
+  --parla-forest: #075846;
+  --parla-emerald: #087F62;
+  --parla-jade: #27A77D;
+  --parla-leaf: #73C99D;
+  --parla-mint: #DDF5E9;
+  --parla-pink: #F4C0D3;
+  --parla-rose: #D96F98;
+  --parla-silver: #C7D0D2;
+  --parla-silver-light: #EEF2F2;
+  border: 1px solid #AEBABD !important;
+  background: linear-gradient(145deg, #EEF2F2 0%, #D9E2E2 48%, #F5DDE6 100%) !important;
+  box-shadow: 0 18px 46px rgb(7 88 70 / 16%);
+}
+.work-card--parla::before {
+  border: 1px solid rgb(199 208 210 / 88%);
+}
+.work-card__trigger--parla {
+  background: linear-gradient(135deg, #064B3D 0%, #087F62 52%, #27A77D 100%) !important;
+}
+.work-card__trigger--parla::before {
+  color: #F5F8F7;
+}
+.work-card__trigger--parla > span:first-child {
+  color: #064B3D !important;
+  background: linear-gradient(105deg, #F2F5F5 0%, #D9E1E2 46%, #F4C8D8 100%) !important;
+  border-bottom: 1px solid rgb(7 88 70 / 18%);
+}
+.work-card__trigger--parla > span:first-child svg {
+  color: #087F62;
+}
+.work-card__trigger--parla img {
+  background:
+    radial-gradient(ellipse at 50% 42%, rgb(255 247 250 / 98%) 0%, rgb(244 192 211 / 70%) 30%, transparent 68%),
+    radial-gradient(ellipse at 78% 78%, rgb(115 201 157 / 72%) 0%, transparent 52%),
+    linear-gradient(135deg, #DDF5E9 0%, #A9E1C5 43%, #E5EAEB 72%, #F4C0D3 100%) !important;
+  filter: saturate(1.12) contrast(1.035);
+}
+.work-card__trigger--parla > span:last-child {
+  color: #064B3D !important;
+  background: linear-gradient(112deg, #F0F4F4 0%, #E1E8E8 45%, #F5DCE6 100%) !important;
+  border-top: 1px solid rgb(126 145 148 / 42%);
+}
+.work-card__trigger--parla > span:last-child::after {
+  color: #087F62;
+}
+.work-card__trigger--parla > span:last-child .font-display {
+  color: #064B3D !important;
+}
+.work-card__trigger--parla > span:last-child [lang="fa"] {
+  color: #A74770 !important;
+}
+.work-card--parla:hover {
+  border-color: #27A77D !important;
+  box-shadow: 0 30px 72px rgb(7 88 70 / 24%);
+}
+.work-card--parla:hover::before {
+  border-color: #F5F8F7;
+}
+.work-card--parla:hover .work-card__trigger--parla > span:last-child {
+  background: linear-gradient(112deg, #E5F2EC 0%, #D5E9DF 48%, #F2C8D8 100%) !important;
+}
