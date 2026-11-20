@@ -711,12 +711,12 @@ export function SelectedWork() {
         {filteredProjects.map((project) => (
           <li key={project.id} className="work-grid__item min-w-0">
             <Dialog>
-              <article className="work-card flex h-full flex-col border border-rule p-3 md:p-4">
+              <article className={`work-card flex h-full flex-col border border-rule p-3 md:p-4 ${project.id === "parla-perfume-ad" ? "work-card--parla" : ""}`}>
                 <DialogTrigger asChild>
                   <Button
                     variant="ghost"
                     aria-label={`View ${project.title} project`}
-                    className="work-card__trigger group relative flex h-auto w-full flex-col items-stretch justify-between gap-0 whitespace-normal rounded-none bg-card p-0 text-left font-normal hover:bg-secondary"
+                    className={`work-card__trigger group relative flex h-auto w-full flex-col items-stretch justify-between gap-0 whitespace-normal rounded-none bg-card p-0 text-left font-normal hover:bg-secondary ${project.id === "parla-perfume-ad" ? "work-card__trigger--parla" : ""}`}
                   >
                     <span className="eyebrow flex items-center justify-between gap-3 px-4 pt-4 pb-3 md:px-5 md:pt-5">
                       <span>{project.coverLabel}</span>
