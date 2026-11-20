@@ -843,6 +843,14 @@ export function SelectedWork() {
                     </ul>
                   </dd>
                 </dl>
+                {project.id === "khaneh-shalvar" && (
+                  <section className="border-t border-rule pt-5">
+                    <p className="eyebrow">Autumn campaign line</p>
+                    <p lang="fa" dir="rtl" className="font-persian mt-3 text-right text-lg leading-loose text-foreground">
+                      از صفر تا صد استایل پاییزت رو از خانه شلوار بخر
+                    </p>
+                  </section>
+                )}
                 {project.id === "touch-ups" && <TouchUpsGallery />}
                 {project.id === "stillness-wellness-spaces" && <StillnessGallery />}
                 {project.id === "parla-perfume-ad" && <ParlaGallery />}
