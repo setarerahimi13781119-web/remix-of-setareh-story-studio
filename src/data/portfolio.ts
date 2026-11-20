@@ -298,6 +298,21 @@ export const projects: PortfolioProject[] = [
     status: "verified-role",
     note: "The role was coordination and publishing, not authorship, copywriting, graphic design, video editing, strategy ownership or account ownership. The selected reels relate to this Nikmehr work overall and are not assigned to either page individually.",
   },
+  {
+    id: "touch-ups",
+    title: "Touch Ups",
+    coverLabel: "Photo editing & retouching",
+    category: "Photography · Image editing",
+    role: "Photo editing & retouching",
+    summary: "A curated collection of photo editing and retouching work.",
+    context: "A collection of image refinement and retouching studies, presented as a focused visual portfolio project.",
+    scope: [
+      "Photo editing and retouching",
+      "Image refinement and visual consistency",
+    ],
+    status: "exploration",
+    note: "Selected image examples from the Touch Ups collection.",
+  },
 ];
 
 export const capabilities = [

@@ -8,6 +8,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { nikmehrWork, projects, work } from "@/data/portfolio";
+import touchUpsCover from "@/assets/touch-ups-cover.jpg";
 
 import junoonPoster from "@/assets/junoon_case_file_poster.jpg.asset.json";
 import junoonGhostship from "@/assets/junoon_case_ghostship.jpg.asset.json";
@@ -438,7 +439,14 @@ export function SelectedWork() {
                       <span>{project.coverLabel}</span>
                       <Plus className="shrink-0 text-foreground" aria-hidden="true" />
                     </span>
-                    {project.id === "sayeh-character-design" ? (
+                    {project.id === "touch-ups" ? (
+                      <img
+                        src={touchUpsCover}
+                        alt=""
+                        aria-hidden="true"
+                        className="min-h-0 flex-1 w-full bg-card object-cover"
+                      />
+                    ) : project.id === "sayeh-character-design" ? (
                       <img
                         src={sayehArtwork}
                         alt=""
