@@ -299,3 +299,50 @@
     transform: none;
   }
 }
+
+
+/* Larger, image-led editorial project cards */
+.work-grid {
+  column-gap: clamp(1.1rem, 2.8vw, 2.8rem);
+  row-gap: clamp(2rem, 4vw, 3.5rem);
+}
+.work-grid__item:nth-child(5n + 1) {
+  grid-column: span 2;
+}
+.work-grid__item:nth-child(5n + 1) .work-card__trigger img {
+  height: clamp(22rem, 39vw, 38rem);
+}
+.work-card {
+  padding: clamp(.55rem, 1vw, .9rem);
+  background: transparent;
+}
+.work-card__trigger {
+  min-height: 0;
+  background: var(--portfolio-silver-light);
+}
+.work-card__trigger img {
+  display: block;
+  width: 100%;
+  height: clamp(17rem, 27vw, 29rem);
+}
+.work-card__trigger > span:last-child {
+  width: 100%;
+  text-align: left;
+  background: var(--portfolio-silver-mist);
+}
+.work-card__trigger > span:last-child [lang="fa"] {
+  color: var(--portfolio-dusty-pink);
+  font-family: var(--font-persian);
+}
+.work-card:hover .work-card__trigger > span:last-child {
+  background: var(--portfolio-soft-pink);
+}
+@media (max-width: 767px) {
+  .work-grid__item:nth-child(5n + 1) .work-card__trigger img,
+  .work-card__trigger img {
+    height: clamp(17rem, 72vw, 27rem);
+  }
+  .work-card {
+    padding: .45rem;
+  }
+}
