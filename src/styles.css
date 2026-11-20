@@ -122,3 +122,180 @@
 @utility font-persian {
   font-family: var(--font-persian);
 }
+
+
+/* Hybrid Editorial × Experimental — bold portfolio system */
+:root {
+  --portfolio-forest: #214C3E;
+  --portfolio-dusty-pink: #A45170;
+  --portfolio-silver-mist: #F5F7F5;
+  --portfolio-silver-light: #E8ECE9;
+  --portfolio-sage: #DDE8E1;
+  --portfolio-soft-pink: #F4E3EA;
+}
+
+.editorial-hero {
+  position: relative;
+  isolation: isolate;
+}
+.editorial-hero::after {
+  content: "SR";
+  position: absolute;
+  z-index: -1;
+  right: clamp(1rem, 8vw, 8rem);
+  top: 2.5rem;
+  color: var(--portfolio-sage);
+  font-family: var(--font-display);
+  font-size: clamp(10rem, 30vw, 27rem);
+  line-height: .72;
+  letter-spacing: -.08em;
+  opacity: .72;
+  pointer-events: none;
+}
+.hero-name {
+  position: relative;
+  max-width: 10ch;
+  text-wrap: balance;
+}
+.hero-name em {
+  display: inline-block;
+  padding-right: .08em;
+}
+.section-heading {
+  position: relative;
+}
+.section-heading > p {
+  padding-top: .35rem;
+}
+.section-heading h2 {
+  max-width: 12ch;
+}
+.portfolio-section {
+  scroll-margin-top: 6rem;
+}
+.work-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .55rem;
+  margin: -1.5rem 0 2.25rem;
+}
+.work-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: .65rem;
+  min-height: 2.7rem;
+  border: 1px solid var(--rule);
+  padding: .65rem .9rem;
+  color: var(--foreground);
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  letter-spacing: .035em;
+  transition: color .22s ease, background-color .22s ease, border-color .22s ease, transform .22s ease;
+}
+.work-filter:hover {
+  border-color: var(--portfolio-dusty-pink);
+  transform: translateY(-2px);
+}
+.work-filter.is-active {
+  border-color: var(--portfolio-forest);
+  background: var(--portfolio-forest);
+  color: white;
+}
+.work-filter__count {
+  display: inline-grid;
+  min-width: 1.25rem;
+  height: 1.25rem;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--portfolio-dusty-pink);
+  color: white;
+  font-size: .62rem;
+}
+.work-grid {
+  align-items: stretch;
+  gap: clamp(1rem, 2.4vw, 2.25rem);
+}
+.work-grid__item:nth-child(5n + 1) {
+  grid-column: span 2;
+}
+.work-grid__item:nth-child(5n + 1) .work-card__trigger {
+  aspect-ratio: 16 / 8.8;
+}
+.work-grid__item:nth-child(5n + 3) {
+  transform: translateY(1.5rem);
+}
+.work-card {
+  position: relative;
+  border-color: var(--rule);
+  padding: clamp(.7rem, 1.5vw, 1.25rem);
+  transition: border-color .25s ease, transform .3s ease, background-color .25s ease;
+}
+.work-card:hover {
+  border-color: var(--portfolio-dusty-pink);
+  transform: translateY(-4px);
+}
+.work-card__trigger {
+  overflow: hidden;
+  background: var(--portfolio-silver-light);
+  transition: background-color .25s ease;
+}
+.work-card__trigger img {
+  transition: transform .55s cubic-bezier(.2,.7,.2,1);
+}
+.work-card__trigger:hover img {
+  transform: scale(1.025);
+}
+.work-card__context {
+  border-top: 1px solid var(--rule);
+}
+.contact-footer {
+  position: relative;
+  overflow: hidden;
+}
+.contact-footer::before {
+  content: "LET’S TALK";
+  position: absolute;
+  right: -1rem;
+  bottom: -.18em;
+  color: rgb(255 255 255 / .055);
+  font-family: var(--font-display);
+  font-size: clamp(6rem, 20vw, 19rem);
+  line-height: .8;
+  white-space: nowrap;
+  pointer-events: none;
+}
+@media (max-width: 767px) {
+  .editorial-hero::after {
+    top: 2rem;
+    right: .5rem;
+    font-size: 42vw;
+  }
+  .work-grid__item:nth-child(5n + 1) {
+    grid-column: auto;
+  }
+  .work-grid__item:nth-child(5n + 1) .work-card__trigger {
+    aspect-ratio: 4 / 3;
+  }
+  .work-grid__item:nth-child(5n + 3) {
+    transform: none;
+  }
+  .work-filters {
+    gap: .45rem;
+    margin-top: -1rem;
+    margin-bottom: 1.5rem;
+  }
+  .work-filter {
+    min-height: 2.45rem;
+    padding: .55rem .7rem;
+    font-size: .62rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .work-filter, .work-card, .work-card__trigger img {
+    transition: none !important;
+  }
+  .work-filter:hover, .work-card:hover, .work-grid__item:nth-child(5n + 3) {
+    transform: none;
+  }
+}
