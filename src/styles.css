@@ -1042,3 +1042,109 @@
 .work-card--parla:hover .work-card__trigger--parla > span:last-child {
   background: linear-gradient(112deg, #E5F2EC 0%, #D5E9DF 48%, #F2C8D8 100%) !important;
 }
+
+
+/* PORTFOLIO CARD ART DIRECTION v5 — malachite / vivid pink / brushed silver */
+:root {
+  --portfolio-malachite: #075E52;
+  --portfolio-jade-pop: #00A889;
+  --portfolio-citrus-leaf: #B6D957;
+  --portfolio-sea-glass: #D9F1E8;
+  --portfolio-rosewood: #783454;
+  --portfolio-guava: #E65B91;
+  --portfolio-peony: #F3A9C4;
+  --portfolio-silver: #BEC9CD;
+  --portfolio-silver-glow: #EDF1F2;
+}
+
+/* The cards now use a considered silver frame and a more expressive colour rhythm.
+   Artwork itself stays untouched: the colour lives in the frame, metadata and footer. */
+.work-card:not(.work-card--parla) {
+  --card-tint: #E4F2EC;
+  --card-accent: #075E52;
+  position: relative;
+  isolation: isolate;
+  padding: clamp(.5rem, .95vw, .85rem);
+  border: 1px solid #BEC9CD !important;
+  background:
+    linear-gradient(145deg, rgb(255 255 255 / 72%), rgb(237 241 242 / 88%)) !important;
+  box-shadow:
+    0 8px 24px rgb(34 57 55 / 7%),
+    inset 0 1px 0 rgb(255 255 255 / 92%);
+  transition:
+    transform .5s cubic-bezier(.2,.8,.2,1),
+    border-color .4s ease,
+    box-shadow .5s ease;
+}
+.work-card:not(.work-card--parla)::after {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 1.1rem;
+  right: 1.1rem;
+  height: 3px;
+  background: linear-gradient(90deg, var(--card-accent), var(--card-highlight));
+  opacity: .9;
+  pointer-events: none;
+}
+.work-card:not(.work-card--parla) .work-card__trigger {
+  background:
+    radial-gradient(ellipse at 85% 5%, color-mix(in srgb, var(--card-highlight) 22%, transparent), transparent 48%),
+    var(--card-tint) !important;
+}
+.work-card:not(.work-card--parla) .work-card__trigger > span:first-child {
+  color: var(--card-accent) !important;
+  background: linear-gradient(100deg, var(--card-tint), color-mix(in srgb, var(--card-highlight) 13%, var(--card-tint))) !important;
+  border-bottom: 1px solid color-mix(in srgb, var(--card-accent) 18%, transparent);
+}
+.work-card:not(.work-card--parla) .work-card__trigger > span:first-child svg {
+  color: var(--card-highlight);
+}
+.work-card:not(.work-card--parla) .work-card__trigger > span:last-child {
+  color: var(--card-accent);
+  background: linear-gradient(110deg, var(--card-tint), color-mix(in srgb, var(--card-highlight) 15%, var(--card-tint))) !important;
+  border-top: 1px solid color-mix(in srgb, var(--card-accent) 22%, transparent);
+}
+.work-card:not(.work-card--parla) .work-card__trigger > span:last-child [lang="fa"] {
+  color: var(--card-highlight) !important;
+}
+
+/* Distinct pairings — no more repeating the same dusty sage / pale blush sequence. */
+.work-grid__item:nth-child(6n + 1) { --card-tint: #DDF3E9; --card-accent: #075E52; --card-highlight: #00A889; }
+.work-grid__item:nth-child(6n + 2) { --card-tint: #FBE2EC; --card-accent: #783454; --card-highlight: #E65B91; }
+.work-grid__item:nth-child(6n + 3) { --card-tint: #EAF2D5; --card-accent: #385B32; --card-highlight: #91B83E; }
+.work-grid__item:nth-child(6n + 4) { --card-tint: #F4D9E5; --card-accent: #783454; --card-highlight: #D94F88; }
+.work-grid__item:nth-child(6n + 5) { --card-tint: #D9EFED; --card-accent: #075E66; --card-highlight: #00A5A0; }
+.work-grid__item:nth-child(6n + 6) { --card-tint: #F8E6D8; --card-accent: #78465A; --card-highlight: #E985A6; }
+
+@media (hover: hover) and (pointer: fine) {
+  .work-card:not(.work-card--parla):hover {
+    transform: translateY(-6px);
+    border-color: var(--card-highlight) !important;
+    box-shadow:
+      0 20px 42px color-mix(in srgb, var(--card-accent) 15%, transparent),
+      inset 0 1px 0 rgb(255 255 255 / 95%);
+  }
+  .work-card:not(.work-card--parla):hover .work-card__trigger > span:last-child {
+    background: linear-gradient(110deg, color-mix(in srgb, var(--card-tint) 72%, white), color-mix(in srgb, var(--card-highlight) 23%, var(--card-tint))) !important;
+  }
+  .work-card:not(.work-card--parla):hover .work-card__trigger img {
+    transform: scale(1.018);
+  }
+}
+@media (max-width: 767px) {
+  .work-card:not(.work-card--parla) {
+    padding: .45rem;
+    box-shadow: 0 5px 18px rgb(34 57 55 / 6%);
+  }
+  .work-card:not(.work-card--parla)::after {
+    left: .8rem;
+    right: .8rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .work-card:not(.work-card--parla) {
+    transition: none !important;
+  }
+}
