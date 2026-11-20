@@ -6,7 +6,8 @@
 
 @theme inline {
   --font-display: "Instrument Serif", "Times New Roman", serif;
-  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-persian: "Vazirmatn", sans-serif;
   --font-mono: "Geist Mono", ui-monospace, monospace;
   --radius-sm: calc(var(--radius) - 2px);
   --radius-md: var(--radius);
@@ -35,26 +36,32 @@
 
 :root {
   --radius: 2px;
-  --background: oklch(0.975 0.012 85);
-  --foreground: oklch(0.18 0.01 50);
-  --card: oklch(0.955 0.016 80);
-  --card-foreground: oklch(0.18 0.01 50);
-  --popover: oklch(0.975 0.012 85);
-  --popover-foreground: oklch(0.18 0.01 50);
-  --primary: oklch(0.18 0.01 50);
-  --primary-foreground: oklch(0.975 0.012 85);
-  --secondary: oklch(0.94 0.018 78);
-  --secondary-foreground: oklch(0.18 0.01 50);
-  --muted: oklch(0.94 0.018 78);
-  --muted-foreground: oklch(0.45 0.015 50);
-  --accent: oklch(0.47 0.12 30);
-  --accent-foreground: oklch(0.975 0.012 85);
-  --destructive: oklch(0.55 0.2 27);
-  --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.18 0.01 50 / 14%);
-  --rule: oklch(0.18 0.01 50 / 22%);
-  --input: oklch(0.18 0.01 50 / 20%);
-  --ring: oklch(0.47 0.12 30);
+  --portfolio-silver-mist: #F5F7F5;
+  --portfolio-silver-light: #E8ECE9;
+  --portfolio-forest: #214C3E;
+  --portfolio-sage: #DDE8E1;
+  --portfolio-dusty-pink: #A45170;
+  --portfolio-soft-pink: #F4E3EA;
+  --background: var(--portfolio-silver-mist);
+  --foreground: var(--portfolio-forest);
+  --card: var(--portfolio-silver-light);
+  --card-foreground: var(--portfolio-forest);
+  --popover: var(--portfolio-silver-mist);
+  --popover-foreground: var(--portfolio-forest);
+  --primary: var(--portfolio-forest);
+  --primary-foreground: #FFFFFF;
+  --secondary: var(--portfolio-sage);
+  --secondary-foreground: var(--portfolio-forest);
+  --muted: var(--portfolio-silver-light);
+  --muted-foreground: #53665E;
+  --accent: var(--portfolio-dusty-pink);
+  --accent-foreground: #FFFFFF;
+  --destructive: #A83232;
+  --destructive-foreground: #FFFFFF;
+  --border: var(--portfolio-silver-light);
+  --rule: #C9D3CD;
+  --input: #AEBBB3;
+  --ring: var(--portfolio-dusty-pink);
 }
 
 @layer base {
@@ -67,7 +74,7 @@
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
-  ::selection { background: var(--accent); color: var(--accent-foreground); }
+  ::selection { background: var(--portfolio-soft-pink); color: var(--portfolio-forest); }
   :focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
@@ -110,4 +117,8 @@
   transition: opacity 0.7s ease, transform 0.7s ease;
   &[data-visible="true"] { opacity: 1; transform: none; }
   @media (prefers-reduced-motion: reduce) { opacity: 1; transform: none; }
+}
+
+@utility font-persian {
+  font-family: var(--font-persian);
 }
