@@ -504,3 +504,52 @@
     height: clamp(26rem, 85vw, 34rem) !important;
   }
 }
+
+
+/* QA fixes: remove the filter/heading hit-area overlap and let each artwork
+   keep its native aspect ratio instead of forcing every image into one box. */
+.work-filters {
+  margin-top: 0 !important;
+  position: relative;
+  z-index: 2;
+}
+.work-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.work-grid__item,
+.work-grid__item:nth-child(3n + 1),
+.work-grid__item:nth-child(5n + 1) {
+  grid-column: auto;
+}
+.work-grid__item:first-child {
+  grid-column: 1 / -1;
+}
+.work-card__trigger img {
+  display: block;
+  width: 100%;
+  height: auto !important;
+  min-height: 0;
+  max-height: none !important;
+  flex: 0 0 auto !important;
+}
+.work-grid__item:first-child .work-card__trigger img {
+  width: min(100%, 720px);
+  max-width: 720px;
+  height: auto !important;
+  margin-inline: auto;
+}
+@media (max-width: 767px) {
+  .work-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .work-grid__item:first-child {
+    grid-column: auto;
+  }
+  .work-grid__item:first-child .work-card__trigger img {
+    width: 100%;
+    max-width: 100%;
+  }
+  .work-filters {
+    margin-top: 0 !important;
+  }
+}
