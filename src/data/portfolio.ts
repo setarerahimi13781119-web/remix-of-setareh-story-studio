@@ -184,6 +184,24 @@ export const projects: PortfolioProject[] = [
     ],
   },
   {
+    id: "touch-ups",
+    title: "Touch Ups",
+    coverLabel: "Before / After · Food photography",
+    category: "Food photography · Retouching · Logo motion",
+    role: "Photo retouching & visual enhancement",
+    summary:
+      "A selected visual project exploring food-photo enhancement and logo motion. The tea comparison is presented transparently as an AI-assisted visual reconstruction based on the original photograph.",
+    context:
+      "Touch Ups brings together food-photography enhancement and logo-motion work. The featured tea image shows the original photograph alongside an AI-assisted reconstruction; it is not represented as pixel-level retouching of the original file.",
+    scope: [
+      "Food-photography retouching and visual enhancement",
+      "AI-assisted reconstruction clearly distinguished from direct photo retouching",
+      "Logo motion work",
+    ],
+    status: "exploration",
+    note: "The tea AFTER is an AI-assisted visual reconstruction based on the original scene, not a pixel-level retouch of the original photograph. Other project media should be added only from the original verified files.",
+  },
+  {
     id: "ai-visual-storytelling",
     title: "AI-assisted visual storytelling",
     coverLabel: "Pennsylvania, 1950",
