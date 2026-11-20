@@ -80,6 +80,35 @@ function TurquoiseJewelryGallery() {
   );
 }
 
+const parlaImages = [
+  {
+    src: "https://www.dropbox.com/scl/fi/jlj6owxsvn0le1puqndib/1795118785331.jpg?rlkey=y5puwnpdrdxmt37phpwi2s3fq&raw=1",
+    alt: "Parla perfume campaign visual 01",
+  },
+];
+
+function ParlaGallery() {
+  return (
+    <figure className="border-t border-rule pt-5">
+      <ol className="grid gap-4 sm:grid-cols-2">
+        {parlaImages.map((image) => (
+          <li key={image.src}>
+            <img
+              src={image.src}
+              alt={image.alt}
+              loading="lazy"
+              className="max-h-[900px] w-full bg-card object-contain"
+            />
+          </li>
+        ))}
+      </ol>
+      <figcaption className="mt-3 text-xs leading-relaxed text-muted-foreground">
+        Parla fragrance · Campaign visual explorations
+      </figcaption>
+    </figure>
+  );
+}
+
 const sayehArtwork =
   "https://www.dropbox.com/scl/fi/xxgfqf8ji9jqbjazo79kp/file_00000000056081f4a18d01e5b1e0b733.png?rlkey=t8lyhkljeu0gtoiqcrypvm1n9&raw=1";
 
@@ -586,6 +615,7 @@ export function SelectedWork() {
                     </ul>
                   </dd>
                 </dl>
+                {project.id === "parla-perfume-ad" && <ParlaGallery />}
                 {project.id === "sayeh-character-design" && <SayehGallery />}
                 {project.id === "khaneh-shalvar" && <KhanehShalvarGallery />}
                 {project.id === "junoon-podcast" && <JunoonGallery />}
