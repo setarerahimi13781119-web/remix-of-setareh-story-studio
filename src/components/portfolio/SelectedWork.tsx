@@ -671,7 +671,24 @@ function projectMatchesFilter(projectId: string, filter: (typeof projectFilters)
 
 export function SelectedWork() {
   const [activeFilter, setActiveFilter] = useState<(typeof projectFilters)[number]>("All");
-  const filteredProjects = projects.filter((project) => projectMatchesFilter(project.id, activeFilter));
+  const projectOrder = [
+    "parla-perfume-ad",
+    "turquoise-jewelry-set",
+    "stillness-wellness-spaces",
+    "moodbean",
+    "khaneh-mod-setareh",
+    "setare-fashion-house-film",
+    "sayeh-character-design",
+    "khaneh-shalvar",
+    "random-pieces",
+    "turkish-coffee-packaging",
+    "touch-ups",
+    "nikmehr",
+    "junoon-podcast",
+  ];
+  const filteredProjects = projects
+    .filter((project) => projectMatchesFilter(project.id, activeFilter))
+    .sort((a, b) => projectOrder.indexOf(a.id) - projectOrder.indexOf(b.id));
 
   return (
     <>
