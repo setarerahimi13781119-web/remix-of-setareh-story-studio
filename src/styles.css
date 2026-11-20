@@ -655,3 +655,105 @@
   .work-card, .work-card__trigger img, .work-card__trigger > span:last-child,
   .work-card__trigger > span:first-child svg { transition: none !important; }
 }
+
+
+/* PARLA — signature fragrance card prototype (preview branch only) */
+.work-card--parla {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(.55rem, 1.15vw, 1rem);
+  border: 1px solid #214c3e;
+  background: #173a31;
+  box-shadow: 0 12px 34px rgb(23 58 49 / 10%);
+  transition: transform 850ms cubic-bezier(.2,.72,.18,1), box-shadow 850ms ease, border-color 500ms ease;
+}
+.work-card--parla::before {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  z-index: 2;
+  border: 1px solid rgb(235 200 212 / 48%);
+  pointer-events: none;
+  transition: inset 900ms cubic-bezier(.2,.72,.18,1), border-color 600ms ease;
+}
+.work-card__trigger--parla {
+  position: relative;
+  isolation: isolate;
+  gap: 0;
+  background: #d5e3d4 !important;
+}
+.work-card__trigger--parla > span:first-child {
+  width: 100%;
+  padding: 1.15rem 1.4rem .95rem;
+  color: #f7e8ed !important;
+  background: #173a31;
+  letter-spacing: .16em;
+  font-size: .62rem;
+}
+.work-card__trigger--parla > span:first-child svg {
+  color: #ebc8d4;
+  transition: transform 700ms cubic-bezier(.2,.72,.18,1);
+}
+.work-card__trigger--parla img {
+  width: 100%;
+  height: clamp(27rem, 43vw, 40rem) !important;
+  padding: clamp(.8rem, 2vw, 1.5rem);
+  background: linear-gradient(145deg, #d5e3d4 0%, #e7f0e8 48%, #f4e3ea 100%);
+  object-fit: contain !important;
+  transform: scale(1);
+  transition: transform 1400ms cubic-bezier(.18,.72,.2,1), filter 1000ms ease;
+  will-change: transform;
+}
+.work-card__trigger--parla > span:last-child {
+  width: 100%;
+  padding: 1.25rem 1.4rem 1.4rem;
+  color: #f7e8ed;
+  background: #87445f !important;
+  border-top: 1px solid rgb(235 200 212 / 55%);
+  transition: background-color 700ms ease, padding 700ms cubic-bezier(.2,.72,.18,1);
+}
+.work-card__trigger--parla > span:last-child .font-display {
+  color: #fff7f8;
+  letter-spacing: -.025em;
+}
+.work-card__trigger--parla > span:last-child [lang="fa"] {
+  color: #f4e3ea !important;
+}
+.work-card--parla:hover {
+  transform: translateY(-9px);
+  border-color: #c36f8d;
+  box-shadow: 0 28px 64px rgb(23 58 49 / 23%);
+}
+.work-card--parla:hover::before {
+  inset: 12px;
+  border-color: rgb(247 232 237 / 85%);
+}
+.work-card--parla:hover .work-card__trigger--parla img {
+  transform: scale(1.035);
+  filter: saturate(1.04) contrast(1.02);
+}
+.work-card--parla:hover .work-card__trigger--parla > span:first-child svg {
+  transform: rotate(45deg);
+}
+.work-card--parla:hover .work-card__trigger--parla > span:last-child {
+  background: #713b53 !important;
+  padding-bottom: 1.65rem;
+}
+@media (max-width: 767px) {
+  .work-card__trigger--parla img {
+    height: clamp(25rem, 100vw, 34rem) !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .work-card--parla,
+  .work-card--parla::before,
+  .work-card__trigger--parla img,
+  .work-card__trigger--parla > span:first-child svg,
+  .work-card__trigger--parla > span:last-child {
+    transition: none !important;
+  }
+  .work-card--parla:hover,
+  .work-card--parla:hover .work-card__trigger--parla img {
+    transform: none !important;
+  }
+}
