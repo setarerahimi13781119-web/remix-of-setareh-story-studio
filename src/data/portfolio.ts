@@ -323,11 +323,11 @@ export const projects: PortfolioProject[] = [
     summary: "A before-and-after collection of restaurant food image retouching, accompanied by a motion treatment for the Chenjeh logo.",
     context: "A visual editing project focused on refining restaurant food photography, presenting each original image alongside its retouched result, with an additional animated logo treatment for Chenjeh.",
     scope: [
-      "Restaurant food image retouching — four before-and-after pairs",
+      "Restaurant and café image retouching — five before-and-after pairs",
       "Logo motion — animated treatment of the Chenjeh logo",
     ],
     status: "exploration",
-    note: "The four food-photo pairs show direct retouching work, and the Chenjeh logo animation is a separate motion piece. The tea BEFORE/AFTER cover is an AI-assisted visual reconstruction based on the original photograph, not a pixel-level retouch of that file.",
+    note: "The five food and café photo pairs show before-and-after image editing, and the Chenjeh logo animation is a separate motion piece. The tea BEFORE/AFTER cover is an AI-assisted visual reconstruction based on the original photograph, not a pixel-level retouch of that file.",
   },
   {
     id: "stillness-wellness-spaces",
