@@ -12,7 +12,7 @@ describe("Portfolio visual design system", () => {
     expect(root).toContain("family=Vazirmatn");
     expect(styles).toContain('--font-sans: "Manrope"');
     expect(styles).toContain('--font-persian: "Vazirmatn"');
-    expect(styles).toContain(".font-persian");
+    expect(styles).toContain("@utility font-persian");
   });
 
   it("defines the approved green, pink and silver palette", () => {
