@@ -473,6 +473,8 @@ function StillnessGallery() {
   );
 }
 
+const coffeeAssetsCover = "https://www.dropbox.com/scl/fi/niwau2i7okvwh0o2whh2v/ai-image-generator-1.jpg?rlkey=buddyp8xmtvpwkjzbutdnvd60&raw=1";
+
 const coffeeAssetImages = [
   "https://uc67c8a1be0cb745e8aa8f406352.previews.dropboxusercontent.com/p/thumb/ADRarViq9rqHmJBE9xC-GuTxptixksHAC0DbO7BLvsun1M3Eoo4S_HzY-5kmle9g7UboWOsACyoW0E3rQwy5e2yHqcEbKD0XaiYO3mIOuCIr0f0PH2RSSuk4XYmJakQ1xWrQIK5Jg5h_JhR4DUhPUulyh9vt1rQ0dx_EmqYAxYQPxrc1RqF783hqWC5qSCdNxZyKLiN4OtL92oHwvaLKn5qH2Rj8uG5LGzedwV0JVNeankAvbaqrkQPbUSGNumo0wg6FMyJx99vkVNA055u1sk-UU2jhlN0AQE9i9xZAejUDqg/p.jpeg",
   "https://ucdaf8683294916a692005d4733b.previews.dropboxusercontent.com/p/thumb/ADQ-Rlqml43x8c_CZfDzsBT9g0_e-TeoOcBnNkWfNBTXk2ffs44O1CEs4xF1lXM0-zXCyBSo6wFs2SkJ_0o9oxvs7yaNv6Ukb3rSC5M7sbLfFi3S0WI4Yb_A5WgLV9NZDAHXhWVSHVavC6CGky9oJwF_rBdPM4hY-AkxGtjUND_1Vpja960KJzBmld-aUSJmKjKb0l_3quiRxGa22roQ_hIEkhlSrdNsTXixoGRb1Q3za2V_1S6oxHdwhhWhtKcakppQdQHHiZFqWmVrV0AWQCpn4ikR08-R7-ipwrmbFiWtiw/p.jpeg",
@@ -711,10 +713,10 @@ export function SelectedWork() {
                       />
                     ) : project.id === "moodbean" ? (
                       <img
-                        src={coffeeAssetImages[0]}
-                        alt="Coffee Assets visual collection preview"
+                        src={coffeeAssetsCover}
+                        alt="Coffee Assets cover — specialty coffee visual"
                         aria-hidden="true"
-                        className="min-h-0 flex-1 w-full bg-card object-cover"
+                        className="min-h-0 flex-1 w-full bg-card object-contain"
                       />
                     ) : project.id === "turkish-coffee-packaging" ? (
                       <img
