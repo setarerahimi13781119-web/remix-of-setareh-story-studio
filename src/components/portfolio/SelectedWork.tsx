@@ -479,6 +479,42 @@ const coffeeAssetImages = [
   "https://uc6deac2e81b69df2e3588ec9d93.previews.dropboxusercontent.com/p/thumb/ADRjqmicQdw-jva-kytQKe9tg2eH3W7F-UVSqphlPSyXH6_LCf01lhVtGxih8MfvqJWoMMBO-xNq3m7pIPNcUks_RdXwf4qHfbJpzavtpBrLi8wC2rU_zTQxfZNyMnF9zBZeEOFpiaLimN-aCNiOzul1i2zDxyCk-kGxMD-fBAzGSIgwLuMoApXuHUdvvBiWVwF6Ml47tc2w31EJ_I5QXkw27yZs0kJiScx_idf-jnZssn0obbJN1fI75-mIuO2J7YvMTqDJm7l7f9hAMhh05OsYpKDdPPqeh8zWRh4hszjsGQ/p.jpeg",
 ];
 
+const randomPiecesImages = [
+  "https://uc56d3a29557d06a3cd8161d15c7.previews.dropboxusercontent.com/p/thumb/ADTIrMkLlvfmHfmjeJXEnEWloiE7drX-lfjk8t__MOgTNOMjBRvPioL7GFL7BKep1nQGzvEuz3LdzuygsUL6hArUGst2gECsKcqVQIscoUHyDvuBmUrTiJfTgn8YxbnMXjt7xTHiCTXwECId89z9z-IVGQiR4W5EfIh8cQSaxx9Q2JdOOgLosEioLvzexO-oxJOs-pnr8sFq_ZUP6xo5jkJ_S3Q1KgNMnPi6sDKj7DSq1UdHj76jI3Rwz84Lyza8KWyuAty5g6FffQ4sdbGt-CkZZpphXk7EqjA_CIih8dV1tA/p.jpeg",
+  "https://uc93cf2c15e661e8afff74643c73.previews.dropboxusercontent.com/p/thumb/ADSB5t1Ndlo4gt_RF04ZjJLIJJCd12dWXq0WlSAJZbOLFJh4pPjIK3ph_59eUlN8zb9ionzFJScftl3NYn7dSkB7_5KBBXQ51yxhwcn3wcrHaO0mez6BGyX7ThSjt__1XEYKQ7ZR9AD08H5uxS7K68Enpgen-SVZeM77AHhljhKLlMRoDCRV3odPnx1EaRkrP82L-xsBYT1fvloAk4zgc8M-s32f9NnQgRr-yaGelZtgi7yj_Kpd5P_LZAP4HeGVbPwYPASQ-K0BXCYmgC2LjIzYOr7Ah1GmRUZtbZxHqBERmQ/p.jpeg",
+  "https://uca0cf0aa626f256ad70921a257d.previews.dropboxusercontent.com/p/thumb/ADTaFFUWlbZhPZ8E82aJO2yVN3YxEPS48y4OTiPQcT7pGqMY5qsTYL11zjikziM3xnaZfUHUMpvvjAZLavBp-xpAzVoKTM4iFJbgKtCK4rJjnlg-HYfCD8gpERIHu3yjykCCzCcxVHj1faR8G0Ceaorkxls_P8nXMfeAMvz9mJMm2QV13NMfx-GNNJkDpwzul9mJQka43jUojfaY0g2tkvhlInPLvgtwxmdzlQPEQSRJ6USKDfPFqxLUTzaQUIJv_4Hb176UCOjU4Mk1WBUM5F0Xm7rKVwu7CNt0sa5KVYkWUw/p.png",
+  "https://uce3a0e81923f734f1dc85e9a892.previews.dropboxusercontent.com/p/thumb/ADRGTQmedWtc6kASN9Hm-hu4m6tgt5oCIDjV7V_ViS5djpA856qfc2gcB7r5Cvkc79ByHxVGnP9QusIYu4vAv5QS-gYap0jwONw5kmZfEiRLoxmJc_7abVc1vUwFPeyKioihJDrbSt71-dCWhFHHM-AAAlYkUqBDrji227Yh0ei2tBWkmm3oyEa2kO93v5KCn-VDBt-X3J7yjfVRtEqYmh_EvZIYkJE1JkJE3aIBY8tuyVskj6RDTBtGnxBc4ZdHpRTpFAJFxtwXhnnuiM5Vi2KVALT1iTj7mTVoYTfESS8ACA/p.jpeg",
+  "https://uc9ddc4a4d8aef1ec1ab3675c20a.previews.dropboxusercontent.com/p/thumb/ADRyp0ioZDpQWRxljY_nFQqKQDxM7M544FrWzGyl1aQ8ldBXKYUwiiiDQS3F9JvQ-uZlqcFFwUgpoDsv18ejTfZi723ABnpOtb1rJ7EzhU8GNAz3S_gPmkpi6pARF3e_cmsniaJGPKb5MNXVnZK7yLsLSxYrgdQlQeBWjinlDNqf9bOu1Qd2KlVOV1RpqjrFzoRlbWA_jaKwtOR5lkptDjPuNhd5aPCjcHY7lj_hTDLi1RB9U5k8JAMmFYszEkrusSXNhFotFslhx8DBDgh4V_cgEmzs6ZiXYF2jBI-sqHZYSw/p.png",
+  "https://uc9f52e0e69e2a578ed52412f9fb.previews.dropboxusercontent.com/p/thumb/ADQMpu2a5era2QUfbIAoEaCj4Q7VD-JuT22XfnObk5q5zfKNT6RIaMgkmgxw4U6VsgCuC7cLgZeOdySiGLrsJsSJ7NX5wm_tiO5lJELj09UBTBtTLm3784AxdIHnFdxR_-LRGmkr-mx5r6Wz4bHloVh8PrHd7xdXZg_gdImfOwfGgt_Kx73HAPytszx6QqvyQD8GRjCUKmWeYRS4SD6pblXc1ugYo8z4u4uzkx9zm9RStln1QXFkEw313k6HZZMhiweVevzdF4rQ9KxlSDoPZ57qVw9SHPXDR539FNsDpfsf6g/p.png",
+  "https://uc2715a2eafde15959e1f0d31325.previews.dropboxusercontent.com/p/thumb/ADTstDBg0zdVLDPLMd3KB5Y4692hw9SozPMVeumcWM5xKqEYD8x7HDJOT2dD4lp-BaCBfygTOl9r9OjLpJ4Xiss2H_gTJA_3VwmDsBtWzzQqFWHwMqEQbQuZ4R7c03yvXVzx7CckvbcquXuNlhiTps_da9vlRcaLF3rcOIQu2cPDjfmnkLHsTvEzbWDg2KImyUsTRpmUt_SHpj1e2kZmxUer8vdp42AOXO3YXyCUjDcIGJ2zIl0vCzn4eIAbtCUWRpgsCPyQsLtwe69KytfIxgoh_wDeWdlF3ZqZVg2PBb34ig/p.png",
+  "https://uc4e5edc90fabdbbdd41e746c868.previews.dropboxusercontent.com/p/thumb/ADTq115VEfFEzPZ1_V9zJ8mr9FIQgSXUSSFecrqkKZu65PVPl7dY7gtvdV5pdirsvKSSbZRI8m26XCuY1j5PYwgQluTA88EIGrYDhfHkXz9vk6AHUT3HQEtlOqAYgnNwudje8OL1W3WO6ySE0Uqk5r-Xo-hTy-x6Ga1tO8ljxuLZ1qvJ6PBpujjO5VrrlA8PR1OpY5KDoB1V1va8KKjRzizo3HjHkPHFxUK6ov1gfYhVINsnxi_y9JEQHTWIYhd7XSCfyEtqxeV-8d1mLt0dysiMY9JJo5zivMVBhCxht9fGdw/p.png",
+  "https://uc6a28d44c43bb5b8d8c3b8e9876.previews.dropboxusercontent.com/p/thumb/ADQSYXquSh0gK3G68ESH4-QbpjVWHBL3kO3xRbVH7V9yxSM7EjNnTW1BbVF85HTwGTRcl725dozVZ0-YK5GAm06FXWtdswO1ZlY99vbZv0-rVtGlq35H3ORucBLWgNTSwJc4id0lMUpQ4tX3p16KURV7n6M-adJS4wAeXsklluPyBiOXKU4-PszTKt8J2SZEhtJyVyN8m8iQSNw0LMeDbl7RFOZVzxYUbTgtIf7q3DihyF9AisvLxvju4NEptBg7v-BKH6Sa4ryi4ouFq71_68akxn64pIlmIZM-dYfEMVQ6Rw/p.jpeg",
+  "https://ucb0685e6e0aedda9110a3179053.previews.dropboxusercontent.com/p/thumb/ADStgG3m3_sKR9-8uInYBC_4i3gro9_-LXwpS9769jX-VnIhVJRx6cBSHrfmy_Q51o4qc1cPyw34N2Gc9XjGn7jkiFgcmC9G12e4YtK6S0ZYDlm8TY5lOqPLUMWUAdHYxc13CoKRUK47YzzbvV3oxB2rcf0-qq-7_SRD10tDK5LxKHY1J9csAHxDeWbZQeYmlOw85i8oYwf4yGzqQcg1gE4FwWIneDyKC7r7MFpdtcbq70vMebeM5CPTcFrJXaNvDuBzJNYr8bfnmSFoolIYHY6Y35xWDv3hrG6wrSKpwsjZxQ/p.png",
+  "https://ucb7f2adaa7646baf96a62a0aea8.previews.dropboxusercontent.com/p/thumb/ADRA6vB0l2HfO_dJCxdfdgD_UoY2J5wbp_fYeTPKgXeEQfKA9vGHPvoV61EA-kY4KyY2AJ7mIiHg1VtqqaF3Hnp3e8IykE336vOOB14ebkpoDCyeRtiR4iRbpxxwKuyr19-FOnx2DrefwDZNDjU7FK2gGbvQJ6LAn3-3JJKLJEGjPsc0K6b9SbduuFEse7yUlFp5NWL4xfAZt2WBe4PW33_ZovxviEuCrxkiQJ5d8DxBXxDIHJv1C6fSqDY6c-b8apIu_6KJv-qBbcj8EOh3p_l3kRoSRa7EhWI4t7pkM7clkw/p.png",
+  "https://uc604555032b416b64bd793f7980.previews.dropboxusercontent.com/p/thumb/ADTHXcQf6vPEeWzIgzycYR9MgvtIzaUozXm1JRVRh09aZ8zssLrd0gt82Vi2ObbaflLNdYhH9uWkB_Q5h0O0ZtBAmaG09qjbWw4BD36gWhyPFiki99ng5WUleMS_DM_RbaKY4TU1g03d7ZrPLFBK7qgrR6jw5oQYmEoYLfm2UQctm9by4h1LJHrQ0mbNJlmlWBHdbb6WvI4GHZyXYnPev8SZ0lLrhAptASCGuoUDxE1cNWj281tEwQ8AlCEW4MkC60u664tW_s7LmQX-kkHGvFMaWqro9SROH3nHvjggLVDqrw/p.jpeg",
+];
+
+function RandomPiecesGallery() {
+  return (
+    <figure className="border-t border-rule pt-5">
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+        {randomPiecesImages.map((src, index) => (
+          <img
+            key={src}
+            src={src}
+            alt={`Random Pieces poster artwork ${index + 1}`}
+            loading="lazy"
+            className="aspect-[3/4] w-full bg-card object-contain"
+          />
+        ))}
+      </div>
+      <figcaption className="mt-3 text-xs leading-relaxed text-muted-foreground">
+        Random Pieces · Selected poster works and graphic experiments
+      </figcaption>
+    </figure>
+  );
+}
+
 function CoffeeAssetsGallery() {
   return (
     <figure className="border-t border-rule pt-5">
@@ -661,7 +697,7 @@ export function SelectedWork() {
                         aria-hidden="true"
                         className="min-h-0 flex-1 w-full bg-card object-contain"
                       />
-                    ) : project.id === "moodbean" ? (
+                    ) : project.id === "random-pieces" ? (\n                      <img\n                        src={randomPiecesImages[0]}\n                        alt="Random Pieces poster collection preview"\n                        aria-hidden="true"\n                        className="min-h-0 flex-1 w-full bg-card object-contain"\n                      />\n                    ) : project.id === "moodbean" ? (
                       <img
                         src={coffeeAssetImages[0]}
                         alt="Coffee Assets visual collection preview"
@@ -798,7 +834,7 @@ export function SelectedWork() {
                 {project.id === "parla-perfume-ad" && <ParlaGallery />}
                 {project.id === "sayeh-character-design" && <SayehGallery />}
                 {project.id === "khaneh-shalvar" && <KhanehShalvarGallery />}
-                {project.id === "moodbean" && <CoffeeAssetsGallery />}
+                {project.id === "random-pieces" && <RandomPiecesGallery />}\n                {project.id === "moodbean" && <CoffeeAssetsGallery />}
                 {project.id === "junoon-podcast" && <JunoonGallery />}
                 {project.tracks?.map((track) => (
                   <section key={track.title} className="border-t border-rule pt-5">
