@@ -38,7 +38,7 @@ function Reveal({ children, className = "" }: { children: ReactNode; className?:
 
 function SectionHead({ index, title, id }: { index: string; title: string; id: string }) {
   return (
-    <div className="grid grid-cols-12 gap-6 border-t border-rule pt-5 pb-12 md:pb-16">
+    <div className="section-heading grid grid-cols-12 gap-6 border-t border-rule pt-5 pb-12 md:pb-16">
       <p className="eyebrow col-span-4 md:col-span-3">§ {index}</p>
       <h2
         id={id}
@@ -108,7 +108,7 @@ export function Hero() {
     <section
       id="top"
       aria-labelledby="hero-title"
-      className="mx-auto max-w-7xl px-5 pt-16 pb-24 md:px-10 md:pt-28 md:pb-36"
+      className="editorial-hero mx-auto max-w-7xl px-5 pt-16 pb-24 md:px-10 md:pt-28 md:pb-36"
     >
       <Reveal>
         <div className="grid grid-cols-12 gap-6">
@@ -118,7 +118,7 @@ export function Hero() {
           <div className="col-span-12 md:col-span-9">
             <h1
               id="hero-title"
-              className="font-display text-[clamp(3.5rem,12vw,10rem)] leading-[0.88] tracking-[-0.02em]"
+              className="hero-name font-display text-[clamp(3.5rem,12vw,10rem)] leading-[0.88] tracking-[-0.02em]"
             >
               Setareh
               <br />
@@ -164,7 +164,7 @@ export function Hero() {
 
 export function Work() {
   return (
-    <section aria-labelledby="work" className="mx-auto max-w-7xl px-5 pb-28 md:px-10">
+    <section aria-labelledby="work" className="portfolio-section mx-auto max-w-7xl px-5 pb-28 md:px-10">
       <SectionHead index="01" title="Selected Work" id="work" />
       <SelectedWork />
     </section>
@@ -274,7 +274,7 @@ export function Contact() {
     <footer
       id="contact"
       aria-labelledby="contact-title"
-      className="bg-primary text-primary-foreground"
+      className="contact-footer bg-primary text-primary-foreground"
     >
       <div className="mx-auto max-w-7xl px-5 py-20 md:px-10 md:py-28">
         <p className="eyebrow text-primary-foreground/60">§ 05 — Contact</p>
