@@ -495,7 +495,7 @@ export function SelectedWork() {
                       />
                     ) : project.id === "parla-perfume-ad" ? (
                       <img
-                        src="https://www.dropbox.com/scl/fi/giqocwvjqk6hvtyrt1dxh/1788420276941.png?rlkey=1j0fxhrytioryxpoumkkmvmof&raw=1"
+                        src="https://www.dropbox.com/scl/fi/8y91i4ep19hykupkpg3tj/lv_0_20261119214004.jpg?rlkey=yfk7l4lwc8pnxis336n27rpoz&raw=1"
                         alt=""
                         aria-hidden="true"
                         loading="lazy"
