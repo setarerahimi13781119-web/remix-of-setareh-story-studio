@@ -558,8 +558,9 @@
 /* Living editorial cards — motion, depth and botanical/rose colour rhythm */
 .work-grid__item {
   min-width: 0;
+  transform: none;
   animation: card-arrive .72s cubic-bezier(.2,.72,.25,1) both;
-  animation-delay: calc((var(--card-index, 0) % 6) * 75ms);
+  animation-delay: calc(var(--card-index, 0) * 65ms);
 }
 .work-grid__item:nth-child(1) { --card-index: 0; }
 .work-grid__item:nth-child(2) { --card-index: 1; }
