@@ -502,32 +502,13 @@ export function SelectedWork() {
                         className="min-h-0 flex-1 w-full bg-card object-contain"
                       />
                     ) : project.id === "setare-fashion-house-film" ? (
-                      <span className="relative flex min-h-0 flex-1 flex-col justify-between overflow-hidden border-y border-rule py-5">
-                        <span className="eyebrow flex items-center justify-between gap-3">
-                          <span>FASHION FILM / PERSONAL PROJECT</span>
-                          <span className="inline-flex items-center gap-1.5 text-accent">
-                            <Play className="size-3 fill-current" aria-hidden="true" />
-                            <span>VIDEO</span>
-                          </span>
-                        </span>
-                        <span className="font-display text-4xl leading-[0.95] tracking-tight text-accent md:text-5xl">
-                          SETARE
-                          <br />
-                          <span className="text-foreground">FASHION HOUSE</span>
-                        </span>
-                        <span className="flex items-center justify-between border-t border-rule pt-3 text-xs tracking-[0.18em] text-muted-foreground">
-                          <span>AUTUMN COLLECTION</span>
-                          <span className="inline-flex items-center gap-2 text-accent">
-                            <Play className="size-3 fill-current" aria-hidden="true" />
-                            WATCH FILM
-                          </span>
-                        </span>
-                        <span className="pointer-events-none absolute inset-0 flex items-center justify-center">
-                          <span className="flex size-14 items-center justify-center rounded-full border border-accent/70 bg-background/90 text-accent shadow-lg transition-transform duration-300 group-hover:scale-110">
-                            <Play className="ml-1 size-6 fill-current" aria-hidden="true" />
-                          </span>
-                        </span>
-                      </span>
+                      <img
+                        src="https://www.dropbox.com/scl/fi/xncc2r3didacdnzew9hgy/setare-fashion-house-cover.jpg?rlkey=ql6x1krumtrk310mbebmloefx&raw=1"
+                        alt="Setare Fashion House autumn collection editorial cover"
+                        aria-hidden="true"
+                        loading="lazy"
+                        className="min-h-0 flex-1 w-full bg-card object-cover"
+                      />
                     ) : project.id === "nikmehr" ? (
                       <span className="relative flex min-h-0 flex-1 flex-col justify-between overflow-hidden border-y border-rule py-5">
                         <span className="eyebrow flex items-center justify-between">
