@@ -8,7 +8,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { nikmehrWork, projects, work } from "@/data/portfolio";
-import touchUpsCover from "@/assets/touch-ups-cover.jpg";
+const touchUpsCover = "https://www.dropbox.com/scl/fi/520jlx8lb3onl7is5qyag/Duck-ai-image-2026-11-20-11-49.jpeg?rlkey=8xu096c7hfkhfzucp5upclhrq&raw=1";
 
 import junoonPoster from "@/assets/junoon_case_file_poster.jpg.asset.json";
 import junoonGhostship from "@/assets/junoon_case_ghostship.jpg.asset.json";
@@ -390,6 +390,23 @@ function TouchUpsGallery() {
             </li>
           ))}
         </ol>
+      </section>
+      <section className="space-y-4 border-t border-rule pt-6">
+        <div>
+          <h3 className="font-display text-2xl">AI-assisted Visual Reconstruction</h3>
+          <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+            Tea photograph · Original scene and AI-assisted reconstruction · Before / After
+          </p>
+        </div>
+        <img
+          src={touchUpsCover}
+          alt="Tea photograph before and AI-assisted visual reconstruction after"
+          loading="lazy"
+          className="w-full bg-card object-contain"
+        />
+        <p className="text-xs leading-relaxed text-muted-foreground">
+          The AFTER is an AI-assisted reconstruction based on the original photograph, not a pixel-level retouch of the original file.
+        </p>
       </section>
       <section className="space-y-3 border-t border-rule pt-6">
         <div>
