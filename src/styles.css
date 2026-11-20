@@ -470,3 +470,37 @@
     padding: .45rem;
   }
 }
+
+
+/* Refine the project rhythm: more full-width artwork, taller previews,
+   while preserving complete artwork (no forced cropping). */
+.work-grid {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+.work-grid__item,
+.work-grid__item:nth-child(5n + 1) {
+  grid-column: span 6;
+}
+.work-grid__item:nth-child(3n + 1) {
+  grid-column: 1 / -1;
+}
+.work-card__trigger img {
+  height: clamp(31rem, 34vw, 40rem) !important;
+}
+.work-grid__item:nth-child(3n + 1) .work-card__trigger img {
+  height: clamp(34rem, 42vw, 46rem) !important;
+}
+@media (max-width: 767px) {
+  .work-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .work-grid__item,
+  .work-grid__item:nth-child(3n + 1),
+  .work-grid__item:nth-child(5n + 1) {
+    grid-column: auto;
+  }
+  .work-card__trigger img,
+  .work-grid__item:nth-child(3n + 1) .work-card__trigger img {
+    height: clamp(26rem, 85vw, 34rem) !important;
+  }
+}
