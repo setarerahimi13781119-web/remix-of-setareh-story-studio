@@ -18,14 +18,7 @@ describe("Portfolio visual design system", () => {
   it("defines the approved green, pink and silver palette", () => {
     const styles = readSource("../styles.css");
 
-    for (const color of [
-      "#214C3E",
-      "#A45170",
-      "#F5F7F5",
-      "#E8ECE9",
-      "#DDE8E1",
-      "#F4E3EA",
-    ]) {
+    for (const color of ["#214C3E", "#A45170", "#F5F7F5", "#E8ECE9", "#DDE8E1", "#F4E3EA"]) {
       expect(styles).toContain(color);
     }
   });
