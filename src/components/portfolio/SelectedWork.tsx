@@ -326,6 +326,90 @@ function KhanehShalvarGallery() {
   );
 }
 
+
+const touchUpsPairs = [
+  {
+    title: "Food retouch 01",
+    before: "https://www.dropbox.com/scl/fi/axvf73zwc5sm8agsyg3fg/unnamed-10.webp?rlkey=aaht3kqgxkl9hxcqj4et489ka&raw=1",
+    after: "https://www.dropbox.com/scl/fi/qa3hmub11yh6fipsehqkp/1792682346570.jpg?rlkey=46bb5h90t7xmucidqf2jitq95&raw=1",
+  },
+  {
+    title: "Food retouch 02",
+    before: "https://www.dropbox.com/scl/fi/9mp0s87j662q4dkq8wcom/lv_0_20261022071125.jpg?rlkey=g6h1zkcmdejlfula2waafx9vh&raw=1",
+    after: "https://www.dropbox.com/scl/fi/sy0ea9y3iiez88halstxt/lv_0_20261022073202.jpg?rlkey=m15v1sl4gcpz6iyjh9xt5kmgy&raw=1",
+  },
+  {
+    title: "Food retouch 03",
+    before: "https://www.dropbox.com/scl/fi/uzz73p9sdl00u13lzbob4/unnamed-3.webp?rlkey=tcbnge742p26f7io36e9ykpot&raw=1",
+    after: "https://www.dropbox.com/scl/fi/5u4z479efuuz500xfty32/VEGA_1792654251368.jpg?rlkey=pazxycvftjmfljh4vdolpjd80&raw=1",
+  },
+  {
+    title: "Food retouch 04",
+    before: "https://www.dropbox.com/scl/fi/1414iztmvive8geiwbjww/lv_0_20261022070508.jpg?rlkey=12ryrwzrs60r40zzq3lu6212s&raw=1",
+    after: "https://www.dropbox.com/scl/fi/wo9gc0man2l1kkpgmcxe2/lv_0_20261022081616.jpg?rlkey=vyenwrqs5tcadtg6ut0tkpyvq&raw=1",
+  },
+];
+
+const chenjehLogoMotion =
+  "https://www.dropbox.com/scl/fi/qcfk7ije92kvmlolk5kg1/chenjeh-logo-motion.mp4?rlkey=39iwnl7f26s0g0rhkks4uk6kv&raw=1";
+
+function TouchUpsGallery() {
+  return (
+    <figure className="space-y-8 border-t border-rule pt-6">
+      <section className="space-y-4">
+        <div>
+          <h3 className="font-display text-2xl">Food Photo Retouching</h3>
+          <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+            Original and retouched restaurant food photography · Before / After
+          </p>
+        </div>
+        <ol className="space-y-6">
+          {touchUpsPairs.map((pair, index) => (
+            <li key={pair.title} className="space-y-3">
+              <h4 className="eyebrow">{String(index + 1).padStart(2, "0")} / {pair.title}</h4>
+              <div className="grid gap-3 sm:grid-cols-2">
+                <div className="min-w-0">
+                  <img
+                    src={pair.before}
+                    alt={`${pair.title} — original food photograph before retouching`}
+                    loading="lazy"
+                    className="w-full bg-card object-contain"
+                  />
+                  <p className="mt-2 text-center font-mono text-xs text-muted-foreground">BEFORE</p>
+                </div>
+                <div className="min-w-0">
+                  <img
+                    src={pair.after}
+                    alt={`${pair.title} — retouched food photograph after editing`}
+                    loading="lazy"
+                    className="w-full bg-card object-contain"
+                  />
+                  <p className="mt-2 text-center font-mono text-xs text-muted-foreground">AFTER</p>
+                </div>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
+      <section className="space-y-3 border-t border-rule pt-6">
+        <div>
+          <h3 className="font-display text-2xl">Chenjeh — Logo Motion</h3>
+          <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+            Motion treatment of the restaurant's static logo
+          </p>
+        </div>
+        <video controls playsInline preload="metadata" className="max-h-[560px] w-full bg-card">
+          <source src={chenjehLogoMotion} type="video/mp4" />
+          Your browser does not support the video element.
+        </video>
+      </section>
+      <figcaption className="text-xs leading-relaxed text-muted-foreground">
+        Restaurant food photo retouching and logo motion · Chenjeh
+      </figcaption>
+    </figure>
+  );
+}
+
 function JunoonGallery() {
   return (
     <figure className="border-t border-rule pt-5">
@@ -628,6 +712,7 @@ export function SelectedWork() {
                     </ul>
                   </dd>
                 </dl>
+                {project.id === "touch-ups" && <TouchUpsGallery />}
                 {project.id === "parla-perfume-ad" && <ParlaGallery />}
                 {project.id === "sayeh-character-design" && <SayehGallery />}
                 {project.id === "khaneh-shalvar" && <KhanehShalvarGallery />}
