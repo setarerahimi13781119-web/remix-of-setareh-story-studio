@@ -226,23 +226,21 @@ export const projects: PortfolioProject[] = [
   },
   {
     id: "moodbean",
-    title: "Moodbean",
-    coverLabel: "Interactive coffee finder",
-    category: "Digital product · Coffee discovery",
-    role: "Product concept · UX/UI design exploration",
+    title: "Coffee Assets",
+    coverLabel: "Coffee visual collection",
+    category: "Coffee · Visual Assets",
+    role: "Visual exploration & asset creation",
     summary:
-      "An interactive specialty-coffee finder that helps people choose a coffee by mood, taste preference or occasion.",
+      "A growing collection of coffee-related visual assets, bringing together atmospheric imagery and creative explorations.",
     context:
-      "Moodbean presents a focused coffee catalogue with mood-based discovery. Visitors can explore four coffees, compare tasting notes and processing details, filter by needs such as morning energy, chocolate richness, creativity or relaxation, and add quantities to a cart.",
+      "An evolving visual collection focused on coffee, its rituals, textures and atmosphere. The gallery currently includes eight selected images and will be expanded as additional assets are added.",
     scope: [
-      "Mood- and occasion-based coffee discovery",
-      "Coffee cards with tasting notes, processing methods and growing elevations",
-      "Quick filters for distinct preferences and moments",
-      "Interactive cart quantities and order placement flow",
+      "Coffee-themed visual asset collection",
+      "Atmospheric imagery and creative visual explorations",
+      "Ongoing gallery development",
     ],
     status: "exploration",
-    liveUrl: "https://moodbean-coffee-finder.lovable.app",
-    note: "An independently developed digital product concept. The live link opens the interactive project.",
+    note: "A growing visual collection. Additional assets will be added as the project develops.",
   },
   {
     id: "turquoise-jewelry-set",
