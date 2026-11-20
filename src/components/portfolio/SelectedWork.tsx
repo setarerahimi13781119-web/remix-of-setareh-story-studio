@@ -641,6 +641,22 @@ function PublishedExamples({ compact = false }: { compact?: boolean }) {
 
 const projectFilters = ["All", "Video & Motion", "Visual Design", "Fashion & Ecommerce", "Content Operations"] as const;
 
+const projectPersianTitles: Record<string, string> = {
+  "parla-perfume-ad": "پارلا — کمپین عطر",
+  "sayeh-character-design": "سایه — طراحی کاراکتر",
+  "setare-fashion-house-film": "خانه مد ستاره — فیلم کالکشن پاییز",
+  "khaneh-shalvar": "خانه شلوار — کمپین پاییز",
+  "khaneh-mod-setareh": "خانه مد ستاره — طراحی فروشگاه",
+  "junoon-podcast": "پادکست جنون",
+  moodbean: "مجموعه تصاویر قهوه",
+  "random-pieces": "قطعات پراکنده — پوستر و گرافیک",
+  "turquoise-jewelry-set": "ست زیورآلات فیروزه‌ای",
+  "turkish-coffee-packaging": "بسته‌بندی قهوه ترک",
+  nikmehr: "نیکمهر — هماهنگی و انتشار محتوا",
+  "touch-ups": "تاچ‌آپ — ریتاچ تصویر و موشن",
+  "stillness-wellness-spaces": "استیلنس — کانسپت فضاهای آرامش",
+};
+
 function projectMatchesFilter(projectId: string, filter: (typeof projectFilters)[number]) {
   if (filter === "All") return true;
   if (filter === "Video & Motion") {
@@ -678,14 +694,14 @@ export function SelectedWork() {
         {filteredProjects.map((project) => (
           <li key={project.id} className="work-grid__item min-w-0">
             <Dialog>
-              <article className="work-card flex h-full flex-col border border-rule p-5 md:p-6">
+              <article className="work-card flex h-full flex-col border border-rule p-3 md:p-4">
                 <DialogTrigger asChild>
                   <Button
                     variant="ghost"
                     aria-label={`View ${project.title} project`}
-                    className="work-card__trigger group relative flex h-auto w-full flex-col items-stretch justify-between gap-6 whitespace-normal rounded-none bg-card p-5 text-left font-normal hover:bg-secondary md:p-7 aspect-[4/3]"
+                    className="work-card__trigger group relative flex h-auto w-full flex-col items-stretch justify-between gap-0 whitespace-normal rounded-none bg-card p-0 text-left font-normal hover:bg-secondary"
                   >
-                    <span className="eyebrow flex items-center justify-between gap-3">
+                    <span className="eyebrow flex items-center justify-between gap-3 px-4 pt-4 pb-3 md:px-5 md:pt-5">
                       <span>{project.coverLabel}</span>
                       <Plus className="shrink-0 text-foreground" aria-hidden="true" />
                     </span>
@@ -800,8 +816,9 @@ export function SelectedWork() {
                         </span>
                       </span>
                     )}
-                    <span className="border-t border-rule pt-4 font-display text-3xl leading-tight md:text-4xl">
-                      {project.title}
+                    <span className="border-t border-rule px-4 pt-4 pb-4 md:px-5 md:pt-5">
+                      <span className="block font-display text-3xl leading-tight md:text-4xl">{project.title}</span>
+                      <span lang="fa" dir="rtl" className="mt-2 block text-right font-persian text-base font-medium leading-relaxed text-accent md:text-lg">{projectPersianTitles[project.id]}</span>
                     </span>
                   </Button>
                 </DialogTrigger>
