@@ -667,29 +667,13 @@ export function SelectedWork() {
                         className="min-h-0 flex-1 w-full bg-card object-cover"
                       />
                     ) : project.id === "nikmehr" ? (
-                      <span className="relative flex min-h-0 flex-1 flex-col justify-between overflow-hidden border-y border-rule py-5">
-                        <span className="eyebrow flex items-center justify-between">
-                          <span>MEDIA / OPERATIONS</span>
-                          <span>VERIFIED ROLE</span>
-                        </span>
-                        <span className="space-y-2">
-                          <span className="block font-display text-[clamp(2.8rem,7vw,5rem)] leading-[0.85] tracking-[-0.05em]">
-                            CONTENT
-                          </span>
-                          <span className="flex items-center gap-2 pl-[12%]">
-                            <span className="h-px flex-1 bg-accent" />
-                            <span className="font-mono text-xs tracking-[0.2em] text-accent">
-                              →
-                            </span>
-                          </span>
-                          <span className="block pl-[12%] font-display text-[clamp(2.8rem,7vw,5rem)] leading-[0.85] tracking-[-0.05em] text-accent">
-                            PUBLISH
-                          </span>
-                        </span>
-                        <span className="border-t border-rule pt-3 text-xs leading-relaxed text-muted-foreground">
-                          Posts + stories · Coordination & publishing
-                        </span>
-                      </span>
+                      <img
+                        src="https://www.dropbox.com/scl/fi/ocvutld04s55mtujgcmqs/InShot_20261120_162106691.jpg?rlkey=d778o7elrbl0nj5ppqhuj6js4&raw=1"
+                        alt="1001 show cover artwork"
+                        aria-hidden="true"
+                        loading="lazy"
+                        className="min-h-0 flex-1 w-full bg-card object-contain"
+                      />
                     ) : (
                       <span className="flex min-h-0 flex-1 flex-col justify-center gap-4 border-y border-rule py-6">
                         <span className="eyebrow text-muted-foreground">{project.category}</span>
