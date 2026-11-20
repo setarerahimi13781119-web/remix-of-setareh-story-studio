@@ -313,6 +313,24 @@ export const projects: PortfolioProject[] = [
     status: "exploration",
     note: "The four food-photo pairs show direct retouching work, and the Chenjeh logo animation is a separate motion piece. The tea BEFORE/AFTER cover is an AI-assisted visual reconstruction based on the original photograph, not a pixel-level retouch of that file.",
   },
+  {
+    id: "stillness-wellness-spaces",
+    title: "STILLNESS — Wellness Space Concepts",
+    coverLabel: "Restorative environments · Motion & stills",
+    category: "Visual Concept · AI-assisted Imagery · Motion",
+    role: "Visual concept development & motion studies",
+    summary:
+      "A visual exploration of calm, nature-led environments, bringing together atmospheric still imagery and motion pieces.",
+    context:
+      "An independent visual study of restorative spaces and quiet moments in nature. The work is presented as a multimedia exploration through still images and motion clips.",
+    scope: [
+      "AI-assisted visual exploration of wellness and meditation environments",
+      "Motion studies and video presentation",
+      "Art direction around atmosphere, natural materials and visual calm",
+    ],
+    status: "exploration",
+    note: "A conceptual visual project, not architectural documentation or a claim of built interior-design work.",
+  },
 ];
 
 export const capabilities = [
