@@ -346,3 +346,127 @@
     padding: .45rem;
   }
 }
+
+
+/* Expanded botanical + rose palette */
+:root {
+  --portfolio-deep-pine: #173A31;
+  --portfolio-moss: #66816D;
+  --portfolio-pistachio: #D5E3D4;
+  --portfolio-mint: #E7F0E8;
+  --portfolio-rose: #C36F8D;
+  --portfolio-berry: #87445F;
+  --portfolio-blush: #F7E8ED;
+  --portfolio-petal: #EBC8D4;
+}
+
+/* Let every artwork occupy its real visual space.
+   flex-basis:0 from Tailwind's flex-1 was overriding the explicit image height. */
+.work-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  column-gap: clamp(1rem, 2.4vw, 2.4rem);
+  row-gap: clamp(2rem, 4vw, 3.6rem);
+}
+.work-grid__item {
+  min-width: 0;
+}
+.work-grid__item:nth-child(5n + 1) {
+  grid-column: 1 / -1;
+}
+.work-card {
+  height: 100%;
+  padding: clamp(.45rem, .9vw, .85rem);
+  border-color: color-mix(in srgb, var(--portfolio-moss) 35%, transparent);
+}
+.work-card__trigger {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  background: var(--portfolio-mint);
+}
+.work-card__trigger img {
+  display: block;
+  flex: 0 0 auto !important;
+  width: 100%;
+  height: clamp(27rem, 42vw, 39rem) !important;
+  min-height: 0;
+  max-height: none;
+  object-position: center;
+}
+.work-grid__item:nth-child(5n + 1) .work-card__trigger img {
+  height: clamp(30rem, 45vw, 43rem) !important;
+}
+.work-card__trigger > span:first-child {
+  color: var(--portfolio-deep-pine);
+}
+.work-card__trigger > span:last-child {
+  background: var(--portfolio-silver-mist);
+  border-top-color: color-mix(in srgb, var(--portfolio-moss) 38%, transparent);
+  transition: background-color .25s ease;
+}
+.work-card__trigger > span:last-child [lang="fa"] {
+  color: var(--portfolio-berry);
+}
+
+/* A deliberate palette rhythm: sage, rose, mint, blush, forest. */
+.work-grid__item:nth-child(5n + 1) .work-card__trigger,
+.work-grid__item:nth-child(5n + 1) .work-card__trigger > span:last-child {
+  background-color: var(--portfolio-mint);
+}
+.work-grid__item:nth-child(5n + 2) .work-card__trigger {
+  background-color: var(--portfolio-blush);
+}
+.work-grid__item:nth-child(5n + 2) .work-card__trigger > span:last-child {
+  background-color: var(--portfolio-blush);
+}
+.work-grid__item:nth-child(5n + 3) .work-card__trigger {
+  background-color: var(--portfolio-pistachio);
+}
+.work-grid__item:nth-child(5n + 3) .work-card__trigger > span:last-child {
+  background-color: var(--portfolio-pistachio);
+}
+.work-grid__item:nth-child(5n + 4) .work-card__trigger {
+  background-color: #F1DCE4;
+}
+.work-grid__item:nth-child(5n + 4) .work-card__trigger > span:last-child {
+  background-color: #F1DCE4;
+}
+.work-grid__item:nth-child(5n + 5) .work-card__trigger {
+  background-color: #E1E9E2;
+}
+.work-grid__item:nth-child(5n + 5) .work-card__trigger > span:last-child {
+  background-color: #E1E9E2;
+}
+.work-card:hover {
+  border-color: var(--portfolio-rose);
+}
+.work-card:hover .work-card__trigger > span:last-child {
+  background-color: var(--portfolio-blush);
+}
+.work-filter.is-active {
+  background: var(--portfolio-deep-pine);
+  border-color: var(--portfolio-deep-pine);
+}
+.work-filter:hover {
+  border-color: var(--portfolio-rose);
+}
+.work-filter__count {
+  background: var(--portfolio-rose);
+}
+@media (max-width: 767px) {
+  .work-grid {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 1.6rem;
+  }
+  .work-grid__item:nth-child(5n + 1) {
+    grid-column: auto;
+  }
+  .work-card__trigger img,
+  .work-grid__item:nth-child(5n + 1) .work-card__trigger img {
+    height: clamp(25rem, 105vw, 36rem) !important;
+  }
+  .work-card {
+    padding: .45rem;
+  }
+}
