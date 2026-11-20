@@ -85,6 +85,10 @@ const parlaImages = [
     src: "https://www.dropbox.com/scl/fi/jlj6owxsvn0le1puqndib/1795118785331.jpg?rlkey=y5puwnpdrdxmt37phpwi2s3fq&raw=1",
     alt: "Parla perfume campaign visual 01",
   },
+  {
+    src: "https://www.dropbox.com/scl/fi/f7rcx71g1todnsrdh6r8u/1795119614842.jpg?rlkey=724y9niwmsqi3huweg7wcw6s6&raw=1",
+    alt: "Parla perfume campaign visual 02",
+  },
 ];
 
 function ParlaGallery() {
