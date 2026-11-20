@@ -301,17 +301,17 @@ export const projects: PortfolioProject[] = [
   {
     id: "touch-ups",
     title: "Touch Ups",
-    coverLabel: "Photo editing & retouching",
-    category: "Photography · Image editing",
-    role: "Photo editing & retouching",
-    summary: "A curated collection of photo editing and retouching work.",
-    context: "A collection of image refinement and retouching studies, presented as a focused visual portfolio project.",
+    coverLabel: "Restaurant food retouching",
+    category: "Food Photography · Retouching · Motion",
+    role: "Food photo retouching & logo motion",
+    summary: "A before-and-after collection of restaurant food image retouching, accompanied by a motion treatment for the Chenjeh logo.",
+    context: "A visual editing project focused on refining restaurant food photography, presenting each original image alongside its retouched result, with an additional animated logo treatment for Chenjeh.",
     scope: [
-      "Photo editing and retouching",
-      "Image refinement and visual consistency",
+      "Restaurant food image retouching — four before-and-after pairs",
+      "Logo motion — animated treatment of the Chenjeh logo",
     ],
     status: "exploration",
-    note: "Selected image examples from the Touch Ups collection.",
+    note: "Food image retouching examples are presented in original-to-retouched pairs. The Chenjeh logo animation is included as an additional motion piece in the same project.",
   },
 ];
 
