@@ -243,6 +243,24 @@ export const projects: PortfolioProject[] = [
     note: "A growing visual collection. Additional assets will be added as the project develops.",
   },
   {
+    id: "random-pieces",
+    title: "Random Pieces",
+    coverLabel: "Poster & graphic design collection",
+    category: "Graphic Design · Posters",
+    role: "Poster design & visual exploration",
+    summary:
+      "A selection of standalone poster and graphic-design pieces gathered into an evolving visual collection.",
+    context:
+      "Random Pieces brings together selected poster works and graphic experiments that sit outside the larger case studies in this portfolio.",
+    scope: [
+      "Selected poster designs",
+      "Standalone graphic compositions",
+      "An evolving collection of visual experiments",
+    ],
+    status: "exploration",
+    note: "A curated collection of individual pieces rather than one continuous client project.",
+  },
+  {
     id: "turquoise-jewelry-set",
     title: "Turquoise Jewelry Set",
     coverLabel: "AI-generated product concept",
