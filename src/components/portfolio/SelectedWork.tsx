@@ -697,7 +697,14 @@ export function SelectedWork() {
                         aria-hidden="true"
                         className="min-h-0 flex-1 w-full bg-card object-contain"
                       />
-                    ) : project.id === "random-pieces" ? (\n                      <img\n                        src={randomPiecesImages[0]}\n                        alt="Random Pieces poster collection preview"\n                        aria-hidden="true"\n                        className="min-h-0 flex-1 w-full bg-card object-contain"\n                      />\n                    ) : project.id === "moodbean" ? (
+                    ) : project.id === "random-pieces" ? (
+                      <img
+                        src={randomPiecesImages[0]}
+                        alt="Random Pieces poster collection preview"
+                        aria-hidden="true"
+                        className="min-h-0 flex-1 w-full bg-card object-contain"
+                      />
+                    ) : project.id === "moodbean" ? (
                       <img
                         src={coffeeAssetImages[0]}
                         alt="Coffee Assets visual collection preview"
