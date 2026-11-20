@@ -553,3 +553,104 @@
     margin-top: 0 !important;
   }
 }
+
+
+/* Living editorial cards — motion, depth and botanical/rose colour rhythm */
+.work-grid__item {
+  min-width: 0;
+  animation: card-arrive .72s cubic-bezier(.2,.72,.25,1) both;
+  animation-delay: calc((var(--card-index, 0) % 6) * 75ms);
+}
+.work-grid__item:nth-child(1) { --card-index: 0; }
+.work-grid__item:nth-child(2) { --card-index: 1; }
+.work-grid__item:nth-child(3) { --card-index: 2; }
+.work-grid__item:nth-child(4) { --card-index: 3; }
+.work-grid__item:nth-child(5) { --card-index: 4; }
+.work-grid__item:nth-child(6) { --card-index: 5; }
+.work-grid__item:nth-child(7) { --card-index: 6; }
+.work-grid__item:nth-child(8) { --card-index: 7; }
+.work-grid__item:nth-child(9) { --card-index: 8; }
+.work-grid__item:nth-child(10) { --card-index: 9; }
+.work-grid__item:nth-child(11) { --card-index: 10; }
+.work-grid__item:nth-child(12) { --card-index: 11; }
+.work-grid__item:nth-child(13) { --card-index: 12; }
+
+@keyframes card-arrive {
+  from { opacity: 0; transform: translate3d(0, 22px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+.work-card {
+  position: relative;
+  overflow: hidden;
+  border-color: color-mix(in srgb, var(--card-accent, var(--portfolio-moss)) 32%, transparent);
+  transition: transform .48s cubic-bezier(.2,.75,.25,1), border-color .35s ease, box-shadow .45s ease;
+}
+.work-card__trigger {
+  position: relative;
+  isolation: isolate;
+  background: var(--card-tint, var(--portfolio-mint)) !important;
+  transition: background-color .4s ease;
+}
+.work-card__trigger img {
+  object-fit: contain !important;
+  object-position: center;
+  max-height: min(68vw, 560px);
+  transition: transform .8s cubic-bezier(.18,.72,.22,1), filter .55s ease;
+  will-change: transform;
+}
+.work-card__trigger > span:first-child {
+  position: relative;
+  z-index: 2;
+  color: var(--card-accent, var(--portfolio-deep-pine));
+}
+.work-card__trigger > span:first-child svg {
+  transition: transform .4s cubic-bezier(.2,.75,.25,1), color .3s ease;
+}
+.work-card__trigger > span:last-child {
+  position: relative;
+  z-index: 2;
+  background: var(--card-tint, var(--portfolio-mint)) !important;
+  border-top: 1px solid color-mix(in srgb, var(--card-accent, var(--portfolio-moss)) 28%, transparent);
+  transition: background-color .4s ease, padding .4s ease;
+}
+.work-card__trigger > span:last-child [lang="fa"] {
+  color: var(--card-accent, var(--portfolio-berry)) !important;
+}
+.work-grid__item:nth-child(6n + 1) { --card-tint: #E7F0E8; --card-accent: #214C3E; }
+.work-grid__item:nth-child(6n + 2) { --card-tint: #F7E8ED; --card-accent: #87445F; }
+.work-grid__item:nth-child(6n + 3) { --card-tint: #D5E3D4; --card-accent: #173A31; }
+.work-grid__item:nth-child(6n + 4) { --card-tint: #F1DCE4; --card-accent: #87445F; }
+.work-grid__item:nth-child(6n + 5) { --card-tint: #E1E9E2; --card-accent: #456B55; }
+.work-grid__item:nth-child(6n + 6) { --card-tint: #EBC8D4; --card-accent: #713B53; }
+
+@media (hover: hover) and (pointer: fine) {
+  .work-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--card-accent, var(--portfolio-rose));
+    box-shadow: 0 18px 44px color-mix(in srgb, var(--card-accent, var(--portfolio-forest)) 13%, transparent);
+  }
+  .work-card__trigger:hover img {
+    transform: scale(1.035);
+    filter: saturate(1.045);
+  }
+  .work-card__trigger:hover > span:first-child svg {
+    transform: rotate(90deg);
+    color: var(--portfolio-rose);
+  }
+  .work-card__trigger:hover > span:last-child {
+    padding-bottom: 1.35rem;
+  }
+}
+.work-card:focus-within {
+  border-color: var(--card-accent, var(--portfolio-rose));
+}
+@media (max-width: 767px) {
+  .work-grid__item { animation-duration: .58s; }
+  .work-card__trigger img { max-height: none; }
+  .work-card:hover { transform: none; box-shadow: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .work-grid__item { animation: none !important; }
+  .work-card, .work-card__trigger img, .work-card__trigger > span:last-child,
+  .work-card__trigger > span:first-child svg { transition: none !important; }
+}
