@@ -427,6 +427,47 @@ function TouchUpsGallery() {
   );
 }
 
+function StillnessGallery() {
+  const stills = ["https://uce3574d77083caa64e47b4d0bbd.previews.dropboxusercontent.com/p/thumb/ADSOka9f8eq4nhKoixYJWFfcHA43aAqRDZNv7t1DzuslPSVsVOEn_XdvEnNJ5L3ucSUhXnvzNeEHrbmPdMe9yCnSuB87vKq6Jr5fKxrXXsMP9tPelaurS4bR8fwz60p6d96WvkyyUrNIp2CsxVntjCzcvsk1Dy-KCXJ_CTflIaMUUN-JGKqylbGlGojKKeeXHhsO0nji8yJykaEAIKJfE3tde5cWo_KbBJ924Yb1LhSle4RVV__BAkQLxpT6okW1gDA42A3I32PW_dv5uihmrZ78d6iqjmG5NqPVyQa7stqIIQ/p.jpeg","https://uce3dfa8daf7f8a961d64a48d5ad.previews.dropboxusercontent.com/p/thumb/ADRc0PBzu8mZBleF7Hwlr5b4GoBK_0ZHvARubQ0tyBzdEUPRS9CN9BOqlqxdriykKpYcXdo9uSUvN_fRjOuiiI479k6-iXTT9Sk3SPhUaKlCW26Pyt-dp4m1Jxf2JE0Xuo0g3QuKexnRUJ8dKiddJKAID7yz1GOLJR3KqgFqf0giWfrrGqWHm5Z9ZeARNfahQcrGKEO5u7Lxi9agEqgAb5hLM5UeR3DGsYQAb0YxOFq2RAwQA9RsN--ewFYixioALQse9Pn44VyaPbjIRfL6B793Lu3pzFulCbBibo_lwgVA/p.png","https://uc13dfd01c620e9406806255b22b.previews.dropboxusercontent.com/p/thumb/ADSdCgNigesD7SC7soXkKuFJrGfoi_e43qXMSmpqHT8p3lwQybIoEbRMkYBGOT2_GlZO6qGcJLa5MdZ7a7zJLjz3HFgsasBPE2p2qzsmTZqw1dgwufuKMpo-T5VKOWgV-vjKuZz0FHEx4vwjm7noeX5wvmmn6F7l5UFWOInOnwpKrGlNu8GDlCsdORcCJF1TDZC0RuCziqC0_kMSt1vdXIxp8_O6ovI_B9dMFdqObUdzT_Up7EVF4CcNtCbxssWFl9V83fraLVcpZF-Hfgbk3mwMoYtkJRA0SrgTygRy8IZr1w/p.jpeg","https://uc7b527f52f199d3038187d6ee80.previews.dropboxusercontent.com/p/thumb/ADQjw1JSgCI4wsK6qPaLczK25g7uGEsf752aC1U4rNY1zRhgFChz7bqnFhl-8ytx3YyqwN0Kbi8LG6IFhU-Y2iY0uli5sQ9Wq-AVSVx8BwuLgktcSaO9RTaUgVTS6RmgDJE5MX8R0Ulv7UyvAETA3_MomS8fKsNbrg1fQLVbEW8ovlJlGUgqwIN21-6IRkQdEMWPlfTWU2zN_UuF9HXe1GrZ2-JsVw0y5vW0aEbNyRTxA4ZY3dVRMuQFjXVz0Q5X7inhsUpB6I6F-DbsoX_pk7nSOWIMdq-SBNtqE6gF15tafQ/p.png","https://uc05cef579ea140c27b906a4453b.previews.dropboxusercontent.com/p/thumb/ADSTzLQg0xm4srMff0nVRrs5-k4g1R5TECTJBEh_CCNIJRqEPg35ogyqHLJaNhWjoXjzP2BjPZCSeKK-BW1WXU7ZHuIa8mWjeOTTxgfTa0Ry6C_smpPNGh_B8IvT8HKTrn2CAvVoV4yV82vtmdD6jlJND7r25k2YrEC5wr-dBhAybcnpMMzB69YVVtjVI-z8JMynzuX8kcMToPXMBpLzdjGOf7A_CDNGqT9Z8JJJWFh7bQaX-_wB0nTt1krJ4gxQRkzC7hwhOKFtLha-ejfWenK_eezOVgabsoDwIslVK7oQHQ/p.jpeg","https://uc00d93da3a3fff1df1612586037.previews.dropboxusercontent.com/p/thumb/ADTDBMEr-Yvi8VC9QHaxU9W9fTAc2676U9374jHI-Rggz1TGWm5RE-1aTkvzfXi3o59LA_-fhgfTK6LMdnDc1d_YKlCefTVVOid8t7KF9xITdsomjLkpp3bt0XExWvq_5NwvhqSwT_SyMOYEct536csHuagIr-hDfJt3LmZio4lCAtDImp_Nd2UYm04Q1pJMR2pVNFe1Rpef2xnt9aVLG19xhuxPyHGiPPDqXbxVHarl4_mwyUpOzc3EempgDabtsoCYNHQKom4O14zphVcK0ybI426LWLOsysXLvpXgnW-h8g/p.png","https://ucf8d72c8246813b4e8c1ac12366.previews.dropboxusercontent.com/p/thumb/ADSSpVg-fMYnnfaPmw7M1ZdTAJNp5rrCfBPJJAU-i22-Ll4NDzKnNVh4Y1UnjuUw2cPSPWOFQmph9x6zMzdy2ybrWySbmbjw6gJFayJtWLnR15vBdOOVa5wAYjlDJRae-R-e3P38QWIP4diGs6ZQR4lm2oX3rI-rPu-E1z94cuOb9hUaBL8aTkCcyjslQoGDQczD60xrUK6gV0HHNzCTNK3RQzv9jaGP3ql9htZkvCkWek2v0FL3XhlOqcuxAIiJIqfDeDBMeSoP7zrpzdiNVt0DeBQmfE1TZVFLX7DsOivfgA/p.png"];
+  const motion = [
+    { title: "Motion study 01", href: "https://www.dropbox.com/preview/%D9%81%D8%B6%D8%A7%DB%8C%20%D8%A2%D8%B1%D8%A7%D9%85%D8%B4%20%D8%A8%D8%AE%D8%B4/VID_20260728_185913_037.mp4", poster: "https://uce18baa8dca6ed0590e3552536.previews.dropboxusercontent.com/p/thumb/ADS3BlzzXMJoMndQv12NTI__iX1x3dFggS5RspYN_V_A_t3xMnAtbWNBjXOWYJX3I3l8dPbMIqVP3-upQFMVAizJAbtDuXYgvu0J8laHZlcN-B2y_I5k6o2B0gijWBK8CxAl5CkyLecLQd5v0cOzDoTmtMVbgBDxCO1hCYMa7eRYasVCWIt4rNtd4adXKm9y32fLWyWU-DaTt1juY5Bwn0SzwkN1wzlzjRvadfSgSgLX4VycNIHYiV1jXIpQmXEV0LR8RcLuAlPFvNe6usaFwYPwAnpIRTVqLWklWIQrvNMR7aOgjRsoAXPgMMVcUbocDzqU1cCrVW0gcsQrfQ4iMW8W/p.jpeg?size=640x480&size_mode=3" },
+    { title: "Motion study 02", href: "https://www.dropbox.com/preview/%D9%81%D8%B6%D8%A7%DB%8C%20%D8%A2%D8%B1%D8%A7%D9%85%D8%B4%20%D8%A8%D8%AE%D8%B4/20260629_232654.mp4", poster: "https://uc6954d6edff038511a64d0a70a1.previews.dropboxusercontent.com/p/thumb/ADSxfK_AQpgBl3eLuTe-B-sACvQiQbnS6TBmqAyFJqjv7w-PkHbPFDKRIjXHkkAEkk_K_LS9OVygZ631enEMEHUIOft3DcV6FkX3_7879AvrCrshS-Kat3sQDF5NHoaaQq6z66pOFRSfFMa-YNpZL5pMWYV6feXs9yl5VHdv_ZY3vWPej54kL2jiCR5V2usl4eB3zgJ9ZkdGcfLMalFaN_tkOsN1vrdWL7St1_avDvTjRPySp5KseNHaxKFeSLJM3HX9Kk2szSrCUg5GufhZwI_q9k4SBrtR9uEmi6jwIs22TBYh1snz5xsENPtX1xr0b8puPYc3R7g0aTe3s80L189M/p.jpeg?size=640x480&size_mode=3" },
+  ];
+  return (
+    <div className="space-y-8 border-t border-rule pt-5">
+      <section className="space-y-3">
+        <div>
+          <p className="eyebrow">01 / Motion studies</p>
+          <h3 className="font-display text-2xl">Moving through stillness</h3>
+          <p className="mt-1 text-xs leading-relaxed text-muted-foreground">Two motion pieces · open to play in Dropbox</p>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2">
+          {motion.map((item) => (
+            <a key={item.href} href={item.href} target="_blank" rel="noopener noreferrer" className="group block border border-rule">
+              <div className="relative aspect-video overflow-hidden bg-card">
+                <img src={item.poster} alt="" loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+                <span className="absolute inset-0 grid place-items-center bg-black/20 text-white"><span className="grid size-12 place-items-center rounded-full border border-white/80 text-xl">▶</span></span>
+              </div>
+              <p className="flex items-center justify-between p-3 text-sm"><span>{item.title}</span><ArrowUpRight className="size-4" aria-hidden="true" /></p>
+            </a>
+          ))}
+        </div>
+      </section>
+      <section className="space-y-3">
+        <div>
+          <p className="eyebrow">02 / Still imagery</p>
+          <h3 className="font-display text-2xl">Spaces for pause</h3>
+        </div>
+        <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+          {stills.map((src, index) => (
+            <img key={src} src={src} alt={`Wellness and meditation environment concept ${index + 1}`} loading="lazy" className="aspect-[4/5] w-full bg-card object-cover" />
+          ))}
+        </div>
+      </section>
+    </div>
+  );
+}
+
 function JunoonGallery() {
   return (
     <figure className="border-t border-rule pt-5">
@@ -543,6 +584,13 @@ export function SelectedWork() {
                     {project.id === "touch-ups" ? (
                       <img
                         src={touchUpsCover}
+                        alt=""
+                        aria-hidden="true"
+                        className="min-h-0 flex-1 w-full bg-card object-cover"
+                      />
+                    ) : project.id === "stillness-wellness-spaces" ? (
+                      <img
+                        src="https://uce3574d77083caa64e47b4d0bbd.previews.dropboxusercontent.com/p/thumb/ADSOka9f8eq4nhKoixYJWFfcHA43aAqRDZNv7t1DzuslPSVsVOEn_XdvEnNJ5L3ucSUhXnvzNeEHrbmPdMe9yCnSuB87vKq6Jr5fKxrXXsMP9tPelaurS4bR8fwz60p6d96WvkyyUrNIp2CsxVntjCzcvsk1Dy-KCXJ_CTflIaMUUN-JGKqylbGlGojKKeeXHhsO0nji8yJykaEAIKJfE3tde5cWo_KbBJ924Yb1LhSle4RVV__BAkQLxpT6okW1gDA42A3I32PW_dv5uihmrZ78d6iqjmG5NqPVyQa7stqIIQ/p.jpeg"
                         alt=""
                         aria-hidden="true"
                         className="min-h-0 flex-1 w-full bg-card object-cover"
@@ -730,6 +778,7 @@ export function SelectedWork() {
                   </dd>
                 </dl>
                 {project.id === "touch-ups" && <TouchUpsGallery />}
+                {project.id === "stillness-wellness-spaces" && <StillnessGallery />}
                 {project.id === "parla-perfume-ad" && <ParlaGallery />}
                 {project.id === "sayeh-character-design" && <SayehGallery />}
                 {project.id === "khaneh-shalvar" && <KhanehShalvarGallery />}
