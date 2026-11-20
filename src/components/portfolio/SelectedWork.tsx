@@ -727,14 +727,14 @@ export function SelectedWork() {
                         src={touchUpsCover}
                         alt=""
                         aria-hidden="true"
-                        className="min-h-0 flex-1 w-full bg-card object-cover"
+                        className="min-h-0 flex-1 w-full bg-card object-contain"
                       />
                     ) : project.id === "stillness-wellness-spaces" ? (
                       <img
                         src="https://uce3574d77083caa64e47b4d0bbd.previews.dropboxusercontent.com/p/thumb/ADSOka9f8eq4nhKoixYJWFfcHA43aAqRDZNv7t1DzuslPSVsVOEn_XdvEnNJ5L3ucSUhXnvzNeEHrbmPdMe9yCnSuB87vKq6Jr5fKxrXXsMP9tPelaurS4bR8fwz60p6d96WvkyyUrNIp2CsxVntjCzcvsk1Dy-KCXJ_CTflIaMUUN-JGKqylbGlGojKKeeXHhsO0nji8yJykaEAIKJfE3tde5cWo_KbBJ924Yb1LhSle4RVV__BAkQLxpT6okW1gDA42A3I32PW_dv5uihmrZ78d6iqjmG5NqPVyQa7stqIIQ/p.jpeg"
                         alt=""
                         aria-hidden="true"
-                        className="min-h-0 flex-1 w-full bg-card object-cover"
+                        className="min-h-0 flex-1 w-full bg-card object-contain"
                       />
                     ) : project.id === "sayeh-character-design" ? (
                       <img
@@ -812,7 +812,7 @@ export function SelectedWork() {
                         alt="Setare Fashion House autumn collection editorial cover"
                         aria-hidden="true"
                         loading="lazy"
-                        className="min-h-0 flex-1 w-full bg-card object-cover"
+                        className="min-h-0 flex-1 w-full bg-card object-contain"
                       />
                     ) : project.id === "nikmehr" ? (
                       <img
