@@ -822,20 +822,23 @@ export function SelectedWork() {
                 <p className="border-t border-rule pt-5 text-sm leading-relaxed text-muted-foreground">
                   {project.note}
                 </p>
-                {project.id === "nikmehr" && <PageLinks />}
+                {project.id === "nikmehr" && (
+                  <>
+                    <PageLinks />
+                    <section className="mt-6 border-t border-rule pt-5">
+                      <p className="eyebrow">Selected published content</p>
+                      <p className="mt-2 max-w-prose text-sm leading-relaxed text-muted-foreground">
+                        Published examples associated with the Nikmehr coordination and publishing role; not attributed to either page individually.
+                      </p>
+                      <PublishedExamples compact />
+                    </section>
+                  </>
+                )}
               </DialogContent>
             </Dialog>
           </li>
         ))}
       </ol>
-      <div className="mt-12 border-t border-rule pt-6">
-        <p className="eyebrow">Nikmehr · Selected published content</p>
-        <p className="mt-2 max-w-prose text-sm leading-relaxed text-muted-foreground">
-          Published examples associated with the Nikmehr coordination and publishing role; not
-          attributed to either page individually.
-        </p>
-        <PublishedExamples />
-      </div>
     </>
   );
 }
