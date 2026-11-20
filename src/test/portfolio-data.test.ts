@@ -9,34 +9,40 @@ describe("Profile contact links", () => {
 });
 
 describe("Verified portfolio project boundaries", () => {
-  it("keeps the portfolio project order and all ten projects", () => {
+  it("keeps the current portfolio project order and all thirteen projects", () => {
     expect(projects.map((project) => project.id)).toEqual([
+      "parla-perfume-ad",
       "sayeh-character-design",
       "setare-fashion-house-film",
       "khaneh-shalvar",
       "khaneh-mod-setareh",
       "junoon-podcast",
       "moodbean",
-      "visual-identity-case-study",
+      "random-pieces",
       "turquoise-jewelry-set",
       "turkish-coffee-packaging",
       "nikmehr",
+      "touch-ups",
+      "stillness-wellness-spaces",
     ]);
-    expect(new Set(projects.map((project) => project.id)).size).toBe(10);
+    expect(new Set(projects.map((project) => project.id)).size).toBe(13);
   });
 
   it("treats independent visual projects as explorations, not verified delivered roles", () => {
     expect(
       projects.filter((project) => project.status === "exploration").map((project) => project.id),
     ).toEqual([
+      "parla-perfume-ad",
       "sayeh-character-design",
       "setare-fashion-house-film",
       "khaneh-shalvar",
       "khaneh-mod-setareh",
       "moodbean",
-      "visual-identity-case-study",
+      "random-pieces",
       "turquoise-jewelry-set",
       "turkish-coffee-packaging",
+      "touch-ups",
+      "stillness-wellness-spaces",
     ]);
     expect(projects.find((p) => p.id === "junoon-podcast")?.status).toBe("team-collaboration");
     expect(
@@ -44,12 +50,11 @@ describe("Verified portfolio project boundaries", () => {
     ).toEqual(["nikmehr"]);
   });
 
-  it("describes Moodbean as an independent coffee discovery product, not generic cafe social content", () => {
-    const moodbean = projects.find((p) => p.id === "moodbean");
-    expect(moodbean?.title).toBe("Moodbean");
-    expect(moodbean?.scope).toContain("Mood- and occasion-based coffee discovery");
-    expect(moodbean?.scope).toContain("Interactive cart quantities and order placement flow");
-    expect(projects.some((p) => p.id === "cafe-social-content")).toBe(false);
+  it("keeps Coffee Assets described as a growing visual collection", () => {
+    const coffeeAssets = projects.find((p) => p.id === "moodbean");
+    expect(coffeeAssets?.title).toBe("Coffee Assets");
+    expect(coffeeAssets?.scope).toContain("Coffee-themed visual asset collection");
+    expect(coffeeAssets?.context).toContain("gallery currently includes eight selected images");
   });
   it("separates Junoon into video editing (Brian Yassipour) and visual exploration tracks", () => {
     const junoon = projects.find((p) => p.id === "junoon-podcast");
