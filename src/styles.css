@@ -914,3 +914,66 @@
     transform: none !important;
   }
 }
+
+
+/* PARLA v3 — richer botanical green + rose palette */
+.work-card--parla {
+  --parla-forest: #164f43;
+  --parla-sage: #dff2e8;
+  --parla-pink: #f5c7d8;
+  --parla-berry: #b84f78;
+  --parla-jade: #72b99a;
+  border: 1px solid #164f43 !important;
+  background:
+    linear-gradient(145deg, #e5f5ec 0%, #d1ecdf 52%, #f8dce7 100%) !important;
+  box-shadow: 0 16px 42px rgb(22 79 67 / 14%);
+}
+.work-card--parla::before {
+  border: 1px solid rgb(184 79 120 / 72%);
+}
+.work-card__trigger--parla {
+  background:
+    linear-gradient(145deg, #164f43 0%, #236e59 52%, #39866b 100%) !important;
+}
+.work-card__trigger--parla::before {
+  color: #ffeaf1;
+}
+.work-card__trigger--parla > span:first-child {
+  color: #164f43 !important;
+  background:
+    linear-gradient(105deg, #f8dce7 0%, #f2b9ce 55%, #f7d0df 100%) !important;
+}
+.work-card__trigger--parla > span:first-child svg {
+  color: #164f43;
+}
+.work-card__trigger--parla img {
+  background:
+    radial-gradient(ellipse at 48% 42%, rgb(255 242 247 / 98%) 0%, rgb(247 215 228 / 82%) 30%, transparent 67%),
+    radial-gradient(ellipse at 78% 78%, rgb(114 185 154 / 62%) 0%, transparent 54%),
+    linear-gradient(135deg, #d8f0e3 0%, #b9e0ce 46%, #f5cbdc 100%) !important;
+  filter: saturate(1.08) contrast(1.025);
+}
+.work-card__trigger--parla > span:last-child {
+  color: #164f43 !important;
+  background:
+    linear-gradient(112deg, #f9e4ec 0%, #f4ccdc 52%, #f8dce7 100%) !important;
+  border-top: 1px solid rgb(22 79 67 / 25%);
+}
+.work-card__trigger--parla > span:last-child::after {
+  color: #a83f69;
+}
+.work-card__trigger--parla > span:last-child .font-display {
+  color: #164f43 !important;
+}
+.work-card__trigger--parla > span:last-child [lang="fa"] {
+  color: #a83f69 !important;
+}
+.work-card--parla:hover {
+  box-shadow: 0 28px 66px rgb(22 79 67 / 22%);
+}
+.work-card--parla:hover::before {
+  border-color: #fff0f5;
+}
+.work-card--parla:hover .work-card__trigger--parla > span:last-child {
+  background: linear-gradient(112deg, #f6d2e0 0%, #efb4cc 58%, #f6d8e5 100%) !important;
+}
