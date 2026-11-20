@@ -468,6 +468,38 @@ function StillnessGallery() {
   );
 }
 
+const coffeeAssetImages = [
+  "https://uc67c8a1be0cb745e8aa8f406352.previews.dropboxusercontent.com/p/thumb/ADRarViq9rqHmJBE9xC-GuTxptixksHAC0DbO7BLvsun1M3Eoo4S_HzY-5kmle9g7UboWOsACyoW0E3rQwy5e2yHqcEbKD0XaiYO3mIOuCIr0f0PH2RSSuk4XYmJakQ1xWrQIK5Jg5h_JhR4DUhPUulyh9vt1rQ0dx_EmqYAxYQPxrc1RqF783hqWC5qSCdNxZyKLiN4OtL92oHwvaLKn5qH2Rj8uG5LGzedwV0JVNeankAvbaqrkQPbUSGNumo0wg6FMyJx99vkVNA055u1sk-UU2jhlN0AQE9i9xZAejUDqg/p.jpeg",
+  "https://ucdaf8683294916a692005d4733b.previews.dropboxusercontent.com/p/thumb/ADQ-Rlqml43x8c_CZfDzsBT9g0_e-TeoOcBnNkWfNBTXk2ffs44O1CEs4xF1lXM0-zXCyBSo6wFs2SkJ_0o9oxvs7yaNv6Ukb3rSC5M7sbLfFi3S0WI4Yb_A5WgLV9NZDAHXhWVSHVavC6CGky9oJwF_rBdPM4hY-AkxGtjUND_1Vpja960KJzBmld-aUSJmKjKb0l_3quiRxGa22roQ_hIEkhlSrdNsTXixoGRb1Q3za2V_1S6oxHdwhhWhtKcakppQdQHHiZFqWmVrV0AWQCpn4ikR08-R7-ipwrmbFiWtiw/p.jpeg",
+  "https://uc7b479aea63720a509a9268cfee.previews.dropboxusercontent.com/p/thumb/ADS94ncaAQHxewsjfN36TfEqmyur3VUWdwbGa8b0KfufTCDblVNFdGv-pxBWKj_Mv6R7rod1N0pJfAV1XrWCW6aS1r7h4fCdS-KAv5Vo4TTMPP1j9bXcZSPMFnEnGUISDftqOYsLC356HsHjRuQaFy8av_DB-nzUGAQeFoNxbj2hgwbS-ZP5V619yqU-SmofhtSPSjv5Da5ql5DiJtzp7gwye1vhcKmOOYMx8QtsjNQYv4Vpn5qC6tGX_-X6_3MScfxTohA1kkRibCAFAWaVHGLao95cbTVFALmU9t_TXR6IXA/p.jpeg",
+  "https://ucce69b197fb601109f653135fed.previews.dropboxusercontent.com/p/thumb/ADSngAoWAf6TodxRWTnobuT-249he2iS-QrbI2iYPW7aplytVxzAzLChvzUNpSAMs0QmuE7gKO7oPWkWaoXG1QD8wvg2PtoEnHf97mlMm-sE6f6ibGYPOhxDdLQRTnzvvfEz7FDtwFLmc9oEmKHgTkbCcDpzhA3Ymj2zqX2v8oA93LrfZlNiAMkcAMwOnMCNy2MVmAj2kbPjZls33I3D06B94amiZTlkUE96UxgAnc8EzWiJLneodcN-HN6EEMBaMKhu97XW4p8JPRJqwpRFSLksekFE7sfRx2qYTure8ZX61A/p.jpeg",
+  "https://uce0d4adc3425055d15fbaa1fc26.previews.dropboxusercontent.com/p/thumb/ADSkgwMs8D43FQn98tvKZKpD4X7G55PYivuovYsVCT94lkoOFr4mjGYX-xZKnZuHz9bxVRK8Tm4PrhJucLTE58bCKKE08fr__0JhMysDbZs0-qI4mxR7O_-w4gS8dwybwcjZplqSiYRYgrHWV1WNPqLxAs5JwMH06lleagpzuZdlQ1BdcC0CpRkVhGgf_rOCuNOPmPxg0QYqswjQj1-rfl6M1Rw9EX8Z0tY2IoZ5XK1J-Ip2gGgA55iFQHPwTUMuNCOk0_e9oO7swSK0csp5w0eksviu_exz8ojoTmBBEcGutQ/p.jpeg",
+  "https://uce8d4dd8353d44b6ae2c400c34e.previews.dropboxusercontent.com/p/thumb/ADTi3KPSy3u9Sh1uTun02sLX98l9Ivmq5zS6ISX_8jgY8bdkRPHeXGFyZX1c91brZIbfaSQ30TBqfOhKNjJBEGIr_zBjrOzJxDvOpvKBdvZsLsKZ3G1AwmgM7IpwaR3GLJ-CqsW_8h7QjPg6t1KI4C3gWC9vyK9C9F2YBJApVm-QIff_rLcPvYHhtzALhwYDzZuSGH-5VvxdsIBkXGQw8Tz2WOTXTOYxQ36WhqjKlw9dby-H2XiDIG6Cuo9_u01d74XcFhXJNantU5aek0B41ctwUzgdDyPsCbN-sd4BBT_ZNA/p.jpeg",
+  "https://uc2cc8223d2e79af555607ac4a3e.previews.dropboxusercontent.com/p/thumb/ADSwK-RLQfWEgLnS9FS00i7vpOJ8rgkliQBScR01C9AnuntRZDdVWycYqV2MZjEVNdovWubCW_BvmPUn-Vy5HYpuIK1QPUWIEXI97ZXw8h-AtTCyL3XwgFhBopISLSYGJueNgumNl9qfjKbvlwZ3kkmZFT6W-Lr8XSzlWcCmo-dd-ylilnncb8AYgwq2hUoSOtjuXXlZCyYO2wJ002_RBihJ98aEFpr90fUz00xZUQF8QTN302ZWKRej7TKWihnvhH_2RbYMKpGcvgHk584AdffY5SXjAKdULFLD3QAeOAhYAw/p.png",
+  "https://uc6deac2e81b69df2e3588ec9d93.previews.dropboxusercontent.com/p/thumb/ADRjqmicQdw-jva-kytQKe9tg2eH3W7F-UVSqphlPSyXH6_LCf01lhVtGxih8MfvqJWoMMBO-xNq3m7pIPNcUks_RdXwf4qHfbJpzavtpBrLi8wC2rU_zTQxfZNyMnF9zBZeEOFpiaLimN-aCNiOzul1i2zDxyCk-kGxMD-fBAzGSIgwLuMoApXuHUdvvBiWVwF6Ml47tc2w31EJ_I5QXkw27yZs0kJiScx_idf-jnZssn0obbJN1fI75-mIuO2J7YvMTqDJm7l7f9hAMhh05OsYpKDdPPqeh8zWRh4hszjsGQ/p.jpeg",
+];
+
+function CoffeeAssetsGallery() {
+  return (
+    <figure className="border-t border-rule pt-5">
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+        {coffeeAssetImages.map((src, index) => (
+          <img
+            key={src}
+            src={src}
+            alt={`Coffee visual asset ${index + 1}`}
+            loading="lazy"
+            className="aspect-[4/5] w-full bg-card object-cover"
+          />
+        ))}
+      </div>
+      <figcaption className="mt-3 text-xs leading-relaxed text-muted-foreground">
+        Coffee Assets · Selected visual explorations · Collection in progress
+      </figcaption>
+    </figure>
+  );
+}
+
 function JunoonGallery() {
   return (
     <figure className="border-t border-rule pt-5">
@@ -631,10 +663,10 @@ export function SelectedWork() {
                       />
                     ) : project.id === "moodbean" ? (
                       <img
-                        src="https://screenshot2.lovable.dev/lovp_1h4v9rfq2v8c5t2hgfqsp74k92/5f6a8a905d7ec7c86a1f73fe87d4ca09_1794284897805.png"
-                        alt="Moodbean Coffee Finder interface preview"
+                        src={coffeeAssetImages[0]}
+                        alt="Coffee Assets visual collection preview"
                         aria-hidden="true"
-                        className="min-h-0 flex-1 w-full bg-card object-contain"
+                        className="min-h-0 flex-1 w-full bg-card object-cover"
                       />
                     ) : project.id === "turkish-coffee-packaging" ? (
                       <img
@@ -766,6 +798,7 @@ export function SelectedWork() {
                 {project.id === "parla-perfume-ad" && <ParlaGallery />}
                 {project.id === "sayeh-character-design" && <SayehGallery />}
                 {project.id === "khaneh-shalvar" && <KhanehShalvarGallery />}
+                {project.id === "moodbean" && <CoffeeAssetsGallery />}
                 {project.id === "junoon-podcast" && <JunoonGallery />}
                 {project.tracks?.map((track) => (
                   <section key={track.title} className="border-t border-rule pt-5">
