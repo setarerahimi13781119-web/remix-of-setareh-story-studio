@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { ArrowUpRight, Play, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -638,19 +639,51 @@ function PublishedExamples({ compact = false }: { compact?: boolean }) {
   );
 }
 
+const projectFilters = ["All", "Video & Motion", "Visual Design", "Fashion & Ecommerce", "Content Operations"] as const;
+
+function projectMatchesFilter(projectId: string, filter: (typeof projectFilters)[number]) {
+  if (filter === "All") return true;
+  if (filter === "Video & Motion") {
+    return ["parla-perfume-ad", "setare-fashion-house-film", "junoon-podcast", "stillness-wellness-spaces", "turquoise-jewelry-set"].includes(projectId);
+  }
+  if (filter === "Fashion & Ecommerce") {
+    return ["khaneh-shalvar", "khaneh-mod-setareh"].includes(projectId);
+  }
+  if (filter === "Content Operations") return projectId === "nikmehr";
+  return !["parla-perfume-ad", "setare-fashion-house-film", "junoon-podcast", "stillness-wellness-spaces", "turquoise-jewelry-set", "khaneh-shalvar", "khaneh-mod-setareh", "nikmehr"].includes(projectId);
+}
+
 export function SelectedWork() {
+  const [activeFilter, setActiveFilter] = useState<(typeof projectFilters)[number]>("All");
+  const filteredProjects = projects.filter((project) => projectMatchesFilter(project.id, activeFilter));
+
   return (
     <>
-      <ol className="grid gap-6 md:grid-cols-2">
-        {projects.map((project) => (
-          <li key={project.id} className="min-w-0">
+      <div className="work-filters" role="group" aria-label="Filter projects by discipline">
+        {projectFilters.map((filter) => (
+          <button
+            key={filter}
+            type="button"
+            aria-pressed={activeFilter === filter}
+            onClick={() => setActiveFilter(filter)}
+            className={`work-filter ${activeFilter === filter ? "is-active" : ""}`}
+          >
+            {filter === "All" ? "All projects" : filter}
+            {filter === "All" && <span className="work-filter__count">{projects.length}</span>}
+          </button>
+        ))}
+      </div>
+      <p className="sr-only" aria-live="polite">{filteredProjects.length} projects shown</p>
+      <ol className="work-grid grid gap-6 md:grid-cols-2">
+        {filteredProjects.map((project) => (
+          <li key={project.id} className="work-grid__item min-w-0">
             <Dialog>
-              <article className="flex h-full flex-col border border-rule p-5 md:p-6">
+              <article className="work-card flex h-full flex-col border border-rule p-5 md:p-6">
                 <DialogTrigger asChild>
                   <Button
                     variant="ghost"
                     aria-label={`View ${project.title} project`}
-                    className="group relative flex h-auto w-full flex-col items-stretch justify-between gap-6 whitespace-normal rounded-none bg-card p-5 text-left font-normal hover:bg-secondary md:p-7 aspect-[4/3]"
+                    className="work-card__trigger group relative flex h-auto w-full flex-col items-stretch justify-between gap-6 whitespace-normal rounded-none bg-card p-5 text-left font-normal hover:bg-secondary md:p-7 aspect-[4/3]"
                   >
                     <span className="eyebrow flex items-center justify-between gap-3">
                       <span>{project.coverLabel}</span>
@@ -802,7 +835,7 @@ export function SelectedWork() {
                   <DialogTrigger asChild>
                     <Button
                       variant="link"
-                      className="mt-auto h-auto justify-start self-start rounded-none px-0 pt-5 pb-0 font-normal"
+                      className="work-card__context mt-auto h-auto justify-start self-start rounded-none px-0 pt-5 pb-0 font-normal"
                     >
                       Project context
                       <Plus aria-hidden="true" />
