@@ -77,42 +77,7 @@ export const work: WorkItem[] = [
     kind: "Reel",
     href: "https://www.instagram.com/reel/DG0vrqaID2v/",
   },
-  {
-    id: "junoon-podcast",
-    title: "Junoon Podcast",
-    coverLabel: "Recent team collaboration",
-    category: "Podcast · Video editing & visual design",
-    role: "Full video editing · Visual design exploration",
-    summary:
-      "Recently joined the team of this long-running true-crime podcast: full editing of the first completed video, plus personal cover and social visual explorations.",
-    context:
-      "Junoon is a long-running true-crime podcast that existed before this collaboration. Setareh recently joined the team; her contribution is limited to the two tracks below.",
-    scope: [
-      "Full video editing — first completed video: Brian Yassipour",
-      "Personal documentary crime-podcast cover and social visual explorations",
-    ],
-    status: "team-collaboration",
-    note: "The podcast, its original identity and its brand history predate this collaboration and are not claimed. The five images shown here are Setareh's own visual explorations from this collaboration; no video file has been added to this portfolio.",
-    tracks: [
-      {
-        title: "Video Editing",
-        label: "Full video editing · First completed video: Brian Yassipour (برایان یاسی‌پور)",
-        items: [
-          "End-to-end editing of the episode video on the Brian Yassipour case",
-          "Carried through from editing to final export",
-        ],
-      },
-      {
-        title: "Visual Design Exploration",
-        label: "Own contribution · Exploration",
-        items: [
-          "Documentary crime-podcast cover explorations",
-          "High-contrast portrait treatments with red / black / white accents",
-          "Social visual treatments for highlight and reels covers",
-        ],
-      },
-    ],
-  },
+
 ];
 
 export type PortfolioProject = {
@@ -202,8 +167,42 @@ export const projects: PortfolioProject[] = [
     status: "exploration",
     note: "The tea AFTER is an AI-assisted visual reconstruction based on the original scene, not a pixel-level retouch of the original photograph. Other project media should be added only from the original verified files.",
   },
-
-
+  {
+    id: "junoon-podcast",
+    title: "Junoon Podcast",
+    coverLabel: "Recent team collaboration",
+    category: "Podcast · Video editing & visual design",
+    role: "Full video editing · Visual design exploration",
+    summary:
+      "Recently joined the team of this long-running true-crime podcast: full editing of the first completed video, plus personal cover and social visual explorations.",
+    context:
+      "Junoon is a long-running true-crime podcast that existed before this collaboration. Setareh recently joined the team; her contribution is limited to the two tracks below.",
+    scope: [
+      "Full video editing — first completed video: Brian Yassipour",
+      "Personal documentary crime-podcast cover and social visual explorations",
+    ],
+    status: "team-collaboration",
+    note: "The podcast, its original identity and its brand history predate this collaboration and are not claimed. The five images shown here are Setareh's own visual explorations from this collaboration; no video file has been added to this portfolio.",
+    tracks: [
+      {
+        title: "Video Editing",
+        label: "Full video editing · First completed video: Brian Yassipour (برایان یاسی‌پور)",
+        items: [
+          "End-to-end editing of the episode video on the Brian Yassipour case",
+          "Carried through from editing to final export",
+        ],
+      },
+      {
+        title: "Visual Design Exploration",
+        label: "Own contribution · Exploration",
+        items: [
+          "Documentary crime-podcast cover explorations",
+          "High-contrast portrait treatments with red / black / white accents",
+          "Social visual treatments for highlight and reels covers",
+        ],
+      },
+    ],
+  },
 ];
 
 export const capabilities = [
