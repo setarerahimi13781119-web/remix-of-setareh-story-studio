@@ -8,54 +8,55 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { nikmehrWork, projects, work } from "@/data/portfolio";
-import junoonPoster from "@/assets/junoon_case_file_poster.jpg.asset.json";
-import junoonGhostship from "@/assets/junoon_case_ghostship.jpg.asset.json";
-import junoonMcnally from "@/assets/junoon_case_mcnally.jpg.asset.json";
-import junoonRogers from "@/assets/junoon_case_rogers.jpg.asset.json";
-import junoonUnterweger from "@/assets/junoon_case_unterweger.jpg.asset.json";
-import kms1 from "@/assets/khaneh_mod_setareh_slide_01.png.asset.json";
-import kms2 from "@/assets/khaneh_mod_setareh_slide_02.png.asset.json";
-import kms3 from "@/assets/khaneh_mod_setareh_slide_03.png.asset.json";
-import kms4 from "@/assets/khaneh_mod_setareh_slide_04.png.asset.json";
-import kms5 from "@/assets/khaneh_mod_setareh_slide_05.png.asset.json";
+const portfolioAsset = (name: string) => `/assets/portfolio/${name}`;
+const junoonPoster = portfolioAsset("junoon_case_file_poster.jpg");
+const junoonGhostship = portfolioAsset("junoon_case_ghostship.jpg");
+const junoonMcnally = portfolioAsset("junoon_case_mcnally.jpg");
+const junoonRogers = portfolioAsset("junoon_case_rogers.jpg");
+const junoonUnterweger = portfolioAsset("junoon_case_unterweger.jpg");
+const kms1 = portfolioAsset("khaneh_mod_setareh_slide_01.png");
+const kms2 = portfolioAsset("khaneh_mod_setareh_slide_02.png");
+const kms3 = portfolioAsset("khaneh_mod_setareh_slide_03.png");
+const kms4 = portfolioAsset("khaneh_mod_setareh_slide_04.png");
+const kms5 = portfolioAsset("khaneh_mod_setareh_slide_05.png");
 
 const touchUpsCover =
   "https://www.dropbox.com/scl/fi/520jlx8lb3onl7is5qyag/Duck-ai-image-2026-11-20-11-49.jpeg?rlkey=8xu096c7hfkhfzucp5upclhrq&raw=1";
 
 const junoonSquares = [
   {
-    src: junoonGhostship.url,
+    src: junoonGhostship,
     alt: "Monochrome ship illustration in a circular frame with red accents",
   },
   {
-    src: junoonMcnally.url,
+    src: junoonMcnally,
     alt: "Documentary-style black-and-white portrait in a circular vignette with red strokes",
   },
   {
-    src: junoonRogers.url,
+    src: junoonRogers,
     alt: "Black-and-white family portrait in a circular frame with red marks",
   },
   {
-    src: junoonUnterweger.url,
+    src: junoonUnterweger,
     alt: "Black-and-white portrait in a circular frame with red slashes and Persian text",
   },
 ];
 
 const kmsSlides = [
   {
-    src: kms1.url,
+    src: kms1,
     alt: "Slide 01 of 05: The digital experience — Khaneh Mod Setareh storefront cover",
   },
   {
-    src: kms2.url,
+    src: kms2,
     alt: "Slide 02 of 05: One brand, two screens — desktop and mobile header side by side",
   },
   {
-    src: kms3.url,
+    src: kms3,
     alt: "Slide 03 of 05: The visual system — colour palette, typeface and hierarchy",
   },
-  { src: kms4.url, alt: "Slide 04 of 05: The complete experience — full page layout" },
-  { src: kms5.url, alt: "Slide 05 of 05: The final note — closing slide" },
+  { src: kms4, alt: "Slide 04 of 05: The complete experience — full page layout" },
+  { src: kms5, alt: "Slide 05 of 05: The final note — closing slide" },
 ];
 
 function KhanehModGallery() {
@@ -86,7 +87,7 @@ function JunoonGallery() {
     <figure className="mt-5">
       <div className="grid gap-3 sm:grid-cols-2">
         <img
-          src={junoonPoster.url}
+          src={junoonPoster}
           alt="Vertical evidence-file style poster exploration with Junoon stamp"
           loading="lazy"
           className="h-full w-full bg-card object-contain"
@@ -206,14 +207,14 @@ export function SelectedWork() {
                       />
                     ) : project.id === "junoon-podcast" ? (
                       <img
-                        src={junoonPoster.url}
+                        src={junoonPoster}
                         alt=""
                         aria-hidden="true"
                         className="min-h-0 flex-1 w-full object-contain"
                       />
                     ) : project.id === "khaneh-mod-setareh" ? (
                       <img
-                        src={kms1.url}
+                        src={kms1}
                         alt=""
                         aria-hidden="true"
                         className="min-h-0 flex-1 w-full object-contain"
