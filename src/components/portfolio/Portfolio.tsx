@@ -76,7 +76,7 @@ function SectionHead({ index, title, id }: { index: string; title: string; id: s
     <div className="section-heading grid grid-cols-12 gap-6 border-t border-rule pt-5 pb-12 md:pb-16">
       <p className="eyebrow col-span-4 md:col-span-3">§ {index}</p>
       <h2
-        id={id}
+        id={`${id}-title`}
         className="col-span-8 md:col-span-9 font-display text-4xl md:text-6xl leading-none tracking-tight"
       >
         {title}
@@ -199,7 +199,7 @@ export function Hero() {
 
 export function Work() {
   return (
-    <section aria-labelledby="work" className="portfolio-section mx-auto max-w-7xl px-5 pb-28 md:px-10">
+    <section id="work" aria-labelledby="work-title" className="portfolio-section mx-auto max-w-7xl px-5 pb-28 md:px-10">
       <SectionHead index="01" title="Selected Work" id="work" />
       <SelectedWork />
     </section>
@@ -208,7 +208,7 @@ export function Work() {
 
 export function Capabilities() {
   return (
-    <section aria-labelledby="capabilities" className="mx-auto max-w-7xl px-5 pb-28 md:px-10">
+    <section id="capabilities" aria-labelledby="capabilities-title" className="mx-auto max-w-7xl px-5 pb-28 md:px-10">
       <SectionHead index="02" title="Areas of focus" id="capabilities" />
       <ol className="grid grid-cols-12 gap-x-6">
         {capabilities.map((c, i) => (
@@ -233,7 +233,7 @@ export function Capabilities() {
 
 export function Experience() {
   return (
-    <section aria-labelledby="experience" className="mx-auto max-w-7xl px-5 pb-28 md:px-10">
+    <section id="experience" aria-labelledby="experience-title" className="mx-auto max-w-7xl px-5 pb-28 md:px-10">
       <SectionHead index="03" title="Experience" id="experience" />
       <div className="grid grid-cols-12 gap-6">
         <div className="col-span-12 md:col-start-4 md:col-span-9 space-y-12">
@@ -259,7 +259,7 @@ export function Experience() {
 
 export function About() {
   return (
-    <section aria-labelledby="about" className="mx-auto max-w-7xl px-5 pb-28 md:px-10">
+    <section id="about" aria-labelledby="about-title" className="mx-auto max-w-7xl px-5 pb-28 md:px-10">
       <SectionHead index="04" title="About" id="about" />
       <Reveal>
         <div className="grid grid-cols-12 gap-6">
