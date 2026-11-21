@@ -27,7 +27,7 @@ export function ScrollStory() {
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
         if (current) setActive(current.target.id);
       },
-      { rootMargin: "-22% 0px -58% 0px", threshold: [0, 0.15, 0.35, 0.6] },
+      { rootMargin: "-28% 0px -48% 0px", threshold: [0, 0.08, 0.2, 0.4, 0.65] },
     );
 
     nodes.forEach((node) => observer.observe(node));
