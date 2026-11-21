@@ -16,9 +16,9 @@
 
 export const profile = {
   name: "Setareh Rahimi",
-  headline: "Content Specialist | Content Production & Coordination",
+  headline: "Content Coordination · Video Editing · Visual Design",
   intro:
-    "Content professional with experience in media content production and publishing operations — focused on coordination, task follow-up and audience communication.",
+    "I coordinate media content and publishing workflows, with hands-on experience in full video editing and visual design exploration through collaborative and self-directed projects.",
   email: "setarerahimi1119@gmail.com",
   linkedin: "https://linkedin.com/in/setare-rahimi-968a0a274",
   cv: "https://jobvision.ir/cv/setare-rahimi-174320",
@@ -92,24 +92,65 @@ export type PortfolioProject = {
   note: string;
   /** Optional separately attributed work tracks shown in the detail view. */
   tracks?: { title: string; label: string; items: string[] }[];
+  liveUrl?: string;
 };
 
 export const projects: PortfolioProject[] = [
   {
-    id: "nikmehr",
-    title: "Nikmehr",
-    coverLabel: "Content publishing",
-    category: "Media · Content operations",
-    role: "Content coordination & publishing",
-    summary: nikmehrWork.description,
+    id: "parla-perfume-ad",
+    title: "Parla — Perfume Campaign",
+    coverLabel: "Fragrance video ad",
+    category: "Fragrance · Video content",
+    role: "Video editing & visual content",
+    summary:
+      "A vertical short-form advertisement created for a Parla fragrance, presented as a finished video piece.",
     context:
-      "As part of the Content Specialist role at Nikmehr, coordinated and published posts and stories for the Jenab Khan and 1001 Instagram pages.",
+      "A perfume advertising video for Parla, prepared in a vertical 9:16 format for social media placement.",
     scope: [
-      "Coordination of posts and stories",
-      "Publishing / distribution for Jenab Khan and 1001",
+      "Short-form fragrance advertising video",
+      "Vertical 9:16 video presentation",
     ],
-    status: "verified-role",
-    note: "The role was coordination and publishing, not authorship, copywriting, graphic design, video editing, strategy ownership or account ownership. The selected reels relate to this Nikmehr work overall and are not assigned to either page individually.",
+    status: "exploration",
+    note: "Presented as a video-content project. Production, scripting and art-direction responsibilities are not claimed.",
+  },
+  {
+    id: "sayeh-character-design",
+    title: "SAYEH — Character Design",
+    coverLabel: "Original character design dossier",
+    category: "Character Design · Visual Development",
+    role: "Independent Character Designer & Visual Developer",
+    summary:
+      "An original character developed independently from concept through final visual presentation, with a structured design dossier covering proportions, turnarounds, expressions and defining details.",
+    context:
+      "SAYEH is an original character design created entirely by Setareh Rahimi. The project documents the character’s visual development and consistency across multiple views, expressions and detail studies.",
+    scope: [
+      "Original character concept, appearance and styling",
+      "Front, three-quarter and profile turnaround views",
+      "Anatomical proportions and measurement sheet",
+      "Facial expression studies",
+      "Detail studies: eyes, ears, skin markings, hair, tail, accessories and clothing",
+      "Material definition, color palette and final visual documentation",
+    ],
+    status: "exploration",
+    note:
+      "An independently designed original character. All character design and visual development were completed by Setareh Rahimi.",
+  },
+  {
+    id: "setare-fashion-house-film",
+    title: "Setare Fashion House — Autumn Collection Film",
+    coverLabel: "Personal fashion film",
+    category: "Fashion · Video & Motion Content",
+    role: "Personal concept & video creation",
+    summary:
+      "A self-directed fashion film created around an autumn collection concept for Setare Fashion House.",
+    context:
+      "An independent fashion video project developed as a personal creative work, separate from the Khaneh Mod Setareh and Khaneh Shalvar projects.",
+    scope: [
+      "Autumn collection fashion-film concept",
+      "Video creation and visual presentation",
+    ],
+    status: "exploration",
+    note: "A self-directed personal project.",
   },
   {
     id: "khaneh-shalvar",
@@ -147,25 +188,6 @@ export const projects: PortfolioProject[] = [
     status: "exploration",
     note: "The LinkedIn presentation is part of the project scope; no publication or client-delivery claim is made.",
   },
-
-  {
-    id: "touch-ups",
-    title: "Touch Ups",
-    coverLabel: "Before / After · Food photography",
-    category: "Food photography · Retouching · Logo motion",
-    role: "Photo retouching & visual enhancement",
-    summary:
-      "A selected visual project exploring food-photo enhancement and logo motion. The tea comparison is presented transparently as an AI-assisted visual reconstruction based on the original photograph.",
-    context:
-      "Touch Ups brings together food-photography enhancement and logo-motion work. The featured tea image shows the original photograph alongside an AI-assisted reconstruction; it is not represented as pixel-level retouching of the original file.",
-    scope: [
-      "Food-photography retouching and visual enhancement",
-      "AI-assisted reconstruction clearly distinguished from direct photo retouching",
-      "Logo motion work",
-    ],
-    status: "exploration",
-    note: "The tea AFTER is an AI-assisted visual reconstruction based on the original scene, not a pixel-level retouch of the original photograph. Other project media should be added only from the original verified files.",
-  },
   {
     id: "junoon-podcast",
     title: "Junoon Podcast",
@@ -202,33 +224,155 @@ export const projects: PortfolioProject[] = [
       },
     ],
   },
+  {
+    id: "moodbean",
+    title: "Coffee Assets",
+    coverLabel: "Coffee visual collection",
+    category: "Coffee · Visual Assets",
+    role: "Visual exploration & asset creation",
+    summary:
+      "A growing collection of coffee-related visual assets, bringing together atmospheric imagery and creative explorations.",
+    context:
+      "An evolving visual collection focused on coffee, its rituals, textures and atmosphere. The gallery currently includes eight selected images and will be expanded as additional assets are added.",
+    scope: [
+      "Coffee-themed visual asset collection",
+      "Atmospheric imagery and creative visual explorations",
+      "Ongoing gallery development",
+    ],
+    status: "exploration",
+    note: "A growing visual collection. Additional assets will be added as the project develops.",
+  },
+  {
+    id: "random-pieces",
+    title: "Random Pieces",
+    coverLabel: "Poster & graphic design collection",
+    category: "Graphic Design · Posters",
+    role: "Poster design & visual exploration",
+    summary:
+      "A selection of standalone poster and graphic-design pieces gathered into an evolving visual collection.",
+    context:
+      "Random Pieces brings together selected poster works and graphic experiments that sit outside the larger case studies in this portfolio.",
+    scope: [
+      "Selected poster designs",
+      "Standalone graphic compositions",
+      "An evolving collection of visual experiments",
+    ],
+    status: "exploration",
+    note: "A curated collection of individual pieces rather than one continuous client project.",
+  },
+  {
+    id: "turquoise-jewelry-set",
+    title: "Turquoise Jewelry Set",
+    coverLabel: "AI-generated product concept",
+    category: "AI-assisted · Product visual design",
+    role: "AI Art Direction · Concept Development · Product Visual Creation",
+    summary:
+      "An end-to-end AI-generated turquoise jewelry concept, developed from the initial idea through the final product visuals.",
+    context:
+      "A self-directed AI product-visual project exploring a coordinated turquoise jewelry set. The concept, design development and final imagery were all created with AI tools.",
+    scope: [
+      "AI-assisted concept development",
+      "Jewelry set design exploration",
+      "AI-generated product and model imagery",
+      "Art direction and visual refinement",
+    ],
+    status: "exploration",
+    note: "All visuals are AI-generated concept imagery; they do not document a physically manufactured product or a real-life photoshoot.",
+  },
+  {
+    id: "turkish-coffee-packaging",
+    title: "Turkish Coffee Packaging Concept",
+    coverLabel: "Three roast colorways",
+    category: "Coffee · Packaging Design",
+    role: "Front-of-pack visual design",
+    summary:
+      "Front-of-pack design for a conceptual Turkish coffee brand, presented as a consistent three-product range with color variations for each roast.",
+    context:
+      "A self-initiated packaging concept for a Turkish coffee brand, exploring a unified visual system across three roast varieties.",
+    scope: [
+      "Front-of-pack design for three coffee roast varieties",
+      "Consistent layout and graphic system across the product range",
+      "Color variations to distinguish the three roasts",
+    ],
+    status: "exploration",
+    note: "A self-initiated concept project. The three variants share the same design and differ only in color; no separate visual identities are claimed.",
+    liveUrl: "https://lnkd.in/p/eYKH42N3",
+  },
+  {
+    id: "nikmehr",
+    title: "Nikmehr",
+    coverLabel: "Content publishing",
+    category: "Media · Content operations",
+    role: "Content coordination & publishing",
+    summary: nikmehrWork.description,
+    context:
+      "As part of the Content Specialist role at Nikmehr, coordinated and published posts and stories for the Jenab Khan and 1001 Instagram pages.",
+    scope: [
+      "Coordination of posts and stories",
+      "Publishing / distribution for Jenab Khan and 1001",
+    ],
+    status: "verified-role",
+    note: "The role was coordination and publishing, not authorship, copywriting, graphic design, video editing, strategy ownership or account ownership. The selected reels relate to this Nikmehr work overall and are not assigned to either page individually.",
+  },
+  {
+    id: "touch-ups",
+    title: "Touch Ups",
+    coverLabel: "Restaurant food retouching",
+    category: "Food Photography · Retouching · Motion",
+    role: "Food photo retouching & logo motion",
+    summary: "A before-and-after collection of restaurant food image retouching, accompanied by a motion treatment for the Chenjeh logo.",
+    context: "A visual editing project focused on refining restaurant food photography, presenting each original image alongside its retouched result, with an additional animated logo treatment for Chenjeh.",
+    scope: [
+      "Restaurant and café image retouching — five before-and-after pairs",
+      "Logo motion — animated treatment of the Chenjeh logo",
+    ],
+    status: "exploration",
+    note: "The five food and café photo pairs show before-and-after image editing, and the Chenjeh logo animation is a separate motion piece. The tea BEFORE/AFTER cover is an AI-assisted visual reconstruction based on the original photograph, not a pixel-level retouch of that file.",
+  },
+  {
+    id: "stillness-wellness-spaces",
+    title: "STILLNESS — Wellness Space Concepts",
+    coverLabel: "Restorative environments · Motion & stills",
+    category: "Visual Concept · AI-assisted Imagery · Motion",
+    role: "Visual concept development & motion studies",
+    summary:
+      "A visual exploration of calm, nature-led environments, bringing together atmospheric still imagery and motion pieces.",
+    context:
+      "An independent visual study of restorative spaces and quiet moments in nature. The work is presented as a multimedia exploration through still images and motion clips.",
+    scope: [
+      "AI-assisted visual exploration of wellness and meditation environments",
+      "Motion studies and video presentation",
+      "Art direction around atmosphere, natural materials and visual calm",
+    ],
+    status: "exploration",
+    note: "A conceptual visual project, not architectural documentation or a claim of built interior-design work.",
+  },
 ];
 
 export const capabilities = [
   {
-    name: "Content production coordination",
-    note: "Coordinating with content teams to keep production moving from planning to publication.",
+    name: "Content coordination & publishing",
+    note: "Coordinating and publishing posts and stories across social media channels, based on the verified Nikmehr role.",
   },
   {
-    name: "Task and workflow follow-up",
-    note: "Tracking assigned tasks and execution details so nothing falls through.",
+    name: "Video editing",
+    note: "End-to-end editing and final export of the first completed Junoon Podcast episode on the Brian Yassipour case.",
   },
   {
-    name: "Media content planning support",
-    note: "Participating in the planning and production of media content.",
+    name: "Visual design exploration",
+    note: "Developing campaign, ecommerce and social visual directions through self-directed studies and recent team collaboration.",
   },
   {
-    name: "Audience communication",
-    note: "Keeping clear, consistent communication with audiences.",
-  },
-  { name: "Order follow-up", note: "Following up on orders and day-to-day operational tasks." },
-  {
-    name: "Team collaboration",
-    note: "Working closely with team members to keep shared work on track.",
+    name: "Image editing & social layouts",
+    note: "Editing cafe and restaurant imagery, adding illustrated accents and exploring 3:4 carousel compositions.",
   },
   {
-    name: "Publishing operations support",
-    note: "Supporting the continuity of day-to-day publishing workflows.",
+    name: "Production workflow support",
+    note: "Following up on assigned tasks and execution details while supporting content planning and production workflows.",
+  },
+  {
+    name: "Publishing operations & audience communication",
+    note: "Supporting day-to-day publishing operations, order follow-up and audience communication in a publishing-house environment.",
   },
 ];
 
@@ -238,7 +382,7 @@ export const experience = [
     org: "Nikmehr",
     period: "Mar 2025 — Mar 2026",
     description:
-      "Coordinated with the content team, followed up on assigned tasks, participated in the planning and production of media content, and tracked execution details.",
+      "Coordinated and published posts and stories for the Jenab Khan and 1001 Instagram pages as part of the content team.",
   },
   {
     role: "Content Production Assistant",
