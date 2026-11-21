@@ -146,7 +146,7 @@ export function Hero() {
         <div className="pm-hero-art" role="img" aria-label="Abstract three-dimensional Playful Matter sculpture">
           <img
             className="pm-sculpture"
-            src="/hero-3d-sculpture.png"
+            src="https://www.dropbox.com/scl/fi/qvqr9usadtyvlz88bhtzb/file_0000000031dc8210ab260c3660f34e9e.png?rlkey=yfkgjtljb3i3c1v3lykyaenl3&raw=1"
             alt="Abstract sculptural composition in the Playful Matter color palette"
             fetchPriority="high"
             onError={(event) => { event.currentTarget.style.visibility = "hidden"; }}
