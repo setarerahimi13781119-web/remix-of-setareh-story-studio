@@ -669,15 +669,13 @@ export function SelectedWork() {
                         className="min-h-0 flex-1 w-full bg-card object-cover"
                       />
                     ) : project.id === "stillness-wellness-spaces" ? (
-                      <span className="relative min-h-0 flex-1 overflow-hidden bg-card">
-                        <img
-                          src="/assets/portfolio/stillness-1.webp"
-                          alt=""
-                          aria-hidden="true"
-                          loading="lazy"
-                          className="absolute inset-0 h-full w-full object-cover object-[center_32%]"
-                        />
-                      </span>
+                      <img
+                        src="/assets/portfolio/stillness-2.webp"
+                        alt=""
+                        aria-hidden="true"
+                        loading="lazy"
+                        className="min-h-0 flex-1 w-full bg-card object-cover"
+                      />
                     ) : project.id === "sayeh-character-design" ? (
                       <img
                         src={sayehArtwork}
