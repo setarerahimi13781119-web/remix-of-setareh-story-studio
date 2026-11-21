@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
-function Reveal({ children, className = "" }: { children: ReactNode; className?: string }) {
+export function Reveal({ children, className = "" }: { children: ReactNode; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
   useEffect(() => {
@@ -26,7 +26,7 @@ function Reveal({ children, className = "" }: { children: ReactNode; className?:
   );
 }
 
-function SectionHead({ index, title, id }: { index: string; title: string; id: string }) {
+export function SectionHead({ index, title, id }: { index: string; title: string; id: string }) {
   return (
     <div className="grid grid-cols-12 gap-6 border-t border-rule pt-5 pb-12 md:pb-16">
       <p className="eyebrow col-span-4 md:col-span-3">§ {index}</p>
