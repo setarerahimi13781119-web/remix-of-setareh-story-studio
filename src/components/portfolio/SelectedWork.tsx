@@ -440,8 +440,8 @@ function StillnessGallery() {
     "/assets/portfolio/stillness-6.webp"
   ];
   const motion = [
-    { title: "Motion study 01", href: "https://www.dropbox.com/preview/%D9%81%D8%B6%D8%A7%DB%8C%20%D8%A2%D8%B1%D8%A7%D9%85%D8%B4%20%D8%A8%D8%AE%D8%B4/VID_20260728_185913_037.mp4", poster: "/assets/portfolio/stillness-2.webp" },
-    { title: "Motion study 02", href: "https://www.dropbox.com/preview/%D9%81%D8%B6%D8%A7%DB%8C%20%D8%A2%D8%B1%D8%A7%D9%85%D8%B4%20%D8%A8%D8%AE%D8%B4/20260629_232654.mp4", poster: "/assets/portfolio/stillness-3.webp" },
+    { title: "Motion study 01", href: "/assets/portfolio/stillness-motion-1.mp4", poster: "/assets/portfolio/stillness-2.webp" },
+    { title: "Motion study 02", href: "/assets/portfolio/stillness-motion-2.mp4", poster: "/assets/portfolio/stillness-3.webp" },
   ];
   return (
     <div className="space-y-8 border-t border-rule pt-5">
