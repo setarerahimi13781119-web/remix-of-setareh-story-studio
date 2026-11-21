@@ -1,0 +1,167 @@
+import { useState } from "react";
+import { about, capabilities, experience, profile } from "@/data/portfolio";
+import { SelectedWork } from "./SelectedWork";
+import { Reveal, SectionHead } from "./shared";
+
+export function Work() {
+  return (
+    <section aria-labelledby="work" className="mx-auto max-w-7xl px-5 pb-28 md:px-10">
+      <SectionHead index="01" title="Selected Work" id="work" />
+      <SelectedWork />
+    </section>
+  );
+}
+
+export function Capabilities() {
+  return (
+    <section aria-labelledby="capabilities" className="mx-auto max-w-7xl px-5 pb-28 md:px-10">
+      <SectionHead index="02" title="Areas of focus" id="capabilities" />
+      <ol className="grid grid-cols-12 gap-x-6">
+        {capabilities.map((c, i) => (
+          <li key={c.name} className="col-span-12 md:col-start-4 md:col-span-9">
+            <Reveal>
+              <div className="group grid grid-cols-12 gap-4 border-b border-border py-6">
+                <span className="eyebrow col-span-2 pt-2">{String(i + 1).padStart(2, "0")}</span>
+                <h3 className="col-span-10 md:col-span-5 font-display text-2xl md:text-3xl transition-colors group-hover:text-accent">
+                  {c.name}
+                </h3>
+                <p className="col-span-10 col-start-3 md:col-span-5 text-sm text-muted-foreground leading-relaxed md:pt-2">
+                  {c.note}
+                </p>
+              </div>
+            </Reveal>
+          </li>
+        ))}
+      </ol>
+    </section>
+  );
+}
+
+export function Experience() {
+  return (
+    <section aria-labelledby="experience" className="mx-auto max-w-7xl px-5 pb-28 md:px-10">
+      <SectionHead index="03" title="Experience" id="experience" />
+      <div className="grid grid-cols-12 gap-6">
+        <div className="col-span-12 md:col-start-4 md:col-span-9 space-y-12">
+          {experience.map((e) => (
+            <Reveal key={e.org}>
+              <article className="grid gap-4 md:grid-cols-3">
+                <p className="eyebrow md:pt-2">{e.period}</p>
+                <div className="md:col-span-2">
+                  <h3 className="font-display text-3xl">{e.role}</h3>
+                  <p className="mt-1 text-accent">{e.org}</p>
+                  <p className="mt-4 max-w-prose text-muted-foreground leading-relaxed">
+                    {e.description}
+                  </p>
+                </div>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function About() {
+  return (
+    <section aria-labelledby="about" className="mx-auto max-w-7xl px-5 pb-28 md:px-10">
+      <SectionHead index="04" title="About" id="about" />
+      <Reveal>
+        <div className="grid grid-cols-12 gap-6">
+          <p className="col-span-12 md:col-start-4 md:col-span-6 font-display text-2xl md:text-3xl leading-snug">
+            {about.bio}
+          </p>
+          <dl className="col-span-12 md:col-start-4 md:col-span-9 mt-8 grid gap-8 border-t border-border pt-8 sm:grid-cols-2">
+            <div>
+              <dt className="eyebrow">Education</dt>
+              <dd className="mt-2">
+                {about.education.degree}
+                <br />
+                <span className="text-muted-foreground">{about.education.school}</span>
+                <br />
+                <span className="text-muted-foreground">
+                  {about.education.period} · {about.education.gpa}
+                </span>
+              </dd>
+            </div>
+            <div>
+              <dt className="eyebrow">Languages</dt>
+              {about.languages.map((l) => (
+                <dd key={l.name} className="mt-2">
+                  {l.name} <span className="text-muted-foreground">— {l.level}</span>
+                </dd>
+              ))}
+            </div>
+          </dl>
+        </div>
+      </Reveal>
+    </section>
+  );
+}
+
+export function Contact() {
+  const [copied, setCopied] = useState(false);
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(profile.email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      /* clipboard unavailable — mailto link remains */
+    }
+  };
+  return (
+    <footer
+      id="contact"
+      aria-labelledby="contact-title"
+      className="bg-primary text-primary-foreground"
+    >
+      <div className="mx-auto max-w-7xl px-5 py-20 md:px-10 md:py-28">
+        <p className="eyebrow text-primary-foreground/60">§ 05 — Contact</p>
+        <h2
+          id="contact-title"
+          className="mt-6 font-display text-[clamp(3rem,9vw,7.5rem)] leading-[0.9] tracking-tight"
+        >
+          Let’s talk about <em>your story</em>.
+        </h2>
+        <div className="mt-12 flex flex-col gap-4 border-t border-primary-foreground/20 pt-8 sm:flex-row sm:items-center sm:justify-between">
+          <a
+            href={`mailto:${profile.email}`}
+            className="link-underline break-all font-display text-2xl md:text-4xl"
+          >
+            {profile.email}
+          </a>
+          <button
+            onClick={copy}
+            className="self-start border border-primary-foreground/40 px-4 py-2 text-sm transition-colors hover:bg-primary-foreground hover:text-primary"
+          >
+            {copied ? "Copied ✓" : "Copy email"}
+          </button>
+          <span className="sr-only" aria-live="polite">
+            {copied ? "Email copied to clipboard" : ""}
+          </span>
+        </div>
+        <div className="mt-5 flex flex-wrap gap-x-6 gap-y-3 text-sm">
+          <a
+            href={profile.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="link-underline"
+          >
+            LinkedIn ↗
+          </a>
+          <a href={profile.cv} target="_blank" rel="noopener noreferrer" className="link-underline">
+            CV on JobVision ↗
+          </a>
+        </div>
+        <div className="mt-20 flex flex-wrap justify-between gap-4 eyebrow text-primary-foreground/60">
+          <span>© {new Date().getFullYear()} Setareh Rahimi</span>
+          <a href="#top" className="link-underline">
+            Back to top ↑
+          </a>
+        </div>
+      </div>
+    </footer>
+  );
+}
