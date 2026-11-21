@@ -354,7 +354,7 @@ const touchUpsPairs = [
 ];
 
 const chenjehLogoMotion =
-  "https://www.dropbox.com/scl/fi/qcfk7ije92kvmlolk5kg1/chenjeh-logo-motion.mp4?rlkey=39iwnl7f26s0g0rhkks4uk6kv&raw=1";
+  "/assets/portfolio/chenjeh-logo-motion.mp4";
 
 function TouchUpsGallery() {
   return (
