@@ -711,12 +711,15 @@ export function SelectedWork() {
                         className="min-h-0 flex-1 w-full bg-card object-contain"
                       />
                     ) : project.id === "random-pieces" ? (
-                      <img
-                        src={randomPiecesImages[0]}
-                        alt="Random Pieces poster collection preview"
-                        aria-hidden="true"
-                        className="min-h-0 flex-1 w-full bg-card object-cover"
-                      />
+                      <span className="relative min-h-0 flex-1 w-full overflow-hidden bg-card">
+                        <img
+                          src={randomPiecesImages[1]}
+                          alt="Random Pieces poster artwork"
+                          aria-hidden="true"
+                          loading="lazy"
+                          className="absolute inset-0 h-full w-full object-cover object-center"
+                        />
+                      </span>
                     ) : project.id === "moodbean" ? (
                       <img
                         src={coffeeAssetsCover}
