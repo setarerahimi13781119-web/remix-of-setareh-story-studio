@@ -534,3 +534,66 @@
   .scroll-stage__orbit,.scroll-stage__ticker { transform:none !important; }
   .scroll-stage__rail span { transform:scaleY(1); }
 }
+
+
+/* First card — Parla: bring it into the shared sculpted-card family,
+   while softening its palette into misty mint, pearl and muted rose. */
+.work-card--parla {
+  --parla-forest:#47685D;
+  --parla-emerald:#8EAA9D;
+  --parla-jade:#B9D0C4;
+  --parla-leaf:#DCE9E1;
+  --parla-mint:#EEF4F0;
+  --parla-pink:#EAD9E0;
+  --parla-rose:#B98599;
+  --parla-silver:#D9E0DD;
+  border:1px solid #C8D4CE !important;
+  border-radius:24px 5px 24px 5px !important;
+  background:linear-gradient(145deg,#F2F5F2 0%,#E8EFEB 55%,#F2E8EC 100%) !important;
+  box-shadow:8px 8px 0 #D6E3DC,0 18px 34px rgb(58 82 70 / 8%);
+}
+.work-card--parla::before {
+  inset:12px auto 12px 0;
+  border:1px solid rgb(161 184 171 / 52%);
+  border-radius:0 8px 8px 0;
+}
+.work-card__trigger--parla {
+  background:linear-gradient(135deg,#E8F0EB 0%,#DCE8E1 52%,#F0E5EA 100%) !important;
+}
+.work-card__trigger--parla::before { color:#617A6F; opacity:.72; }
+.work-card__trigger--parla > span:first-child {
+  color:#526D61 !important;
+  background:linear-gradient(105deg,#F3F6F3 0%,#E5ECE7 58%,#F2E9ED 100%) !important;
+  border-bottom:1px solid rgb(126 151 137 / 24%);
+}
+.work-card__trigger--parla > span:first-child svg { color:#A77B8E; }
+.work-card__trigger--parla img {
+  border-radius:14px 3px 14px 3px !important;
+  background:
+    radial-gradient(ellipse at 50% 42%,rgb(255 255 255 / 96%) 0%,rgb(234 217 224 / 48%) 34%,transparent 70%),
+    radial-gradient(ellipse at 78% 78%,rgb(185 208 196 / 62%) 0%,transparent 54%),
+    linear-gradient(135deg,#EAF2ED 0%,#DCE9E1 45%,#E9EDEF 74%,#F1E6EB 100%) !important;
+}
+.work-card__trigger--parla > span:last-child {
+  color:#526D61 !important;
+  background:linear-gradient(112deg,#F2F5F2 0%,#E7EEE9 52%,#F1E7EB 100%) !important;
+  border-top:1px solid rgb(126 145 137 / 30%);
+}
+.work-card__trigger--parla > span:last-child::after { color:#8A9F93; }
+.work-card__trigger--parla > span:last-child .font-display { color:#47685D !important; }
+.work-card__trigger--parla > span:last-child [lang="fa"] { color:#A9798D !important; }
+@media (hover:hover) and (pointer:fine) {
+  .work-card--parla:hover {
+    transform:translateY(-8px) rotate(-.35deg);
+    border-color:#AFC5B8 !important;
+    box-shadow:12px 14px 0 #D6E3DC,0 24px 44px rgb(71 104 93 / 14%);
+  }
+  .work-card--parla:hover::before { inset:12px auto 12px 0; border-color:#AFC5B8; }
+  .work-card--parla:hover .work-card__trigger--parla img {
+    transform:translateY(-3px) scale(1.02);
+    filter:saturate(1.02) contrast(1.01);
+  }
+}
+@media (max-width:767px) {
+  .work-card--parla { border-radius:18px 4px 18px 4px !important; }
+}
