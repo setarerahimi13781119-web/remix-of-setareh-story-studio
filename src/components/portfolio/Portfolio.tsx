@@ -120,8 +120,8 @@ export function Hero() {
     const rect = event.currentTarget.getBoundingClientRect();
     const x = (event.clientX - rect.left) / rect.width - 0.5;
     const y = (event.clientY - rect.top) / rect.height - 0.5;
-    event.currentTarget.style.setProperty("--pointer-x", String(x));
-    event.currentTarget.style.setProperty("--pointer-y", String(y));
+    event.currentTarget.style.setProperty("--move-x", `${-x * 22}px`);
+    event.currentTarget.style.setProperty("--move-y", `${-y * 22}px`);
   };
 
   const releaseBubbles = (event: PointerEvent<HTMLDivElement>) => {
@@ -184,12 +184,25 @@ export function Hero() {
           className="pm-hero-art"
           onPointerMove={moveArt}
           onPointerLeave={(event) => {
-            event.currentTarget.style.setProperty("--pointer-x", "0");
-            event.currentTarget.style.setProperty("--pointer-y", "0");
+            event.currentTarget.style.setProperty("--move-x", "0px");
+            event.currentTarget.style.setProperty("--move-y", "0px");
           }}
-          onPointerDown={releaseBubbles}
+          onPointerDown={(event) => {
+            moveArt(event);
+            releaseBubbles(event);
+          }}
+          onTouchStart={(event) => {
+            const touch = event.touches[0];
+            if (!touch) return;
+            const rect = event.currentTarget.getBoundingClientRect();
+            const x = (touch.clientX - rect.left) / rect.width - 0.5;
+            const y = (touch.clientY - rect.top) / rect.height - 0.5;
+            event.currentTarget.style.setProperty("--move-x", `${-x * 22}px`);
+            event.currentTarget.style.setProperty("--move-y", `${-y * 22}px`);
+          }}
           aria-label="Interactive abstract Playful Matter sculpture. Touch or click to release small bubbles."
         >
+          <div className="pm-sculpture-motion">
           <img
             className="pm-sculpture"
             src="https://www.dropbox.com/scl/fi/qvqr9usadtyvlz88bhtzb/file_0000000031dc8210ab260c3660f34e9e.png?rlkey=yfkgjtljb3i3c1v3lykyaenl3&raw=1"
@@ -197,6 +210,7 @@ export function Hero() {
             fetchPriority="high"
             onError={(event) => { event.currentTarget.style.visibility = "hidden"; }}
           />
+          </div>
           {bubbles.map((bubble) => (
             <span
               key={bubble.id}
