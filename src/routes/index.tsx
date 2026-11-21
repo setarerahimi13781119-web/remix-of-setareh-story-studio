@@ -9,6 +9,7 @@ import {
   Hero,
   Work,
 } from "@/components/portfolio/Portfolio";
+import { ScrollStory } from "@/components/portfolio/ScrollStory";
 
 const title = "Setareh Rahimi | Content Coordination, Video Editing & Visual Design";
 const description =
@@ -40,6 +41,7 @@ function Index() {
         Skip to work
       </a>
       <ScrollStage />
+      <ScrollStory />
       <Header />
       <main>
         <Hero />
