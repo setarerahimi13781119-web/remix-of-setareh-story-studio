@@ -1,8 +1,74 @@
-import { useEffect, useRef, useState, type CSSProperties, type PointerEvent } from "react";
+import { useEffect, useRef, useState, type CSSProperties, type PointerEvent, type ReactNode } from "react";
 import { profile } from "@/data/portfolio";
 import { Reveal } from "./shared";
 
 type Bubble = { id: number; x: number; y: number; size: number; drift: number };
+
+function InteractiveObject({
+  className,
+  children,
+  onPop,
+  label,
+}: {
+  className: string;
+  children: ReactNode;
+  onPop: (x: number, y: number) => void;
+  label: string;
+}) {
+  const [offset, setOffset] = useState({ x: 0, y: 0 });
+  const [dragging, setDragging] = useState(false);
+  const origin = useRef({ x: 0, y: 0, pointerX: 0, pointerY: 0 });
+
+  const start = (event: PointerEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    event.currentTarget.setPointerCapture(event.pointerId);
+    origin.current = { x: offset.x, y: offset.y, pointerX: event.clientX, pointerY: event.clientY };
+    setDragging(true);
+  };
+
+  const move = (event: PointerEvent<HTMLButtonElement>) => {
+    if (!dragging) return;
+    setOffset({
+      x: Math.max(-72, Math.min(72, origin.current.x + event.clientX - origin.current.pointerX)),
+      y: Math.max(-72, Math.min(72, origin.current.y + event.clientY - origin.current.pointerY)),
+    });
+  };
+
+  const release = (event: PointerEvent<HTMLButtonElement>) => {
+    if (!dragging) return;
+    const bounds = event.currentTarget.parentElement?.getBoundingClientRect();
+    if (bounds) {
+      onPop(
+        ((event.clientX - bounds.left) / bounds.width) * 100,
+        ((event.clientY - bounds.top) / bounds.height) * 100,
+      );
+    }
+    setDragging(false);
+    setOffset({ x: 0, y: 0 });
+  };
+
+  return (
+    <button
+      type="button"
+      className={`pm-play-object ${className}${dragging ? " is-dragging" : ""}`}
+      aria-label={label}
+      onPointerDown={start}
+      onPointerMove={move}
+      onPointerUp={release}
+      onPointerCancel={release}
+      onClick={(event) => {
+        const bounds = event.currentTarget.parentElement?.getBoundingClientRect();
+        if (bounds) onPop(
+          ((event.clientX - bounds.left) / bounds.width) * 100,
+          ((event.clientY - bounds.top) / bounds.height) * 100,
+        );
+      }}
+      style={{ "--object-x": `${offset.x}px`, "--object-y": `${offset.y}px` } as CSSProperties}
+    >
+      {children}
+    </button>
+  );
+}
 
 export function Hero() {
   const [bubbles, setBubbles] = useState<Bubble[]>([]);
@@ -11,11 +77,8 @@ export function Hero() {
 
   useEffect(() => () => bubbleTimers.current.forEach(window.clearTimeout), []);
 
-  const releaseBubbles = (event: PointerEvent<HTMLDivElement>) => {
-    const rect = event.currentTarget.getBoundingClientRect();
-    const x = ((event.clientX - rect.left) / rect.width) * 100;
-    const y = ((event.clientY - rect.top) / rect.height) * 100;
-    const burst = Array.from({ length: 7 }, (_, index) => ({
+  const releaseBubbles = (x: number, y: number) => {
+    const burst = Array.from({ length: 7 }, () => ({
       id: ++bubbleId.current,
       x: x + (Math.random() - 0.5) * 10,
       y: y + (Math.random() - 0.5) * 8,
@@ -54,16 +117,10 @@ export function Hero() {
           Creative Direction · Video Editing · Visual Storytelling
         </p>
         <div className="mt-8 flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap">
-          <a
-            href="#work"
-            className="pm-cta-primary inline-flex items-center gap-3 px-6 py-3 text-sm font-semibold"
-          >
+          <a href="#work" className="pm-cta-primary inline-flex items-center gap-3 px-6 py-3 text-sm font-semibold">
             Explore Selected Work <span aria-hidden="true">↓</span>
           </a>
-          <a
-            href="#contact"
-            className="pm-cta-secondary inline-flex items-center gap-3 px-6 py-3 text-sm font-semibold"
-          >
+          <a href="#contact" className="pm-cta-secondary inline-flex items-center gap-3 px-6 py-3 text-sm font-semibold">
             Let’s Connect <span aria-hidden="true">↗</span>
           </a>
         </div>
@@ -74,33 +131,35 @@ export function Hero() {
       </Reveal>
 
       <Reveal className="col-span-1 md:col-span-5">
-        <div className="pm-hero-art" onPointerDown={releaseBubbles}>
+        <div className="pm-hero-art">
           <div className="pm-sculpture-motion">
             <img
               className="pm-sculpture"
               src="https://www.dropbox.com/scl/fi/qvqr9usadtyvlz88bhtzb/file_0000000031dc8210ab260c3660f34e9e.png?rlkey=yfkgjtljb3i3c1v3lykyaenl3&raw=1"
               alt="Portrait surrounded by playful green, pink and cream sculptural forms"
               fetchPriority="high"
-              onError={(event) => {
-                event.currentTarget.style.visibility = "hidden";
-              }}
+              onError={(event) => { event.currentTarget.style.visibility = "hidden"; }}
             />
           </div>
+
+          <InteractiveObject className="pm-object-loop" label="Move pink ribbon shape" onPop={releaseBubbles}>
+            <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M18 54C18 28 37 12 59 18C83 24 91 50 76 69C64 85 39 88 25 74C16 65 20 50 33 43C46 36 61 42 62 54C63 64 52 70 44 64" fill="none" stroke="#D92F78" strokeWidth="13" strokeLinecap="round" strokeLinejoin="round"/><path d="M21 49C23 29 39 17 57 21" fill="none" stroke="#F7A7C6" strokeWidth="3" strokeLinecap="round"/></svg>
+          </InteractiveObject>
+          <InteractiveObject className="pm-object-orb" label="Move lime orb" onPop={releaseBubbles}>
+            <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="34" fill="#C8F34A"/><circle cx="38" cy="36" r="9" fill="#F4F1EA" opacity=".55"/><path d="M28 68C40 82 63 83 75 67" fill="none" stroke="#8DAF36" strokeWidth="4" strokeLinecap="round"/></svg>
+          </InteractiveObject>
+          <InteractiveObject className="pm-object-pill" label="Move green capsule" onPop={releaseBubbles}>
+            <svg viewBox="0 0 120 72" aria-hidden="true"><rect x="8" y="8" width="104" height="56" rx="28" fill="#2E7D4B"/><path d="M30 22C42 12 69 12 84 22" fill="none" stroke="#A6D68A" strokeWidth="5" strokeLinecap="round"/></svg>
+          </InteractiveObject>
+          <InteractiveObject className="pm-object-disc" label="Move cream and pink disc" onPop={releaseBubbles}>
+            <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="39" fill="#F7E8D8"/><path d="M50 11A39 39 0 0 1 89 50H50Z" fill="#EF77A7"/><circle cx="50" cy="50" r="15" fill="#B6E34A"/></svg>
+          </InteractiveObject>
+
           {bubbles.map((bubble) => (
-            <span
-              key={bubble.id}
-              className="pm-bubble"
-              aria-hidden="true"
-              style={
-                {
-                  left: `${bubble.x}%`,
-                  top: `${bubble.y}%`,
-                  width: bubble.size,
-                  height: bubble.size,
-                  "--bubble-drift": `${bubble.drift}px`,
-                } as CSSProperties
-              }
-            />
+            <span key={bubble.id} className="pm-bubble" aria-hidden="true" style={{
+              left: `${bubble.x}%`, top: `${bubble.y}%`, width: bubble.size, height: bubble.size,
+              "--bubble-drift": `${bubble.drift}px`,
+            } as CSSProperties} />
           ))}
           <span className="pm-art-index">PM — 001 / FORM STUDY</span>
         </div>
