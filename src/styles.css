@@ -1044,193 +1044,228 @@
 }
 
 
-/* PORTFOLIO CARD ART DIRECTION v5 — malachite / vivid pink / brushed silver */
-:root {
-  --portfolio-malachite: #075E52;
-  --portfolio-jade-pop: #00A889;
-  --portfolio-citrus-leaf: #B6D957;
-  --portfolio-sea-glass: #D9F1E8;
-  --portfolio-rosewood: #783454;
-  --portfolio-guava: #E65B91;
-  --portfolio-peony: #F3A9C4;
-  --portfolio-silver: #BEC9CD;
-  --portfolio-silver-glow: #EDF1F2;
-}
 
-/* The cards now use a considered silver frame and a more expressive colour rhythm.
-   Artwork itself stays untouched: the colour lives in the frame, metadata and footer. */
+/* PROJECT CARD SYSTEM — one source of truth, with an unmistakable identity per project. */
 .work-card:not(.work-card--parla) {
-  --card-tint: #E4F2EC;
-  --card-accent: #075E52;
+  --project-accent: #075E52;
+  --project-pop: #00A889;
+  --project-stage: #E4F2EC;
+  --project-head: #EDF6F1;
+  --project-foot: #D6EAE1;
+  --project-frame: #B8CBC3;
+  --project-rail: linear-gradient(180deg, var(--project-pop), var(--project-accent));
   position: relative;
-  isolation: isolate;
-  padding: clamp(.5rem, .95vw, .85rem);
-  border: 1px solid #BEC9CD !important;
-  background:
-    linear-gradient(145deg, rgb(255 255 255 / 72%), rgb(237 241 242 / 88%)) !important;
-  box-shadow:
-    0 8px 24px rgb(34 57 55 / 7%),
-    inset 0 1px 0 rgb(255 255 255 / 92%);
-  transition:
-    transform .5s cubic-bezier(.2,.8,.2,1),
-    border-color .4s ease,
-    box-shadow .5s ease;
+  overflow: hidden;
+  padding: 0 !important;
+  border: 1px solid var(--project-frame) !important;
+  border-radius: 3px;
+  background: linear-gradient(145deg, #F8FAF9, var(--project-stage)) !important;
+  box-shadow: 0 12px 30px rgb(24 45 40 / 10%), inset 0 1px 0 rgb(255 255 255 / 90%);
+  transition: transform .45s cubic-bezier(.2,.75,.25,1), border-color .35s ease, box-shadow .4s ease;
+}
+.work-card:not(.work-card--parla)::before {
+  content: "";
+  position: absolute;
+  z-index: 5;
+  inset: 0 auto 0 0;
+  width: 5px;
+  background: var(--project-rail);
+  pointer-events: none;
 }
 .work-card:not(.work-card--parla)::after {
   content: "";
   position: absolute;
-  z-index: 3;
+  z-index: 5;
   top: 0;
-  left: 1.1rem;
-  right: 1.1rem;
-  height: 3px;
-  background: linear-gradient(90deg, var(--card-accent), var(--card-highlight));
-  opacity: .9;
+  left: 5px;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--project-accent), var(--project-pop), var(--project-frame));
   pointer-events: none;
 }
 .work-card:not(.work-card--parla) .work-card__trigger {
-  background:
-    radial-gradient(ellipse at 85% 5%, color-mix(in srgb, var(--card-highlight) 22%, transparent), transparent 48%),
-    var(--card-tint) !important;
+  overflow: hidden;
+  background: var(--project-stage) !important;
 }
 .work-card:not(.work-card--parla) .work-card__trigger > span:first-child {
-  color: var(--card-accent) !important;
-  background: linear-gradient(100deg, var(--card-tint), color-mix(in srgb, var(--card-highlight) 13%, var(--card-tint))) !important;
-  border-bottom: 1px solid color-mix(in srgb, var(--card-accent) 18%, transparent);
+  min-height: 3.8rem;
+  padding: 1.05rem 1.3rem .85rem 1.55rem !important;
+  color: var(--project-accent) !important;
+  background: var(--project-head) !important;
+  border-bottom: 1px solid color-mix(in srgb, var(--project-accent) 26%, transparent);
+  letter-spacing: .14em;
 }
 .work-card:not(.work-card--parla) .work-card__trigger > span:first-child svg {
-  color: var(--card-highlight);
+  color: var(--project-pop) !important;
+  transition: transform .35s ease;
+}
+.work-card:not(.work-card--parla) .work-card__trigger img {
+  display: block;
+  width: 100%;
+  height: clamp(19rem, 31vw, 27rem);
+  min-height: 0;
+  padding: 1.25rem 1.5rem;
+  background: var(--project-stage) !important;
+  object-fit: contain !important;
+  transition: transform .7s cubic-bezier(.18,.72,.22,1), filter .5s ease;
 }
 .work-card:not(.work-card--parla) .work-card__trigger > span:last-child {
-  color: var(--card-accent);
-  background: linear-gradient(110deg, var(--card-tint), color-mix(in srgb, var(--card-highlight) 15%, var(--card-tint))) !important;
-  border-top: 1px solid color-mix(in srgb, var(--card-accent) 22%, transparent);
+  min-height: 7.4rem;
+  width: 100%;
+  padding: 1.1rem 1.35rem 1.25rem 1.55rem !important;
+  color: var(--project-accent) !important;
+  background: var(--project-foot) !important;
+  border-top: 1px solid color-mix(in srgb, var(--project-accent) 28%, transparent);
+  text-align: left;
+}
+.work-card:not(.work-card--parla) .work-card__trigger > span:last-child .font-display {
+  color: var(--project-accent) !important;
+  letter-spacing: -.035em;
 }
 .work-card:not(.work-card--parla) .work-card__trigger > span:last-child [lang="fa"] {
-  color: var(--card-highlight) !important;
+  color: var(--project-pop) !important;
+}
+.work-card:not(.work-card--parla) > div.mt-5 {
+  padding: 0 1.35rem 1.35rem 1.55rem;
+}
+.work-card:not(.work-card--parla) .work-card__context { color: var(--project-accent); }
+.work-card:not(.work-card--parla) .work-card__context svg {
+  color: var(--project-pop);
+  transition: transform .3s ease;
 }
 
-/* Distinct pairings — no more repeating the same dusty sage / pale blush sequence. */
-.work-grid__item:nth-child(6n + 1) { --card-tint: #DDF3E9; --card-accent: #075E52; --card-highlight: #00A889; }
-.work-grid__item:nth-child(6n + 2) { --card-tint: #FBE2EC; --card-accent: #783454; --card-highlight: #E65B91; }
-.work-grid__item:nth-child(6n + 3) { --card-tint: #EAF2D5; --card-accent: #385B32; --card-highlight: #91B83E; }
-.work-grid__item:nth-child(6n + 4) { --card-tint: #F4D9E5; --card-accent: #783454; --card-highlight: #D94F88; }
-.work-grid__item:nth-child(6n + 5) { --card-tint: #D9EFED; --card-accent: #075E66; --card-highlight: #00A5A0; }
-.work-grid__item:nth-child(6n + 6) { --card-tint: #F8E6D8; --card-accent: #78465A; --card-highlight: #E985A6; }
+/* Turquoise set — jewel-vitrine green, cool silver, double inset frame. */
+.work-card--turquoise-jewelry-set {
+  --project-accent:#075E52; --project-pop:#00A889; --project-stage:#E3F1EC;
+  --project-head:#F1F7F4; --project-foot:#D5E9E1; --project-frame:#AFC8C0;
+  --project-rail:linear-gradient(180deg,#BEC9CD,#00A889,#075E52,#BEC9CD);
+  background:linear-gradient(145deg,#F8FAF9,#DCEAE5)!important;
+  box-shadow:inset 0 0 0 5px #E8EFED, inset 0 0 0 6px #BFCBC8, 0 12px 30px rgb(24 45 40 / 10%);
+}
+.work-card--turquoise-jewelry-set .work-card__trigger img { padding:1.7rem 2.2rem; }
+.work-card--turquoise-jewelry-set::before { width:3px; }
 
-@media (hover: hover) and (pointer: fine) {
+/* STILLNESS — quiet botanical editorial, square corners and generous image stage. */
+.work-card--stillness-wellness-spaces {
+  --project-accent:#315D4B; --project-pop:#91B83E; --project-stage:#E9F0E5;
+  --project-head:#F3F6EF; --project-foot:#DDE8D8; --project-frame:#BFCDBB;
+  --project-rail:linear-gradient(180deg,#DCE8D5,#91B83E,#315D4B);
+  border-radius:0;
+  box-shadow:none;
+}
+.work-card--stillness-wellness-spaces .work-card__trigger img { height:clamp(21rem,34vw,30rem); padding:2rem; }
+.work-card--stillness-wellness-spaces .work-card__trigger > span:first-child { letter-spacing:.22em; }
+
+/* MOODBEAN — warm roasted-coffee palette with a vivid guava edge. */
+.work-card--moodbean {
+  --project-accent:#57372F; --project-pop:#D94F88; --project-stage:#F0E2D9;
+  --project-head:#F8EEE8; --project-foot:#E7D2C8; --project-frame:#CDB7AD;
+  --project-rail:linear-gradient(180deg,#F3A9C4,#D94F88,#57372F);
+  border-radius:14px 2px 2px 2px;
+}
+.work-card--moodbean .work-card__trigger img { height:clamp(18rem,29vw,25rem); padding:1rem; }
+
+/* KHANEH MOD SETAREH — split jade / rose storefront identity. */
+.work-card--khaneh-mod-setareh {
+  --project-accent:#075E52; --project-pop:#D94F88; --project-stage:#E3EFE8;
+  --project-head:#F8E8EF; --project-foot:#D8EAE0; --project-frame:#B9C9C1;
+  --project-rail:linear-gradient(180deg,#D94F88 0 42%,#075E52 42% 100%);
+  background:linear-gradient(125deg,#F8E9EF 0%,#E2EFE7 58%,#D2E7DD 100%)!important;
+}
+.work-card--khaneh-mod-setareh .work-card__trigger img { height:clamp(22rem,35vw,31rem); padding:1rem; }
+
+/* SETARE FASHION HOUSE — tall runway frame, raspberry typography. */
+.work-card--setare-fashion-house-film {
+  --project-accent:#6D2448; --project-pop:#E65B91; --project-stage:#F4DCE6;
+  --project-head:#F9EAF0; --project-foot:#EFC7D7; --project-frame:#B9C2C5;
+  --project-rail:linear-gradient(180deg,#E65B91,#6D2448);
+}
+.work-card--setare-fashion-house-film .work-card__trigger img { height:clamp(23rem,38vw,33rem); padding:.65rem; }
+.work-card--setare-fashion-house-film .work-card__trigger > span:last-child .font-display { font-size:clamp(2rem,3.8vw,3.2rem); }
+
+/* SAYEH — character dossier, botanical green and citrus marker. */
+.work-card--sayeh-character-design {
+  --project-accent:#3D5635; --project-pop:#A7C84B; --project-stage:#E8EEDB;
+  --project-head:#F2F5E9; --project-foot:#DCE7C9; --project-frame:#BBC99F;
+  --project-rail:linear-gradient(180deg,#D6E69C,#A7C84B,#3D5635);
+  border-radius:2px 18px 2px 2px;
+}
+.work-card--sayeh-character-design .work-card__trigger img { height:clamp(21rem,34vw,29rem); padding:1rem 1.4rem; }
+
+/* KHANEH SHALVAR — burgundy campaign with saturated rose signature. */
+.work-card--khaneh-shalvar {
+  --project-accent:#71364E; --project-pop:#E65B91; --project-stage:#F2DFE5;
+  --project-head:#F9EAF0; --project-foot:#EBCBD7; --project-frame:#C9B4BD;
+  --project-rail:linear-gradient(180deg,#F3A9C4,#E65B91,#71364E);
+}
+.work-card--khaneh-shalvar .work-card__trigger img { height:clamp(22rem,35vw,30rem); padding:.8rem; }
+
+/* RANDOM PIECES — graphic sheet, silver field and berry signal. */
+.work-card--random-pieces {
+  --project-accent:#403747; --project-pop:#D94F88; --project-stage:#E8E4EB;
+  --project-head:#F4F0F5; --project-foot:#DDD5E3; --project-frame:#BDB5C2;
+  --project-rail:repeating-linear-gradient(180deg,#D94F88 0 9px,#BEC9CD 9px 18px,#403747 18px 27px);
+}
+.work-card--random-pieces .work-card__trigger img { height:clamp(20rem,32vw,28rem); padding:1.2rem; }
+
+/* TURKISH COFFEE — clay paper and soft pink foil. */
+.work-card--turkish-coffee-packaging {
+  --project-accent:#704535; --project-pop:#D96F98; --project-stage:#F1E2D8;
+  --project-head:#F9EFE8; --project-foot:#E8D1C4; --project-frame:#CDB8AA;
+  --project-rail:linear-gradient(180deg,#D96F98,#B76B56,#704535);
+  border-radius:2px 2px 14px 2px;
+}
+.work-card--turkish-coffee-packaging .work-card__trigger img { height:clamp(19rem,30vw,26rem); padding:1.1rem; }
+
+/* TOUCH UPS — technical graphite / brushed-silver workbench. */
+.work-card--touch-ups {
+  --project-accent:#35444A; --project-pop:#D94F88; --project-stage:#E5EAEC;
+  --project-head:#F1F4F5; --project-foot:#D7E0E3; --project-frame:#AEBBC0;
+  --project-rail:linear-gradient(180deg,#F5F7F7,#BEC9CD,#7D8D94,#D94F88);
+  background:repeating-linear-gradient(135deg,#F5F7F7 0 14px,#E9EEF0 14px 15px)!important;
+}
+.work-card--touch-ups .work-card__trigger img { height:clamp(18rem,29vw,25rem); padding:.75rem; }
+
+/* NIKMEHR — content operations, energetic jade with guava highlight. */
+.work-card--nikmehr {
+  --project-accent:#075E52; --project-pop:#E65B91; --project-stage:#DDF1E9;
+  --project-head:#F8E6ED; --project-foot:#CFE8DC; --project-frame:#AFC8BE;
+  --project-rail:linear-gradient(180deg,#E65B91 0 35%,#00A889 35% 100%);
+}
+.work-card--nikmehr .work-card__trigger img { height:clamp(20rem,32vw,28rem); padding:.8rem; }
+
+/* JUNOON — evidence archive: near-black dossier, red index line, silver details. */
+.work-card--junoon-podcast {
+  --project-accent:#F1ECEE; --project-pop:#E33C50; --project-stage:#171719;
+  --project-head:#242326; --project-foot:#242326; --project-frame:#77777D;
+  --project-rail:linear-gradient(180deg,#E33C50 0 55%,#9A9A9F 55% 100%);
+  background:linear-gradient(145deg,#343236,#111113)!important;
+  box-shadow:0 16px 38px rgb(0 0 0 / 22%),inset 0 1px 0 rgb(255 255 255 / 12%);
+}
+.work-card--junoon-podcast .work-card__trigger img { height:clamp(23rem,37vw,33rem); padding:1.15rem 1.6rem; }
+.work-card--junoon-podcast .work-card__trigger > span:first-child { border-bottom-color:rgb(227 60 80 / 45%); }
+.work-card--junoon-podcast .work-card__trigger > span:first-child svg { color:#E33C50!important; }
+.work-card--junoon-podcast .work-card__trigger > span:last-child { border-top-color:rgb(227 60 80 / 45%); }
+.work-card--junoon-podcast .work-card__trigger > span:last-child .font-display { color:#F4EFF0!important; }
+.work-card--junoon-podcast .work-card__trigger > span:last-child [lang="fa"] { color:#F05A6C!important; }
+.work-card--junoon-podcast .work-card__context { color:#F1ECEE; }
+
+@media (hover:hover) and (pointer:fine) {
   .work-card:not(.work-card--parla):hover {
-    transform: translateY(-6px);
-    border-color: var(--card-highlight) !important;
-    box-shadow:
-      0 20px 42px color-mix(in srgb, var(--card-accent) 15%, transparent),
-      inset 0 1px 0 rgb(255 255 255 / 95%);
+    transform:translateY(-6px);
+    border-color:var(--project-pop)!important;
+    box-shadow:0 22px 46px color-mix(in srgb,var(--project-accent) 18%,transparent);
   }
-  .work-card:not(.work-card--parla):hover .work-card__trigger > span:last-child {
-    background: linear-gradient(110deg, color-mix(in srgb, var(--card-tint) 72%, white), color-mix(in srgb, var(--card-highlight) 23%, var(--card-tint))) !important;
-  }
-  .work-card:not(.work-card--parla):hover .work-card__trigger img {
-    transform: scale(1.018);
-  }
+  .work-card:not(.work-card--parla):hover .work-card__trigger img { transform:scale(1.02); filter:saturate(1.05); }
+  .work-card:not(.work-card--parla):hover .work-card__trigger > span:first-child svg { transform:rotate(45deg); }
+  .work-card:not(.work-card--parla):hover .work-card__context svg { transform:translate(2px,-2px); }
 }
-@media (max-width: 767px) {
-  .work-card:not(.work-card--parla) {
-    padding: .45rem;
-    box-shadow: 0 5px 18px rgb(34 57 55 / 6%);
-  }
-  .work-card:not(.work-card--parla)::after {
-    left: .8rem;
-    right: .8rem;
-  }
+@media (max-width:767px) {
+  .work-card:not(.work-card--parla) .work-card__trigger img { height:clamp(18rem,78vw,25rem); padding:.7rem; }
+  .work-card--junoon-podcast .work-card__trigger img { height:clamp(21rem,92vw,29rem); }
 }
-@media (prefers-reduced-motion: reduce) {
-  .work-card:not(.work-card--parla) {
-    transition: none !important;
-  }
-}
-
- 
-/* PROJECT-SPECIFIC CARD ART DIRECTION — each project gets its own visual system. */
-.work-card:not(.work-card--parla){padding:0!important;border-width:1px!important;border-color:var(--project-frame,#BEC9CD)!important;background:var(--project-frame-bg,#EDF1F2)!important;box-shadow:0 12px 30px rgb(22 39 36 / 9%),inset 0 1px 0 rgb(255 255 255 / 85%)}
-.work-card:not(.work-card--parla)::after{left:0;right:0;height:4px;background:linear-gradient(90deg,var(--project-accent),var(--project-pop),var(--project-frame))}
-.work-card:not(.work-card--parla) .work-card__trigger{background:var(--project-stage,var(--card-tint))!important}
-.work-card:not(.work-card--parla) .work-card__trigger>span:first-child{min-height:3.6rem;padding:1.05rem 1.35rem .85rem!important;color:var(--project-accent)!important;background:var(--project-head,var(--project-stage))!important;border-bottom:1px solid color-mix(in srgb,var(--project-accent) 24%,transparent);letter-spacing:.15em}
-.work-card:not(.work-card--parla) .work-card__trigger>span:first-child svg{color:var(--project-pop)!important}
-.work-card:not(.work-card--parla) .work-card__trigger>img{display:block;width:100%;min-height:17rem;height:clamp(19rem,31vw,27rem);padding:clamp(.8rem,1.8vw,1.45rem);background:var(--project-image-bg,var(--project-stage))!important;object-fit:contain!important;transition:transform .8s cubic-bezier(.18,.72,.22,1),filter .6s ease}
-.work-card:not(.work-card--parla) .work-card__trigger>span:last-child{min-height:7.2rem;padding:1.15rem 1.35rem 1.35rem!important;color:var(--project-accent)!important;background:var(--project-foot,var(--project-head))!important;border-top:1px solid color-mix(in srgb,var(--project-accent) 25%,transparent)}
-.work-card:not(.work-card--parla) .work-card__trigger>span:last-child .font-display{color:var(--project-accent)!important;letter-spacing:-.035em}
-.work-card:not(.work-card--parla) .work-card__trigger>span:last-child [lang=fa]{color:var(--project-pop)!important}
-.work-card:not(.work-card--parla)>div.mt-5{padding:0 1.35rem 1.35rem}
-.work-card:not(.work-card--parla) .work-card__context{color:var(--project-accent)}
-.work-card:not(.work-card--parla) .work-card__context svg{color:var(--project-pop);transition:transform .35s ease}
-
-/* Turquoise jewellery — deep malachite + cool silver product vitrine. */
-.work-card--turquoise-jewelry-set{--project-accent:#075E52;--project-pop:#00A889;--project-stage:#DDF3E9;--project-head:#EAF5F0;--project-foot:#D3EAE1;--project-frame:#AFC8C0;--project-frame-bg:linear-gradient(145deg,#F4F7F6,#DCE8E5);--project-image-bg:radial-gradient(ellipse at 50% 48%,#FFF 0%,#E4F2ED 58%,#C6DED5 100%)}
-.work-card--turquoise-jewelry-set .work-card__trigger>img{padding:1.5rem 2.2rem}
-.work-card--turquoise-jewelry-set::before{content:"";position:absolute;inset:8px;border:1px solid rgb(7 94 82 / 20%);pointer-events:none;z-index:2}
-
-/* Stillness — quiet botanical editorial. */
-.work-card--stillness-wellness-spaces{--project-accent:#315D4B;--project-pop:#91B83E;--project-stage:#E8F0E7;--project-head:#F0F5EE;--project-foot:#DCE9D9;--project-frame:#C1D0C1;--project-frame-bg:linear-gradient(135deg,#F6F8F3,#DDE8DC);--project-image-bg:linear-gradient(160deg,#F2F5EE,#D5E3D3);border-radius:2px}
-.work-card--stillness-wellness-spaces .work-card__trigger>img{height:clamp(20rem,34vw,30rem);padding:1.8rem}
-.work-card--stillness-wellness-spaces .work-card__trigger>span:first-child{letter-spacing:.22em}
-
-/* Moodbean — roasted coffee and warm pink. */
-.work-card--moodbean{--project-accent:#57372F;--project-pop:#D46D8C;--project-stage:#F1E5DE;--project-head:#F7EEE9;--project-foot:#E9D6CE;--project-frame:#CBB5AC;--project-frame-bg:linear-gradient(145deg,#F8F1ED,#E4D4CC);--project-image-bg:radial-gradient(ellipse at 50% 50%,#FFF9F4 0%,#EEDFD6 72%,#D9C2B8 100%)}
-.work-card--moodbean .work-card__trigger>img{height:clamp(18rem,29vw,25rem);padding:1.1rem}
-
-/* Khaneh Mod Setareh — polished jade and rose storefront. */
-.work-card--khaneh-mod-setareh{--project-accent:#075E52;--project-pop:#D94F88;--project-stage:#E4F1E9;--project-head:#F6E5EC;--project-foot:#D9ECE2;--project-frame:#B7C9C1;--project-frame-bg:linear-gradient(120deg,#F4F6F4 0%,#E5EFEB 55%,#F3DFE7 100%);--project-image-bg:linear-gradient(145deg,#F7E9EF,#DCEDE4 52%,#C6E1D4)}
-.work-card--khaneh-mod-setareh .work-card__trigger>img{height:clamp(22rem,35vw,31rem);padding:1rem}
-
-/* Setare Fashion House — editorial contrast and vivid raspberry. */
-.work-card--setare-fashion-house-film{--project-accent:#6D2448;--project-pop:#E65B91;--project-stage:#F5DCE6;--project-head:#F9EAF0;--project-foot:#EFC6D6;--project-frame:#B9C2C5;--project-frame-bg:linear-gradient(145deg,#F0F2F3,#E7D5DE);--project-image-bg:linear-gradient(155deg,#E7EAEB,#F7DCE7 58%,#D6E6DE)}
-.work-card--setare-fashion-house-film .work-card__trigger>img{height:clamp(22rem,37vw,32rem);padding:.65rem}
-.work-card--setare-fashion-house-film .work-card__trigger>span:last-child .font-display{font-size:clamp(2rem,3.8vw,3.2rem)}
-
-/* SAYEH — earthy green and citrus signal. */
-.work-card--sayeh-character-design{--project-accent:#3D5635;--project-pop:#A7C84B;--project-stage:#E8EEDB;--project-head:#F1F4E8;--project-foot:#DDE7C9;--project-frame:#BEC9A9;--project-frame-bg:linear-gradient(145deg,#F4F6EC,#E0E8D4);--project-image-bg:radial-gradient(ellipse at 50% 45%,#FBFCF5 0%,#E6EDD8 72%,#CFDDBB 100%)}
-.work-card--sayeh-character-design .work-card__trigger>img{height:clamp(21rem,34vw,29rem);padding:1rem 1.4rem}
-
-/* Khaneh Shalvar — confident burgundy / rose campaign. */
-.work-card--khaneh-shalvar{--project-accent:#71364E;--project-pop:#E65B91;--project-stage:#F2DFE5;--project-head:#F8EAF0;--project-foot:#EACBD7;--project-frame:#C9B4BD;--project-frame-bg:linear-gradient(145deg,#F5F0F2,#E7D9DE);--project-image-bg:linear-gradient(135deg,#F8EEF1,#E8D5DC 55%,#D9E7DF)}
-.work-card--khaneh-shalvar .work-card__trigger>img{height:clamp(22rem,35vw,30rem);padding:.8rem}
-
-/* Random Pieces — graphic studio sheet, silver and berry. */
-.work-card--random-pieces{--project-accent:#3F3444;--project-pop:#D94F88;--project-stage:#E8E4EA;--project-head:#F3EFF4;--project-foot:#DDD5E2;--project-frame:#BDB5C2;--project-frame-bg:linear-gradient(135deg,#F5F3F6,#DDD9E2);--project-image-bg:repeating-linear-gradient(135deg,#F1EEF3 0 18px,#E6E0E9 18px 36px)}
-.work-card--random-pieces .work-card__trigger>img{height:clamp(20rem,32vw,28rem);padding:1.25rem}
-
-/* Turkish coffee — warm clay and pink foil accent. */
-.work-card--turkish-coffee-packaging{--project-accent:#704535;--project-pop:#D96F98;--project-stage:#F1E2D8;--project-head:#F8EEE7;--project-foot:#E8D1C4;--project-frame:#CDB8AA;--project-frame-bg:linear-gradient(145deg,#F8F2ED,#E8D8CC);--project-image-bg:linear-gradient(145deg,#FCF6EF,#E9D8CB 70%,#F3D9E3)}
-.work-card--turkish-coffee-packaging .work-card__trigger>img{height:clamp(19rem,30vw,26rem);padding:1.1rem}
-
-/* Touch-ups — technical retouch desk, graphite / brushed silver / guava. */
-.work-card--touch-ups{--project-accent:#35444A;--project-pop:#E65B91;--project-stage:#E5EAEC;--project-head:#F0F3F4;--project-foot:#D6DEE1;--project-frame:#AEBBC0;--project-frame-bg:linear-gradient(145deg,#F7F8F8,#DDE3E5);--project-image-bg:linear-gradient(135deg,#F5F6F7,#DDE4E7)}
-.work-card--touch-ups .work-card__trigger>img{height:clamp(18rem,29vw,25rem);padding:.75rem}
-
-/* Nikmehr — lively content operations, jade and punchy guava. */
-.work-card--nikmehr{--project-accent:#075E52;--project-pop:#E65B91;--project-stage:#DDF1E9;--project-head:#F7E5EC;--project-foot:#CDE8DC;--project-frame:#AFC8BE;--project-frame-bg:linear-gradient(120deg,#F5F7F5,#E3EEE9 58%,#F5E0E8);--project-image-bg:linear-gradient(145deg,#F8EAF0,#D8EEE4)}
-.work-card--nikmehr .work-card__trigger>img{height:clamp(20rem,32vw,28rem);padding:.8rem}
-
-/* Junoon — evidence archive: ink-black, red file mark, silver typography. */
-.work-card--junoon-podcast{--project-accent:#F1ECEE;--project-pop:#E33C50;--project-stage:#171719;--project-head:#242326;--project-foot:#242326;--project-frame:#77777D;--project-frame-bg:linear-gradient(145deg,#343236,#111113);--project-image-bg:radial-gradient(ellipse at 50% 48%,#343236 0%,#171719 72%,#0B0B0D 100%);border-color:#77777D!important;box-shadow:0 14px 36px rgb(0 0 0 / 20%),inset 0 1px 0 rgb(255 255 255 / 12%)}
-.work-card--junoon-podcast::after{height:3px;background:linear-gradient(90deg,#E33C50 0%,#E33C50 28%,#8D8D92 28%,#8D8D92 100%)}
-.work-card--junoon-podcast .work-card__trigger>span:first-child{border-bottom-color:rgb(227 60 80 / 45%)}
-.work-card--junoon-podcast .work-card__trigger>span:first-child svg{color:#E33C50!important}
-.work-card--junoon-podcast .work-card__trigger>img{height:clamp(23rem,37vw,33rem);padding:1.15rem 1.6rem}
-.work-card--junoon-podcast .work-card__trigger>span:last-child{border-top-color:rgb(227 60 80 / 45%)}
-.work-card--junoon-podcast .work-card__trigger>span:last-child .font-display{color:#F4EFF0!important}
-.work-card--junoon-podcast .work-card__trigger>span:last-child [lang=fa]{color:#F05A6C!important}
-.work-card--junoon-podcast .work-card__context{color:#F1ECEE}
-
-@media (hover:hover) and (pointer:fine){
- .work-card:not(.work-card--parla):hover{transform:translateY(-7px);border-color:var(--project-pop)!important;box-shadow:0 22px 48px color-mix(in srgb,var(--project-accent) 19%,transparent),inset 0 1px 0 rgb(255 255 255 / 90%)}
- .work-card:not(.work-card--parla):hover .work-card__trigger>img{transform:scale(1.018);filter:saturate(1.045)}
- .work-card:not(.work-card--parla):hover .work-card__context svg{transform:rotate(45deg)}
-}
-@media (max-width:767px){
- .work-card:not(.work-card--parla) .work-card__trigger>img{height:clamp(18rem,78vw,25rem);min-height:0;padding:.7rem}
- .work-card--junoon-podcast .work-card__trigger>img{height:clamp(21rem,92vw,29rem)}
-}
-@media (prefers-reduced-motion:reduce){
- .work-card:not(.work-card--parla),.work-card:not(.work-card--parla) .work-card__trigger>img,.work-card:not(.work-card--parla) .work-card__context svg{transition:none!important}
+@media (prefers-reduced-motion:reduce) {
+  .work-card:not(.work-card--parla),
+  .work-card:not(.work-card--parla) .work-card__trigger img,
+  .work-card:not(.work-card--parla) .work-card__context svg { transition:none!important; }
 }
