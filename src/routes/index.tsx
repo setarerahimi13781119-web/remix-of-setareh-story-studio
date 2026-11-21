@@ -21,11 +21,13 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://setareh-portfolio.vercel.app/" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:title", content: title },
       { name: "twitter:description", content: description },
     ],
   }),
+  links: [{ rel: "canonical", href: "https://setareh-portfolio.vercel.app/" }],
   component: Index,
 });
 
