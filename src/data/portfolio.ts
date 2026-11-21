@@ -77,7 +77,6 @@ export const work: WorkItem[] = [
     kind: "Reel",
     href: "https://www.instagram.com/reel/DG0vrqaID2v/",
   },
-
 ];
 
 export type PortfolioProject = {
