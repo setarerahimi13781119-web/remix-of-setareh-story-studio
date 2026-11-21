@@ -217,144 +217,107 @@
   gap: clamp(1rem, 2.4vw, 2.25rem);
 }
 
-/* PORTFOLIO CARDS — consolidated system. Keep all card rules in this section. */
+/* PORTFOLIO CARDS — Contemporary Pop / Neo-Brutalist system.
+   One shared design language; each project gets its own composition. */
 .work-grid { align-items:stretch; gap:clamp(1rem,2.4vw,2.25rem); }
 .work-grid__item { min-width:0; }
 .work-card {
   --card-accent:#075E52;
-  --card-pop:#00A889;
-  --card-stage:#E4F2EC;
-  --card-head:#F1F7F4;
-  --card-foot:#D6EAE1;
-  --card-frame:#B8CBC3;
-  position:relative;
-  display:flex;
-  flex-direction:column;
-  height:100%;
-  overflow:hidden;
-  padding:0 !important;
-  border:1px solid var(--card-frame) !important;
-  border-radius:4px;
-  background:linear-gradient(145deg,#FAFCFB,var(--card-stage)) !important;
-  box-shadow:0 12px 30px rgb(24 45 40 / 10%),inset 0 1px 0 rgb(255 255 255 / 90%);
-  transition:transform .42s cubic-bezier(.2,.75,.25,1),border-color .3s ease,box-shadow .38s ease;
+  --card-pop:#F04491;
+  --card-stage:#E8F4EF;
+  --card-head:#0C3029;
+  --card-foot:#D8EDE4;
+  --card-frame:#0C3029;
+  position:relative; display:flex; flex-direction:column; height:100%;
+  overflow:hidden; padding:0 !important;
+  border:1.5px solid var(--card-frame) !important;
+  border-radius:2px;
+  background:var(--card-stage) !important;
+  box-shadow:6px 6px 0 var(--card-accent),0 14px 28px rgb(20 28 25 / 9%);
+  transition:transform .32s cubic-bezier(.2,.75,.25,1),box-shadow .32s ease,border-color .25s ease;
 }
 .work-card:not(.work-card--parla)::before {
-  content:"";
-  position:absolute;
-  z-index:5;
-  inset:0 auto 0 0;
-  width:4px;
-  background:var(--card-rail,linear-gradient(180deg,var(--card-pop),var(--card-accent)));
-  pointer-events:none;
+  content:""; position:absolute; z-index:5; inset:0 auto 0 0; width:7px;
+  background:var(--card-pop); pointer-events:none;
 }
 .work-card:not(.work-card--parla)::after {
-  content:"";
-  position:absolute;
-  z-index:5;
-  top:0;
-  left:4px;
-  right:0;
-  height:3px;
-  background:linear-gradient(90deg,var(--card-accent),var(--card-pop),var(--card-frame));
-  pointer-events:none;
+  content:""; position:absolute; z-index:5; top:0; left:7px; right:0; height:7px;
+  background:var(--card-accent); pointer-events:none;
 }
 .work-card__trigger {
-  position:relative;
-  display:flex;
-  width:100%;
-  flex-direction:column;
-  align-items:stretch;
-  justify-content:space-between;
-  gap:0;
-  overflow:hidden;
+  position:relative; display:flex; width:100%; flex-direction:column;
+  align-items:stretch; justify-content:space-between; gap:0; overflow:hidden;
   background:var(--card-stage) !important;
 }
 .work-card__trigger > span:first-child {
-  min-height:3.7rem;
-  padding:1.05rem 1.3rem .85rem 1.55rem !important;
-  border-bottom:1px solid color-mix(in srgb,var(--card-accent) 25%,transparent);
-  color:var(--card-accent) !important;
-  background:var(--card-head) !important;
-  letter-spacing:.14em;
+  min-height:3.55rem; padding:1rem 1.25rem .8rem 1.6rem !important;
+  border:0 !important; color:#fff !important; background:var(--card-head) !important;
+  font-family:var(--font-mono); font-size:.66rem; letter-spacing:.13em;
+  text-transform:uppercase;
 }
 .work-card__trigger > span:first-child svg {
-  color:var(--card-pop) !important;
-  transition:transform .35s ease;
+  color:var(--card-pop) !important; transition:transform .3s ease;
 }
 .work-card__trigger img {
-  display:block;
-  width:100%;
-  height:clamp(19rem,31vw,27rem);
-  min-height:0;
-  padding:1.15rem 1.4rem;
-  background:var(--card-stage) !important;
+  display:block; width:100%; height:clamp(19rem,31vw,27rem); min-height:0;
+  padding:1.1rem 1.35rem; background:var(--card-stage) !important;
   object-fit:contain !important;
-  transition:transform .65s cubic-bezier(.18,.72,.22,1),filter .45s ease;
+  transition:transform .55s cubic-bezier(.18,.72,.22,1),filter .4s ease;
 }
 .work-card__trigger > span:last-child {
-  position:relative;
-  width:100%;
-  min-height:7.4rem;
-  padding:1.1rem 1.35rem 1.25rem 1.55rem !important;
-  border-top:1px solid color-mix(in srgb,var(--card-accent) 25%,transparent);
-  color:var(--card-accent) !important;
-  background:var(--card-foot) !important;
+  position:relative; width:100%; min-height:7.5rem;
+  padding:1.15rem 1.35rem 1.3rem 1.6rem !important;
+  border:0 !important; border-top:1.5px solid var(--card-frame) !important;
+  color:var(--card-accent) !important; background:var(--card-foot) !important;
   text-align:left;
 }
 .work-card__trigger > span:last-child .font-display {
-  color:var(--card-accent) !important;
-  letter-spacing:-.035em;
+  color:var(--card-accent) !important; letter-spacing:-.045em; line-height:.98;
 }
 .work-card__trigger > span:last-child [lang="fa"] { color:var(--card-pop) !important; }
-.work-card > div.mt-5 { padding:0 1.35rem 1.35rem 1.55rem; }
-.work-card__context { border-top:1px solid color-mix(in srgb,var(--card-accent) 20%,transparent); color:var(--card-accent); }
-.work-card__context svg { color:var(--card-pop); transition:transform .3s ease; }
+.work-card > div.mt-5 { padding:0 1.35rem 1.35rem 1.6rem; }
+.work-card__context { border-top:1px solid color-mix(in srgb,var(--card-accent) 32%,transparent); color:var(--card-accent); }
+.work-card__context svg { color:var(--card-pop); transition:transform .28s ease; }
 
-/* Repeating sequence is assigned by data-palette on each visible list item. */
+/* Deliberately varied pairings: green, raspberry, silver and ink — no rainbow cycle. */
 .work-grid__item[data-palette="0"] .work-card:not(.work-card--parla):not(.work-card--junoon-podcast) {
-  --card-accent:#075E52; --card-pop:#00A889; --card-stage:#E4F2EC; --card-head:#F1F7F4; --card-foot:#D6EAE1; --card-frame:#B8CBC3;
-  --card-rail:linear-gradient(180deg,#BEC9CD 0%,#00A889 32%,#075E52 100%);
+  --card-accent:#075E52; --card-pop:#F04491; --card-stage:#E5F3ED; --card-head:#073B32; --card-foot:#CFE9DE; --card-frame:#073B32;
 }
 .work-grid__item[data-palette="1"] .work-card:not(.work-card--parla):not(.work-card--junoon-podcast) {
-  --card-accent:#315D4B; --card-pop:#91B83E; --card-stage:#E9F0E5; --card-head:#F3F6EF; --card-foot:#DDE8D8; --card-frame:#BFCDBB;
-  --card-rail:linear-gradient(180deg,#DCE8D5 0%,#91B83E 48%,#315D4B 100%);
+  --card-accent:#8E245B; --card-pop:#087F62; --card-stage:#F8E5EE; --card-head:#64183F; --card-foot:#F0C8DC; --card-frame:#64183F;
 }
 .work-grid__item[data-palette="2"] .work-card:not(.work-card--parla):not(.work-card--junoon-podcast) {
-  --card-accent:#71364E; --card-pop:#E65B91; --card-stage:#F4DFE8; --card-head:#F9ECF1; --card-foot:#EBCBD7; --card-frame:#D2B8C2;
-  --card-rail:linear-gradient(180deg,#F3A9C4 0%,#E65B91 48%,#71364E 100%);
+  --card-accent:#25282B; --card-pop:#F04491; --card-stage:#E5E8E9; --card-head:#17191B; --card-foot:#D0D6D8; --card-frame:#25282B;
 }
 .work-grid__item[data-palette="3"] .work-card:not(.work-card--parla):not(.work-card--junoon-podcast) {
-  --card-accent:#6D2448; --card-pop:#D94F88; --card-stage:#F0DDE6; --card-head:#F8EAF0; --card-foot:#E8C9D8; --card-frame:#C9B4BD;
-  --card-rail:linear-gradient(180deg,#D94F88 0%,#A74770 48%,#6D2448 100%);
+  --card-accent:#087F62; --card-pop:#D92F7C; --card-stage:#DDF3E8; --card-head:#075440; --card-foot:#BFE6D4; --card-frame:#075440;
 }
 .work-grid__item[data-palette="4"] .work-card:not(.work-card--parla):not(.work-card--junoon-podcast) {
-  --card-accent:#35444A; --card-pop:#D94F88; --card-stage:#E8ECEE; --card-head:#F4F6F7; --card-foot:#DCE3E6; --card-frame:#B8C4C9;
-  --card-rail:linear-gradient(180deg,#F5F7F7 0%,#BEC9CD 48%,#7D8D94 82%,#D94F88 100%);
+  --card-accent:#A72B68; --card-pop:#BEC8CC; --card-stage:#F6E4ED; --card-head:#76204C; --card-foot:#EFC9DA; --card-frame:#76204C;
 }
 .work-grid__item[data-palette="5"] .work-card:not(.work-card--parla):not(.work-card--junoon-podcast) {
-  --card-accent:#3D5635; --card-pop:#A7C84B; --card-stage:#E8EEDB; --card-head:#F2F5E9; --card-foot:#DCE7C9; --card-frame:#BBC99F;
-  --card-rail:linear-gradient(180deg,#D6E69C 0%,#A7C84B 48%,#3D5635 100%);
+  --card-accent:#40534B; --card-pop:#EC438D; --card-stage:#E6EBE8; --card-head:#273B33; --card-foot:#D2DDD7; --card-frame:#273B33;
 }
 
-/* Composition changes by project; the colour sequence remains consistent. */
-.work-card--turquoise-jewelry-set { border-radius:3px; box-shadow:inset 0 0 0 5px #E8EFED, inset 0 0 0 6px #BFCBC8, 0 12px 30px rgb(24 45 40 / 10%); }
+/* Project-specific art direction: same system, different silhouette and rhythm. */
+.work-card--turquoise-jewelry-set { border-radius:0; box-shadow:7px 7px 0 var(--card-pop),0 14px 28px rgb(20 28 25 / 9%); }
 .work-card--turquoise-jewelry-set .work-card__trigger img { padding:1.7rem 2.2rem; }
-.work-card--stillness-wellness-spaces { border-radius:0; box-shadow:none; }
+.work-card--stillness-wellness-spaces { border-radius:0; box-shadow:inset 0 0 0 8px var(--card-stage),inset 0 0 0 9px var(--card-accent); }
 .work-card--stillness-wellness-spaces .work-card__trigger img { height:clamp(21rem,34vw,30rem); padding:2rem; }
-.work-card--stillness-wellness-spaces .work-card__trigger > span:first-child { letter-spacing:.22em; }
-.work-card--moodbean { border-radius:14px 2px 2px 2px; }
+.work-card--stillness-wellness-spaces .work-card__trigger > span:first-child { letter-spacing:.2em; }
+.work-card--moodbean { border-radius:2px 18px 2px 2px; box-shadow:6px 6px 0 var(--card-pop),0 14px 28px rgb(20 28 25 / 9%); }
 .work-card--moodbean .work-card__trigger img { height:clamp(18rem,29vw,25rem); padding:1rem; }
 .work-card--khaneh-mod-setareh .work-card__trigger img { height:clamp(22rem,35vw,31rem); padding:1rem; }
 .work-card--setare-fashion-house-film .work-card__trigger img { height:clamp(23rem,38vw,33rem); padding:.65rem; }
 .work-card--setare-fashion-house-film .work-card__trigger > span:last-child .font-display { font-size:clamp(2rem,3.8vw,3.2rem); }
-.work-card--sayeh-character-design { border-radius:2px 18px 2px 2px; }
+.work-card--sayeh-character-design { border-radius:0 0 22px 0; box-shadow:7px 7px 0 var(--card-pop),0 14px 28px rgb(20 28 25 / 9%); }
 .work-card--sayeh-character-design .work-card__trigger img { height:clamp(21rem,34vw,29rem); padding:1rem 1.4rem; }
 .work-card--khaneh-shalvar .work-card__trigger img { height:clamp(22rem,35vw,30rem); padding:.8rem; }
+.work-card--random-pieces { transform:rotate(-.35deg); }
 .work-card--random-pieces .work-card__trigger img { height:clamp(20rem,32vw,28rem); padding:1.2rem; }
-.work-card--turkish-coffee-packaging { border-radius:2px 2px 14px 2px; }
+.work-card--turkish-coffee-packaging { border-radius:2px; box-shadow:7px 7px 0 var(--card-accent),0 14px 28px rgb(20 28 25 / 9%); }
 .work-card--turkish-coffee-packaging .work-card__trigger img { height:clamp(19rem,30vw,26rem); padding:1.1rem; }
-.work-card--touch-ups { background:repeating-linear-gradient(135deg,#F5F7F7 0 14px,#E9EEF0 14px 15px) !important; }
+.work-card--touch-ups { background:repeating-linear-gradient(135deg,var(--card-stage) 0 16px,color-mix(in srgb,var(--card-pop) 12%,var(--card-stage)) 16px 17px) !important; }
 .work-card--touch-ups .work-card__trigger img { height:clamp(18rem,29vw,25rem); padding:.75rem; }
 .work-card--nikmehr .work-card__trigger img { height:clamp(20rem,32vw,28rem); padding:.8rem; }
 
