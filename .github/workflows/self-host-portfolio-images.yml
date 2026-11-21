@@ -1,0 +1,33 @@
+name: Move portfolio images to Vercel repo
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/self-host-portfolio-images.yml"
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download original portfolio images
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p public/assets/portfolio
+          curl -fL 'https://id-preview--c40cda6a-8161-45d2-9902-76acbf71b9f3.lovable.app/__l5e/assets-v1/99f21d75-2756-4b86-86a0-d06695f2674b/junoon_case_file_poster.jpg' -o public/assets/portfolio/junoon_case_file_poster.jpg
+          curl -fL 'https://id-preview--c40cda6a-8161-45d2-9902-76acbf71b9f3.lovable.app/__l5e/assets-v1/9abe9641-92f6-4f1a-8629-2f13b43d38cb/junoon_case_ghostship.jpg' -o public/assets/portfolio/junoon_case_ghostship.jpg
+          curl -fL 'https://id-preview--c40cda6a-8161-45d2-9902-76acbf71b9f3.lovable.app/__l5e/assets-v1/629796b5-7c63-4020-8bd6-ff6759c251c7/junoon_case_mcnally.jpg' -o public/assets/portfolio/junoon_case_mcnally.jpg
+          curl -fL 'https://id-preview--c40cda6a-8161-45d2-9902-76acbf71b9f3.lovable.app/__l5e/assets-v1/1dd1f730-5ab0-484c-8b0a-52606f47d46e/junoon_case_rogers.jpg' -o public/assets/portfolio/junoon_case_rogers.jpg
+          curl -fL 'https://id-preview--c40cda6a-8161-45d2-9902-76acbf71b9f3.lovable.app/__l5e/assets-v1/590f4d2a-06a4-457f-9d6f-d532c4eb0c50/junoon_case_unterweger.jpg' -o public/assets/portfolio/junoon_case_unterweger.jpg
+          curl -fL 'https://id-preview--c40cda6a-8161-45d2-9902-76acbf71b9f3.lovable.app/__l5e/assets-v1/110c67b0-1c94-4db4-b54d-61ec2f3df335/khaneh_mod_setareh_slide_01.png' -o public/assets/portfolio/khaneh_mod_setareh_slide_01.png
+          curl -fL 'https://id-preview--c40cda6a-8161-45d2-9902-76acbf71b9f3.lovable.app/__l5e/assets-v1/86f77f9c-d34d-4259-8728-d9e01ee04c00/khaneh_mod_setareh_slide_02.png' -o public/assets/portfolio/khaneh_mod_setareh_slide_02.png
+          curl -fL 'https://id-preview--c40cda6a-8161-45d2-9902-76acbf71b9f3.lovable.app/__l5e/assets-v1/10a92b35-7c4a-4bc6-a528-eb62849c7d07/khaneh_mod_setareh_slide_03.png' -o public/assets/portfolio/khaneh_mod_setareh_slide_03.png
+          curl -fL 'https://id-preview--c40cda6a-8161-45d2-9902-76acbf71b9f3.lovable.app/__l5e/assets-v1/d103e22c-8a16-4d51-b8b2-463ae82a44d8/khaneh_mod_setareh_slide_04.png' -o public/assets/portfolio/khaneh_mod_setareh_slide_04.png
+          curl -fL 'https://id-preview--c40cda6a-8161-45d2-9902-76acbf71b9f3.lovable.app/__l5e/assets-v1/59ae846d-2601-4229-86fb-97df8842bc95/khaneh_mod_setareh_slide_05.png' -o public/assets/portfolio/khaneh_mod_setareh_slide_05.png
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public/assets/portfolio
+          git commit -m 'Host portfolio images in project' || exit 0
+          git push
