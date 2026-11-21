@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { about, capabilities, experience, profile } from "@/data/portfolio";
 import { SelectedWork } from "./SelectedWork";
+import { ObserverStory } from "./ObserverStory";
 
 const nav = [
   { href: "#work", label: "Work" },
@@ -200,7 +201,7 @@ export function Hero() {
 export function Work() {
   return (
     <section id="work" aria-labelledby="work-title" className="portfolio-section mx-auto max-w-7xl px-5 pb-28 md:px-10">
-      <SectionHead index="01" title="Selected Work" id="work" />
+      <SectionHead index="02" title="Selected Work" id="work" />
       <SelectedWork />
     </section>
   );
@@ -209,7 +210,7 @@ export function Work() {
 export function Capabilities() {
   return (
     <section id="capabilities" aria-labelledby="capabilities-title" className="mx-auto max-w-7xl px-5 pb-28 md:px-10">
-      <SectionHead index="02" title="Areas of focus" id="capabilities" />
+      <SectionHead index="03" title="Areas of focus" id="capabilities" />
       <ol className="grid grid-cols-12 gap-x-6">
         {capabilities.map((c, i) => (
           <li key={c.name} className="col-span-12 md:col-start-4 md:col-span-9">
@@ -234,7 +235,7 @@ export function Capabilities() {
 export function Experience() {
   return (
     <section id="experience" aria-labelledby="experience-title" className="mx-auto max-w-7xl px-5 pb-28 md:px-10">
-      <SectionHead index="03" title="Experience" id="experience" />
+      <SectionHead index="04" title="Experience" id="experience" />
       <div className="grid grid-cols-12 gap-6">
         <div className="col-span-12 md:col-start-4 md:col-span-9 space-y-12">
           {experience.map((e) => (
@@ -260,7 +261,7 @@ export function Experience() {
 export function About() {
   return (
     <section id="about" aria-labelledby="about-title" className="mx-auto max-w-7xl px-5 pb-28 md:px-10">
-      <SectionHead index="04" title="About" id="about" />
+      <SectionHead index="05" title="About" id="about" />
       <Reveal>
         <div className="grid grid-cols-12 gap-6">
           <p className="col-span-12 md:col-start-4 md:col-span-6 font-display text-2xl md:text-3xl leading-snug">
@@ -312,7 +313,7 @@ export function Contact() {
       className="contact-footer bg-primary text-primary-foreground"
     >
       <div className="mx-auto max-w-7xl px-5 py-20 md:px-10 md:py-28">
-        <p className="eyebrow text-primary-foreground/60">§ 05 — Contact</p>
+        <p className="eyebrow text-primary-foreground/60">§ 06 — Contact</p>
         <h2
           id="contact-title"
           className="mt-6 font-display text-[clamp(3rem,9vw,7.5rem)] leading-[0.9] tracking-tight"
