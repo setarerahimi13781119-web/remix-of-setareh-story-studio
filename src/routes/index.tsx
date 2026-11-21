@@ -5,6 +5,7 @@ import {
   Contact,
   Experience,
   Header,
+  ScrollStage,
   Hero,
   Work,
 } from "@/components/portfolio/Portfolio";
@@ -38,6 +39,7 @@ function Index() {
       >
         Skip to work
       </a>
+      <ScrollStage />
       <Header />
       <main>
         <Hero />
