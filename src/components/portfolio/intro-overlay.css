@@ -5,10 +5,12 @@
   display: grid;
   place-items: center;
   overflow: hidden;
-  color: #F4F6F2;
-  background: #173D32;
+  color: #f4f6f2;
+  background: #173d32;
   clip-path: inset(0 0 0 0);
-  transition: clip-path .72s cubic-bezier(.76,0,.24,1), opacity .5s ease;
+  transition:
+    clip-path 0.72s cubic-bezier(0.76, 0, 0.24, 1),
+    opacity 0.5s ease;
 }
 .intro-overlay::before,
 .intro-overlay::after {
@@ -18,14 +20,14 @@
   aspect-ratio: 1;
   border: 1px solid rgb(226 239 231 / 14%);
   border-radius: 50%;
-  transform: scale(.72) rotate(-18deg);
-  animation: intro-orbit 1.8s cubic-bezier(.2,.7,.2,1) both;
+  transform: scale(0.72) rotate(-18deg);
+  animation: intro-orbit 1.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
 .intro-overlay::after {
   width: min(54vw, 32rem);
   border-color: rgb(240 68 145 / 38%);
-  transform: scale(.82) rotate(24deg);
-  animation-delay: .08s;
+  transform: scale(0.82) rotate(24deg);
+  animation-delay: 0.08s;
 }
 .intro-overlay__content {
   position: relative;
@@ -34,16 +36,18 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  animation: intro-content .85s cubic-bezier(.2,.7,.2,1) both;
+  animation: intro-content 0.85s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
 .intro-overlay__monogram {
-  font: 400 clamp(5rem,16vw,11rem)/.8 var(--font-display);
-  letter-spacing: -.09em;
-  color: #E6EEE8;
+  font: 400 clamp(5rem, 16vw, 11rem)/0.8 var(--font-display);
+  letter-spacing: -0.09em;
+  color: #e6eee8;
 }
-.intro-overlay__monogram span { color: #F04491; }
+.intro-overlay__monogram span {
+  color: #f04491;
+}
 .intro-overlay__rule {
-  width: clamp(7rem,18vw,12rem);
+  width: clamp(7rem, 18vw, 12rem);
   height: 1px;
   margin: 2rem 0 1.2rem;
   overflow: hidden;
@@ -53,22 +57,25 @@
   display: block;
   width: 100%;
   height: 100%;
-  background: #F04491;
+  background: #f04491;
   transform: scaleX(0);
   transform-origin: left;
-  animation: intro-line 1.1s .2s cubic-bezier(.2,.7,.2,1) forwards;
+  animation: intro-line 1.1s 0.2s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
 }
 .intro-overlay__name {
-  font: 600 .72rem/1 var(--font-mono);
-  letter-spacing: .28em;
+  font: 600 0.72rem/1 var(--font-mono);
+  letter-spacing: 0.28em;
 }
 .intro-overlay__caption {
-  margin-top: .7rem;
+  margin-top: 0.7rem;
   color: rgb(244 246 242 / 58%);
-  font: 500 .58rem/1 var(--font-mono);
-  letter-spacing: .18em;
+  font: 500 0.58rem/1 var(--font-mono);
+  letter-spacing: 0.18em;
 }
-.intro-overlay__caption span { color: #F04491; padding: 0 .25rem; }
+.intro-overlay__caption span {
+  color: #f04491;
+  padding: 0 0.25rem;
+}
 .intro-overlay[data-phase="exit"] {
   clip-path: inset(0 0 100% 0);
   pointer-events: none;
@@ -76,20 +83,42 @@
 .intro-overlay[data-phase="exit"] .intro-overlay__content {
   opacity: 0;
   transform: translateY(-18px);
-  transition: opacity .25s ease, transform .4s ease;
+  transition:
+    opacity 0.25s ease,
+    transform 0.4s ease;
 }
 @keyframes intro-content {
-  from { opacity: 0; transform: translateY(22px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 @keyframes intro-line {
-  to { transform: scaleX(1); }
+  to {
+    transform: scaleX(1);
+  }
 }
 @keyframes intro-orbit {
-  from { opacity: 0; transform: scale(.58) rotate(-38deg); }
-  to { opacity: 1; transform: scale(1) rotate(0); }
+  from {
+    opacity: 0;
+    transform: scale(0.58) rotate(-38deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
 }
 @media (prefers-reduced-motion: reduce) {
-  .intro-overlay, .intro-overlay::before, .intro-overlay::after,
-  .intro-overlay__content, .intro-overlay__rule i { animation: none !important; transition: none !important; }
+  .intro-overlay,
+  .intro-overlay::before,
+  .intro-overlay::after,
+  .intro-overlay__content,
+  .intro-overlay__rule i {
+    animation: none !important;
+    transition: none !important;
+  }
 }
