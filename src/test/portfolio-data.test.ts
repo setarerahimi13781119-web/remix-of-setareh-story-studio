@@ -27,12 +27,15 @@ describe("Portfolio project integrity", () => {
   });
 
   it("distinguishes verified work, explorations and team collaboration", () => {
-    expect(projects.filter((project) => project.status === "verified-role").map((p) => p.id))
-      .toEqual(["nikmehr"]);
-    expect(projects.filter((project) => project.status === "exploration").map((p) => p.id))
-      .toEqual(["khaneh-shalvar", "khaneh-mod-setareh", "touch-ups"]);
-    expect(projects.filter((project) => project.status === "team-collaboration").map((p) => p.id))
-      .toEqual(["junoon-podcast"]);
+    expect(
+      projects.filter((project) => project.status === "verified-role").map((p) => p.id),
+    ).toEqual(["nikmehr"]);
+    expect(projects.filter((project) => project.status === "exploration").map((p) => p.id)).toEqual(
+      ["khaneh-shalvar", "khaneh-mod-setareh", "touch-ups"],
+    );
+    expect(
+      projects.filter((project) => project.status === "team-collaboration").map((p) => p.id),
+    ).toEqual(["junoon-podcast"]);
   });
 
   it("requires every project to have a unique id and complete case-study content", () => {
