@@ -126,7 +126,7 @@ export function Hero() {
           Ideas in motion.
         </p>
         <p className="mt-3 max-w-lg text-sm leading-relaxed text-muted-foreground md:text-base">
-          {profile.headline}. {profile.intro}
+          Creative Direction · Video Editing · Visual Storytelling
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <a href="#work" className="pm-cta-primary inline-flex items-center gap-3 px-6 py-3 text-sm font-semibold">
