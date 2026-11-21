@@ -752,6 +752,7 @@ export function SelectedWork() {
                         loop
                         playsInline
                         preload="metadata"
+                        poster="https://www.dropbox.com/scl/fi/xncc2r3didacdnzew9hgy/setare-fashion-house-cover.jpg?rlkey=ql6x1krumtrk310mbebmloefx&raw=1"
                         aria-hidden="true"
                         className="min-h-0 flex-1 w-full bg-card object-cover"
                       >
