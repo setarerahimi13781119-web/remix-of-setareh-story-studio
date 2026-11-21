@@ -6,7 +6,10 @@ A responsive editorial-style personal portfolio presenting Setareh Rahimi's expe
 
 - **Nikmehr:** verified coordination and publishing of posts and stories for the Jenab Khan and 1001 Instagram pages. Four linked Reels are presented as selected examples of the overall Nikmehr work and are not attributed to either page individually.
 - **Junoon Podcast:** a recent team collaboration on a long-running true-crime podcast. The portfolio separates full video editing of the first completed Brian Yassipour episode from Setareh's own cover and social visual explorations. The podcast and its original identity predate this collaboration.
-- **Khaneh Shalvar, Khaneh Mod Setareh, AI-assisted visual storytelling, and Cafe & food social content:** presented as explorations, not as claims of completed client delivery.
+- **Khaneh Shalvar and Khaneh Mod Setareh:** fashion and ecommerce visual explorations.
+- **Touch Ups:** food-photography enhancement and logo-motion exploration, with the AI-assisted reconstruction clearly disclosed.
+
+The current Selected Work section contains five approved projects. Add a sixth only when its content and assets are confirmed.
 
 LinkedIn: https://linkedin.com/in/setare-rahimi-968a0a274
 CV: https://jobvision.ir/cv/setare-rahimi-174320
@@ -65,8 +68,8 @@ Other available scripts: bun run build:dev and bun run preview.
 
 ## Content and attribution
 
-Keep project descriptions tied to confirmed contributions. Do not invent outcomes, metrics, testimonials, client delivery, authorship or ownership. Nikmehr is described as coordination and publishing. Junoon is described as a collaboration that began after the podcast and its original identity already existed. AI-assisted images are identified as AI-assisted, not documentary photographs.
+Keep project descriptions tied to confirmed contributions. Do not invent outcomes, metrics, testimonials, client delivery, authorship or ownership. Nikmehr is described as coordination and publishing. Junoon is described as a collaboration that began after the podcast and its original identity already existed. AI-assisted reconstructions are identified as such, not presented as direct pixel-level retouching or documentary photographs.
 
 ## SEO and social metadata
 
-The shared root document contains site-wide metadata. The home route owns its page title, description, Open Graph title/description/type, and Twitter card/title/description. Canonical and og:url are intentionally omitted until the published URL for this exact project can be independently verified.
+The shared root document contains site-wide metadata. The home route owns its page title, description, Open Graph title/description/type, and Twitter card/title/description. The production canonical URL is https://setareh-portfolio.vercel.app.
