@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type CSSProperties, type PointerEvent, type ReactNode } from "react";
 import { about, capabilities, experience, profile } from "@/data/portfolio";
 import { SelectedWork } from "./SelectedWork";
 
@@ -106,7 +106,43 @@ export function Header() {
   );
 }
 
+type Bubble = { id: number; x: number; y: number; size: number; drift: number };
+
 export function Hero() {
+  const [bubbles, setBubbles] = useState<Bubble[]>([]);
+  const bubbleId = useRef(0);
+  const bubbleTimers = useRef<number[]>([]);
+  const artRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => () => bubbleTimers.current.forEach(window.clearTimeout), []);
+
+  const moveArt = (event: PointerEvent<HTMLDivElement>) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    const x = (event.clientX - rect.left) / rect.width - 0.5;
+    const y = (event.clientY - rect.top) / rect.height - 0.5;
+    event.currentTarget.style.setProperty("--pointer-x", String(x));
+    event.currentTarget.style.setProperty("--pointer-y", String(y));
+  };
+
+  const releaseBubbles = (event: PointerEvent<HTMLDivElement>) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    const x = ((event.clientX - rect.left) / rect.width) * 100;
+    const y = ((event.clientY - rect.top) / rect.height) * 100;
+    const burst = Array.from({ length: 7 }, (_, index) => ({
+      id: ++bubbleId.current,
+      x: x + (Math.random() - 0.5) * 10,
+      y: y + (Math.random() - 0.5) * 8,
+      size: 4 + Math.random() * 7,
+      drift: (Math.random() - 0.5) * 34,
+    }));
+    setBubbles((current) => [...current.slice(-20), ...burst]);
+    const timer = window.setTimeout(() => {
+      const ids = new Set(burst.map((bubble) => bubble.id));
+      setBubbles((current) => current.filter((bubble) => !ids.has(bubble.id)));
+    }, 1500);
+    bubbleTimers.current.push(timer);
+  };
+
   return (
     <section
       id="top"
@@ -143,7 +179,17 @@ export function Hero() {
       </Reveal>
 
       <Reveal className="col-span-1 md:col-span-5">
-        <div className="pm-hero-art" role="img" aria-label="Abstract three-dimensional Playful Matter sculpture">
+        <div
+          ref={artRef}
+          className="pm-hero-art"
+          onPointerMove={moveArt}
+          onPointerLeave={(event) => {
+            event.currentTarget.style.setProperty("--pointer-x", "0");
+            event.currentTarget.style.setProperty("--pointer-y", "0");
+          }}
+          onPointerDown={releaseBubbles}
+          aria-label="Interactive abstract Playful Matter sculpture. Touch or click to release small bubbles."
+        >
           <img
             className="pm-sculpture"
             src="https://www.dropbox.com/scl/fi/qvqr9usadtyvlz88bhtzb/file_0000000031dc8210ab260c3660f34e9e.png?rlkey=yfkgjtljb3i3c1v3lykyaenl3&raw=1"
@@ -151,6 +197,20 @@ export function Hero() {
             fetchPriority="high"
             onError={(event) => { event.currentTarget.style.visibility = "hidden"; }}
           />
+          {bubbles.map((bubble) => (
+            <span
+              key={bubble.id}
+              className="pm-bubble"
+              aria-hidden="true"
+              style={{
+                left: `${bubble.x}%`,
+                top: `${bubble.y}%`,
+                width: bubble.size,
+                height: bubble.size,
+                "--bubble-drift": `${bubble.drift}px`,
+              } as CSSProperties}
+            />
+          ))}
           <span className="pm-art-index">PM — 001 / FORM STUDY</span>
         </div>
       </Reveal>
