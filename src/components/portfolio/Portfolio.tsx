@@ -1,4 +1,11 @@
-import { useEffect, useRef, useState, type CSSProperties, type PointerEvent, type ReactNode } from "react";
+import {
+  useEffect,
+  useRef,
+  useState,
+  type CSSProperties,
+  type PointerEvent,
+  type ReactNode,
+} from "react";
 import { about, capabilities, experience, profile } from "@/data/portfolio";
 import { SelectedWork } from "./SelectedWork";
 
@@ -54,10 +61,26 @@ export function BrandMark() {
   return (
     <a href="#top" className="pm-brand" aria-label="Setareh Rahimi — Back to top">
       <svg className="pm-brand-mark" viewBox="0 0 42 42" fill="none" aria-hidden="true">
-        <path d="M18.7 8.2C15.4 5.8 8.2 6.4 7.1 11.2C5.9 16.4 13.1 17.4 18.2 20.1C23.4 22.9 23.3 30.1 17.5 33.2C12.7 35.8 6.9 33.8 5.2 30.9" stroke="#243E24" strokeWidth="5" strokeLinecap="round" />
-        <path d="M23.5 34V8.5H29.3C35.5 8.5 37.1 17.1 31.4 19.8L23.5 23.5" stroke="#9EB67A" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
+        <path
+          d="M18.7 8.2C15.4 5.8 8.2 6.4 7.1 11.2C5.9 16.4 13.1 17.4 18.2 20.1C23.4 22.9 23.3 30.1 17.5 33.2C12.7 35.8 6.9 33.8 5.2 30.9"
+          stroke="#243E24"
+          strokeWidth="5"
+          strokeLinecap="round"
+        />
+        <path
+          d="M23.5 34V8.5H29.3C35.5 8.5 37.1 17.1 31.4 19.8L23.5 23.5"
+          stroke="#9EB67A"
+          strokeWidth="5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
         <path d="M27.2 22.1L36.5 34" stroke="#9EB67A" strokeWidth="4" strokeLinecap="round" />
-        <path d="M5 7.5C8.1 4.4 11.2 3.2 14.7 3.5" stroke="#C12864" strokeWidth="2" strokeLinecap="round" />
+        <path
+          d="M5 7.5C8.1 4.4 11.2 3.2 14.7 3.5"
+          stroke="#C12864"
+          strokeWidth="2"
+          strokeLinecap="round"
+        />
         <circle cx="36.5" cy="6.5" r="2.5" fill="#C12864" />
       </svg>
       <span>Setareh Rahimi</span>
@@ -75,7 +98,9 @@ export function Header() {
           <ul className="flex items-center gap-8">
             {nav.map((n) => (
               <li key={n.href}>
-                <a href={n.href} className="pm-nav-link">{n.label}</a>
+                <a href={n.href} className="pm-nav-link">
+                  {n.label}
+                </a>
               </li>
             ))}
           </ul>
@@ -90,11 +115,19 @@ export function Header() {
         </button>
       </div>
       {open && (
-        <nav id="mobile-nav" aria-label="Mobile" className="md:hidden border-t border-border animate-in fade-in slide-in-from-top-2 duration-200">
+        <nav
+          id="mobile-nav"
+          aria-label="Mobile"
+          className="md:hidden border-t border-border animate-in fade-in slide-in-from-top-2 duration-200"
+        >
           <ul className="px-5 py-4">
             {nav.map((n) => (
               <li key={n.href} className="border-b border-border last:border-0">
-                <a href={n.href} onClick={() => setOpen(false)} className="block py-3 font-display text-2xl">
+                <a
+                  href={n.href}
+                  onClick={() => setOpen(false)}
+                  className="block py-3 font-display text-2xl"
+                >
                   {n.label}
                 </a>
               </li>
@@ -147,7 +180,8 @@ export function Hero() {
           <span>§ 00 / PORTFOLIO — {new Date().getFullYear()}</span>
         </div>
         <h1 id="hero-title" className="pm-hero-title text-[clamp(3.5rem,10vw,8.8rem)]">
-          PLAYFUL<br />
+          PLAYFUL
+          <br />
           <span className="pm-hero-title-accent">MATTER</span>
         </h1>
         <p className="mt-8 font-display text-2xl font-semibold tracking-tight md:text-3xl">
@@ -157,10 +191,16 @@ export function Hero() {
           Creative Direction · Video Editing · Visual Storytelling
         </p>
         <div className="mt-8 flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap">
-          <a href="#work" className="pm-cta-primary inline-flex items-center gap-3 px-6 py-3 text-sm font-semibold">
+          <a
+            href="#work"
+            className="pm-cta-primary inline-flex items-center gap-3 px-6 py-3 text-sm font-semibold"
+          >
             Explore Selected Work <span aria-hidden="true">↓</span>
           </a>
-          <a href="#contact" className="pm-cta-secondary inline-flex items-center gap-3 px-6 py-3 text-sm font-semibold">
+          <a
+            href="#contact"
+            className="pm-cta-secondary inline-flex items-center gap-3 px-6 py-3 text-sm font-semibold"
+          >
             Let’s Connect <span aria-hidden="true">↗</span>
           </a>
         </div>
@@ -171,31 +211,32 @@ export function Hero() {
       </Reveal>
 
       <Reveal className="col-span-1 md:col-span-5">
-        <div
-          className="pm-hero-art"
-          onPointerDown={releaseBubbles}
-        >
+        <div className="pm-hero-art" onPointerDown={releaseBubbles}>
           <div className="pm-sculpture-motion">
-          <img
-            className="pm-sculpture"
-            src="https://www.dropbox.com/scl/fi/qvqr9usadtyvlz88bhtzb/file_0000000031dc8210ab260c3660f34e9e.png?rlkey=yfkgjtljb3i3c1v3lykyaenl3&raw=1"
-            alt="Portrait surrounded by playful green, pink and cream sculptural forms"
-            fetchPriority="high"
-            onError={(event) => { event.currentTarget.style.visibility = "hidden"; }}
-          />
+            <img
+              className="pm-sculpture"
+              src="https://www.dropbox.com/scl/fi/qvqr9usadtyvlz88bhtzb/file_0000000031dc8210ab260c3660f34e9e.png?rlkey=yfkgjtljb3i3c1v3lykyaenl3&raw=1"
+              alt="Portrait surrounded by playful green, pink and cream sculptural forms"
+              fetchPriority="high"
+              onError={(event) => {
+                event.currentTarget.style.visibility = "hidden";
+              }}
+            />
           </div>
           {bubbles.map((bubble) => (
             <span
               key={bubble.id}
               className="pm-bubble"
               aria-hidden="true"
-              style={{
-                left: `${bubble.x}%`,
-                top: `${bubble.y}%`,
-                width: bubble.size,
-                height: bubble.size,
-                "--bubble-drift": `${bubble.drift}px`,
-              } as CSSProperties}
+              style={
+                {
+                  left: `${bubble.x}%`,
+                  top: `${bubble.y}%`,
+                  width: bubble.size,
+                  height: bubble.size,
+                  "--bubble-drift": `${bubble.drift}px`,
+                } as CSSProperties
+              }
             />
           ))}
           <span className="pm-art-index">PM — 001 / FORM STUDY</span>
