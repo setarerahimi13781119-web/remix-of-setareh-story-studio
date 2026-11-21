@@ -38,9 +38,19 @@ describe("Portfolio project integrity", () => {
     expect(
       projects.filter((project) => project.status === "verified-role").map((p) => p.id),
     ).toEqual(["nikmehr"]);
-    expect(projects.filter((project) => project.status === "exploration").map((p) => p.id)).toEqual(
-      ["khaneh-shalvar", "khaneh-mod-setareh", "touch-ups"],
-    );
+    expect(projects.filter((project) => project.status === "exploration").map((p) => p.id)).toEqual([
+      "parla-perfume-ad",
+      "sayeh-character-design",
+      "setare-fashion-house-film",
+      "khaneh-shalvar",
+      "khaneh-mod-setareh",
+      "moodbean",
+      "random-pieces",
+      "turquoise-jewelry-set",
+      "turkish-coffee-packaging",
+      "touch-ups",
+      "stillness-wellness-spaces",
+    ]);
     expect(
       projects.filter((project) => project.status === "team-collaboration").map((p) => p.id),
     ).toEqual(["junoon-podcast"]);
