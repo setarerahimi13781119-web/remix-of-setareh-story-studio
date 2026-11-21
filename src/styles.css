@@ -216,1096 +216,242 @@
   align-items: stretch;
   gap: clamp(1rem, 2.4vw, 2.25rem);
 }
-.work-grid__item:nth-child(5n + 1) {
-  grid-column: span 2;
-}
-.work-grid__item:nth-child(5n + 1) .work-card__trigger {
-  aspect-ratio: 16 / 8.8;
-}
-.work-grid__item:nth-child(5n + 3) {
-  transform: translateY(1.5rem);
-}
+
+/* PORTFOLIO CARDS — consolidated system. Keep all card rules in this section. */
+.work-grid { align-items:stretch; gap:clamp(1rem,2.4vw,2.25rem); }
+.work-grid__item { min-width:0; }
 .work-card {
-  position: relative;
-  border-color: var(--rule);
-  padding: clamp(.7rem, 1.5vw, 1.25rem);
-  transition: border-color .25s ease, transform .3s ease, background-color .25s ease;
-}
-.work-card:hover {
-  border-color: var(--portfolio-dusty-pink);
-  transform: translateY(-4px);
-}
-.work-card__trigger {
-  overflow: hidden;
-  background: var(--portfolio-silver-light);
-  transition: background-color .25s ease;
-}
-.work-card__trigger img {
-  transition: transform .55s cubic-bezier(.2,.7,.2,1);
-}
-.work-card__trigger:hover img {
-  transform: scale(1.025);
-}
-.work-card__context {
-  border-top: 1px solid var(--rule);
-}
-.contact-footer {
-  position: relative;
-  overflow: hidden;
-}
-.contact-footer::before {
-  content: "LET’S TALK";
-  position: absolute;
-  right: -1rem;
-  bottom: -.18em;
-  color: rgb(255 255 255 / .055);
-  font-family: var(--font-display);
-  font-size: clamp(6rem, 20vw, 19rem);
-  line-height: .8;
-  white-space: nowrap;
-  pointer-events: none;
-}
-@media (max-width: 767px) {
-  .editorial-hero::after {
-    top: 2rem;
-    right: .5rem;
-    font-size: 42vw;
-  }
-  .work-grid__item:nth-child(5n + 1) {
-    grid-column: auto;
-  }
-  .work-grid__item:nth-child(5n + 1) .work-card__trigger {
-    aspect-ratio: 4 / 3;
-  }
-  .work-grid__item:nth-child(5n + 3) {
-    transform: none;
-  }
-  .work-filters {
-    gap: .45rem;
-    margin-top: -1rem;
-    margin-bottom: 1.5rem;
-  }
-  .work-filter {
-    min-height: 2.45rem;
-    padding: .55rem .7rem;
-    font-size: .62rem;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .work-filter, .work-card, .work-card__trigger img {
-    transition: none !important;
-  }
-  .work-filter:hover, .work-card:hover, .work-grid__item:nth-child(5n + 3) {
-    transform: none;
-  }
-}
-
-
-/* Larger, image-led editorial project cards */
-.work-grid {
-  column-gap: clamp(1.1rem, 2.8vw, 2.8rem);
-  row-gap: clamp(2rem, 4vw, 3.5rem);
-}
-.work-grid__item:nth-child(5n + 1) {
-  grid-column: span 2;
-}
-.work-grid__item:nth-child(5n + 1) .work-card__trigger img {
-  height: clamp(22rem, 39vw, 38rem);
-}
-.work-card {
-  padding: clamp(.55rem, 1vw, .9rem);
-  background: transparent;
-}
-.work-card__trigger {
-  min-height: 0;
-  background: var(--portfolio-silver-light);
-}
-.work-card__trigger img {
-  display: block;
-  width: 100%;
-  height: clamp(17rem, 27vw, 29rem);
-}
-.work-card__trigger > span:last-child {
-  width: 100%;
-  text-align: left;
-  background: var(--portfolio-silver-mist);
-}
-.work-card__trigger > span:last-child [lang="fa"] {
-  color: var(--portfolio-dusty-pink);
-  font-family: var(--font-persian);
-}
-.work-card:hover .work-card__trigger > span:last-child {
-  background: var(--portfolio-soft-pink);
-}
-@media (max-width: 767px) {
-  .work-grid__item:nth-child(5n + 1) .work-card__trigger img,
-  .work-card__trigger img {
-    height: clamp(17rem, 72vw, 27rem);
-  }
-  .work-card {
-    padding: .45rem;
-  }
-}
-
-
-/* Expanded botanical + rose palette */
-:root {
-  --portfolio-deep-pine: #173A31;
-  --portfolio-moss: #66816D;
-  --portfolio-pistachio: #D5E3D4;
-  --portfolio-mint: #E7F0E8;
-  --portfolio-rose: #C36F8D;
-  --portfolio-berry: #87445F;
-  --portfolio-blush: #F7E8ED;
-  --portfolio-petal: #EBC8D4;
-}
-
-/* Let every artwork occupy its real visual space.
-   flex-basis:0 from Tailwind's flex-1 was overriding the explicit image height. */
-.work-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-items: stretch;
-  column-gap: clamp(1rem, 2.4vw, 2.4rem);
-  row-gap: clamp(2rem, 4vw, 3.6rem);
-}
-.work-grid__item {
-  min-width: 0;
-}
-.work-grid__item:nth-child(5n + 1) {
-  grid-column: 1 / -1;
-}
-.work-card {
-  height: 100%;
-  padding: clamp(.45rem, .9vw, .85rem);
-  border-color: color-mix(in srgb, var(--portfolio-moss) 35%, transparent);
-}
-.work-card__trigger {
-  display: flex;
-  width: 100%;
-  overflow: hidden;
-  background: var(--portfolio-mint);
-}
-.work-card__trigger img {
-  display: block;
-  flex: 0 0 auto !important;
-  width: 100%;
-  height: clamp(27rem, 42vw, 39rem) !important;
-  min-height: 0;
-  max-height: none;
-  object-position: center;
-}
-.work-grid__item:nth-child(5n + 1) .work-card__trigger img {
-  height: clamp(30rem, 45vw, 43rem) !important;
-}
-.work-card__trigger > span:first-child {
-  color: var(--portfolio-deep-pine);
-}
-.work-card__trigger > span:last-child {
-  background: var(--portfolio-silver-mist);
-  border-top-color: color-mix(in srgb, var(--portfolio-moss) 38%, transparent);
-  transition: background-color .25s ease;
-}
-.work-card__trigger > span:last-child [lang="fa"] {
-  color: var(--portfolio-berry);
-}
-
-/* A deliberate palette rhythm: sage, rose, mint, blush, forest. */
-.work-grid__item:nth-child(5n + 1) .work-card__trigger,
-.work-grid__item:nth-child(5n + 1) .work-card__trigger > span:last-child {
-  background-color: var(--portfolio-mint);
-}
-.work-grid__item:nth-child(5n + 2) .work-card__trigger {
-  background-color: var(--portfolio-blush);
-}
-.work-grid__item:nth-child(5n + 2) .work-card__trigger > span:last-child {
-  background-color: var(--portfolio-blush);
-}
-.work-grid__item:nth-child(5n + 3) .work-card__trigger {
-  background-color: var(--portfolio-pistachio);
-}
-.work-grid__item:nth-child(5n + 3) .work-card__trigger > span:last-child {
-  background-color: var(--portfolio-pistachio);
-}
-.work-grid__item:nth-child(5n + 4) .work-card__trigger {
-  background-color: #F1DCE4;
-}
-.work-grid__item:nth-child(5n + 4) .work-card__trigger > span:last-child {
-  background-color: #F1DCE4;
-}
-.work-grid__item:nth-child(5n + 5) .work-card__trigger {
-  background-color: #E1E9E2;
-}
-.work-grid__item:nth-child(5n + 5) .work-card__trigger > span:last-child {
-  background-color: #E1E9E2;
-}
-.work-card:hover {
-  border-color: var(--portfolio-rose);
-}
-.work-card:hover .work-card__trigger > span:last-child {
-  background-color: var(--portfolio-blush);
-}
-.work-filter.is-active {
-  background: var(--portfolio-deep-pine);
-  border-color: var(--portfolio-deep-pine);
-}
-.work-filter:hover {
-  border-color: var(--portfolio-rose);
-}
-.work-filter__count {
-  background: var(--portfolio-rose);
-}
-@media (max-width: 767px) {
-  .work-grid {
-    grid-template-columns: minmax(0, 1fr);
-    row-gap: 1.6rem;
-  }
-  .work-grid__item:nth-child(5n + 1) {
-    grid-column: auto;
-  }
-  .work-card__trigger img,
-  .work-grid__item:nth-child(5n + 1) .work-card__trigger img {
-    height: clamp(25rem, 105vw, 36rem) !important;
-  }
-  .work-card {
-    padding: .45rem;
-  }
-}
-
-
-/* Refine the project rhythm: more full-width artwork, taller previews,
-   while preserving complete artwork (no forced cropping). */
-.work-grid {
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-}
-.work-grid__item,
-.work-grid__item:nth-child(5n + 1) {
-  grid-column: span 6;
-}
-.work-grid__item:nth-child(3n + 1) {
-  grid-column: 1 / -1;
-}
-.work-card__trigger img {
-  height: clamp(31rem, 34vw, 40rem) !important;
-}
-.work-grid__item:nth-child(3n + 1) .work-card__trigger img {
-  height: clamp(34rem, 42vw, 46rem) !important;
-}
-@media (max-width: 767px) {
-  .work-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-  .work-grid__item,
-  .work-grid__item:nth-child(3n + 1),
-  .work-grid__item:nth-child(5n + 1) {
-    grid-column: auto;
-  }
-  .work-card__trigger img,
-  .work-grid__item:nth-child(3n + 1) .work-card__trigger img {
-    height: clamp(26rem, 85vw, 34rem) !important;
-  }
-}
-
-
-/* QA fixes: remove the filter/heading hit-area overlap and let each artwork
-   keep its native aspect ratio instead of forcing every image into one box. */
-.work-filters {
-  margin-top: 0 !important;
-  position: relative;
-  z-index: 2;
-}
-.work-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-.work-grid__item,
-.work-grid__item:nth-child(3n + 1),
-.work-grid__item:nth-child(5n + 1) {
-  grid-column: auto;
-}
-.work-grid__item:first-child {
-  grid-column: 1 / -1;
-}
-.work-card__trigger img {
-  display: block;
-  width: 100%;
-  height: auto !important;
-  min-height: 0;
-  max-height: none !important;
-  flex: 0 0 auto !important;
-}
-.work-grid__item:first-child .work-card__trigger img {
-  width: min(100%, 720px);
-  max-width: 720px;
-  height: auto !important;
-  margin-inline: auto;
-}
-@media (max-width: 767px) {
-  .work-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-  .work-grid__item:first-child {
-    grid-column: auto;
-  }
-  .work-grid__item:first-child .work-card__trigger img {
-    width: 100%;
-    max-width: 100%;
-  }
-  .work-filters {
-    margin-top: 0 !important;
-  }
-}
-
-
-/* Living editorial cards — motion, depth and botanical/rose colour rhythm */
-.work-grid__item {
-  min-width: 0;
-  transform: none;
-  animation: card-arrive .72s cubic-bezier(.2,.72,.25,1) both;
-  animation-delay: calc(var(--card-index, 0) * 65ms);
-}
-.work-grid__item:nth-child(1) { --card-index: 0; }
-.work-grid__item:nth-child(2) { --card-index: 1; }
-.work-grid__item:nth-child(3) { --card-index: 2; }
-.work-grid__item:nth-child(4) { --card-index: 3; }
-.work-grid__item:nth-child(5) { --card-index: 4; }
-.work-grid__item:nth-child(6) { --card-index: 5; }
-.work-grid__item:nth-child(7) { --card-index: 6; }
-.work-grid__item:nth-child(8) { --card-index: 7; }
-.work-grid__item:nth-child(9) { --card-index: 8; }
-.work-grid__item:nth-child(10) { --card-index: 9; }
-.work-grid__item:nth-child(11) { --card-index: 10; }
-.work-grid__item:nth-child(12) { --card-index: 11; }
-.work-grid__item:nth-child(13) { --card-index: 12; }
-
-@keyframes card-arrive {
-  from { opacity: 0; transform: translate3d(0, 22px, 0); }
-  to { opacity: 1; transform: translate3d(0, 0, 0); }
-}
-.work-card {
-  position: relative;
-  overflow: hidden;
-  border-color: color-mix(in srgb, var(--card-accent, var(--portfolio-moss)) 32%, transparent);
-  transition: transform .48s cubic-bezier(.2,.75,.25,1), border-color .35s ease, box-shadow .45s ease;
-}
-.work-card__trigger {
-  position: relative;
-  isolation: isolate;
-  background: var(--card-tint, var(--portfolio-mint)) !important;
-  transition: background-color .4s ease;
-}
-.work-card__trigger img {
-  object-fit: contain !important;
-  object-position: center;
-  max-height: min(68vw, 560px);
-  transition: transform .8s cubic-bezier(.18,.72,.22,1), filter .55s ease;
-  will-change: transform;
-}
-.work-card__trigger > span:first-child {
-  position: relative;
-  z-index: 2;
-  color: var(--card-accent, var(--portfolio-deep-pine));
-}
-.work-card__trigger > span:first-child svg {
-  transition: transform .4s cubic-bezier(.2,.75,.25,1), color .3s ease;
-}
-.work-card__trigger > span:last-child {
-  position: relative;
-  z-index: 2;
-  background: var(--card-tint, var(--portfolio-mint)) !important;
-  border-top: 1px solid color-mix(in srgb, var(--card-accent, var(--portfolio-moss)) 28%, transparent);
-  transition: background-color .4s ease, padding .4s ease;
-}
-.work-card__trigger > span:last-child [lang="fa"] {
-  color: var(--card-accent, var(--portfolio-berry)) !important;
-}
-.work-grid__item:nth-child(6n + 1) { --card-tint: #E7F0E8; --card-accent: #214C3E; }
-.work-grid__item:nth-child(6n + 2) { --card-tint: #F7E8ED; --card-accent: #87445F; }
-.work-grid__item:nth-child(6n + 3) { --card-tint: #D5E3D4; --card-accent: #173A31; }
-.work-grid__item:nth-child(6n + 4) { --card-tint: #F1DCE4; --card-accent: #87445F; }
-.work-grid__item:nth-child(6n + 5) { --card-tint: #E1E9E2; --card-accent: #456B55; }
-.work-grid__item:nth-child(6n + 6) { --card-tint: #EBC8D4; --card-accent: #713B53; }
-
-@media (hover: hover) and (pointer: fine) {
-  .work-card:hover {
-    transform: translateY(-7px);
-    border-color: var(--card-accent, var(--portfolio-rose));
-    box-shadow: 0 18px 44px color-mix(in srgb, var(--card-accent, var(--portfolio-forest)) 13%, transparent);
-  }
-  .work-card__trigger:hover img {
-    transform: scale(1.035);
-    filter: saturate(1.045);
-  }
-  .work-card__trigger:hover > span:first-child svg {
-    transform: rotate(90deg);
-    color: var(--portfolio-rose);
-  }
-  .work-card__trigger:hover > span:last-child {
-    padding-bottom: 1.35rem;
-  }
-}
-.work-card:focus-within {
-  border-color: var(--card-accent, var(--portfolio-rose));
-}
-@media (max-width: 767px) {
-  .work-grid__item { animation-duration: .58s; }
-  .work-card__trigger img { max-height: none; }
-  .work-card:hover { transform: none; box-shadow: none; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .work-grid__item { animation: none !important; }
-  .work-card, .work-card__trigger img, .work-card__trigger > span:last-child,
-  .work-card__trigger > span:first-child svg { transition: none !important; }
-}
-
-
-/* PARLA — signature fragrance card prototype (preview branch only) */
-.work-card--parla {
-  position: relative;
-  overflow: hidden;
-  padding: clamp(.55rem, 1.15vw, 1rem);
-  border: 1px solid #214c3e;
-  background: #173a31;
-  box-shadow: 0 12px 34px rgb(23 58 49 / 10%);
-  transition: transform 850ms cubic-bezier(.2,.72,.18,1), box-shadow 850ms ease, border-color 500ms ease;
-}
-.work-card--parla::before {
-  content: "";
-  position: absolute;
-  inset: 7px;
-  z-index: 2;
-  border: 1px solid rgb(235 200 212 / 48%);
-  pointer-events: none;
-  transition: inset 900ms cubic-bezier(.2,.72,.18,1), border-color 600ms ease;
-}
-.work-card__trigger--parla {
-  position: relative;
-  isolation: isolate;
-  gap: 0;
-  background: #d5e3d4 !important;
-}
-.work-card__trigger--parla > span:first-child {
-  width: 100%;
-  padding: 1.15rem 1.4rem .95rem;
-  color: #f7e8ed !important;
-  background: #173a31;
-  letter-spacing: .16em;
-  font-size: .62rem;
-}
-.work-card__trigger--parla > span:first-child svg {
-  color: #ebc8d4;
-  transition: transform 700ms cubic-bezier(.2,.72,.18,1);
-}
-.work-card__trigger--parla img {
-  width: 100%;
-  height: clamp(27rem, 43vw, 40rem) !important;
-  padding: clamp(.8rem, 2vw, 1.5rem);
-  background: linear-gradient(145deg, #d5e3d4 0%, #e7f0e8 48%, #f4e3ea 100%);
-  object-fit: contain !important;
-  transform: scale(1);
-  transition: transform 1400ms cubic-bezier(.18,.72,.2,1), filter 1000ms ease;
-  will-change: transform;
-}
-.work-card__trigger--parla > span:last-child {
-  width: 100%;
-  padding: 1.25rem 1.4rem 1.4rem;
-  color: #f7e8ed;
-  background: #87445f !important;
-  border-top: 1px solid rgb(235 200 212 / 55%);
-  transition: background-color 700ms ease, padding 700ms cubic-bezier(.2,.72,.18,1);
-}
-.work-card__trigger--parla > span:last-child .font-display {
-  color: #fff7f8;
-  letter-spacing: -.025em;
-}
-.work-card__trigger--parla > span:last-child [lang="fa"] {
-  color: #f4e3ea !important;
-}
-.work-card--parla:hover {
-  transform: translateY(-9px);
-  border-color: #c36f8d;
-  box-shadow: 0 28px 64px rgb(23 58 49 / 23%);
-}
-.work-card--parla:hover::before {
-  inset: 12px;
-  border-color: rgb(247 232 237 / 85%);
-}
-.work-card--parla:hover .work-card__trigger--parla img {
-  transform: scale(1.035);
-  filter: saturate(1.04) contrast(1.02);
-}
-.work-card--parla:hover .work-card__trigger--parla > span:first-child svg {
-  transform: rotate(45deg);
-}
-.work-card--parla:hover .work-card__trigger--parla > span:last-child {
-  background: #713b53 !important;
-  padding-bottom: 1.65rem;
-}
-@media (max-width: 767px) {
-  .work-card__trigger--parla img {
-    height: clamp(25rem, 100vw, 34rem) !important;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .work-card--parla,
-  .work-card--parla::before,
-  .work-card__trigger--parla img,
-  .work-card__trigger--parla > span:first-child svg,
-  .work-card__trigger--parla > span:last-child {
-    transition: none !important;
-  }
-  .work-card--parla:hover,
-  .work-card--parla:hover .work-card__trigger--parla img {
-    transform: none !important;
-  }
-}
-
-
-/* PARLA v2 — art-directed editorial fragrance card */
-.work-card--parla {
-  --parla-forest: #173d32;
-  --parla-sage: #dce9df;
-  --parla-pink: #d99aae;
-  --parla-berry: #9d526e;
-  padding: 0 !important;
-  overflow: hidden;
-  border: 1px solid var(--parla-forest) !important;
-  background: var(--parla-sage) !important;
-  box-shadow: 0 14px 38px rgb(23 61 50 / 11%);
-  transition: transform 950ms cubic-bezier(.2,.8,.2,1), box-shadow 950ms ease;
-}
-.work-card--parla::before {
-  content: "";
-  position: absolute;
-  z-index: 3;
-  inset: 9px;
-  border: 1px solid rgb(217 154 174 / 78%);
-  pointer-events: none;
-  transition: inset 950ms cubic-bezier(.2,.8,.2,1), border-color 700ms ease;
-}
-.work-card__trigger--parla {
-  overflow: hidden;
-  background: var(--parla-forest) !important;
-}
-.work-card__trigger--parla::before {
-  content: "PARLA  /  FRAGRANCE";
-  position: absolute;
-  z-index: 2;
-  top: 50%;
-  right: .6rem;
-  writing-mode: vertical-rl;
-  transform: translateY(-50%);
-  color: rgb(247 231 235 / 88%);
-  font-family: var(--font-mono);
-  font-size: .54rem;
-  letter-spacing: .2em;
-  pointer-events: none;
-  transition: opacity 700ms ease, transform 900ms cubic-bezier(.2,.8,.2,1);
-}
-.work-card__trigger--parla > span:first-child {
-  position: relative;
-  z-index: 1;
-  min-height: 3.5rem;
-  align-items: center;
-  padding: 1.05rem 1.55rem .9rem !important;
-  color: var(--parla-forest) !important;
-  background: var(--parla-pink) !important;
-  letter-spacing: .19em;
-  font-size: .62rem;
-}
-.work-card__trigger--parla > span:first-child svg {
-  color: var(--parla-forest);
-  transition: transform 800ms cubic-bezier(.2,.8,.2,1);
-}
-.work-card__trigger--parla img {
-  position: relative;
-  z-index: 0;
-  display: block;
-  width: calc(100% - 2.5rem) !important;
-  height: clamp(25rem, 39vw, 35rem) !important;
-  margin: 1.25rem auto 1.45rem;
-  padding: clamp(1.25rem, 2.8vw, 2.5rem) 2.2rem !important;
-  background:
-    radial-gradient(ellipse at 48% 42%, rgb(247 231 235 / 90%) 0%, rgb(220 233 223 / 82%) 46%, transparent 76%),
-    linear-gradient(135deg, #dce9df 0%, #c7d9cc 52%, #f0dce3 100%) !important;
-  object-fit: contain !important;
-  filter: saturate(.96);
-  transform: translateY(0) scale(1);
-  transition: transform 1500ms cubic-bezier(.16,.75,.2,1), filter 1100ms ease;
-  will-change: transform;
-}
-.work-card__trigger--parla > span:last-child {
-  position: relative;
-  width: 100%;
-  min-height: 8.3rem;
-  padding: 1.35rem 1.55rem 1.55rem !important;
-  color: var(--parla-forest);
-  background: #f5e7eb !important;
-  border-top: 1px solid rgb(23 61 50 / 22%);
-  transition: background-color 800ms ease, padding 800ms ease;
-}
-.work-card__trigger--parla > span:last-child::after {
-  content: "SCENT  /  STORY  /  IMAGE";
-  position: absolute;
-  right: 1.55rem;
-  bottom: 1.05rem;
-  color: var(--parla-berry);
-  font-family: var(--font-mono);
-  font-size: .52rem;
-  letter-spacing: .16em;
-  opacity: .8;
-}
-.work-card__trigger--parla > span:last-child .font-display {
-  color: var(--parla-forest) !important;
-  font-size: clamp(2.25rem, 4vw, 3.5rem);
-  letter-spacing: -.045em;
-  line-height: .95;
-}
-.work-card__trigger--parla > span:last-child [lang="fa"] {
-  max-width: 75%;
-  color: var(--parla-berry) !important;
-  font-size: .95rem;
-}
-.work-card--parla:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 30px 68px rgb(23 61 50 / 19%);
-}
-.work-card--parla:hover::before {
-  inset: 14px;
-  border-color: rgb(247 231 235 / 96%);
-}
-.work-card--parla:hover .work-card__trigger--parla::before {
-  opacity: .55;
-  transform: translateY(-50%) translateX(-3px);
-}
-.work-card--parla:hover .work-card__trigger--parla img {
-  transform: translateY(-5px) scale(1.035);
-  filter: saturate(1.06) contrast(1.025);
-}
-.work-card--parla:hover .work-card__trigger--parla > span:first-child svg {
-  transform: rotate(45deg);
-}
-.work-card--parla:hover .work-card__trigger--parla > span:last-child {
-  background: #f0dce3 !important;
-}
-@media (max-width: 767px) {
-  .work-card__trigger--parla img {
-    width: calc(100% - 1.7rem) !important;
-    height: clamp(23rem, 94vw, 31rem) !important;
-    margin: .9rem auto 1rem;
-    padding: 1rem 1.6rem !important;
-  }
-  .work-card__trigger--parla > span:last-child {
-    min-height: 7.5rem;
-  }
-  .work-card__trigger--parla > span:last-child::after {
-    right: 1.2rem;
-    bottom: .8rem;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .work-card--parla, .work-card--parla::before,
-  .work-card__trigger--parla::before,
-  .work-card__trigger--parla img,
-  .work-card__trigger--parla > span:first-child svg,
-  .work-card__trigger--parla > span:last-child {
-    transition: none !important;
-  }
-  .work-card--parla:hover,
-  .work-card--parla:hover .work-card__trigger--parla img {
-    transform: none !important;
-  }
-}
-
-
-/* PARLA v3 — richer botanical green + rose palette */
-.work-card--parla {
-  --parla-forest: #164f43;
-  --parla-sage: #dff2e8;
-  --parla-pink: #f5c7d8;
-  --parla-berry: #b84f78;
-  --parla-jade: #72b99a;
-  border: 1px solid #164f43 !important;
-  background:
-    linear-gradient(145deg, #e5f5ec 0%, #d1ecdf 52%, #f8dce7 100%) !important;
-  box-shadow: 0 16px 42px rgb(22 79 67 / 14%);
-}
-.work-card--parla::before {
-  border: 1px solid rgb(184 79 120 / 72%);
-}
-.work-card__trigger--parla {
-  background:
-    linear-gradient(145deg, #164f43 0%, #236e59 52%, #39866b 100%) !important;
-}
-.work-card__trigger--parla::before {
-  color: #ffeaf1;
-}
-.work-card__trigger--parla > span:first-child {
-  color: #164f43 !important;
-  background:
-    linear-gradient(105deg, #f8dce7 0%, #f2b9ce 55%, #f7d0df 100%) !important;
-}
-.work-card__trigger--parla > span:first-child svg {
-  color: #164f43;
-}
-.work-card__trigger--parla img {
-  background:
-    radial-gradient(ellipse at 48% 42%, rgb(255 242 247 / 98%) 0%, rgb(247 215 228 / 82%) 30%, transparent 67%),
-    radial-gradient(ellipse at 78% 78%, rgb(114 185 154 / 62%) 0%, transparent 54%),
-    linear-gradient(135deg, #d8f0e3 0%, #b9e0ce 46%, #f5cbdc 100%) !important;
-  filter: saturate(1.08) contrast(1.025);
-}
-.work-card__trigger--parla > span:last-child {
-  color: #164f43 !important;
-  background:
-    linear-gradient(112deg, #f9e4ec 0%, #f4ccdc 52%, #f8dce7 100%) !important;
-  border-top: 1px solid rgb(22 79 67 / 25%);
-}
-.work-card__trigger--parla > span:last-child::after {
-  color: #a83f69;
-}
-.work-card__trigger--parla > span:last-child .font-display {
-  color: #164f43 !important;
-}
-.work-card__trigger--parla > span:last-child [lang="fa"] {
-  color: #a83f69 !important;
-}
-.work-card--parla:hover {
-  box-shadow: 0 28px 66px rgb(22 79 67 / 22%);
-}
-.work-card--parla:hover::before {
-  border-color: #fff0f5;
-}
-.work-card--parla:hover .work-card__trigger--parla > span:last-child {
-  background: linear-gradient(112deg, #f6d2e0 0%, #efb4cc 58%, #f6d8e5 100%) !important;
-}
-
-
-/* PARLA v4 — vivid emerald, fresh jade, blush and brushed silver */
-.work-card--parla {
-  --parla-forest: #075846;
-  --parla-emerald: #087F62;
-  --parla-jade: #27A77D;
-  --parla-leaf: #73C99D;
-  --parla-mint: #DDF5E9;
-  --parla-pink: #F4C0D3;
-  --parla-rose: #D96F98;
-  --parla-silver: #C7D0D2;
-  --parla-silver-light: #EEF2F2;
-  border: 1px solid #AEBABD !important;
-  background: linear-gradient(145deg, #EEF2F2 0%, #D9E2E2 48%, #F5DDE6 100%) !important;
-  box-shadow: 0 18px 46px rgb(7 88 70 / 16%);
-}
-.work-card--parla::before {
-  border: 1px solid rgb(199 208 210 / 88%);
-}
-.work-card__trigger--parla {
-  background: linear-gradient(135deg, #064B3D 0%, #087F62 52%, #27A77D 100%) !important;
-}
-.work-card__trigger--parla::before {
-  color: #F5F8F7;
-}
-.work-card__trigger--parla > span:first-child {
-  color: #064B3D !important;
-  background: linear-gradient(105deg, #F2F5F5 0%, #D9E1E2 46%, #F4C8D8 100%) !important;
-  border-bottom: 1px solid rgb(7 88 70 / 18%);
-}
-.work-card__trigger--parla > span:first-child svg {
-  color: #087F62;
-}
-.work-card__trigger--parla img {
-  background:
-    radial-gradient(ellipse at 50% 42%, rgb(255 247 250 / 98%) 0%, rgb(244 192 211 / 70%) 30%, transparent 68%),
-    radial-gradient(ellipse at 78% 78%, rgb(115 201 157 / 72%) 0%, transparent 52%),
-    linear-gradient(135deg, #DDF5E9 0%, #A9E1C5 43%, #E5EAEB 72%, #F4C0D3 100%) !important;
-  filter: saturate(1.12) contrast(1.035);
-}
-.work-card__trigger--parla > span:last-child {
-  color: #064B3D !important;
-  background: linear-gradient(112deg, #F0F4F4 0%, #E1E8E8 45%, #F5DCE6 100%) !important;
-  border-top: 1px solid rgb(126 145 148 / 42%);
-}
-.work-card__trigger--parla > span:last-child::after {
-  color: #087F62;
-}
-.work-card__trigger--parla > span:last-child .font-display {
-  color: #064B3D !important;
-}
-.work-card__trigger--parla > span:last-child [lang="fa"] {
-  color: #A74770 !important;
-}
-.work-card--parla:hover {
-  border-color: #27A77D !important;
-  box-shadow: 0 30px 72px rgb(7 88 70 / 24%);
-}
-.work-card--parla:hover::before {
-  border-color: #F5F8F7;
-}
-.work-card--parla:hover .work-card__trigger--parla > span:last-child {
-  background: linear-gradient(112deg, #E5F2EC 0%, #D5E9DF 48%, #F2C8D8 100%) !important;
-}
-
-
-
-/* PROJECT CARD SYSTEM — one source of truth, with an unmistakable identity per project. */
-.work-card:not(.work-card--parla) {
-  --project-accent: #075E52;
-  --project-pop: #00A889;
-  --project-stage: #E4F2EC;
-  --project-head: #EDF6F1;
-  --project-foot: #D6EAE1;
-  --project-frame: #B8CBC3;
-  --project-rail: linear-gradient(180deg, var(--project-pop), var(--project-accent));
-  position: relative;
-  overflow: hidden;
-  padding: 0 !important;
-  border: 1px solid var(--project-frame) !important;
-  border-radius: 3px;
-  background: linear-gradient(145deg, #F8FAF9, var(--project-stage)) !important;
-  box-shadow: 0 12px 30px rgb(24 45 40 / 10%), inset 0 1px 0 rgb(255 255 255 / 90%);
-  transition: transform .45s cubic-bezier(.2,.75,.25,1), border-color .35s ease, box-shadow .4s ease;
+  --card-accent:#075E52;
+  --card-pop:#00A889;
+  --card-stage:#E4F2EC;
+  --card-head:#F1F7F4;
+  --card-foot:#D6EAE1;
+  --card-frame:#B8CBC3;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  height:100%;
+  overflow:hidden;
+  padding:0 !important;
+  border:1px solid var(--card-frame) !important;
+  border-radius:4px;
+  background:linear-gradient(145deg,#FAFCFB,var(--card-stage)) !important;
+  box-shadow:0 12px 30px rgb(24 45 40 / 10%),inset 0 1px 0 rgb(255 255 255 / 90%);
+  transition:transform .42s cubic-bezier(.2,.75,.25,1),border-color .3s ease,box-shadow .38s ease;
 }
 .work-card:not(.work-card--parla)::before {
-  content: "";
-  position: absolute;
-  z-index: 5;
-  inset: 0 auto 0 0;
-  width: 5px;
-  background: var(--project-rail);
-  pointer-events: none;
+  content:"";
+  position:absolute;
+  z-index:5;
+  inset:0 auto 0 0;
+  width:4px;
+  background:var(--card-rail,linear-gradient(180deg,var(--card-pop),var(--card-accent)));
+  pointer-events:none;
 }
 .work-card:not(.work-card--parla)::after {
-  content: "";
-  position: absolute;
-  z-index: 5;
-  top: 0;
-  left: 5px;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--project-accent), var(--project-pop), var(--project-frame));
-  pointer-events: none;
+  content:"";
+  position:absolute;
+  z-index:5;
+  top:0;
+  left:4px;
+  right:0;
+  height:3px;
+  background:linear-gradient(90deg,var(--card-accent),var(--card-pop),var(--card-frame));
+  pointer-events:none;
 }
-.work-card:not(.work-card--parla) .work-card__trigger {
-  overflow: hidden;
-  background: var(--project-stage) !important;
+.work-card__trigger {
+  position:relative;
+  display:flex;
+  width:100%;
+  flex-direction:column;
+  align-items:stretch;
+  justify-content:space-between;
+  gap:0;
+  overflow:hidden;
+  background:var(--card-stage) !important;
 }
-.work-card:not(.work-card--parla) .work-card__trigger > span:first-child {
-  min-height: 3.8rem;
-  padding: 1.05rem 1.3rem .85rem 1.55rem !important;
-  color: var(--project-accent) !important;
-  background: var(--project-head) !important;
-  border-bottom: 1px solid color-mix(in srgb, var(--project-accent) 26%, transparent);
-  letter-spacing: .14em;
+.work-card__trigger > span:first-child {
+  min-height:3.7rem;
+  padding:1.05rem 1.3rem .85rem 1.55rem !important;
+  border-bottom:1px solid color-mix(in srgb,var(--card-accent) 25%,transparent);
+  color:var(--card-accent) !important;
+  background:var(--card-head) !important;
+  letter-spacing:.14em;
 }
-.work-card:not(.work-card--parla) .work-card__trigger > span:first-child svg {
-  color: var(--project-pop) !important;
-  transition: transform .35s ease;
+.work-card__trigger > span:first-child svg {
+  color:var(--card-pop) !important;
+  transition:transform .35s ease;
 }
-.work-card:not(.work-card--parla) .work-card__trigger img {
-  display: block;
-  width: 100%;
-  height: clamp(19rem, 31vw, 27rem);
-  min-height: 0;
-  padding: 1.25rem 1.5rem;
-  background: var(--project-stage) !important;
-  object-fit: contain !important;
-  transition: transform .7s cubic-bezier(.18,.72,.22,1), filter .5s ease;
+.work-card__trigger img {
+  display:block;
+  width:100%;
+  height:clamp(19rem,31vw,27rem);
+  min-height:0;
+  padding:1.15rem 1.4rem;
+  background:var(--card-stage) !important;
+  object-fit:contain !important;
+  transition:transform .65s cubic-bezier(.18,.72,.22,1),filter .45s ease;
 }
-.work-card:not(.work-card--parla) .work-card__trigger > span:last-child {
-  min-height: 7.4rem;
-  width: 100%;
-  padding: 1.1rem 1.35rem 1.25rem 1.55rem !important;
-  color: var(--project-accent) !important;
-  background: var(--project-foot) !important;
-  border-top: 1px solid color-mix(in srgb, var(--project-accent) 28%, transparent);
-  text-align: left;
+.work-card__trigger > span:last-child {
+  position:relative;
+  width:100%;
+  min-height:7.4rem;
+  padding:1.1rem 1.35rem 1.25rem 1.55rem !important;
+  border-top:1px solid color-mix(in srgb,var(--card-accent) 25%,transparent);
+  color:var(--card-accent) !important;
+  background:var(--card-foot) !important;
+  text-align:left;
 }
-.work-card:not(.work-card--parla) .work-card__trigger > span:last-child .font-display {
-  color: var(--project-accent) !important;
-  letter-spacing: -.035em;
+.work-card__trigger > span:last-child .font-display {
+  color:var(--card-accent) !important;
+  letter-spacing:-.035em;
 }
-.work-card:not(.work-card--parla) .work-card__trigger > span:last-child [lang="fa"] {
-  color: var(--project-pop) !important;
+.work-card__trigger > span:last-child [lang="fa"] { color:var(--card-pop) !important; }
+.work-card > div.mt-5 { padding:0 1.35rem 1.35rem 1.55rem; }
+.work-card__context { border-top:1px solid color-mix(in srgb,var(--card-accent) 20%,transparent); color:var(--card-accent); }
+.work-card__context svg { color:var(--card-pop); transition:transform .3s ease; }
+
+/* Repeating sequence is assigned by data-palette on each visible list item. */
+.work-grid__item[data-palette="0"] .work-card:not(.work-card--parla):not(.work-card--junoon-podcast) {
+  --card-accent:#075E52; --card-pop:#00A889; --card-stage:#E4F2EC; --card-head:#F1F7F4; --card-foot:#D6EAE1; --card-frame:#B8CBC3;
+  --card-rail:linear-gradient(180deg,#BEC9CD 0%,#00A889 32%,#075E52 100%);
 }
-.work-card:not(.work-card--parla) > div.mt-5 {
-  padding: 0 1.35rem 1.35rem 1.55rem;
+.work-grid__item[data-palette="1"] .work-card:not(.work-card--parla):not(.work-card--junoon-podcast) {
+  --card-accent:#315D4B; --card-pop:#91B83E; --card-stage:#E9F0E5; --card-head:#F3F6EF; --card-foot:#DDE8D8; --card-frame:#BFCDBB;
+  --card-rail:linear-gradient(180deg,#DCE8D5 0%,#91B83E 48%,#315D4B 100%);
 }
-.work-card:not(.work-card--parla) .work-card__context { color: var(--project-accent); }
-.work-card:not(.work-card--parla) .work-card__context svg {
-  color: var(--project-pop);
-  transition: transform .3s ease;
+.work-grid__item[data-palette="2"] .work-card:not(.work-card--parla):not(.work-card--junoon-podcast) {
+  --card-accent:#71364E; --card-pop:#E65B91; --card-stage:#F4DFE8; --card-head:#F9ECF1; --card-foot:#EBCBD7; --card-frame:#D2B8C2;
+  --card-rail:linear-gradient(180deg,#F3A9C4 0%,#E65B91 48%,#71364E 100%);
+}
+.work-grid__item[data-palette="3"] .work-card:not(.work-card--parla):not(.work-card--junoon-podcast) {
+  --card-accent:#6D2448; --card-pop:#D94F88; --card-stage:#F0DDE6; --card-head:#F8EAF0; --card-foot:#E8C9D8; --card-frame:#C9B4BD;
+  --card-rail:linear-gradient(180deg,#D94F88 0%,#A74770 48%,#6D2448 100%);
+}
+.work-grid__item[data-palette="4"] .work-card:not(.work-card--parla):not(.work-card--junoon-podcast) {
+  --card-accent:#35444A; --card-pop:#D94F88; --card-stage:#E8ECEE; --card-head:#F4F6F7; --card-foot:#DCE3E6; --card-frame:#B8C4C9;
+  --card-rail:linear-gradient(180deg,#F5F7F7 0%,#BEC9CD 48%,#7D8D94 82%,#D94F88 100%);
+}
+.work-grid__item[data-palette="5"] .work-card:not(.work-card--parla):not(.work-card--junoon-podcast) {
+  --card-accent:#3D5635; --card-pop:#A7C84B; --card-stage:#E8EEDB; --card-head:#F2F5E9; --card-foot:#DCE7C9; --card-frame:#BBC99F;
+  --card-rail:linear-gradient(180deg,#D6E69C 0%,#A7C84B 48%,#3D5635 100%);
 }
 
-/* Turquoise set — jewel-vitrine green, cool silver, double inset frame. */
-.work-card--turquoise-jewelry-set {
-  --project-accent:#075E52; --project-pop:#00A889; --project-stage:#E3F1EC;
-  --project-head:#F1F7F4; --project-foot:#D5E9E1; --project-frame:#AFC8C0;
-  --project-rail:linear-gradient(180deg,#BEC9CD,#00A889,#075E52,#BEC9CD);
-  background:linear-gradient(145deg,#F8FAF9,#DCEAE5)!important;
-  box-shadow:inset 0 0 0 5px #E8EFED, inset 0 0 0 6px #BFCBC8, 0 12px 30px rgb(24 45 40 / 10%);
-}
+/* Composition changes by project; the colour sequence remains consistent. */
+.work-card--turquoise-jewelry-set { border-radius:3px; box-shadow:inset 0 0 0 5px #E8EFED, inset 0 0 0 6px #BFCBC8, 0 12px 30px rgb(24 45 40 / 10%); }
 .work-card--turquoise-jewelry-set .work-card__trigger img { padding:1.7rem 2.2rem; }
-.work-card--turquoise-jewelry-set::before { width:3px; }
-
-/* STILLNESS — quiet botanical editorial, square corners and generous image stage. */
-.work-card--stillness-wellness-spaces {
-  --project-accent:#315D4B; --project-pop:#91B83E; --project-stage:#E9F0E5;
-  --project-head:#F3F6EF; --project-foot:#DDE8D8; --project-frame:#BFCDBB;
-  --project-rail:linear-gradient(180deg,#DCE8D5,#91B83E,#315D4B);
-  border-radius:0;
-  box-shadow:none;
-}
+.work-card--stillness-wellness-spaces { border-radius:0; box-shadow:none; }
 .work-card--stillness-wellness-spaces .work-card__trigger img { height:clamp(21rem,34vw,30rem); padding:2rem; }
 .work-card--stillness-wellness-spaces .work-card__trigger > span:first-child { letter-spacing:.22em; }
-
-/* MOODBEAN — warm roasted-coffee palette with a vivid guava edge. */
-.work-card--moodbean {
-  --project-accent:#57372F; --project-pop:#D94F88; --project-stage:#F0E2D9;
-  --project-head:#F8EEE8; --project-foot:#E7D2C8; --project-frame:#CDB7AD;
-  --project-rail:linear-gradient(180deg,#F3A9C4,#D94F88,#57372F);
-  border-radius:14px 2px 2px 2px;
-}
+.work-card--moodbean { border-radius:14px 2px 2px 2px; }
 .work-card--moodbean .work-card__trigger img { height:clamp(18rem,29vw,25rem); padding:1rem; }
-
-/* KHANEH MOD SETAREH — split jade / rose storefront identity. */
-.work-card--khaneh-mod-setareh {
-  --project-accent:#075E52; --project-pop:#D94F88; --project-stage:#E3EFE8;
-  --project-head:#F8E8EF; --project-foot:#D8EAE0; --project-frame:#B9C9C1;
-  --project-rail:linear-gradient(180deg,#D94F88 0 42%,#075E52 42% 100%);
-  background:linear-gradient(125deg,#F8E9EF 0%,#E2EFE7 58%,#D2E7DD 100%)!important;
-}
 .work-card--khaneh-mod-setareh .work-card__trigger img { height:clamp(22rem,35vw,31rem); padding:1rem; }
-
-/* SETARE FASHION HOUSE — tall runway frame, raspberry typography. */
-.work-card--setare-fashion-house-film {
-  --project-accent:#6D2448; --project-pop:#E65B91; --project-stage:#F4DCE6;
-  --project-head:#F9EAF0; --project-foot:#EFC7D7; --project-frame:#B9C2C5;
-  --project-rail:linear-gradient(180deg,#E65B91,#6D2448);
-}
 .work-card--setare-fashion-house-film .work-card__trigger img { height:clamp(23rem,38vw,33rem); padding:.65rem; }
 .work-card--setare-fashion-house-film .work-card__trigger > span:last-child .font-display { font-size:clamp(2rem,3.8vw,3.2rem); }
-
-/* SAYEH — character dossier, botanical green and citrus marker. */
-.work-card--sayeh-character-design {
-  --project-accent:#3D5635; --project-pop:#A7C84B; --project-stage:#E8EEDB;
-  --project-head:#F2F5E9; --project-foot:#DCE7C9; --project-frame:#BBC99F;
-  --project-rail:linear-gradient(180deg,#D6E69C,#A7C84B,#3D5635);
-  border-radius:2px 18px 2px 2px;
-}
+.work-card--sayeh-character-design { border-radius:2px 18px 2px 2px; }
 .work-card--sayeh-character-design .work-card__trigger img { height:clamp(21rem,34vw,29rem); padding:1rem 1.4rem; }
-
-/* KHANEH SHALVAR — burgundy campaign with saturated rose signature. */
-.work-card--khaneh-shalvar {
-  --project-accent:#71364E; --project-pop:#E65B91; --project-stage:#F2DFE5;
-  --project-head:#F9EAF0; --project-foot:#EBCBD7; --project-frame:#C9B4BD;
-  --project-rail:linear-gradient(180deg,#F3A9C4,#E65B91,#71364E);
-}
 .work-card--khaneh-shalvar .work-card__trigger img { height:clamp(22rem,35vw,30rem); padding:.8rem; }
-
-/* RANDOM PIECES — graphic sheet, silver field and berry signal. */
-.work-card--random-pieces {
-  --project-accent:#403747; --project-pop:#D94F88; --project-stage:#E8E4EB;
-  --project-head:#F4F0F5; --project-foot:#DDD5E3; --project-frame:#BDB5C2;
-  --project-rail:repeating-linear-gradient(180deg,#D94F88 0 9px,#BEC9CD 9px 18px,#403747 18px 27px);
-}
 .work-card--random-pieces .work-card__trigger img { height:clamp(20rem,32vw,28rem); padding:1.2rem; }
-
-/* TURKISH COFFEE — clay paper and soft pink foil. */
-.work-card--turkish-coffee-packaging {
-  --project-accent:#704535; --project-pop:#D96F98; --project-stage:#F1E2D8;
-  --project-head:#F9EFE8; --project-foot:#E8D1C4; --project-frame:#CDB8AA;
-  --project-rail:linear-gradient(180deg,#D96F98,#B76B56,#704535);
-  border-radius:2px 2px 14px 2px;
-}
+.work-card--turkish-coffee-packaging { border-radius:2px 2px 14px 2px; }
 .work-card--turkish-coffee-packaging .work-card__trigger img { height:clamp(19rem,30vw,26rem); padding:1.1rem; }
-
-/* TOUCH UPS — technical graphite / brushed-silver workbench. */
-.work-card--touch-ups {
-  --project-accent:#35444A; --project-pop:#D94F88; --project-stage:#E5EAEC;
-  --project-head:#F1F4F5; --project-foot:#D7E0E3; --project-frame:#AEBBC0;
-  --project-rail:linear-gradient(180deg,#F5F7F7,#BEC9CD,#7D8D94,#D94F88);
-  background:repeating-linear-gradient(135deg,#F5F7F7 0 14px,#E9EEF0 14px 15px)!important;
-}
+.work-card--touch-ups { background:repeating-linear-gradient(135deg,#F5F7F7 0 14px,#E9EEF0 14px 15px) !important; }
 .work-card--touch-ups .work-card__trigger img { height:clamp(18rem,29vw,25rem); padding:.75rem; }
-
-/* NIKMEHR — content operations, energetic jade with guava highlight. */
-.work-card--nikmehr {
-  --project-accent:#075E52; --project-pop:#E65B91; --project-stage:#DDF1E9;
-  --project-head:#F8E6ED; --project-foot:#CFE8DC; --project-frame:#AFC8BE;
-  --project-rail:linear-gradient(180deg,#E65B91 0 35%,#00A889 35% 100%);
-}
 .work-card--nikmehr .work-card__trigger img { height:clamp(20rem,32vw,28rem); padding:.8rem; }
 
-/* JUNOON — evidence archive: near-black dossier, red index line, silver details. */
+/* Junoon is intentionally outside the light palette cycle. */
 .work-card--junoon-podcast {
-  --project-accent:#F1ECEE; --project-pop:#E33C50; --project-stage:#171719;
-  --project-head:#242326; --project-foot:#242326; --project-frame:#77777D;
-  --project-rail:linear-gradient(180deg,#E33C50 0 55%,#9A9A9F 55% 100%);
-  background:linear-gradient(145deg,#343236,#111113)!important;
+  --card-accent:#F1ECEE; --card-pop:#E33C50; --card-stage:#171719; --card-head:#242326; --card-foot:#242326; --card-frame:#77777D;
+  --card-rail:linear-gradient(180deg,#E33C50 0 55%,#9A9A9F 55% 100%);
+  background:linear-gradient(145deg,#343236,#111113) !important;
   box-shadow:0 16px 38px rgb(0 0 0 / 22%),inset 0 1px 0 rgb(255 255 255 / 12%);
 }
 .work-card--junoon-podcast .work-card__trigger img { height:clamp(23rem,37vw,33rem); padding:1.15rem 1.6rem; }
 .work-card--junoon-podcast .work-card__trigger > span:first-child { border-bottom-color:rgb(227 60 80 / 45%); }
-.work-card--junoon-podcast .work-card__trigger > span:first-child svg { color:#E33C50!important; }
+.work-card--junoon-podcast .work-card__trigger > span:first-child svg { color:#E33C50 !important; }
 .work-card--junoon-podcast .work-card__trigger > span:last-child { border-top-color:rgb(227 60 80 / 45%); }
-.work-card--junoon-podcast .work-card__trigger > span:last-child .font-display { color:#F4EFF0!important; }
-.work-card--junoon-podcast .work-card__trigger > span:last-child [lang="fa"] { color:#F05A6C!important; }
+.work-card--junoon-podcast .work-card__trigger > span:last-child .font-display { color:#F4EFF0 !important; }
+.work-card--junoon-podcast .work-card__trigger > span:last-child [lang="fa"] { color:#F05A6C !important; }
 .work-card--junoon-podcast .work-card__context { color:#F1ECEE; }
+
+/* Parla: one definitive luxury treatment; no legacy versions remain. */
+.work-card--parla {
+  --parla-forest:#075846; --parla-emerald:#087F62; --parla-jade:#27A77D; --parla-leaf:#73C99D;
+  --parla-mint:#DDF5E9; --parla-pink:#F4C0D3; --parla-rose:#D96F98; --parla-silver:#C7D0D2;
+  position:relative; overflow:hidden; padding:0 !important;
+  border:1px solid #AEBABD !important;
+  background:linear-gradient(145deg,#EEF2F2 0%,#D9E2E2 48%,#F5DDE6 100%) !important;
+  box-shadow:0 18px 46px rgb(7 88 70 / 16%);
+  transition:transform .8s cubic-bezier(.2,.8,.2,1),box-shadow .8s ease,border-color .45s ease;
+}
+.work-card--parla::before {
+  content:""; position:absolute; z-index:3; inset:9px;
+  border:1px solid rgb(199 208 210 / 88%); pointer-events:none;
+  transition:inset .8s cubic-bezier(.2,.8,.2,1),border-color .6s ease;
+}
+.work-card__trigger--parla { position:relative; isolation:isolate; overflow:hidden; background:linear-gradient(135deg,#064B3D 0%,#087F62 52%,#27A77D 100%) !important; }
+.work-card__trigger--parla::before {
+  content:"PARLA  /  FRAGRANCE"; position:absolute; z-index:2; top:50%; right:.6rem;
+  writing-mode:vertical-rl; transform:translateY(-50%); color:#F5F8F7;
+  font-family:var(--font-mono); font-size:.54rem; letter-spacing:.2em; pointer-events:none;
+  transition:opacity .6s ease,transform .8s cubic-bezier(.2,.8,.2,1);
+}
+.work-card__trigger--parla > span:first-child {
+  position:relative; z-index:1; min-height:3.5rem; align-items:center;
+  padding:1.05rem 1.55rem .9rem !important; color:#064B3D !important;
+  background:linear-gradient(105deg,#F2F5F5 0%,#D9E1E2 46%,#F4C8D8 100%) !important;
+  border-bottom:1px solid rgb(7 88 70 / 18%); letter-spacing:.19em; font-size:.62rem;
+}
+.work-card__trigger--parla > span:first-child svg { color:#087F62; transition:transform .7s cubic-bezier(.2,.8,.2,1); }
+.work-card__trigger--parla img {
+  position:relative; z-index:0; display:block; width:calc(100% - 2.5rem) !important;
+  height:clamp(25rem,39vw,35rem) !important; margin:1.25rem auto 1.45rem;
+  padding:clamp(1.25rem,2.8vw,2.5rem) 2.2rem !important;
+  background:
+    radial-gradient(ellipse at 50% 42%,rgb(255 247 250 / 98%) 0%,rgb(244 192 211 / 70%) 30%,transparent 68%),
+    radial-gradient(ellipse at 78% 78%,rgb(115 201 157 / 72%) 0%,transparent 52%),
+    linear-gradient(135deg,#DDF5E9 0%,#A9E1C5 43%,#E5EAEB 72%,#F4C0D3 100%) !important;
+  object-fit:contain !important; filter:saturate(1.12) contrast(1.035);
+  transform:translateY(0) scale(1);
+  transition:transform 1.3s cubic-bezier(.16,.75,.2,1),filter .9s ease;
+}
+.work-card__trigger--parla > span:last-child {
+  position:relative; width:100%; min-height:8.3rem; padding:1.35rem 1.55rem 1.55rem !important;
+  color:#064B3D !important; background:linear-gradient(112deg,#F0F4F4 0%,#E1E8E8 45%,#F5DCE6 100%) !important;
+  border-top:1px solid rgb(126 145 148 / 42%);
+  transition:background-color .7s ease,padding .7s ease;
+}
+.work-card__trigger--parla > span:last-child::after {
+  content:"SCENT  /  STORY  /  IMAGE"; position:absolute; right:1.55rem; bottom:1.05rem;
+  color:#087F62; font-family:var(--font-mono); font-size:.52rem; letter-spacing:.16em; opacity:.8;
+}
+.work-card__trigger--parla > span:last-child .font-display { color:#064B3D !important; font-size:clamp(2.25rem,4vw,3.5rem); letter-spacing:-.045em; line-height:.95; }
+.work-card__trigger--parla > span:last-child [lang="fa"] { max-width:75%; color:#A74770 !important; font-size:.95rem; }
 
 @media (hover:hover) and (pointer:fine) {
   .work-card:not(.work-card--parla):hover {
-    transform:translateY(-6px);
-    border-color:var(--project-pop)!important;
-    box-shadow:0 22px 46px color-mix(in srgb,var(--project-accent) 18%,transparent);
+    transform:translateY(-6px); border-color:var(--card-pop) !important;
+    box-shadow:0 22px 46px color-mix(in srgb,var(--card-accent) 18%,transparent);
   }
   .work-card:not(.work-card--parla):hover .work-card__trigger img { transform:scale(1.02); filter:saturate(1.05); }
   .work-card:not(.work-card--parla):hover .work-card__trigger > span:first-child svg { transform:rotate(45deg); }
   .work-card:not(.work-card--parla):hover .work-card__context svg { transform:translate(2px,-2px); }
+  .work-card--parla:hover { transform:translateY(-6px); border-color:#27A77D !important; box-shadow:0 30px 72px rgb(7 88 70 / 24%); }
+  .work-card--parla:hover::before { inset:14px; border-color:#F5F8F7; }
+  .work-card--parla:hover .work-card__trigger--parla::before { opacity:.55; transform:translateY(-50%) translateX(-3px); }
+  .work-card--parla:hover .work-card__trigger--parla img { transform:translateY(-5px) scale(1.035); filter:saturate(1.06) contrast(1.025); }
+  .work-card--parla:hover .work-card__trigger--parla > span:first-child svg { transform:rotate(45deg); }
+  .work-card--parla:hover .work-card__trigger--parla > span:last-child { background:linear-gradient(112deg,#E5F2EC 0%,#D5E9DF 48%,#F2C8D8 100%) !important; }
 }
+.work-card:focus-within { outline:2px solid var(--card-pop); outline-offset:3px; }
 @media (max-width:767px) {
-  .work-card:not(.work-card--parla) .work-card__trigger img { height:clamp(18rem,78vw,25rem); padding:.7rem; }
+  .work-card__trigger img { height:clamp(18rem,78vw,25rem); padding:.7rem; }
   .work-card--junoon-podcast .work-card__trigger img { height:clamp(21rem,92vw,29rem); }
+  .work-card__trigger--parla img { width:calc(100% - 1.7rem) !important; height:clamp(23rem,94vw,31rem) !important; margin:.9rem auto 1rem; padding:1rem 1.6rem !important; }
+  .work-card__trigger--parla > span:last-child { min-height:7.5rem; }
+  .work-card__trigger--parla > span:last-child::after { right:1.2rem; bottom:.8rem; }
 }
 @media (prefers-reduced-motion:reduce) {
-  .work-card:not(.work-card--parla),
-  .work-card:not(.work-card--parla) .work-card__trigger img,
-  .work-card:not(.work-card--parla) .work-card__context svg { transition:none!important; }
-}
-
-
-/* ORDERED COLOUR SEQUENCE — cycles through visible non-Parla projects.
-   The palette index is assigned in the filtered React list, so filters never
-   leave gaps or restart the rhythm unpredictably. */
-.work-grid__item[data-palette="0"] .work-card:not(.work-card--parla):not(.work-card--junoon-podcast) {
-  --project-accent:#075E52; --project-pop:#00A889; --project-stage:#E4F2EC;
-  --project-head:#F1F7F4; --project-foot:#D6EAE1; --project-frame:#B8CBC3;
-  --project-rail:linear-gradient(180deg,#BEC9CD 0%,#00A889 32%,#075E52 100%);
-}
-.work-grid__item[data-palette="1"] .work-card:not(.work-card--parla):not(.work-card--junoon-podcast) {
-  --project-accent:#315D4B; --project-pop:#91B83E; --project-stage:#E9F0E5;
-  --project-head:#F3F6EF; --project-foot:#DDE8D8; --project-frame:#BFCDBB;
-  --project-rail:linear-gradient(180deg,#DCE8D5 0%,#91B83E 48%,#315D4B 100%);
-}
-.work-grid__item[data-palette="2"] .work-card:not(.work-card--parla):not(.work-card--junoon-podcast) {
-  --project-accent:#71364E; --project-pop:#E65B91; --project-stage:#F4DFE8;
-  --project-head:#F9ECF1; --project-foot:#EBCBD7; --project-frame:#D2B8C2;
-  --project-rail:linear-gradient(180deg,#F3A9C4 0%,#E65B91 48%,#71364E 100%);
-}
-.work-grid__item[data-palette="3"] .work-card:not(.work-card--parla):not(.work-card--junoon-podcast) {
-  --project-accent:#6D2448; --project-pop:#D94F88; --project-stage:#F0DDE6;
-  --project-head:#F8EAF0; --project-foot:#E8C9D8; --project-frame:#C9B4BD;
-  --project-rail:linear-gradient(180deg,#D94F88 0%,#A74770 48%,#6D2448 100%);
-}
-.work-grid__item[data-palette="4"] .work-card:not(.work-card--parla):not(.work-card--junoon-podcast) {
-  --project-accent:#35444A; --project-pop:#D94F88; --project-stage:#E8ECEE;
-  --project-head:#F4F6F7; --project-foot:#DCE3E6; --project-frame:#B8C4C9;
-  --project-rail:linear-gradient(180deg,#F5F7F7 0%,#BEC9CD 48%,#7D8D94 82%,#D94F88 100%);
-}
-.work-grid__item[data-palette="5"] .work-card:not(.work-card--parla):not(.work-card--junoon-podcast) {
-  --project-accent:#3D5635; --project-pop:#A7C84B; --project-stage:#E8EEDB;
-  --project-head:#F2F5E9; --project-foot:#DCE7C9; --project-frame:#BBC99F;
-  --project-rail:linear-gradient(180deg,#D6E69C 0%,#A7C84B 48%,#3D5635 100%);
-}
-/* Junoon remains a dark evidence file, but its red/silver index rail participates
-   in the same repeated sequence without washing out its documentary identity. */
-.work-grid__item[data-palette] .work-card--junoon-podcast {
-  --project-rail:linear-gradient(180deg,#E33C50 0 55%,#BEC9CD 55% 100%);
+  .work-card,.work-card::before,.work-card__trigger img,.work-card__trigger > span:first-child svg,
+  .work-card__trigger > span:last-child,.work-card__context svg,.work-card__trigger--parla::before { transition:none !important; }
+  .work-card:hover,.work-card:hover .work-card__trigger img { transform:none !important; }
 }
