@@ -19,7 +19,8 @@ import kms3 from "@/assets/khaneh_mod_setareh_slide_03.png.asset.json";
 import kms4 from "@/assets/khaneh_mod_setareh_slide_04.png.asset.json";
 import kms5 from "@/assets/khaneh_mod_setareh_slide_05.png.asset.json";
 
-const touchUpsCover = "https://www.dropbox.com/scl/fi/520jlx8lb3onl7is5qyag/Duck-ai-image-2026-11-20-11-49.jpeg?rlkey=8xu096c7hfkhfzucp5upclhrq&raw=1";
+const touchUpsCover =
+  "https://www.dropbox.com/scl/fi/520jlx8lb3onl7is5qyag/Duck-ai-image-2026-11-20-11-49.jpeg?rlkey=8xu096c7hfkhfzucp5upclhrq&raw=1";
 
 const junoonSquares = [
   {
@@ -301,7 +302,8 @@ export function SelectedWork() {
                       className="w-full bg-card object-contain"
                     />
                     <figcaption className="mt-3 text-xs leading-relaxed text-muted-foreground">
-                      BEFORE / AFTER comparison · The AFTER is an AI-assisted visual reconstruction based on the original photograph.
+                      BEFORE / AFTER comparison · The AFTER is an AI-assisted visual reconstruction
+                      based on the original photograph.
                     </figcaption>
                   </figure>
                 )}
