@@ -115,14 +115,6 @@ export function Hero() {
 
   useEffect(() => () => bubbleTimers.current.forEach(window.clearTimeout), []);
 
-  const moveArt = (event: PointerEvent<HTMLDivElement>) => {
-    const rect = event.currentTarget.getBoundingClientRect();
-    const x = (event.clientX - rect.left) / rect.width - 0.5;
-    const y = (event.clientY - rect.top) / rect.height - 0.5;
-    event.currentTarget.style.setProperty("--move-x", `${-x * 22}px`);
-    event.currentTarget.style.setProperty("--move-y", `${-y * 22}px`);
-  };
-
   const releaseBubbles = (event: PointerEvent<HTMLDivElement>) => {
     const rect = event.currentTarget.getBoundingClientRect();
     const x = ((event.clientX - rect.left) / rect.width) * 100;
