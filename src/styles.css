@@ -418,3 +418,119 @@
   .work-card__trigger > span:last-child,.work-card__context svg,.work-card__trigger--parla::before { transition:none !important; }
   .work-card:hover,.work-card:hover .work-card__trigger img { transform:none !important; }
 }
+
+
+/* SCROLL STAGE — the backdrop responds to the reader, not a looping animation. */
+:root { --page-progress:0; --scroll-drift:0px; }
+.scroll-stage {
+  position:fixed; z-index:0; inset:0; overflow:hidden; pointer-events:none;
+  color:#087F62; opacity:.72; contain:layout paint;
+}
+.scroll-stage__rail {
+  position:absolute; top:15vh; bottom:15vh; left:clamp(12px,2.1vw,30px);
+  width:1px; background:rgb(8 127 98 / 17%);
+}
+.scroll-stage__rail::before {
+  content:""; position:absolute; left:-3px; top:0; width:7px; height:7px;
+  border-radius:50%; background:#F04491;
+}
+.scroll-stage__rail span {
+  position:absolute; top:0; left:-1px; width:3px; height:100%;
+  background:linear-gradient(180deg,#087F62 0%,#F04491 52%,#AEB8BD 100%);
+  transform:scaleY(var(--page-progress)); transform-origin:top center;
+  box-shadow:0 0 12px rgb(8 127 98 / 24%);
+}
+.scroll-stage__orbit {
+  position:absolute; top:22vh; right:-8vw; width:clamp(15rem,34vw,34rem);
+  aspect-ratio:1; border:1px solid rgb(8 127 98 / 16%); border-radius:50%;
+  transform:translate3d(0,calc(var(--scroll-drift) * -1),0) rotate(calc(var(--page-progress) * 210deg));
+  transition:transform .08s linear;
+}
+.scroll-stage__orbit::before,.scroll-stage__orbit::after {
+  content:""; position:absolute; inset:11%; border:1px solid rgb(240 68 145 / 18%);
+  border-radius:42% 58% 63% 37% / 45% 38% 62% 55%;
+}
+.scroll-stage__orbit::after {
+  inset:23%; border-color:rgb(8 127 98 / 22%);
+  border-radius:50%; transform:rotate(45deg) scaleX(.72);
+}
+.scroll-stage__orbit i {
+  position:absolute; width:12px; height:12px; border-radius:50%;
+  background:#F04491; box-shadow:0 0 0 6px rgb(240 68 145 / 9%);
+}
+.scroll-stage__orbit i:nth-child(1) { top:12%; left:25%; }
+.scroll-stage__orbit i:nth-child(2) { right:18%; top:48%; width:7px; height:7px; background:#087F62; }
+.scroll-stage__orbit i:nth-child(3) { left:43%; bottom:8%; width:9px; height:9px; background:#AEB8BD; }
+.scroll-stage__ticker {
+  position:absolute; left:clamp(2.5rem,7vw,7rem); right:0; bottom:1.15rem;
+  display:flex; align-items:center; justify-content:flex-start; gap:1.5rem;
+  white-space:nowrap; overflow:hidden; color:#244D40; opacity:.18;
+  font:600 .58rem/1 var(--font-mono); letter-spacing:.24em;
+  transform:translate3d(calc(var(--page-progress) * -10%),0,0);
+}
+.scroll-stage__ticker b { color:#E33C8C; font-size:1rem; }
+
+/* Keep the decorative stage behind all readable content. */
+.grain > header,.grain > main,.grain > footer { position:relative; z-index:1; }
+.grain > main { isolation:isolate; }
+.grain > header { background-color:rgb(245 247 245 / 88%); }
+
+/* Break the rigid card grid: sculpted corners, offset plates and varied silhouettes. */
+.work-card:not(.work-card--parla):not(.work-card--junoon-podcast) {
+  border-radius:24px 5px 24px 5px !important;
+  box-shadow:8px 8px 0 var(--card-accent),0 18px 34px rgb(20 28 25 / 8%);
+}
+.work-card:not(.work-card--parla):not(.work-card--junoon-podcast)::before {
+  inset:12px auto 12px 0; width:5px; border-radius:0 8px 8px 0;
+}
+.work-card:not(.work-card--parla):not(.work-card--junoon-podcast)::after {
+  top:0; left:auto; right:0; width:34%; height:5px; border-radius:0 0 0 8px;
+}
+.work-card__trigger img { border-radius:14px 3px 14px 3px; }
+.work-card__trigger > span:first-child { border-radius:0 0 16px 0; }
+.work-card__trigger > span:last-child { border-radius:0 18px 0 0; }
+.work-card--turquoise-jewelry-set { border-radius:42px 6px 6px 6px !important; }
+.work-card--turquoise-jewelry-set .work-card__trigger img { border-radius:50% 50% 8px 8px; }
+.work-card--stillness-wellness-spaces { border-radius:6px 42px 6px 42px !important; }
+.work-card--stillness-wellness-spaces .work-card__trigger img { border-radius:48% 48% 6px 6px; }
+.work-card--moodbean { border-radius:38px 6px 38px 6px !important; }
+.work-card--moodbean .work-card__trigger img { border-radius:26px 4px 26px 4px; }
+.work-card--khaneh-mod-setareh { border-radius:6px 34px 6px 34px !important; }
+.work-card--khaneh-mod-setareh .work-card__trigger img { border-radius:4px 28px 4px 28px; }
+.work-card--setare-fashion-house-film { border-radius:50% 8px 8px 8px !important; }
+.work-card--setare-fashion-house-film .work-card__trigger img { border-radius:44% 44% 5px 5px; }
+.work-card--sayeh-character-design { border-radius:6px 44px 6px 6px !important; }
+.work-card--sayeh-character-design .work-card__trigger img { border-radius:8px 36px 8px 8px; }
+.work-card--khaneh-shalvar { border-radius:34px 5px 34px 5px !important; }
+.work-card--khaneh-shalvar .work-card__trigger img { border-radius:26px 4px 26px 4px; }
+.work-card--random-pieces { border-radius:6px 34px 6px 34px !important; }
+.work-card--random-pieces .work-card__trigger img { border-radius:4px 26px 4px 26px; }
+.work-card--turkish-coffee-packaging { border-radius:42px 42px 5px 5px !important; }
+.work-card--turkish-coffee-packaging .work-card__trigger img { border-radius:34px 34px 4px 4px; }
+.work-card--touch-ups { border-radius:5px 5px 38px 5px !important; }
+.work-card--touch-ups .work-card__trigger img { border-radius:4px 4px 28px 4px; }
+.work-card--nikmehr { border-radius:6px 40px 6px 40px !important; }
+.work-card--nikmehr .work-card__trigger img { border-radius:4px 30px 4px 30px; }
+.work-card--junoon-podcast { border-radius:5px 30px 5px 30px !important; }
+.work-card--parla { border-radius:36px 5px 36px 5px !important; }
+.work-card--parla::before { border-radius:28px 3px 28px 3px; }
+.work-card--parla .work-card__trigger img { border-radius:48% 48% 12px 12px; }
+
+@media (hover:hover) and (pointer:fine) {
+  .work-card:not(.work-card--parla):hover {
+    transform:translateY(-8px) rotate(-.35deg);
+    box-shadow:12px 14px 0 var(--card-pop),0 24px 44px color-mix(in srgb,var(--card-accent) 18%,transparent);
+  }
+  .work-card:nth-child(even):not(.work-card--parla):hover { transform:translateY(-8px) rotate(.35deg); }
+}
+@media (max-width:767px) {
+  .scroll-stage__orbit { top:26vh; right:-37vw; opacity:.6; }
+  .scroll-stage__rail { left:5px; opacity:.5; }
+  .scroll-stage__ticker { left:1.2rem; bottom:.5rem; font-size:.48rem; gap:.9rem; }
+  .work-card:not(.work-card--parla):not(.work-card--junoon-podcast) { border-radius:18px 4px 18px 4px !important; }
+  .work-card__trigger img { border-radius:12px 3px 12px 3px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .scroll-stage__orbit,.scroll-stage__ticker { transform:none !important; }
+  .scroll-stage__rail span { transform:scaleY(1); }
+}
