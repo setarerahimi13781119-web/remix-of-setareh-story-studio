@@ -31,32 +31,9 @@ jobs:
       - name: Build for Cloudflare
         run: bun run build
 
-      - name: Resolve Cloudflare account from API token
-        id: account
-        shell: bash
-        env:
-          CF_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        run: |
-          if [[ -z "$CF_API_TOKEN" ]]; then
-            echo "::error::Missing repository secret CLOUDFLARE_API_TOKEN."
-            exit 1
-          fi
-          response=$(curl --fail-with-body --silent --show-error \
-            -H "Authorization: Bearer $CF_API_TOKEN" \
-            "https://api.cloudflare.com/client/v4/accounts?per_page=50")
-          count=$(jq '.result | length' <<< "$response")
-          if [[ "$count" -ne 1 ]]; then
-            echo "::error::Expected exactly one accessible Cloudflare account; found $count. Configure an account-specific token or set CLOUDFLARE_ACCOUNT_ID."
-            jq -r '.result[] | "Accessible account: \(.name) — \(.id)"' <<< "$response"
-            exit 1
-          fi
-          account_id=$(jq -r '.result[0].id' <<< "$response")
-          echo "account_id=$account_id" >> "$GITHUB_OUTPUT"
-          echo "Resolved Cloudflare account successfully."
-
       - name: Deploy to Cloudflare Workers
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ steps.account.outputs.account_id }}
+          accountId: cb8f0b23
           command: deploy --config .output/server/wrangler.json
