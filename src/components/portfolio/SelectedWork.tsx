@@ -755,7 +755,7 @@ export function SelectedWork() {
                       />
                     ) : project.id === "nikmehr" ? (
                       <img
-                        src="/assets/portfolio/nikmehr.webp"
+                        src="/assets/portfolio/nikmehr-v2.webp"
                         alt="1001 show cover artwork"
                         aria-hidden="true"
                         loading="lazy"
