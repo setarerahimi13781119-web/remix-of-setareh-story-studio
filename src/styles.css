@@ -210,6 +210,19 @@
     opacity: .94;
     filter: saturate(.94) contrast(1.015);
     animation: pm-float 7s ease-in-out infinite;
+    translate: calc(var(--pointer-x, 0) * -14px) calc(var(--pointer-y, 0) * -14px);
+    transition: translate 180ms cubic-bezier(.2,.75,.25,1);
+    will-change: transform, translate;
+  }
+  .pm-bubble {
+    position: absolute;
+    z-index: 2;
+    border: 1px solid rgb(193 40 100 / 42%);
+    border-radius: 999px;
+    pointer-events: none;
+    background: radial-gradient(circle at 32% 28%, rgb(255 255 255 / 82%), rgb(158 182 122 / 15%) 48%, rgb(193 40 100 / 8%));
+    box-shadow: 0 0 12px rgb(158 182 122 / 16%);
+    animation: pm-bubble-rise 1.45s cubic-bezier(.16,.65,.3,1) forwards;
   }
   .pm-art-index {
     position: absolute;
@@ -239,6 +252,11 @@
     background: rgb(36 62 36 / 5%);
     transform: translateY(-2px);
   }
+}
+@keyframes pm-bubble-rise {
+  0% { opacity: 0; transform: translate3d(0, 8px, 0) scale(.35); }
+  18% { opacity: .82; }
+  100% { opacity: 0; transform: translate3d(var(--bubble-drift, 0px), -42px, 0) scale(1.45); }
 }
 @keyframes pm-float {
   0%, 100% { transform: translate3d(0, 0, 0) rotate(-1deg); }
