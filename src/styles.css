@@ -5,8 +5,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-display: "Instrument Serif", "Times New Roman", serif;
-  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", "Syne", "Manrope", sans-serif;
+  --font-sans: "Plus Jakarta Sans", "Manrope", "Geist", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Geist Mono", ui-monospace, monospace;
   --radius-sm: calc(var(--radius) - 2px);
   --radius-md: var(--radius);
@@ -34,27 +34,34 @@
 }
 
 :root {
-  --radius: 2px;
-  --background: oklch(0.975 0.012 85);
-  --foreground: oklch(0.18 0.01 50);
-  --card: oklch(0.955 0.016 80);
-  --card-foreground: oklch(0.18 0.01 50);
-  --popover: oklch(0.975 0.012 85);
-  --popover-foreground: oklch(0.18 0.01 50);
-  --primary: oklch(0.18 0.01 50);
-  --primary-foreground: oklch(0.975 0.012 85);
-  --secondary: oklch(0.94 0.018 78);
-  --secondary-foreground: oklch(0.18 0.01 50);
-  --muted: oklch(0.94 0.018 78);
-  --muted-foreground: oklch(0.45 0.015 50);
-  --accent: oklch(0.47 0.12 30);
-  --accent-foreground: oklch(0.975 0.012 85);
+  --radius: 1rem;
+  --portfolio-cream: #F4F1EA;
+  --portfolio-dark-olive: #243E24;
+  --portfolio-sage: #9EB67A;
+  --portfolio-magenta: #C12864;
+  --portfolio-soft-pink: #F5E6ED;
+  --page-gutter: clamp(1.25rem, 5vw, 5.5rem);
+  --content-width: 1440px;
+  --background: var(--portfolio-cream);
+  --foreground: var(--portfolio-dark-olive);
+  --card: #F0EDE5;
+  --card-foreground: var(--portfolio-dark-olive);
+  --popover: var(--portfolio-cream);
+  --popover-foreground: var(--portfolio-dark-olive);
+  --primary: var(--portfolio-dark-olive);
+  --primary-foreground: var(--portfolio-cream);
+  --secondary: #EAE8DF;
+  --secondary-foreground: var(--portfolio-dark-olive);
+  --muted: #EAE8DF;
+  --muted-foreground: #4D634D;
+  --accent: var(--portfolio-magenta);
+  --accent-foreground: #FFFFFF;
   --destructive: oklch(0.55 0.2 27);
   --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.18 0.01 50 / 14%);
-  --rule: oklch(0.18 0.01 50 / 22%);
-  --input: oklch(0.18 0.01 50 / 20%);
-  --ring: oklch(0.47 0.12 30);
+  --border: rgba(36, 62, 36, 0.16);
+  --rule: rgba(36, 62, 36, 0.22);
+  --input: rgba(36, 62, 36, 0.18);
+  --ring: var(--portfolio-sage);
 }
 
 @layer base {
@@ -110,4 +117,136 @@
   transition: opacity 0.7s ease, transform 0.7s ease;
   &[data-visible="true"] { opacity: 1; transform: none; }
   @media (prefers-reduced-motion: reduce) { opacity: 1; transform: none; }
+}
+
+
+/* Playful Matter — scoped header and hero treatment */
+@layer components {
+  .pm-header {
+    background: rgb(244 241 234 / 88%);
+    border-color: rgb(36 62 36 / 10%);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+  }
+  .pm-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: .8rem;
+    flex-shrink: 0;
+    color: var(--portfolio-dark-olive);
+    font-family: var(--font-display);
+    font-size: .95rem;
+    font-weight: 800;
+    letter-spacing: -.045em;
+  }
+  .pm-brand-mark { width: 42px; height: 42px; flex: none; }
+  .pm-nav-link {
+    position: relative;
+    color: var(--muted-foreground);
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: .035em;
+    transition: color 180ms ease;
+  }
+  .pm-nav-link::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -.3rem;
+    left: 0;
+    height: 1px;
+    background: var(--portfolio-magenta);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 220ms ease;
+  }
+  .pm-nav-link:hover { color: var(--portfolio-dark-olive); }
+  .pm-nav-link:hover::after { transform: scaleX(1); transform-origin: left; }
+  .pm-hero {
+    position: relative;
+    isolation: isolate;
+  }
+  .pm-hero-eyebrow { color: var(--muted-foreground); }
+  .pm-hero-title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    letter-spacing: -.075em;
+    line-height: .86;
+    overflow-wrap: anywhere;
+  }
+  .pm-hero-title-accent { color: var(--portfolio-magenta); }
+  .pm-hero-art {
+    position: relative;
+    display: grid;
+    min-height: 420px;
+    place-items: center;
+    isolation: isolate;
+    overflow: hidden;
+  }
+  .pm-hero-art::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: min(88%, 500px);
+    aspect-ratio: 1;
+    border: 1px solid rgb(158 182 122 / 58%);
+    border-radius: 50%;
+    transform: rotate(-24deg) scaleY(.72);
+  }
+  .pm-hero-art::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 58%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgb(158 182 122 / 25%), transparent 70%);
+    filter: blur(12px);
+  }
+  .pm-sculpture {
+    width: min(100%, 570px);
+    max-height: 570px;
+    object-fit: contain;
+    filter: drop-shadow(0 28px 36px rgb(36 62 36 / 12%));
+    animation: pm-float 7s ease-in-out infinite;
+  }
+  .pm-art-index {
+    position: absolute;
+    right: .25rem;
+    bottom: .5rem;
+    color: var(--muted-foreground);
+    font-family: var(--font-mono);
+    font-size: .65rem;
+    letter-spacing: .08em;
+  }
+  .pm-cta-primary {
+    border-radius: 999px;
+    background: var(--portfolio-dark-olive);
+    color: var(--portfolio-cream);
+    transition: transform 180ms ease, background-color 180ms ease;
+  }
+  .pm-cta-primary:hover {
+    background: var(--portfolio-magenta);
+    transform: translateY(-2px);
+  }
+  .pm-cta-secondary {
+    border: 1px solid rgb(36 62 36 / 30%);
+    border-radius: 999px;
+    transition: background-color 180ms ease, transform 180ms ease;
+  }
+  .pm-cta-secondary:hover {
+    background: rgb(36 62 36 / 5%);
+    transform: translateY(-2px);
+  }
+}
+@keyframes pm-float {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-1deg); }
+  50% { transform: translate3d(0, -10px, 0) rotate(1deg); }
+}
+@media (max-width: 767px) {
+  .pm-hero-art { min-height: 300px; }
+  .pm-sculpture { width: min(86%, 390px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pm-sculpture { animation: none; }
 }
