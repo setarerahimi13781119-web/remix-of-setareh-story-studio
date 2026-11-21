@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import "./observer-story.css";
 import junoonPoster from "@/assets/junoon_case_file_poster.jpg.asset.json";
 import junoonGhostship from "@/assets/junoon_case_ghostship.jpg.asset.json";
 import junoonMcnally from "@/assets/junoon_case_mcnally.jpg.asset.json";
