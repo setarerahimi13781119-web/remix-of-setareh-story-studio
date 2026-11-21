@@ -646,17 +646,26 @@ function PublishedExamples({ compact = false }: { compact?: boolean }) {
 export function SelectedWork() {
   return (
     <>
-      <style>{"/* Hybrid visual archive cover system */\n.portfolio-cover-trigger { --cover-accent: #65c64a; }\n.portfolio-art-frame {\n  position:relative; display:flex; flex:0 0 auto; min-width:0; min-height:0; width:100%; aspect-ratio:4 / 3;\n  overflow:hidden; isolation:isolate; background:var(--cover-accent); border:1px solid var(--cover-accent);\n  box-shadow:inset 0 0 0 5px rgb(255 255 255 / 18%);\n}\n.portfolio-art-frame::before {\n  content:attr(data-index) ' / 13'; position:absolute; z-index:5; top:.55rem; left:.55rem;\n  padding:.32rem .48rem; color:#292b29; background:#fff4df; border-radius:2px;\n  font:700 .58rem/1 ui-monospace,monospace; letter-spacing:.12em; pointer-events:none;\n}\n.portfolio-art-frame::after {\n  content:''; position:absolute; z-index:4; inset:.42rem; border:1px solid rgb(255 255 255 / 55%);\n  pointer-events:none; transition:inset 260ms cubic-bezier(.2,.8,.2,1),border-color 260ms ease;\n}\n.portfolio-cover-trigger:hover .portfolio-art-frame::after { inset:.62rem; border-color:#fff4df; }\n.portfolio-art-frame > img,.portfolio-art-frame > video { transition:transform 500ms cubic-bezier(.2,.8,.2,1),filter 500ms ease; filter:saturate(1.015) contrast(1.015); }\n.portfolio-cover-trigger:hover .portfolio-art-frame > img,.portfolio-cover-trigger:hover .portfolio-art-frame > video { transform:scale(1.018); }\n.portfolio-art-frame[data-project=parla-perfume-ad] { --cover-accent:#f18db8; }\n.portfolio-art-frame[data-project=sayeh-character-design] { --cover-accent:#b6a1e5; }\n.portfolio-art-frame[data-project=setare-fashion-house-film] { --cover-accent:#f47768; }\n.portfolio-art-frame[data-project=khaneh-shalvar] { --cover-accent:#f5b58e; }\n.portfolio-art-frame[data-project=khaneh-mod-setareh] { --cover-accent:#f6d66b; }\n.portfolio-art-frame[data-project=junoon-podcast] { --cover-accent:#65c64a; }\n.portfolio-art-frame[data-project=moodbean] { --cover-accent:#f5b58e; }\n.portfolio-art-frame[data-project=random-pieces] { --cover-accent:#c9ef62; }\n.portfolio-art-frame[data-project=turquoise-jewelry-set] { --cover-accent:#66c7d0; }\n.portfolio-art-frame[data-project=turkish-coffee-packaging] { --cover-accent:#f6d66b; }\n.portfolio-art-frame[data-project=nikmehr] { --cover-accent:#65c64a; }\n.portfolio-art-frame[data-project=touch-ups] { --cover-accent:#f18db8; }\n.portfolio-art-frame[data-project=stillness-wellness-spaces] { --cover-accent:#66c7d0; }\n.portfolio-art-frame[data-project=junoon-podcast]::before { color:#fff4df; background:#292b29; }\n.portfolio-art-frame[data-project=random-pieces]::before { color:#292b29; background:#fff4df; }\n/* Project-specific details; the original artwork stays dominant. */\n.portfolio-art-frame__motif {\n  position:absolute; z-index:3; right:1rem; bottom:1rem; display:grid; place-items:center;\n  width:2.25rem; height:2.25rem; border:1px solid rgb(255 255 255 / 72%);\n  border-radius:999px; color:#292b29; background:rgb(255 244 223 / 88%);\n  box-shadow:0 3px 14px rgb(41 43 41 / 10%); pointer-events:none;\n  animation:cover-float 4.8s ease-in-out infinite;\n}\n.portfolio-art-frame__motif svg { width:1rem; height:1rem; stroke-width:1.7; }\n.portfolio-art-frame[data-project=parla-perfume-ad] .portfolio-art-frame__motif { color:#9b4770; }\n.portfolio-art-frame[data-project=turquoise-jewelry-set] .portfolio-art-frame__motif,\n.portfolio-art-frame[data-project=stillness-wellness-spaces] .portfolio-art-frame__motif { color:#267e87; }\n.portfolio-art-frame[data-project=stillness-wellness-spaces].is-rippling::after {\n  inset:0; border:0; border-radius:0;\n  background:radial-gradient(circle at var(--ripple-x,50%) var(--ripple-y,50%),\n    transparent 0 3%,rgb(255 255 255 / 68%) 3.2% 3.55%,transparent 3.8% 8%,\n    rgb(255 255 255 / 42%) 8.2% 8.5%,transparent 8.8% 14%,\n    rgb(102 199 208 / 28%) 14.2% 14.5%,transparent 14.8% 22%);\n  animation:cover-ripple 950ms cubic-bezier(.16,.7,.25,1) both;\n}\n@keyframes cover-ripple {\n  0% { opacity:.85; background-size:12% 12%; }\n  100% { opacity:0; background-size:180% 180%; }\n}\n@keyframes cover-float {\n  0%,100% { transform:translate3d(0,0,0) rotate(-5deg); }\n  50% { transform:translate3d(0,-5px,0) rotate(3deg); }\n}\n@media(prefers-reduced-motion:reduce) {\n  .portfolio-art-frame__motif { animation:none; }\n  .portfolio-art-frame[data-project=stillness-wellness-spaces].is-rippling::after { animation:none; }\n}\n.random-pieces-cover {\n  position:relative; display:flex; flex:1; min-height:0; width:100%; flex-direction:column;\n  justify-content:space-between; overflow:hidden; padding:clamp(1rem,3vw,2rem); color:#f3f0e8;\n  background:linear-gradient(135deg,transparent 0 48%,rgb(255 255 255 / 7%) 48.2% 48.6%,transparent 48.8%),#171816;\n}\n.random-pieces-cover__top,.random-pieces-cover__bottom {\n  position:relative; z-index:2; display:flex; justify-content:space-between; gap:.7rem;\n  color:#c9c9bf; font:500 clamp(.48rem,1vw,.65rem)/1.3 ui-monospace,monospace; letter-spacing:.13em;\n}\n.random-pieces-cover__top b { color:#d6f15b; font-weight:600; }\n.random-pieces-cover__letters {\n  position:relative; z-index:2; align-self:center; color:#f3f0e8;\n  font:800 clamp(6rem,17vw,12rem)/.72 sans-serif; letter-spacing:-.12em;\n  transform:rotate(-8deg) translateX(-.12em);\n}\n.random-pieces-cover__letters span { color:#d6f15b; font-weight:400; }\n.random-pieces-cover__shape { position:absolute; display:block; pointer-events:none; }\n.random-pieces-cover__shape--one {\n  top:16%; right:13%; width:24%; aspect-ratio:1; border:1px solid #d6f15b; border-radius:50%;\n  box-shadow:0 0 0 .7rem rgb(214 241 91 / 9%),0 0 0 1.4rem rgb(214 241 91 / 5%);\n}\n.random-pieces-cover__shape--two {\n  bottom:18%; left:11%; width:29%; height:1.1rem; background:#e44f74;\n  transform:rotate(-31deg); box-shadow:0 0 0 .45rem rgb(228 79 116 / 14%);\n}\n.random-pieces-cover__shape--three {\n  right:17%; bottom:23%; width:18%; aspect-ratio:1; background:#d6f15b;\n  clip-path:polygon(50% 0,100% 100%,0 100%); transform:rotate(16deg); opacity:.9;\n}\n@media(max-width:767px) {\n  .random-pieces-cover__letters { font-size:clamp(5.5rem,26vw,8rem); }\n  .random-pieces-cover__top,.random-pieces-cover__bottom { font-size:.46rem; }\n}"}</style>
-      <ol className="grid gap-6 md:grid-cols-2">
+      <div className="portfolio-work-stage">
+        <svg className="portfolio-scroll-ribbon" viewBox="0 0 100 1820" preserveAspectRatio="none" aria-hidden="true">
+          <path className="portfolio-scroll-ribbon__line" pathLength="1" d="M50 0 C12 90 88 160 50 260 S12 430 50 520 S88 690 50 780 S12 950 50 1040 S88 1210 50 1300 S12 1470 50 1560 S88 1730 50 1820" />
+          <path className="portfolio-scroll-ribbon__echo" d="M50 0 C12 90 88 160 50 260 S12 430 50 520 S88 690 50 780 S12 950 50 1040 S88 1210 50 1300 S12 1470 50 1560 S88 1730 50 1820" />
+          <circle className="portfolio-scroll-ribbon__node portfolio-scroll-ribbon__node--one" cx="50" cy="260" r="7" />
+          <circle className="portfolio-scroll-ribbon__node portfolio-scroll-ribbon__node--two" cx="50" cy="780" r="10" />
+          <circle className="portfolio-scroll-ribbon__node portfolio-scroll-ribbon__node--three" cx="50" cy="1300" r="8" />
+          <circle className="portfolio-scroll-ribbon__finish" cx="50" cy="1770" r="22" />
+          <circle className="portfolio-scroll-ribbon__finish portfolio-scroll-ribbon__finish--inner" cx="50" cy="1770" r="10" />
+        </svg>
+        <ol className="portfolio-work-grid">
         {projects.map((project, projectIndex) => (
-          <li key={project.id} className="min-w-0">
+          <li key={project.id} className={`portfolio-work-item portfolio-work-item--${(projectIndex % 6) + 1}`}>
             <Dialog>
-              <article className="flex h-full flex-col border border-rule p-5 md:p-6">
+              <article className="portfolio-work-card flex h-full flex-col">
                 <DialogTrigger asChild>
                   <Button
                     variant="ghost"
                     aria-label={`View ${project.title} project`}
-                    className="portfolio-cover-trigger group relative flex h-auto w-full flex-col items-stretch justify-between gap-6 whitespace-normal rounded-none bg-card p-5 text-left font-normal hover:bg-secondary md:p-7 aspect-[4/3]"
+                    className="portfolio-cover-trigger group relative flex h-auto w-full flex-col items-stretch justify-between gap-4 whitespace-normal rounded-none bg-transparent p-0 text-left font-normal hover:bg-transparent"
                   >
                     <span className="eyebrow flex items-center justify-between gap-3">
                       <span>{project.coverLabel}</span>
@@ -681,7 +690,7 @@ export function SelectedWork() {
                         src={touchUpsCover}
                         alt=""
                         aria-hidden="true"
-                        className="min-h-0 flex-1 w-full bg-card object-cover"
+                        className="min-h-0 flex-1 w-full bg-card object-contain"
                       />
                     ) : project.id === "stillness-wellness-spaces" ? (
                       <img
@@ -964,6 +973,7 @@ export function SelectedWork() {
           </li>
         ))}
       </ol>
+      </div>
     </>
   );
 }
