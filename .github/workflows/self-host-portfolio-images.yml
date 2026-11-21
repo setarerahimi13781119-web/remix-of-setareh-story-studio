@@ -1,9 +1,6 @@
 name: Move portfolio images to Vercel repo
 on:
-  push:
-    branches: [main]
-    paths:
-      - ".github/workflows/self-host-portfolio-images.yml"
+  workflow_dispatch:
 permissions:
   contents: write
 jobs:
@@ -16,99 +13,6 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p public/assets/portfolio
-          sudo apt-get update -qq && sudo apt-get install -y imagemagick ffmpeg >/dev/null
-          curl -fL 'https://uc7fdb53ebf16fbebc99e467bf96.dl.dropboxusercontent.com/cd/0/get/DMVj6CMF9v06-gpb1Qh_Ukp4Amft-mWAqj23uc1k-nu1KVpIQYtYJEmPQcH2wOWardnAE8DK6ucTwW6d3wFiugsAnX_66t81TJVv_JVWEdCijAxynUMDNu0D3eFdvnMvf191LruYoJaD37-3nLISV-CguMH2x37lElWMdoiebKqRwg/file?c_luid=72978bdf' -o /tmp/coffee-1.original
-          convert /tmp/coffee-1.original -resize '1400x1400>' -strip -quality 76 public/assets/portfolio/coffee-1.webp
-          curl -fL 'https://ucce02a535b53677f6f09b51f960.dl.dropboxusercontent.com/cd/0/get/DMWa5fjX6HaYJp75297rvYQ1P5E6NJ3P6UH10pn4KhW7-sPwoCrTBQte_IccGO1wIOa3khGEnUok52yK8F4Q4016f5Q689gEgLNHCvr3dejybBne_InylkdhfJK7yrX5SaZ4uCGZbDPhHdtfLCa9ltB6S0AObxalILD1l5ubg6v3vA/file?c_luid=72978bdf' -o /tmp/coffee-2.original
-          convert /tmp/coffee-2.original -resize '1400x1400>' -strip -quality 76 public/assets/portfolio/coffee-2.webp
-          curl -fL 'https://uc3d4586e065232adbc30e3378a8.dl.dropboxusercontent.com/cd/0/get/DMXwsHGHLTaxG58D7xAc_q8WVweN6nMek24O7FaNop4Kb3_lh6x4gX4mNzu_x4LMZ7Ps3c-kFfV95CfYJWPcHEjtr_om5UIjOcvgbfV-flbKUVbIeMVwn6l0JAjPO-R442QjYi96BCvciQKPWslbdkSkcWw0skRsL4In9ERnY2cotQ/file?c_luid=72978bdf' -o /tmp/coffee-3.original
-          convert /tmp/coffee-3.original -resize '1400x1400>' -strip -quality 76 public/assets/portfolio/coffee-3.webp
-          curl -fL 'https://uca4d1a3e8ce792cbb1abbbf1fdf.dl.dropboxusercontent.com/cd/0/get/DMXMSqUC6oI6vux1ZX_ehdW_GGPMbbZ-FJcACLXflChUjI3mRXW8-5_zQeC_sRUv9T2IDzz0sOV41qTvfDokAgAZwHHp9M5vTbNbc8yuNi_AVaiypv2m3dEX7S5Kew2plRezWu559A50vIFAeIw_2G06q2EfnNLK5kCVcNr45SC5dA/file?c_luid=72978bdf' -o /tmp/coffee-4.original
-          convert /tmp/coffee-4.original -resize '1400x1400>' -strip -quality 76 public/assets/portfolio/coffee-4.webp
-          curl -fL 'https://uc16ffa44bb31da8a64a98a19efd.dl.dropboxusercontent.com/cd/0/get/DMXMnWoCYzg2Sec96F19KM9GxxRyTZqyg2VscoJ6gjKeDPFpRajtXMzJiXyyOoesxgYWo7JBapOmclhQX5d_XmxITccf7DX1nhcDx9vwZgt57HWII4IpYJA8vV5qlmVW7xHCtK-wRS-U0K5tk1fI2BKcT9sTZmGuOIRZjauJJpJuQg/file?c_luid=72978bdf' -o /tmp/coffee-5.original
-          convert /tmp/coffee-5.original -resize '1400x1400>' -strip -quality 76 public/assets/portfolio/coffee-5.webp
-          curl -fL 'https://uc11b424d2030bd996723e424e0a.dl.dropboxusercontent.com/cd/0/get/DMWY1Xqt96L63TCr-srVg1c3YZjGxds51BeKjP7UgorD-fxSacNgUyAod6lxIhPyxi9zR4n3cLP43QCsm3EVPB2USJG6WJzZE5xdXHk3WKa_2AWgVh4Hbhcsb-bcEAWAkE-bzJgzcs6iFmn-emeNakX1hXLle1RQ091GQYXgkknmKw/file?c_luid=72978bdf' -o /tmp/coffee-6.original
-          convert /tmp/coffee-6.original -resize '1400x1400>' -strip -quality 76 public/assets/portfolio/coffee-6.webp
-          curl -fL 'https://uc23c993ac63e6c3d3c831f5528d.dl.dropboxusercontent.com/cd/0/get/DMUCC8eVFBh1mFLSEtDK_dGmgcETMsP3ugv3Bj1FXSHZjFr9kNzUNnHQJjJZJB4ar1_aUj0O_5Pba_HonkHJWUb2OElE8LYinpOPHt2EoF2feekwP9squUWZ5CMc7aMYZ_-hdKcAjAP5chlR-8Mlnfft2JaEasiYGX0aIGWteHpevw/file?c_luid=72978bdf' -o /tmp/coffee-7.original
-          convert /tmp/coffee-7.original -resize '1400x1400>' -strip -quality 76 public/assets/portfolio/coffee-7.webp
-          curl -fL 'https://uc84eb852fe5cefa8f3b7111ab61.dl.dropboxusercontent.com/cd/0/get/DMUJJ0LNFcliuMzDd88nQZHy4RjV5vXsaOt6RF5GBtKtGbbxNHTp6E7Rl3ea2C9rt3r_aRPdF6UxjVl59gu21jLf9ww6cFR3-bHujzXEoN68ieiho-ysZTSGkJyjMOJBW8-20lbWNbJnHCUeBdGHSFiT4Fh64pWOD7O-vMFeQP1NRQ/file?c_luid=72978bdf' -o /tmp/coffee-8.original
-          convert /tmp/coffee-8.original -resize '1400x1400>' -strip -quality 76 public/assets/portfolio/coffee-8.webp
-          curl -fL 'https://uc70f8f2993e81702912bb6e0038.dl.dropboxusercontent.com/cd/0/get/DMU_kfEXGG1xoeqITtFul00Clo5yJknkbdTjBSpTcOinzuFQQTv7RANhxOdkM_vzGQCCusPW6Dkowiefn1T5rk8Xh_HH5ifiTUFtwW4r6Uzru26vZW3Ot3We3QTlqegEotuIpp2mYY1zjtktf0aw5wuNmW7j8PrA4QqLLjYNzVN-sQ/file?c_luid=72978bdf' -o /tmp/touch-food1-before.original
-          convert /tmp/touch-food1-before.original -resize '1400x1400>' -strip -quality 76 public/assets/portfolio/touch-food1-before.webp
-          curl -fL 'https://ucf4cdc06f1c7106e068a2618342.dl.dropboxusercontent.com/cd/0/get/DMXTrWD1fUT0l8UTpN67yu1D3vf-zatvxtfKgHNp-S4e-zYBn9NiODBSTUg4RtkCJWWBpwNDuB8KXAUwUaE9uWGMcnECmbXalXpiVoXS0W3TiLJ1hAF3g0qWD4eEgRXhK1hkF8dTbjeqK0xA8XjbwoKZ82R89ELpTSovJwcwdefMhA/file?c_luid=72978bdf' -o /tmp/touch-food1-after.original
-          convert /tmp/touch-food1-after.original -resize '1400x1400>' -strip -quality 76 public/assets/portfolio/touch-food1-after.webp
-          curl -fL 'https://uc4b11d2b6ab8d948aa91a5e1ff9.dl.dropboxusercontent.com/cd/0/get/DMWl9nBwoLRDS489R0pCy7DJqH2SwsVSiBXZMVO8ZG2IKFfT_HiPS5U67uh60ipnMly9G8cN2zsMh5tp3kWP1ZWHQ_CIOsVI3xOuNI_yYF-r_prjfz8vPtSICW9pUL8SErAEnsHbqKo9rpQ0p1M68J2EDVoS3oIOWtJGb_x-DI4cHA/file?c_luid=72978bdf' -o /tmp/touch-food2-before.original
-          convert /tmp/touch-food2-before.original -resize '1400x1400>' -strip -quality 76 public/assets/portfolio/touch-food2-before.webp
-          curl -fL 'https://uc914eaea0aeb0a9806130bffa78.dl.dropboxusercontent.com/cd/0/get/DMV3bBo-f5Fq6OHFYt1DHr5GxkE0OUAeFTlEwCR3lSEyaPvc6dY3pLdoGv10GSPsSMdpiCHiJsZ3TGhUKmap4bs8j16wseIBz6-P-YanWBqop5iDms09ygtjS1bik3tCTasTmfs55WhObinDx8xAEPhlHe829oMyx-iBPokoOHaRMw/file?c_luid=72978bdf' -o /tmp/touch-food2-after.original
-          convert /tmp/touch-food2-after.original -resize '1400x1400>' -strip -quality 76 public/assets/portfolio/touch-food2-after.webp
-          curl -fL 'https://uc60ff0f46f37dd593f9452cc2d3.dl.dropboxusercontent.com/cd/0/get/DMWC5MrI45ASiHor9i29uQTEOzWqU5ihakAOWL5uG-9dfp2AKMGJvajHssQEZsT9lUgOTIeoTMHlzLw7C5YE_knRGpv6_28ubCY394uSjPBCrBOadYSHc4e3_vO-kvNMxXQ81LAcREbzLQwUkVxRU1VEp67LLGLmpg2KkJ4-oudnMg/file?c_luid=72978bdf' -o /tmp/touch-food3-before.original
-          convert /tmp/touch-food3-before.original -resize '1400x1400>' -strip -quality 76 public/assets/portfolio/touch-food3-before.webp
-          curl -fL 'https://uc8730757f2f7c714358f61ba264.dl.dropboxusercontent.com/cd/0/get/DMWnEBj1TzSDw-riy8RkKHuO9EKJgwQLtBTZWv-Sh9M7xWC-yt_gmSqpHbExnlNdMEkyqemvFwXXDldUVajxZJuolbiYqfezrcIKJqRMcZzywFDP4Co5BPOr3IpWiWUQV1wySbVQzd_FeE_IdoHjg8-QHoIy5QRGeOiScHUxc6JAWw/file?c_luid=72978bdf' -o /tmp/touch-food3-after.original
-          convert /tmp/touch-food3-after.original -resize '1400x1400>' -strip -quality 76 public/assets/portfolio/touch-food3-after.webp
-          curl -fL 'https://uca9d7900e3305ea2e4babaf1e7b.dl.dropboxusercontent.com/cd/0/get/DMWITEFtMTd2DVnUUz6buE-Uhz8LKUI_U-Zi3hwtcCtCHgxSIuotiC7irGqJY6VyYU_5yzVEibJHs-P-8PuHkk6Co3VurXb90dHWc-1AIpYscfPIXpvZSrYb3bacgbQbtmDD5_9kVbnrk49A3DROMYT4ZvX1H2Ncv5qvJiVj3c5v1w/file?c_luid=72978bdf' -o /tmp/touch-food4-before.original
-          convert /tmp/touch-food4-before.original -resize '1400x1400>' -strip -quality 76 public/assets/portfolio/touch-food4-before.webp
-          curl -fL 'https://ucb87ca90d55c12e86d849227484.dl.dropboxusercontent.com/cd/0/get/DMXDyKDoYoBxP9_4IehFwSqYA-0qfIGNEk2-0lLEEWkZblmREvGXe8gaHPvRG3rrR6A-tZFmgbJKG3bgind6TuJZIxON6JISDbVkPLCWjQxzQpKKiDIcqRR0bfTFz6xQum_Q750AgUtiTkx1_X60OICbe_aSgLtdWM1bHO3hVsCoBA/file?c_luid=72978bdf' -o /tmp/touch-food4-after.original
-          convert /tmp/touch-food4-after.original -resize '1400x1400>' -strip -quality 76 public/assets/portfolio/touch-food4-after.webp
-          curl -fL 'https://ucec0ae22c82b8078ac91f46da19.dl.dropboxusercontent.com/cd/0/get/DMXAEHC99Y7wZiLdcD4wZYBEm8IPbGECo2NVejbsik5orjvHUX3zyg4LbmzNJ5zUSIhSKaQRVVfe3xhSFjZai1Ayd5J-b3YjWDwHnNLRP8yYslsgk1lvLd23PDdQZhutMVi2JtEcdEBWvd9PlyYYfXl0RxRmfrsjFowsklmQ8ZMAmg/file?c_luid=72978bdf' -o /tmp/touch-coffee-before.original
-          convert /tmp/touch-coffee-before.original -resize '1400x1400>' -strip -quality 76 public/assets/portfolio/touch-coffee-before.webp
-          curl -fL 'https://ucd2a4d3bee76bda50d07637ba23.dl.dropboxusercontent.com/cd/0/get/DMXY5XTBAd8F0j_ghG7MO-0J73kyhpOiCdCVwBy1pn61uQJmQIvUmw_b5bVG-zjewLDUPrDIzl44Kf7TlR95enNYQtPGPtMQZ3tvP1GQSljgEbw3qPY1b_Q5fMaLfOUHrKuf9OhBgg-l-LRs4Eun7nmJG7JkT0aoJldYoEWnMogeqQ/file?c_luid=72978bdf' -o /tmp/touch-coffee-after.original
-          convert /tmp/touch-coffee-after.original -resize '1400x1400>' -strip -quality 76 public/assets/portfolio/touch-coffee-after.webp
-          curl -fL 'https://uc407ff64ba445b32e7002de1ee2.dl.dropboxusercontent.com/cd/0/get/DMXemzUWhwy78nIy4remboeBsOI09nNSeVMis6xZb00gT84DENcmoA-ErWcklXqp_Vetu1xVsBgnMdZcmxSbyX1FeXhxCMNAB-nR44dGemi4a8Mas_-PQEedRjzfRSHABqgTqiyOJuABGg-7lukgG55WYnI7X17r5Ln-HLaJSjduVg/file?c_luid=72978bdf' -o /tmp/stillness-1.original
-          convert /tmp/stillness-1.original -resize '1400x1400>' -strip -quality 76 public/assets/portfolio/stillness-1.webp
-          curl -fL 'https://uc20eaf1a73d85720b86860b03e7.dl.dropboxusercontent.com/cd/0/get/DMVnP-tS0ntO6YdfVNQTX-PcUUMHBb_6pbv_MJAanj1lB9j2ra0dwOc99jCxdP_gwq-oVr5KuqXjZdMbji44yxrLsKEN7lzvMhZqFRSr9CnN1kBx3eCGQzi392lmRrDTXDusj0Kh-n73E3VtO0_5DHOYrvOXb-YLVCFosWG_6p9rvg/file?c_luid=72978bdf' -o /tmp/stillness-2.original
-          convert /tmp/stillness-2.original -resize '1400x1400>' -strip -quality 76 public/assets/portfolio/stillness-2.webp
-          curl -fL 'https://uc9ca4091f425c7935e04af8e7c3.dl.dropboxusercontent.com/cd/0/get/DMW5uESS8hXmWeKETKuRoLWvcGRXPvjDQEJw3N4pLvPj0ipp56tFTLS0WD_SvslR-AcNWhwcbjD9tJXUwf8LK6VEVjbmKK2F8v86n_JA4NJQdIZ9R185TsLGXi1SuprJ_4S8HlvIQsDN4KnqrLTpsnJyUhg588tTXzV_5pAMM4zVMg/file?c_luid=72978bdf' -o /tmp/stillness-3.original
-          convert /tmp/stillness-3.original -resize '1400x1400>' -strip -quality 76 public/assets/portfolio/stillness-3.webp
-          curl -fL 'https://uc54320e124b48377bf6d0d97c51.dl.dropboxusercontent.com/cd/0/get/DMVAWxfcDL2siFovFBX3tCZv20fuXCXvwd1IKTwlypfCYzCDHchwRL0vhvvEqd5_kYomoiIyWazmNHez4e4HAbIUcA521GiD3EoARbpjRXMnslvopiDDHaacAPe28dA75cv4O-a_ca0FLNjDEKgfk_VBi-JrE8K6bJtd11UXd1JnuA/file?c_luid=72978bdf' -o /tmp/stillness-4.original
-          convert /tmp/stillness-4.original -resize '1400x1400>' -strip -quality 76 public/assets/portfolio/stillness-4.webp
-          curl -fL 'https://ucf64b671347a542c82a12f15be4.dl.dropboxusercontent.com/cd/0/get/DMUIo1-V1cpzLa0jBOJSX-8Vl3cfER5zkkWOy4F3pTZ_e3kjosXbUj98QB2BRnFxm06Ie0hfgCoAsSlp-B0if18T91YWBcJtljcTbaKIfBqXvTZZOsS63Cn-dwhEqstUhgH3884BQsb_M2zI_3rtGOR-PIHXlS_O0jvT70Ha2b_BTw/file?c_luid=72978bdf' -o /tmp/stillness-5.original
-          convert /tmp/stillness-5.original -resize '1400x1400>' -strip -quality 76 public/assets/portfolio/stillness-5.webp
-          curl -fL 'https://uc47e2f592caa89925cbde27a3c5.dl.dropboxusercontent.com/cd/0/get/DMXL9c3IEkIAt5K7YqIagtIxt5-9EiyPBTsA-m2gruT1S6QnwhgCON6kh0YLNckc-AJeRy3KKzJZBIW2giOuFAdTzSznHJZUf5FFF0KLFwgJ6Iz5-ov_xX1ENe6vLXl3TAro4RX9veWN4lmJJOwRzvuDSkzyISJp2-wKzb1y1zL3ig/file?c_luid=72978bdf' -o /tmp/stillness-6.original
-          convert /tmp/stillness-6.original -resize '1400x1400>' -strip -quality 76 public/assets/portfolio/stillness-6.webp
-          curl -fL 'https://ucac2dfe7e85ee1a2bdcec4b93bf.dl.dropboxusercontent.com/cd/0/get/DMWbzD95TbOjCuDd4SvYVkvxICVKg0dnWZ_79-OkNjtc0_RnhdMM6UJay-Ns3zr_nISAyz_dOokCc9RgQI3qgh4Hxn0KvCb1O_t3gWHrseI0f6I9aXyPIPmZOxW4cUYuGXKpVI0772Tz936cgxdyGesb6xgqSkIeDMMpflkzOdWPsA/file?c_luid=72978bdf' -o /tmp/random-1.original
-          convert /tmp/random-1.original -resize '1400x1400>' -strip -quality 76 public/assets/portfolio/random-1.webp
-          curl -fL 'https://ucca2c14e9db55c45b1e12099e92.dl.dropboxusercontent.com/cd/0/get/DMWk8H-s4AqME-8y4QwnJuDp-d3QrCyhr8Or1Ag_YLApouejPmVBq23e8X1i4hjqE1_4vGH0EQ-iH-NO6qr1hdIPomoQPhWgwnSXOS6BhAWFHbZOeBf9dxRux2s1ke-PUnKomtBJbzf4sV-BBOQgVZkIb3H6HWuM4RxboLXQ5_kaJQ/file?c_luid=72978bdf' -o /tmp/random-2.original
-          convert /tmp/random-2.original -resize '1400x1400>' -strip -quality 76 public/assets/portfolio/random-2.webp
-          curl -fL 'https://uc32db8fd3e28b56bd7548f5a424.dl.dropboxusercontent.com/cd/0/get/DMX4lj5s10D881eVV7lbr5gfS55pxlDLe4L38UO951ANfprLDtd3hD3eQK01hRF5lTHQSCcbXrj6fHDXtudtu77UrI0Q18LCS3wnF2Lz4Ap0nDRM8I2FnL2hQ1p7oVIx_f0fx9mOrHqDXu5ufFdiXZ3nsXi_G0fbezHEGtxfm3QxGg/file?c_luid=72978bdf' -o /tmp/random-3.original
-          convert /tmp/random-3.original -resize '1400x1400>' -strip -quality 76 public/assets/portfolio/random-3.webp
-          curl -fL 'https://uc43b256ed28ac7098a087ee2a3a.dl.dropboxusercontent.com/cd/0/get/DMXPbQt4CMuY84X4GJhy_V4w8NS1UpoD6SqRbvTliIKekKkFZdJuvrUAptEcvlGYTO1Bz4OvUNDkUpk7OGdcAIRUxL4vtf4Az4Yj5hZGIL2PuExG-EZZKCRE38FtGlSOBjfNFilTuyRFhPDRvfdCra7PbaGlW4xG8gJ0SW62v8nmCQ/file?c_luid=72978bdf' -o /tmp/random-4.original
-          convert /tmp/random-4.original -resize '1400x1400>' -strip -quality 76 public/assets/portfolio/random-4.webp
-          curl -fL 'https://uc7862013cbefffac8a35102f023.dl.dropboxusercontent.com/cd/0/get/DMW5if00LjD0_ae6MaGRHRfxF-_Sk6_GVNJ8c5QSXSZAjfdiyrlb27c5-jeF0ZgjMVZfp-VKae3LS9sy91K-1q1x6zykKwbbiuEXGcAZZg879Mt5ASZQarInSXVK3nlLXu1ZjY2qRCI3yt2K9SxMpyUjVPiMgVpWFGe8OYW2tCRrbQ/file?c_luid=72978bdf' -o /tmp/random-5.original
-          convert /tmp/random-5.original -resize '1400x1400>' -strip -quality 76 public/assets/portfolio/random-5.webp
-          curl -fL 'https://ucf434419f7db023b9ab0d3fd1df.dl.dropboxusercontent.com/cd/0/get/DMVWjk-jInwBzFfNHvcUseIK4RtXl6pM8D0v9TONRH_eb-JmzEykaGZDWSKtWfr25LYduY8O7HlKKKZzdIsGLGJVnRAeC8_k-uGXL1Yc_-w1EcA5e5PHzLkZ6YUGGV7rv8ywK7vqr95aYgVWfa3mLZQbzf8Tl09IhCVl9flltbPQbQ/file?c_luid=72978bdf' -o /tmp/random-6.original
-          convert /tmp/random-6.original -resize '1400x1400>' -strip -quality 76 public/assets/portfolio/random-6.webp
-          curl -fL 'https://uc3dd5061c776a7f075344e094d5.dl.dropboxusercontent.com/cd/0/get/DMVfHaSwF-CPfXf0RO4-TXD71lC_H1pF9UHGZvhp99iaB96v703ONhs6I0FPvcNMzKZtK_XFGQtLtOCVREH452yH_v1CXm6fArY6QKu61kSiJdtLjaxEKd7MO_ef5K_o4rN0gr__JTdMJWieSry_UsY7k7B45KDwpDL5lGIW5KTnGA/file?c_luid=72978bdf' -o /tmp/random-7.original
-          convert /tmp/random-7.original -resize '1400x1400>' -strip -quality 76 public/assets/portfolio/random-7.webp
-          curl -fL 'https://uc02579f8a880c34ef8b72480691.dl.dropboxusercontent.com/cd/0/get/DMX3TRdJcIpZDA1XmKugo_u0ORwEWD9RrmRp5VEU_yT7FyaSB-_PeDrr7dvSG_VhfIJufINdcJvRncOFJllzBPiDvipMtf4sLriDaGewmcMSQ0lgy17LJnp7QSNO9B2fKEP-i6UKQb9rK0w3aI_qfxJuAyWonKXWJfY6nyHQBfP_ug/file?c_luid=72978bdf' -o /tmp/random-8.original
-          convert /tmp/random-8.original -resize '1400x1400>' -strip -quality 76 public/assets/portfolio/random-8.webp
-          curl -fL 'https://ucff9212f12bc9501e627c76b033.dl.dropboxusercontent.com/cd/0/get/DMXG60qZ-PFHUd2NrbCmj2cQA2c3g1Owg1Gptek2HtPxjFRLLmf6yCqZwGgBOu04EDe7Q5nx1czl8uvidUR46UdB2TuD8go-uWL5QkDMq-S_a5I05O5pkYLa9439DCsdK_wLnlqOV9GZg7L6lx5tHmLoynQRF4EwW-G_ZR4FQyYBag/file?c_luid=72978bdf' -o /tmp/random-9.original
-          convert /tmp/random-9.original -resize '1400x1400>' -strip -quality 76 public/assets/portfolio/random-9.webp
-          curl -fL 'https://ucb429c010b3290c7cd67eea9c44.dl.dropboxusercontent.com/cd/0/get/DMXCtJyW2ayxEJ3ijxz62RXZnO6j1M3NmzyjZ4tun_5MtgMbSP7J14miBfgh6GAeqW1_94wK-41lY2ddjjQcjKejDPsNltby6xZUJUv2SmZspr2Ct7UzTkHhRX0m1eGN5zEho4Kpenl7IJvE4G0uVQzAK_XXOD-QW5taWaPG44GCCA/file?c_luid=72978bdf' -o /tmp/random-10.original
-          convert /tmp/random-10.original -resize '1400x1400>' -strip -quality 76 public/assets/portfolio/random-10.webp
-          curl -fL 'https://uc2f27a5883a5b6b6b53f784e607.dl.dropboxusercontent.com/cd/0/get/DMW7EAtcIYOMfpKZBV4MIxbcyL7H1oG6bs357LMgqTvZoZioDFHSyuJ-IaVGk8xqPPIwMwq7RWpGrXQJdM0Ju3yPnJhM44rNTEbjhNpITsxEX2i4upQvpLpbQGzD79dDfU7KyREUpTrgtVRNlBLS5qbK2sf8pt6RSsJdtjv0RepGBg/file?c_luid=72978bdf' -o /tmp/random-11.original
-          convert /tmp/random-11.original -resize '1400x1400>' -strip -quality 76 public/assets/portfolio/random-11.webp
-          curl -fL 'https://uc5edb5cb7003a1f806cac9a986c.dl.dropboxusercontent.com/cd/0/get/DMV3F4-goLJTLNbLIfumyZPoqP8bTZktcHe-yDxWF001wmX8WlSA4pEkcfv_5jd9z7qW55oTGTUmOJqMZbxiLK89Eytqfn5Ld83arC84ALKeh5JYjPVgz-Dm5NKVTs2C4i6Vo9AMjUXcCb6oN94mgJpjSzxhI6Xwj3f-OZvuY1WeQg/file?c_luid=72978bdf' -o /tmp/random-12.original
-          convert /tmp/random-12.original -resize '1400x1400>' -strip -quality 76 public/assets/portfolio/random-12.webp
-          curl -fL 'https://ucffb200a4e8aecc454e8f29c7c1.dl.dropboxusercontent.com/cd/0/get/DMUtYsUZyptj1_aaOTFOwy2hfPUtJzN9ZNdIxQXIAfn_r21UZJgymQ-xDmNmZhM5fprsfsx8x-oGOBvIrE5Up4jvPmcsfM_faWnKWlAYoSS7o6osT-NNMPU_h6Hkgd5RUzE45_LaV9_tSba5A1wkVKgy35zUeP7MxAOxy_NTTyanjQ/file?c_luid=72978bdf' -o /tmp/shalvar-1.original
-          convert /tmp/shalvar-1.original -resize '1400x1400>' -strip -quality 76 public/assets/portfolio/shalvar-1.webp
-          curl -fL 'https://uc1a0c4bee330ef304dae126d5db.dl.dropboxusercontent.com/cd/0/get/DMUwsUK1HO3NdVKkD3zMVV51X-9OBLE-k-Na1pHE7FA6psH0viw0nz9bEUe8v-B_OPLfXjw_Sw6mrvZT7rXjnhZCHVxIj3amyZ1rrFvKnj0tDpzL5LLxw5V9upBDRowRpqP-GQhNdq9zkbCQUpzhclINdL-nquLlOGsEXYDRgWU9rw/file?c_luid=72978bdf' -o /tmp/shalvar-2.original
-          convert /tmp/shalvar-2.original -resize '1400x1400>' -strip -quality 76 public/assets/portfolio/shalvar-2.webp
-          curl -fL 'https://uc331b31fd7088c011468b28d89c.dl.dropboxusercontent.com/cd/0/get/DMVbrnCDc57DZsBW7ybuHFD4viVXr719qHVneVHMwdez4IdoMiu34iqr3AL0uAHyhBNq-4wdzKxqnRN8p9kHb_pDHNSs02_wZLFRSpW6qG9r2lzZcP5FF2uIe79mMYHWNYCLniPqYb1s8StGV-sW6iVL_F4QLK3EK4fb6jA8UY4qtQ/file?c_luid=72978bdf' -o /tmp/shalvar-3.original
-          convert /tmp/shalvar-3.original -resize '1400x1400>' -strip -quality 76 public/assets/portfolio/shalvar-3.webp
-          curl -fL 'https://uc3ac7ce76dd0ea997d47d771512.dl.dropboxusercontent.com/cd/0/get/DMVImMYUhwDpu4VcUCeJNALxRqfNY5FGNJ1ZZFF7fUGnEn2BQaMywa3htXioC_GdEMc9LQHK2ZsO98kmqSMqKYnoIa7bY3KKcBad662C0yR8c-3xn6DRtVgO8Vrw7_3OQe9seEJnbvAUYB_yd6Bzu0KO2Az5DzpCTQZfq-9rJg1wOQ/file?c_luid=72978bdf' -o /tmp/shalvar-4.original
-          convert /tmp/shalvar-4.original -resize '1400x1400>' -strip -quality 76 public/assets/portfolio/shalvar-4.webp
-          curl -fL 'https://uc1c9c1fe8f69b0da75622347439.dl.dropboxusercontent.com/cd/0/get/DMX3pdtpHXrPbzoI-nVIFbjwZ7Vfz0opW8tnE7AXa_2QfgIUAbelRWJ0afHUtqFrnPEg9ZGPPb_R_JzICJkD06f8yRxq0EYdwfRgbdFrhGTdhyAP7BQGu3e5-KPEP7MeiI6l72p9892LskP35MC5pKrY28ERAXMPdOTq4ldcgCplUw/file?c_luid=72978bdf' -o /tmp/shalvar-5.original
-          convert /tmp/shalvar-5.original -resize '1400x1400>' -strip -quality 76 public/assets/portfolio/shalvar-5.webp
-          curl -fL 'https://uc6d1e0f08a074dafdd6f2895b3e.dl.dropboxusercontent.com/cd/0/get/DMWc4Qa9AB5ppgY94odoloPggmW2oe7NgqyCFu5gfzBeNptxASSqm6m-U4fvMPRxZRGX9buf7rpmNTX5w-sn0GPUxD6xO8wh68evIpDq10-p-qGnRjS2Hh-WeSaGyUCCEkL4xOees8ygYSCQM_GjYTPAFOqXTn5f-I279Yd3HJPJtg/file?c_luid=72978bdf' -o /tmp/shalvar-6.original
-          convert /tmp/shalvar-6.original -resize '1400x1400>' -strip -quality 76 public/assets/portfolio/shalvar-6.webp
-          curl -fL 'https://ucb7d440f8580f8e43fb2b1d1fa0.dl.dropboxusercontent.com/cd/0/get/DMWYLt2Ht6YtzUscaPGvSuPYLRqDwF7WL6brMV9z-YUgJ9lXkgKmp6Ha14uly_XPJg5HP5lWghS4FZ8fQBRJJmtRbYJNduEl_SaqK-dElQT1kyQSdDH3oLyhTSlZh9kS3LKDWHKnM5fLg0mw_osFvk5Z5Rf-IJwOi3e11usInxIoVQ/file?c_luid=72978bdf' -o /tmp/nikmehr-v2.original
-          convert /tmp/nikmehr-v2.original -resize '1400x1400>' -strip -quality 76 public/assets/portfolio/nikmehr-v2.webp
-          curl -fL 'https://uc98a8d1cb214462d98d68354d80.dl.dropboxusercontent.com/cd/0/get/DMXdq24yYJ1o1ogNWInSk6pEJFXgAepfc94ggXU2wlsfPK4QdLIhhWSugl8vEggDTthOJTgNMqNl7C6PWveqo8Mx83xxIh72NPOfeOxyCQNvexH5v1fA7Ts3DxMiRbWA9Iqq6Y-Vf2dipSf8T_dG2UfOBJKy7ZFJjUh9uSKUp-EWTg/file?c_luid=72978bdf' -o /tmp/stillness-motion-1.mp4
-          ffmpeg -y -i /tmp/stillness-motion-1.mp4 -vf 'scale=640:-2' -c:v libx264 -preset veryfast -crf 30 -c:a aac -b:a 64k -movflags +faststart public/assets/portfolio/stillness-motion-1.mp4 >/dev/null 2>&1
-          curl -fL 'https://ucfc17cb04199772347b2ef15ed0.dl.dropboxusercontent.com/cd/0/get/DMU6BCDL5IOGW3vSXZzgV0TcXyKd6nEheyhVK6RY8caoBF8UuWn4ROnGvSIqd0sUNnO_5oENrvpr1Gj7i7vf4KwYzMfus9mt5KRJ08d6kf2MnAAGyaBxEMW84dOaHK45hw_TBZsRAQXm0zx9MiyOOlJClBL5x6wWONhKM-IaS_bT4A/file?c_luid=72978bdf' -o /tmp/stillness-motion-2.mp4
-          ffmpeg -y -i /tmp/stillness-motion-2.mp4 -vf 'scale=640:-2' -c:v libx264 -preset veryfast -crf 30 -c:a aac -b:a 64k -movflags +faststart public/assets/portfolio/stillness-motion-2.mp4 >/dev/null 2>&1
-          curl -fL 'https://uc7d0baac468c0a6049da3c463c1.dl.dropboxusercontent.com/cd/0/get/DMUk7oveHQvaLATj3lWRfcbJX6v07gxdEYKpiBjRd2981eMu3reRB9ivBOcdQHJd7f_eegyxzJhxdwSz-TjCSWODCAaB8KREdFOtgLylhmmXLdYYG5ybs5MvxbVUHkp2Wv1Mq9frH4rVeN1Qsr-Vb_fBvZAfRnwnU-lqX54JUS5YUQ/file?c_luid=72978bdf' -o /tmp/chenjeh-logo-motion.mp4
-          ffmpeg -y -i /tmp/chenjeh-logo-motion.mp4 -vf 'scale=640:-2' -c:v libx264 -preset veryfast -crf 30 -c:a aac -b:a 64k -movflags +faststart public/assets/portfolio/chenjeh-logo-motion.mp4 >/dev/null 2>&1
           curl -fL 'https://id-preview--c40cda6a-8161-45d2-9902-76acbf71b9f3.lovable.app/__l5e/assets-v1/99f21d75-2756-4b86-86a0-d06695f2674b/junoon_case_file_poster.jpg' -o public/assets/portfolio/junoon_case_file_poster.jpg
           curl -fL 'https://id-preview--c40cda6a-8161-45d2-9902-76acbf71b9f3.lovable.app/__l5e/assets-v1/9abe9641-92f6-4f1a-8629-2f13b43d38cb/junoon_case_ghostship.jpg' -o public/assets/portfolio/junoon_case_ghostship.jpg
           curl -fL 'https://id-preview--c40cda6a-8161-45d2-9902-76acbf71b9f3.lovable.app/__l5e/assets-v1/629796b5-7c63-4020-8bd6-ff6759c251c7/junoon_case_mcnally.jpg' -o public/assets/portfolio/junoon_case_mcnally.jpg
