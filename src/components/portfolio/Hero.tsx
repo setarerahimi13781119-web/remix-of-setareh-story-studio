@@ -1,100 +1,64 @@
-import { useEffect, useRef, useState, type CSSProperties, type PointerEvent, type ReactNode } from "react";
+import { useRef, useState, type CSSProperties, type PointerEvent } from "react";
 import { profile } from "@/data/portfolio";
 import { Reveal } from "./shared";
 
-type Bubble = { id: number; x: number; y: number; size: number; drift: number };
+const artwork = "https://www.dropbox.com/scl/fi/qvqr9usadtyvlz88bhtzb/file_0000000031dc8210ab260c3660f34e9e.png?rlkey=yfkgjtljb3i3c1v3lykyaenl3&raw=1";
 
-function InteractiveObject({
-  className,
-  children,
-  onPop,
-  label,
-}: {
-  className: string;
-  children: ReactNode;
-  onPop: (x: number, y: number) => void;
-  label: string;
-}) {
+const floatingPieces = [
+  { className: "pm-piece-left-flower", label: "Move the pink flower" },
+  { className: "pm-piece-top-form", label: "Move the top green form" },
+  { className: "pm-piece-right-flower", label: "Move the right pink flower" },
+  { className: "pm-piece-right-loop", label: "Move the green loop" },
+  { className: "pm-piece-left-loop", label: "Move the left green form" },
+];
+
+function FloatingImagePiece({ className, label }: { className: string; label: string }) {
   const [offset, setOffset] = useState({ x: 0, y: 0 });
-  const [dragging, setDragging] = useState(false);
-  const origin = useRef({ x: 0, y: 0, pointerX: 0, pointerY: 0 });
+  const [active, setActive] = useState(false);
+  const origin = useRef({ pointerX: 0, pointerY: 0 });
 
   const start = (event: PointerEvent<HTMLButtonElement>) => {
     event.preventDefault();
     event.currentTarget.setPointerCapture(event.pointerId);
-    origin.current = { x: offset.x, y: offset.y, pointerX: event.clientX, pointerY: event.clientY };
-    setDragging(true);
+    origin.current = { pointerX: event.clientX, pointerY: event.clientY };
+    setActive(true);
+    setOffset({ x: 4, y: -6 });
   };
 
   const move = (event: PointerEvent<HTMLButtonElement>) => {
-    if (!dragging) return;
+    if (!active) return;
+    const dx = event.clientX - origin.current.pointerX;
+    const dy = event.clientY - origin.current.pointerY;
     setOffset({
-      x: Math.max(-72, Math.min(72, origin.current.x + event.clientX - origin.current.pointerX)),
-      y: Math.max(-72, Math.min(72, origin.current.y + event.clientY - origin.current.pointerY)),
+      x: Math.max(-58, Math.min(58, dx + 4)),
+      y: Math.max(-58, Math.min(58, dy - 6)),
     });
   };
 
-  const release = (event: PointerEvent<HTMLButtonElement>) => {
-    if (!dragging) return;
-    const bounds = event.currentTarget.parentElement?.getBoundingClientRect();
-    if (bounds) {
-      onPop(
-        ((event.clientX - bounds.left) / bounds.width) * 100,
-        ((event.clientY - bounds.top) / bounds.height) * 100,
-      );
-    }
-    setDragging(false);
+  const release = () => {
+    if (!active) return;
+    setActive(false);
     setOffset({ x: 0, y: 0 });
   };
 
   return (
     <button
       type="button"
-      className={`pm-play-object ${className}${dragging ? " is-dragging" : ""}`}
+      className={`pm-floating-piece ${className}${active ? " is-active" : ""}`}
       aria-label={label}
       onPointerDown={start}
       onPointerMove={move}
       onPointerUp={release}
       onPointerCancel={release}
-      onClick={(event) => {
-        if (event.detail !== 0) return;
-        const bounds = event.currentTarget.parentElement?.getBoundingClientRect();
-        if (bounds) onPop(
-          ((event.clientX - bounds.left) / bounds.width) * 100,
-          ((event.clientY - bounds.top) / bounds.height) * 100,
-        );
-      }}
-      style={{ "--object-x": `${offset.x}px`, "--object-y": `${offset.y}px` } as CSSProperties}
+      onLostPointerCapture={release}
+      style={{ "--piece-x": `${offset.x}px`, "--piece-y": `${offset.y}px` } as CSSProperties}
     >
-      {children}
+      <img src={artwork} alt="" draggable={false} />
     </button>
   );
 }
 
 export function Hero() {
-  const [bubbles, setBubbles] = useState<Bubble[]>([]);
-  const bubbleId = useRef(0);
-  const bubbleTimers = useRef<number[]>([]);
-
-  useEffect(() => () => bubbleTimers.current.forEach(window.clearTimeout), []);
-
-  const releaseBubbles = (x: number, y: number) => {
-    const burst = Array.from({ length: 7 }, () => ({
-      id: ++bubbleId.current,
-      x: x + (Math.random() - 0.5) * 10,
-      y: y + (Math.random() - 0.5) * 8,
-      size: 4 + Math.random() * 7,
-      drift: (Math.random() - 0.5) * 34,
-    }));
-    setBubbles((current) => [...current.slice(-20), ...burst]);
-    const timer = window.setTimeout(() => {
-      const ids = new Set(burst.map((bubble) => bubble.id));
-      setBubbles((current) => current.filter((bubble) => !ids.has(bubble.id)));
-      bubbleTimers.current = bubbleTimers.current.filter((id) => id !== timer);
-    }, 1500);
-    bubbleTimers.current.push(timer);
-  };
-
   return (
     <section
       id="top"
@@ -133,35 +97,19 @@ export function Hero() {
 
       <Reveal className="col-span-1 md:col-span-5">
         <div className="pm-hero-art">
-          <div className="pm-sculpture-motion">
+          <div className="pm-sculpture-stage">
             <img
               className="pm-sculpture"
-              src="https://www.dropbox.com/scl/fi/qvqr9usadtyvlz88bhtzb/file_0000000031dc8210ab260c3660f34e9e.png?rlkey=yfkgjtljb3i3c1v3lykyaenl3&raw=1"
-              alt="Portrait surrounded by playful green, pink and cream sculptural forms"
+              src={artwork}
+              alt="Playful Matter visual identity artwork"
               fetchPriority="high"
+              draggable={false}
               onError={(event) => { event.currentTarget.style.visibility = "hidden"; }}
             />
+            {floatingPieces.map((piece) => (
+              <FloatingImagePiece key={piece.className} {...piece} />
+            ))}
           </div>
-
-          <InteractiveObject className="pm-object-loop" label="Move pink ribbon shape" onPop={releaseBubbles}>
-            <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M18 54C18 28 37 12 59 18C83 24 91 50 76 69C64 85 39 88 25 74C16 65 20 50 33 43C46 36 61 42 62 54C63 64 52 70 44 64" fill="none" stroke="#D92F78" strokeWidth="13" strokeLinecap="round" strokeLinejoin="round"/><path d="M21 49C23 29 39 17 57 21" fill="none" stroke="#F7A7C6" strokeWidth="3" strokeLinecap="round"/></svg>
-          </InteractiveObject>
-          <InteractiveObject className="pm-object-orb" label="Move lime orb" onPop={releaseBubbles}>
-            <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="34" fill="#C8F34A"/><circle cx="38" cy="36" r="9" fill="#F4F1EA" opacity=".55"/><path d="M28 68C40 82 63 83 75 67" fill="none" stroke="#8DAF36" strokeWidth="4" strokeLinecap="round"/></svg>
-          </InteractiveObject>
-          <InteractiveObject className="pm-object-pill" label="Move green capsule" onPop={releaseBubbles}>
-            <svg viewBox="0 0 120 72" aria-hidden="true"><rect x="8" y="8" width="104" height="56" rx="28" fill="#2E7D4B"/><path d="M30 22C42 12 69 12 84 22" fill="none" stroke="#A6D68A" strokeWidth="5" strokeLinecap="round"/></svg>
-          </InteractiveObject>
-          <InteractiveObject className="pm-object-disc" label="Move cream and pink disc" onPop={releaseBubbles}>
-            <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="39" fill="#F7E8D8"/><path d="M50 11A39 39 0 0 1 89 50H50Z" fill="#EF77A7"/><circle cx="50" cy="50" r="15" fill="#B6E34A"/></svg>
-          </InteractiveObject>
-
-          {bubbles.map((bubble) => (
-            <span key={bubble.id} className="pm-bubble" aria-hidden="true" style={{
-              left: `${bubble.x}%`, top: `${bubble.y}%`, width: bubble.size, height: bubble.size,
-              "--bubble-drift": `${bubble.drift}px`,
-            } as CSSProperties} />
-          ))}
           <span className="pm-art-index">PM — 001 / FORM STUDY</span>
         </div>
       </Reveal>
