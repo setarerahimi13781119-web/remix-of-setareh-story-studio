@@ -200,6 +200,16 @@
     background: linear-gradient(90deg, var(--portfolio-cream) 0%, transparent 13%, transparent 87%, var(--portfolio-cream) 100%);
     opacity: .22;
   }
+  .pm-sculpture-motion {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    transform: translate3d(var(--move-x, 0px), var(--move-y, 0px), 0);
+    transition: transform 240ms cubic-bezier(.2,.75,.25,1);
+    will-change: transform;
+  }
   .pm-sculpture {
     position: relative;
     z-index: 0;
@@ -210,9 +220,9 @@
     opacity: .94;
     filter: saturate(.94) contrast(1.015);
     animation: pm-float 7s ease-in-out infinite;
-    translate: calc(var(--pointer-x, 0) * -14px) calc(var(--pointer-y, 0) * -14px);
-    transition: translate 180ms cubic-bezier(.2,.75,.25,1);
-    will-change: transform, translate;
+    -webkit-mask-image: radial-gradient(ellipse at center, #000 58%, rgb(0 0 0 / .92) 72%, transparent 100%);
+    mask-image: radial-gradient(ellipse at center, #000 58%, rgb(0 0 0 / .92) 72%, transparent 100%);
+    transition: filter 260ms ease;
   }
   .pm-bubble {
     position: absolute;
@@ -265,6 +275,7 @@
 @media (max-width: 767px) {
   .pm-hero-art { min-height: 300px; }
   .pm-sculpture { width: min(86%, 390px); }
+  .pm-sculpture-motion { width: 100%; }
 }
 @media (prefers-reduced-motion: reduce) {
   .pm-sculpture { animation: none; }
