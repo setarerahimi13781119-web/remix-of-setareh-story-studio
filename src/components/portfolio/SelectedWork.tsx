@@ -343,7 +343,7 @@ const touchUpsPairs = [
   },
   {
     title: "Food retouch 04",
-    before: "https://www.dropbox.com/scl/fi/1414iztmvive8geiwbjww/lv_0_20261022070508.jpg?rlkey=12ryrwzrs60r40zzq3lu6212s&raw=1",
+    before: "/assets/portfolio/touch-food4-before.webp",
     after: "/assets/portfolio/touch-food4-after.webp",
   },
   {
