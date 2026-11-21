@@ -57,6 +57,7 @@ function InteractiveObject({
       onPointerUp={release}
       onPointerCancel={release}
       onClick={(event) => {
+        if (event.detail !== 0) return;
         const bounds = event.currentTarget.parentElement?.getBoundingClientRect();
         if (bounds) onPop(
           ((event.clientX - bounds.left) / bounds.width) * 100,
