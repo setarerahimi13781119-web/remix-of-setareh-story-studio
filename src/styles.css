@@ -560,3 +560,82 @@
     }
   }
 }
+
+/* Playful editorial Selected Work */
+@layer components {
+  .portfolio-work-stage { position:relative; isolation:isolate; margin-inline:auto; padding-block:clamp(2.5rem,6vw,6rem); }
+  .portfolio-scroll-ribbon { position:absolute; z-index:-1; inset:0; width:100%; height:100%; overflow:visible; pointer-events:none; opacity:.72; }
+  .portfolio-scroll-ribbon__line { fill:none; stroke:#65c64a; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; stroke-dasharray:1; stroke-dashoffset:.58; opacity:.5; }
+  .portfolio-scroll-ribbon__echo { fill:none; stroke:#f18db8; stroke-width:1; stroke-linecap:round; stroke-dasharray:3 10; opacity:.45; }
+  .portfolio-scroll-ribbon__node { fill:#fff4df; stroke:#65c64a; stroke-width:2; transform-box:fill-box; transform-origin:center; }
+  .portfolio-scroll-ribbon__node--two { fill:#f18db8; stroke:#fff4df; }
+  .portfolio-scroll-ribbon__node--three { fill:#c9ef62; }
+  .portfolio-scroll-ribbon__finish { fill:none; stroke:#f18db8; stroke-width:2; opacity:.72; }
+  .portfolio-scroll-ribbon__finish--inner { stroke:#65c64a; stroke-width:4; }
+  .portfolio-work-grid { position:relative; display:grid; grid-template-columns:minmax(0,1fr); column-gap:clamp(1.5rem,4vw,4rem); row-gap:clamp(4.5rem,10vw,9rem); margin:0; padding:0; list-style:none; }
+  .portfolio-work-item,.portfolio-work-card { min-width:0; }
+  .portfolio-cover-trigger { --cover-accent:#65c64a; overflow:visible; color:var(--foreground); transition:transform 360ms cubic-bezier(.2,.8,.2,1); }
+  .portfolio-cover-trigger:hover { transform:translateY(-4px); }
+  .portfolio-cover-trigger > .eyebrow { min-height:1.2rem; padding-inline:.1rem; color:var(--muted-foreground); }
+  .portfolio-art-frame { position:relative; display:flex; flex:none; width:100%; min-width:0; overflow:hidden; isolation:isolate; aspect-ratio:4 / 5; padding:clamp(.45rem,1.2vw,.85rem); border:1px solid color-mix(in srgb,var(--cover-accent) 72%,transparent); background:var(--cover-accent); box-shadow:inset 0 0 0 4px rgb(255 255 255 / 18%); }
+  .portfolio-art-frame::before { content:attr(data-index) " / 13"; position:absolute; z-index:5; top:.75rem; left:.75rem; padding:.32rem .48rem; border-radius:999px; color:#292b29; background:#fff4df; font:700 .58rem/1 var(--font-mono); letter-spacing:.1em; pointer-events:none; }
+  .portfolio-art-frame::after { content:""; position:absolute; z-index:4; inset:.42rem; border:1px solid rgb(255 255 255 / 64%); pointer-events:none; transition:inset 260ms cubic-bezier(.2,.8,.2,1),border-color 260ms ease; }
+  .portfolio-cover-trigger:hover .portfolio-art-frame::after { inset:.68rem; border-color:#fff4df; }
+  .portfolio-art-frame > img,.portfolio-art-frame > video { position:relative; z-index:1; display:block; width:100%; height:100%; min-width:0; min-height:0; object-position:center; transition:transform 500ms cubic-bezier(.2,.8,.2,1),filter 500ms ease; filter:saturate(1.025) contrast(1.01); }
+  .portfolio-cover-trigger:hover .portfolio-art-frame > img,.portfolio-cover-trigger:hover .portfolio-art-frame > video { transform:scale(1.012); }
+  .portfolio-art-frame[data-project="parla-perfume-ad"] { --cover-accent:#f18db8; aspect-ratio:4 / 5; }
+  .portfolio-art-frame[data-project="sayeh-character-design"] { --cover-accent:#b6a1e5; aspect-ratio:4 / 5; }
+  .portfolio-art-frame[data-project="setare-fashion-house-film"] { --cover-accent:#f47768; aspect-ratio:16 / 10; }
+  .portfolio-art-frame[data-project="khaneh-shalvar"] { --cover-accent:#f5b58e; aspect-ratio:4 / 5; }
+  .portfolio-art-frame[data-project="khaneh-mod-setareh"] { --cover-accent:#f6d66b; aspect-ratio:4 / 5; }
+  .portfolio-art-frame[data-project="junoon-podcast"] { --cover-accent:#65c64a; aspect-ratio:4 / 5; }
+  .portfolio-art-frame[data-project="moodbean"] { --cover-accent:#f5b58e; aspect-ratio:4 / 5; }
+  .portfolio-art-frame[data-project="random-pieces"] { --cover-accent:#c9ef62; aspect-ratio:1 / 1; padding:0; }
+  .portfolio-art-frame[data-project="turquoise-jewelry-set"] { --cover-accent:#66c7d0; aspect-ratio:4 / 5; }
+  .portfolio-art-frame[data-project="turkish-coffee-packaging"] { --cover-accent:#f6d66b; aspect-ratio:4 / 5; }
+  .portfolio-art-frame[data-project="nikmehr"] { --cover-accent:#65c64a; aspect-ratio:3 / 2; }
+  .portfolio-art-frame[data-project="touch-ups"] { --cover-accent:#f18db8; aspect-ratio:3 / 2; }
+  .portfolio-art-frame[data-project="stillness-wellness-spaces"] { --cover-accent:#66c7d0; aspect-ratio:4 / 5; }
+  .portfolio-art-frame[data-project="junoon-podcast"]::before { color:#fff4df; background:#292b29; }
+  .portfolio-art-frame[data-project="random-pieces"]::before { color:#292b29; background:#fff4df; }
+  .portfolio-art-frame__motif { position:absolute; z-index:3; right:1rem; bottom:1rem; display:grid; width:2.2rem; height:2.2rem; place-items:center; border:1px solid rgb(255 255 255 / 78%); border-radius:999px; color:#292b29; background:rgb(255 244 223 / 92%); box-shadow:0 3px 14px rgb(41 43 41 / 12%); pointer-events:none; animation:cover-float 5.2s ease-in-out infinite; }
+  .portfolio-art-frame__motif svg { width:1rem; height:1rem; stroke-width:1.7; }
+  .portfolio-art-frame[data-project="parla-perfume-ad"] .portfolio-art-frame__motif { color:#9b4770; }
+  .portfolio-art-frame[data-project="turquoise-jewelry-set"] .portfolio-art-frame__motif,.portfolio-art-frame[data-project="stillness-wellness-spaces"] .portfolio-art-frame__motif { color:#267e87; }
+  .portfolio-art-frame[data-project="stillness-wellness-spaces"].is-rippling::after { inset:0; border:0; background:radial-gradient(circle at var(--ripple-x,50%) var(--ripple-y,50%),transparent 0 3%,rgb(255 255 255 / 68%) 3.2% 3.55%,transparent 3.8% 8%,rgb(255 255 255 / 42%) 8.2% 8.5%,transparent 8.8% 14%,rgb(102 199 208 / 28%) 14.2% 14.5%,transparent 14.8% 22%); animation:cover-ripple 950ms cubic-bezier(.16,.7,.25,1) both; }
+  .portfolio-work-item--2,.portfolio-work-item--5,.portfolio-work-item--8,.portfolio-work-item--11 { transform:translateY(clamp(1.5rem,5vw,4.5rem)); }
+  .portfolio-work-item--3,.portfolio-work-item--6,.portfolio-work-item--9,.portfolio-work-item--12 { transform:translateY(clamp(.5rem,2vw,1.5rem)); }
+  .portfolio-work-item--4,.portfolio-work-item--7,.portfolio-work-item--10,.portfolio-work-item--13 { transform:translateY(clamp(2rem,6vw,5rem)); }
+}
+@keyframes cover-float { 0%,100% { transform:translate3d(0,0,0) rotate(-4deg); } 50% { transform:translate3d(0,-5px,0) rotate(3deg); } }
+@keyframes cover-ripple { 0% { opacity:.85; background-size:12% 12%; } 100% { opacity:0; background-size:180% 180%; } }
+@supports (animation-timeline:view()) {
+  .portfolio-scroll-ribbon__line { stroke-dashoffset:1; animation:portfolio-ribbon-draw 1s linear both; animation-timeline:view(block); animation-range:entry 0% exit 100%; }
+  .portfolio-scroll-ribbon__node { animation:portfolio-node-pop 1s linear both; animation-timeline:view(block); animation-range:entry 8% exit 85%; }
+  .portfolio-scroll-ribbon__finish { animation:portfolio-finish 1s linear both; animation-timeline:view(block); animation-range:entry 60% exit 100%; }
+}
+@keyframes portfolio-ribbon-draw { to { stroke-dashoffset:0; } }
+@keyframes portfolio-node-pop { 0% { opacity:.15; scale:.45; } 100% { opacity:1; scale:1; } }
+@keyframes portfolio-finish { 0% { opacity:.1; scale:.35; } 100% { opacity:.85; scale:1; } }
+@media (min-width:900px) {
+  .portfolio-work-grid { grid-template-columns:repeat(12,minmax(0,1fr)); column-gap:clamp(1.75rem,4vw,4.5rem); row-gap:clamp(6rem,9vw,9rem); align-items:start; }
+  .portfolio-work-item { grid-column:span 6; }
+  .portfolio-work-item--2,.portfolio-work-item--5,.portfolio-work-item--8,.portfolio-work-item--11 { grid-column:8 / span 5; }
+  .portfolio-work-item--3,.portfolio-work-item--6,.portfolio-work-item--9,.portfolio-work-item--12 { grid-column:1 / span 5; }
+  .portfolio-work-item--4,.portfolio-work-item--7,.portfolio-work-item--10,.portfolio-work-item--13 { grid-column:7 / span 6; }
+}
+@media (max-width:899px) {
+  .portfolio-work-stage { padding-block:2rem; }
+  .portfolio-work-grid { row-gap:3.75rem; }
+  .portfolio-work-item--2,.portfolio-work-item--3,.portfolio-work-item--4,.portfolio-work-item--5,.portfolio-work-item--6 { transform:none; }
+  .portfolio-scroll-ribbon { opacity:.35; }
+  .portfolio-art-frame { aspect-ratio:4 / 5; }
+  .portfolio-art-frame[data-project="setare-fashion-house-film"],.portfolio-art-frame[data-project="nikmehr"],.portfolio-art-frame[data-project="touch-ups"] { aspect-ratio:3 / 2; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .portfolio-cover-trigger,.portfolio-art-frame > img,.portfolio-art-frame > video { transition:none; }
+  .portfolio-cover-trigger:hover { transform:none; }
+  .portfolio-art-frame__motif { animation:none; }
+  .portfolio-art-frame[data-project="stillness-wellness-spaces"].is-rippling::after { animation:none; }
+  .portfolio-scroll-ribbon__line { stroke-dashoffset:0; }
+}
