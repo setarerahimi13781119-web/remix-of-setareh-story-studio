@@ -264,15 +264,15 @@ function KhanehShalvarGallery() {
       images: [
         {
           label: "Original · Tailor’s Dummy",
-          src: "https://www.dropbox.com/scl/fi/fiox9e6ibonzy1r88ry4p/IMG_20261113_211925_973.jpg?rlkey=7harvn76dtwvtk9nf0uxbw1nh&raw=1",
+          src: "/assets/portfolio/shalvar-1.webp",
         },
         {
           label: "Ghost Mannequin",
-          src: "https://www.dropbox.com/scl/fi/pfyvapnem382ce2tm2q34/IMG_20261113_211945_305.jpg?rlkey=66ozr21hu7uilf5tqsxgwkcc9&raw=1",
+          src: "/assets/portfolio/shalvar-2.webp",
         },
         {
           label: "On-Model Fit",
-          src: "https://www.dropbox.com/scl/fi/vxb6xr81fejax5ga9qi95/IMG_20261113_211937_951.jpg?rlkey=ur02358bez5qia0jmfi7dx2r8&raw=1",
+          src: "/assets/portfolio/shalvar-3.webp",
         },
       ],
     },
@@ -281,15 +281,15 @@ function KhanehShalvarGallery() {
       images: [
         {
           label: "Original · Tailor’s Dummy",
-          src: "https://www.dropbox.com/scl/fi/bl4e6trc55k9h83y23uoy/.jpg?rlkey=dynw62cfxsyajju4trmcsumrt&raw=1",
+          src: "/assets/portfolio/shalvar-4.webp",
         },
         {
           label: "Ghost Mannequin",
-          src: "https://www.dropbox.com/scl/fi/u05hhyzrg6ahlivriqpqo/.png?rlkey=hw438msqjd8fxoqm2iqfbw2ur&raw=1",
+          src: "/assets/portfolio/shalvar-5.webp",
         },
         {
           label: "On-Model Fit",
-          src: "https://www.dropbox.com/scl/fi/5c2hna2hvzuzv7fuz4cpr/.jpg?rlkey=26znd195tigvaudqhrxyfl5ln&raw=1",
+          src: "/assets/portfolio/shalvar-6.webp",
         },
       ],
     },
