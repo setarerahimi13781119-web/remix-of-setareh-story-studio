@@ -30,15 +30,23 @@ describe("Responsive navigation", () => {
 });
 
 describe("Selected work interactions", () => {
-  it("renders all five approved project cards", () => {
+  it("renders all restored project cards", () => {
     render(<SelectedWork />);
 
     for (const title of [
-      "Nikmehr",
+      "Parla — Perfume Campaign",
+      "SAYEH — Character Design",
+      "Setare Fashion House — Autumn Collection Film",
       "Khaneh Shalvar",
       "Khaneh Mod Setareh",
-      "Touch Ups",
       "Junoon Podcast",
+      "Coffee Assets",
+      "Random Pieces",
+      "Turquoise Jewelry Set",
+      "Turkish Coffee Packaging Concept",
+      "Nikmehr",
+      "Touch Ups",
+      "STILLNESS — Wellness Space Concepts",
     ]) {
       expect(screen.getByRole("button", { name: `View ${title} project` })).toBeInTheDocument();
     }
