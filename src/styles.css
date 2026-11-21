@@ -1269,3 +1269,43 @@
   .work-card:not(.work-card--parla) .work-card__trigger img,
   .work-card:not(.work-card--parla) .work-card__context svg { transition:none!important; }
 }
+
+
+/* ORDERED COLOUR SEQUENCE — cycles through visible non-Parla projects.
+   The palette index is assigned in the filtered React list, so filters never
+   leave gaps or restart the rhythm unpredictably. */
+.work-grid__item[data-palette="0"] .work-card:not(.work-card--parla):not(.work-card--junoon-podcast) {
+  --project-accent:#075E52; --project-pop:#00A889; --project-stage:#E4F2EC;
+  --project-head:#F1F7F4; --project-foot:#D6EAE1; --project-frame:#B8CBC3;
+  --project-rail:linear-gradient(180deg,#BEC9CD 0%,#00A889 32%,#075E52 100%);
+}
+.work-grid__item[data-palette="1"] .work-card:not(.work-card--parla):not(.work-card--junoon-podcast) {
+  --project-accent:#315D4B; --project-pop:#91B83E; --project-stage:#E9F0E5;
+  --project-head:#F3F6EF; --project-foot:#DDE8D8; --project-frame:#BFCDBB;
+  --project-rail:linear-gradient(180deg,#DCE8D5 0%,#91B83E 48%,#315D4B 100%);
+}
+.work-grid__item[data-palette="2"] .work-card:not(.work-card--parla):not(.work-card--junoon-podcast) {
+  --project-accent:#71364E; --project-pop:#E65B91; --project-stage:#F4DFE8;
+  --project-head:#F9ECF1; --project-foot:#EBCBD7; --project-frame:#D2B8C2;
+  --project-rail:linear-gradient(180deg,#F3A9C4 0%,#E65B91 48%,#71364E 100%);
+}
+.work-grid__item[data-palette="3"] .work-card:not(.work-card--parla):not(.work-card--junoon-podcast) {
+  --project-accent:#6D2448; --project-pop:#D94F88; --project-stage:#F0DDE6;
+  --project-head:#F8EAF0; --project-foot:#E8C9D8; --project-frame:#C9B4BD;
+  --project-rail:linear-gradient(180deg,#D94F88 0%,#A74770 48%,#6D2448 100%);
+}
+.work-grid__item[data-palette="4"] .work-card:not(.work-card--parla):not(.work-card--junoon-podcast) {
+  --project-accent:#35444A; --project-pop:#D94F88; --project-stage:#E8ECEE;
+  --project-head:#F4F6F7; --project-foot:#DCE3E6; --project-frame:#B8C4C9;
+  --project-rail:linear-gradient(180deg,#F5F7F7 0%,#BEC9CD 48%,#7D8D94 82%,#D94F88 100%);
+}
+.work-grid__item[data-palette="5"] .work-card:not(.work-card--parla):not(.work-card--junoon-podcast) {
+  --project-accent:#3D5635; --project-pop:#A7C84B; --project-stage:#E8EEDB;
+  --project-head:#F2F5E9; --project-foot:#DCE7C9; --project-frame:#BBC99F;
+  --project-rail:linear-gradient(180deg,#D6E69C 0%,#A7C84B 48%,#3D5635 100%);
+}
+/* Junoon remains a dark evidence file, but its red/silver index rail participates
+   in the same repeated sequence without washing out its documentary identity. */
+.work-grid__item[data-palette] .work-card--junoon-podcast {
+  --project-rail:linear-gradient(180deg,#E33C50 0 55%,#BEC9CD 55% 100%);
+}
