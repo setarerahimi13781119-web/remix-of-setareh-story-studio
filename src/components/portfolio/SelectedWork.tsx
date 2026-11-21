@@ -708,8 +708,14 @@ export function SelectedWork() {
       </div>
       <p className="sr-only" aria-live="polite">{filteredProjects.length} projects shown</p>
       <ol className="work-grid grid gap-6 md:grid-cols-2">
-        {filteredProjects.map((project) => (
-          <li key={project.id} className="work-grid__item min-w-0">
+        {filteredProjects.map((project, index) => (
+          <li
+            key={project.id}
+            className="work-grid__item min-w-0"
+            data-palette={project.id === "parla-perfume-ad" ? undefined : filteredProjects
+              .slice(0, index)
+              .filter((item) => item.id !== "parla-perfume-ad").length % 6}
+          >
             <Dialog>
               <article className={`work-card flex h-full flex-col border border-rule p-3 md:p-4 ${project.id === "parla-perfume-ad" ? "work-card--parla" : `work-card--${project.id}`}`}>
                 <DialogTrigger asChild>
