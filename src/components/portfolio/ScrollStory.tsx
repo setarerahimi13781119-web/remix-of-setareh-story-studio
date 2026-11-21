@@ -3,11 +3,12 @@ import "./scroll-story.css";
 
 const chapters = [
   { id: "top", number: "00", label: "Opening" },
-  { id: "work", number: "01", label: "Selected work" },
-  { id: "capabilities", number: "02", label: "Areas of focus" },
-  { id: "experience", number: "03", label: "Experience" },
-  { id: "about", number: "04", label: "About" },
-  { id: "contact", number: "05", label: "Contact" },
+  { id: "observer", number: "01", label: "The Observer" },
+  { id: "work", number: "02", label: "Selected work" },
+  { id: "capabilities", number: "03", label: "Areas of focus" },
+  { id: "experience", number: "04", label: "Experience" },
+  { id: "about", number: "05", label: "About" },
+  { id: "contact", number: "06", label: "Contact" },
 ];
 
 export function ScrollStory() {
