@@ -112,7 +112,6 @@ export function Hero() {
   const [bubbles, setBubbles] = useState<Bubble[]>([]);
   const bubbleId = useRef(0);
   const bubbleTimers = useRef<number[]>([]);
-  const artRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => () => bubbleTimers.current.forEach(window.clearTimeout), []);
 
@@ -139,6 +138,7 @@ export function Hero() {
     const timer = window.setTimeout(() => {
       const ids = new Set(burst.map((bubble) => bubble.id));
       setBubbles((current) => current.filter((bubble) => !ids.has(bubble.id)));
+      bubbleTimers.current = bubbleTimers.current.filter((id) => id !== timer);
     }, 1500);
     bubbleTimers.current.push(timer);
   };
@@ -164,7 +164,7 @@ export function Hero() {
         <p className="mt-3 max-w-lg text-sm leading-relaxed text-muted-foreground md:text-base">
           Creative Direction · Video Editing · Visual Storytelling
         </p>
-        <div className="mt-8 flex flex-wrap gap-3">
+        <div className="mt-8 flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap">
           <a href="#work" className="pm-cta-primary inline-flex items-center gap-3 px-6 py-3 text-sm font-semibold">
             Explore Selected Work <span aria-hidden="true">↓</span>
           </a>
@@ -180,26 +180,8 @@ export function Hero() {
 
       <Reveal className="col-span-1 md:col-span-5">
         <div
-          ref={artRef}
           className="pm-hero-art"
-          onPointerMove={moveArt}
-          onPointerLeave={(event) => {
-            event.currentTarget.style.setProperty("--move-x", "0px");
-            event.currentTarget.style.setProperty("--move-y", "0px");
-          }}
-          onPointerDown={(event) => {
-            moveArt(event);
-            releaseBubbles(event);
-          }}
-          onTouchStart={(event) => {
-            const touch = event.touches[0];
-            if (!touch) return;
-            const rect = event.currentTarget.getBoundingClientRect();
-            const x = (touch.clientX - rect.left) / rect.width - 0.5;
-            const y = (touch.clientY - rect.top) / rect.height - 0.5;
-            event.currentTarget.style.setProperty("--move-x", `${-x * 22}px`);
-            event.currentTarget.style.setProperty("--move-y", `${-y * 22}px`);
-          }}
+          onPointerDown={releaseBubbles}
           aria-label="Interactive abstract Playful Matter sculpture. Touch or click to release small bubbles."
         >
           <div className="pm-sculpture-motion">
