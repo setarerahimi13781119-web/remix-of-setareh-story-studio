@@ -647,7 +647,7 @@ export function SelectedWork() {
   return (
     <>
       <ol className="grid gap-6 md:grid-cols-2">
-        {projects.map((project) => (
+        {projects.map((project, projectIndex) => (
           <li key={project.id} className="min-w-0">
             <Dialog>
               <article className="flex h-full flex-col border border-rule p-5 md:p-6">
@@ -655,12 +655,13 @@ export function SelectedWork() {
                   <Button
                     variant="ghost"
                     aria-label={`View ${project.title} project`}
-                    className="group relative flex h-auto w-full flex-col items-stretch justify-between gap-6 whitespace-normal rounded-none bg-card p-5 text-left font-normal hover:bg-secondary md:p-7 aspect-[4/3]"
+                    className="portfolio-cover-trigger group relative flex h-auto w-full flex-col items-stretch justify-between gap-6 whitespace-normal rounded-none bg-card p-5 text-left font-normal hover:bg-secondary md:p-7 aspect-[4/3]"
                   >
                     <span className="eyebrow flex items-center justify-between gap-3">
                       <span>{project.coverLabel}</span>
                       <Plus className="shrink-0 text-foreground" aria-hidden="true" />
                     </span>
+                    <span className="portfolio-art-frame" data-project={project.id} data-index={String(projectIndex + 1).padStart(2, "0")}>
                     {project.id === "touch-ups" ? (
                       <img
                         src={touchUpsCover}
@@ -711,14 +712,13 @@ export function SelectedWork() {
                         className="min-h-0 flex-1 w-full bg-card object-contain"
                       />
                     ) : project.id === "random-pieces" ? (
-                      <span className="relative min-h-0 flex-1 w-full overflow-hidden bg-card">
-                        <img
-                          src={randomPiecesImages[1]}
-                          alt="Random Pieces poster artwork"
-                          aria-hidden="true"
-                          loading="lazy"
-                          className="absolute inset-0 h-full w-full object-cover object-center"
-                        />
+                      <span className="random-pieces-cover" aria-hidden="true">
+                        <span className="random-pieces-cover__top">INDEPENDENT GRAPHIC ARCHIVE <b>RP—08</b></span>
+                        <span className="random-pieces-cover__letters">R<span>/</span>P</span>
+                        <span className="random-pieces-cover__shape random-pieces-cover__shape--one" />
+                        <span className="random-pieces-cover__shape random-pieces-cover__shape--two" />
+                        <span className="random-pieces-cover__shape random-pieces-cover__shape--three" />
+                        <span className="random-pieces-cover__bottom">POSTERS / COMPOSITIONS / EXPERIMENTS</span>
                       </span>
                     ) : project.id === "moodbean" ? (
                       <img
@@ -781,6 +781,7 @@ export function SelectedWork() {
                         </span>
                       </span>
                     )}
+                    </span>
                     <span className="border-t border-rule pt-4 font-display text-3xl leading-tight md:text-4xl">
                       {project.title}
                     </span>
