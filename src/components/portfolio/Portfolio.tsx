@@ -10,6 +10,41 @@ const nav = [
   { href: "#contact", label: "Contact" },
 ];
 
+
+export function ScrollStage() {
+  useEffect(() => {
+    let frame = 0;
+    const update = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const root = document.documentElement;
+        const max = Math.max(1, root.scrollHeight - window.innerHeight);
+        const progress = Math.min(1, Math.max(0, window.scrollY / max));
+        root.style.setProperty("--page-progress", progress.toFixed(4));
+        root.style.setProperty("--scroll-drift", `${window.scrollY * 0.12}px`);
+      });
+    };
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+      document.documentElement.style.removeProperty("--page-progress");
+      document.documentElement.style.removeProperty("--scroll-drift");
+    };
+  }, []);
+
+  return (
+    <div className="scroll-stage" aria-hidden="true">
+      <div className="scroll-stage__rail"><span /></div>
+      <div className="scroll-stage__orbit"><i /><i /><i /></div>
+      <div className="scroll-stage__ticker"><span>MAKE IT MOVE</span><b>✳</b><span>FORM FOLLOWS FEELING</span><b>✳</b><span>MAKE IT MOVE</span></div>
+    </div>
+  );
+}
+
 function Reveal({ children, className = "" }: { children: ReactNode; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
