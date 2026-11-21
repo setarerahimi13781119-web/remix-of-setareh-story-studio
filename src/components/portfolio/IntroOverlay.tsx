@@ -20,10 +20,16 @@ export function IntroOverlay() {
   return (
     <div className="intro-overlay" data-phase={phase} role="status" aria-label="Opening portfolio">
       <div className="intro-overlay__content">
-        <div className="intro-overlay__monogram" aria-hidden="true">SR<span>.</span></div>
-        <div className="intro-overlay__rule"><i /></div>
+        <div className="intro-overlay__monogram" aria-hidden="true">
+          SR<span>.</span>
+        </div>
+        <div className="intro-overlay__rule">
+          <i />
+        </div>
         <p className="intro-overlay__name">SETAREH RAHIMI</p>
-        <p className="intro-overlay__caption">CREATIVE PORTFOLIO <span>—</span> 2026</p>
+        <p className="intro-overlay__caption">
+          CREATIVE PORTFOLIO <span>—</span> 2026
+        </p>
       </div>
     </div>
   );
