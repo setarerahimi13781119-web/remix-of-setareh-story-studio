@@ -521,7 +521,7 @@
     transform:translateY(-8px) rotate(-.35deg);
     box-shadow:12px 14px 0 var(--card-pop),0 24px 44px color-mix(in srgb,var(--card-accent) 18%,transparent);
   }
-  .work-card:nth-child(even):not(.work-card--parla):hover { transform:translateY(-8px) rotate(.35deg); }
+  .work-grid__item:nth-child(even) .work-card:not(.work-card--parla):hover { transform:translateY(-8px) rotate(.35deg); }
 }
 @media (max-width:767px) {
   .scroll-stage__orbit { top:26vh; right:-37vw; opacity:.6; }
