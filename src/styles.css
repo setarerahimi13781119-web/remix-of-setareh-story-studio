@@ -597,3 +597,39 @@
 @media (max-width:767px) {
   .work-card--parla { border-radius:18px 4px 18px 4px !important; }
 }
+
+
+/* Narrative pacing: give each project room to arrive and be read. */
+.work-grid {
+  row-gap: clamp(4.25rem, 8vw, 7rem) !important;
+  column-gap: clamp(1.5rem, 3vw, 2.8rem) !important;
+}
+@media (min-width: 768px) {
+  .work-grid__item:nth-child(even) { margin-top: 3.25rem; }
+}
+@media (max-width: 767px) {
+  .work-grid { row-gap: 3.25rem !important; }
+}
+
+/* Parla: stronger colour at the top, gradually dissolving into a pale base. */
+.work-card--parla {
+  background: linear-gradient(180deg,#B7CCBF 0%,#D5E2DA 36%,#EAF0EC 72%,#F5F6F3 100%) !important;
+  border-top: 2px solid #718F80 !important;
+}
+.work-card__trigger--parla {
+  background: linear-gradient(180deg,#A8C1B3 0%,#D3E1D8 42%,#EDF2EE 78%,#F5F6F3 100%) !important;
+}
+.work-card__trigger--parla > span:first-child {
+  color: #29483B !important;
+  background: linear-gradient(105deg,#789989 0%,#A7C0B2 58%,#D4E0D8 100%) !important;
+  border-bottom: 1px solid rgb(41 72 59 / 24%);
+}
+.work-card__trigger--parla > span:first-child svg { color:#F4E8ED !important; }
+.work-card__trigger--parla img {
+  background:
+    radial-gradient(ellipse at 50% 38%,rgb(255 255 255 / 94%) 0%,rgb(232 240 235 / 66%) 42%,transparent 72%),
+    linear-gradient(180deg,#C6D9CE 0%,#E2EBE5 55%,#F1F4F1 100%) !important;
+}
+.work-card__trigger--parla > span:last-child {
+  background: linear-gradient(180deg,#E8EFEB 0%,#F1F4F1 100%) !important;
+}
