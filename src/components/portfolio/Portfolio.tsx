@@ -50,21 +50,32 @@ function SectionHead({ index, title, id }: { index: string; title: string; id: s
   );
 }
 
+export function BrandMark() {
+  return (
+    <a href="#top" className="pm-brand" aria-label="Setareh Rahimi — Back to top">
+      <svg className="pm-brand-mark" viewBox="0 0 42 42" fill="none" aria-hidden="true">
+        <path d="M18.7 8.2C15.4 5.8 8.2 6.4 7.1 11.2C5.9 16.4 13.1 17.4 18.2 20.1C23.4 22.9 23.3 30.1 17.5 33.2C12.7 35.8 6.9 33.8 5.2 30.9" stroke="#243E24" strokeWidth="5" strokeLinecap="round" />
+        <path d="M23.5 34V8.5H29.3C35.5 8.5 37.1 17.1 31.4 19.8L23.5 23.5" stroke="#9EB67A" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M27.2 22.1L36.5 34" stroke="#9EB67A" strokeWidth="4" strokeLinecap="round" />
+        <path d="M5 7.5C8.1 4.4 11.2 3.2 14.7 3.5" stroke="#C12864" strokeWidth="2" strokeLinecap="round" />
+        <circle cx="36.5" cy="6.5" r="2.5" fill="#C12864" />
+      </svg>
+      <span>Setareh Rahimi</span>
+    </a>
+  );
+}
+
 export function Header() {
   const [open, setOpen] = useState(false);
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur">
+    <header className="pm-header sticky top-0 z-50 border-b backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-10">
-        <a href="#top" className="font-display text-xl tracking-tight">
-          Setareh Rahimi<span className="text-accent">.</span>
-        </a>
+        <BrandMark />
         <nav aria-label="Primary" className="hidden md:block">
-          <ul className="flex gap-8 text-sm">
+          <ul className="flex items-center gap-8">
             {nav.map((n) => (
               <li key={n.href}>
-                <a href={n.href} className="link-underline pb-0.5">
-                  {n.label}
-                </a>
+                <a href={n.href} className="pm-nav-link">{n.label}</a>
               </li>
             ))}
           </ul>
@@ -79,19 +90,11 @@ export function Header() {
         </button>
       </div>
       {open && (
-        <nav
-          id="mobile-nav"
-          aria-label="Mobile"
-          className="md:hidden border-t border-border animate-in fade-in slide-in-from-top-2 duration-200"
-        >
+        <nav id="mobile-nav" aria-label="Mobile" className="md:hidden border-t border-border animate-in fade-in slide-in-from-top-2 duration-200">
           <ul className="px-5 py-4">
             {nav.map((n) => (
               <li key={n.href} className="border-b border-border last:border-0">
-                <a
-                  href={n.href}
-                  onClick={() => setOpen(false)}
-                  className="block py-3 font-display text-2xl"
-                >
+                <a href={n.href} onClick={() => setOpen(false)} className="block py-3 font-display text-2xl">
                   {n.label}
                 </a>
               </li>
@@ -108,54 +111,47 @@ export function Hero() {
     <section
       id="top"
       aria-labelledby="hero-title"
-      className="mx-auto max-w-7xl px-5 pt-16 pb-24 md:px-10 md:pt-28 md:pb-36"
+      className="pm-hero mx-auto grid max-w-7xl grid-cols-1 items-center gap-8 overflow-hidden px-5 py-16 md:grid-cols-12 md:gap-6 md:px-10 md:py-24 lg:py-28"
     >
-      <Reveal>
-        <div className="grid grid-cols-12 gap-6">
-          <p className="eyebrow col-span-12 md:col-span-3 md:pt-6">
-            Portfolio — {new Date().getFullYear()}
-          </p>
-          <div className="col-span-12 md:col-span-9">
-            <h1
-              id="hero-title"
-              className="font-display text-[clamp(3.5rem,12vw,10rem)] leading-[0.88] tracking-[-0.02em]"
-            >
-              Setareh
-              <br />
-              <em className="text-accent">Rahimi</em>
-            </h1>
-            <div className="mt-12 grid gap-8 border-t border-rule pt-6 md:grid-cols-2">
-              <div>
-                <p className="font-display text-2xl md:text-3xl">{profile.headline}</p>
-                <p className="mt-3 max-w-md text-muted-foreground leading-relaxed">
-                  {profile.intro}
-                </p>
-              </div>
-              <div className="flex flex-col justify-between gap-8">
-                <div className="flex flex-wrap gap-3">
-                  <a
-                    href="#work"
-                    className="group inline-flex items-center gap-2 bg-primary px-5 py-3 text-sm text-primary-foreground transition-colors hover:bg-accent"
-                  >
-                    Explore selected work{" "}
-                    <span aria-hidden className="transition-transform group-hover:translate-y-0.5">
-                      ↓
-                    </span>
-                  </a>
-                  <a
-                    href="#contact"
-                    className="inline-flex items-center border border-foreground px-5 py-3 text-sm transition-colors hover:bg-foreground hover:text-background"
-                  >
-                    Contact
-                  </a>
-                </div>
-                <p className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-accent" />
-                  {profile.availability}
-                </p>
-              </div>
-            </div>
-          </div>
+      <Reveal className="col-span-1 md:col-span-7">
+        <div className="pm-hero-eyebrow eyebrow mb-8 flex items-center gap-3">
+          <span className="h-2 w-2 rounded-full bg-accent" aria-hidden="true" />
+          <span>§ 00 / PORTFOLIO — {new Date().getFullYear()}</span>
+        </div>
+        <h1 id="hero-title" className="pm-hero-title text-[clamp(3.5rem,10vw,8.8rem)]">
+          PLAYFUL<br />
+          <span className="pm-hero-title-accent">MATTER</span>
+        </h1>
+        <p className="mt-8 font-display text-2xl font-semibold tracking-tight md:text-3xl">
+          Ideas in motion.
+        </p>
+        <p className="mt-3 max-w-lg text-sm leading-relaxed text-muted-foreground md:text-base">
+          {profile.headline}. {profile.intro}
+        </p>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <a href="#work" className="pm-cta-primary inline-flex items-center gap-3 px-6 py-3 text-sm font-semibold">
+            Explore Selected Work <span aria-hidden="true">↓</span>
+          </a>
+          <a href="#contact" className="pm-cta-secondary inline-flex items-center gap-3 px-6 py-3 text-sm font-semibold">
+            Let’s Connect <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+        <p className="mt-8 flex items-center gap-2 text-sm text-muted-foreground">
+          <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-accent" />
+          {profile.availability}
+        </p>
+      </Reveal>
+
+      <Reveal className="col-span-1 md:col-span-5">
+        <div className="pm-hero-art" role="img" aria-label="Abstract three-dimensional Playful Matter sculpture">
+          <img
+            className="pm-sculpture"
+            src="/hero-3d-sculpture.png"
+            alt="Abstract sculptural composition in the Playful Matter color palette"
+            fetchPriority="high"
+            onError={(event) => { event.currentTarget.style.visibility = "hidden"; }}
+          />
+          <span className="pm-art-index">PM — 001 / FORM STUDY</span>
         </div>
       </Reveal>
     </section>
