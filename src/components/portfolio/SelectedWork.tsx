@@ -714,7 +714,7 @@ export function SelectedWork() {
             className="work-grid__item min-w-0"
             data-palette={project.id === "parla-perfume-ad" ? undefined : filteredProjects
               .slice(0, index)
-              .filter((item) => item.id !== "parla-perfume-ad").length % 6}
+              .filter((item) => item.id !== "parla-perfume-ad" && item.id !== "junoon-podcast").length % 6}
           >
             <Dialog>
               <article className={`work-card flex h-full flex-col border border-rule p-3 md:p-4 ${project.id === "parla-perfume-ad" ? "work-card--parla" : `work-card--${project.id}`}`}>
