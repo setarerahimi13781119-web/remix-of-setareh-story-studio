@@ -328,28 +328,28 @@ function KhanehShalvarGallery() {
 const touchUpsPairs = [
   {
     title: "Food retouch 01",
-    before: "https://www.dropbox.com/scl/fi/axvf73zwc5sm8agsyg3fg/unnamed-10.webp?rlkey=aaht3kqgxkl9hxcqj4et489ka&raw=1",
-    after: "https://www.dropbox.com/scl/fi/qa3hmub11yh6fipsehqkp/1792682346570.jpg?rlkey=46bb5h90t7xmucidqf2jitq95&raw=1",
+    before: "/assets/portfolio/touch-food1-before.webp",
+    after: "/assets/portfolio/touch-food1-after.webp",
   },
   {
     title: "Food retouch 02",
-    before: "https://www.dropbox.com/scl/fi/9mp0s87j662q4dkq8wcom/lv_0_20261022071125.jpg?rlkey=g6h1zkcmdejlfula2waafx9vh&raw=1",
-    after: "https://www.dropbox.com/scl/fi/sy0ea9y3iiez88halstxt/lv_0_20261022073202.jpg?rlkey=m15v1sl4gcpz6iyjh9xt5kmgy&raw=1",
+    before: "/assets/portfolio/touch-food2-before.webp",
+    after: "/assets/portfolio/touch-food2-after.webp",
   },
   {
     title: "Food retouch 03",
-    before: "https://www.dropbox.com/scl/fi/uzz73p9sdl00u13lzbob4/unnamed-3.webp?rlkey=tcbnge742p26f7io36e9ykpot&raw=1",
-    after: "https://www.dropbox.com/scl/fi/5u4z479efuuz500xfty32/VEGA_1792654251368.jpg?rlkey=pazxycvftjmfljh4vdolpjd80&raw=1",
+    before: "/assets/portfolio/touch-food3-before.webp",
+    after: "/assets/portfolio/touch-food3-after.webp",
   },
   {
     title: "Food retouch 04",
     before: "https://www.dropbox.com/scl/fi/1414iztmvive8geiwbjww/lv_0_20261022070508.jpg?rlkey=12ryrwzrs60r40zzq3lu6212s&raw=1",
-    after: "https://www.dropbox.com/scl/fi/wo9gc0man2l1kkpgmcxe2/lv_0_20261022081616.jpg?rlkey=vyenwrqs5tcadtg6ut0tkpyvq&raw=1",
+    after: "/assets/portfolio/touch-food4-after.webp",
   },
   {
     title: "Coffee retouch 01",
-    before: "https://uc38f78cd19cc07ef42d87a67c09.previews.dropboxusercontent.com/p/thumb/ADRPoncNzW7owGACetWSE5Ilz02u_6sFcVYL7TyhyZHJMgx4QNqKPaPzXxLUD9kN2XJ_MrUZakAFmKZNJh-JrmhOT-b1ZyAp1YeAv8nlLbiqDeJA0Hf1Q_UTM_Gx3iBOMwP8Lct1ab42aKMd1XxTM3c23_0z5v88Yfdhss9ovzk1aBDgpDjJhc0VDQwT__GwFDvSQjyiZGNf_W2_4zimXM7UKi2sh12SU76EyBZ8Dqj_xcAFat1Lj5zPY9gQduFeMG8yKWDj4tYGb_NOAQJ9ocWQr7i3PocvBPpznvW-vRTb-g/p.jpeg",
-    after: "https://uc525ae958c4cd815354cd89cc29.previews.dropboxusercontent.com/p/thumb/ADSnSJFCInzbhRQqAl-KpQgUDJTldV_E23gl4dBLHbYXcuVKUJRhQFU-kzBGNiqXm-2m4eFp1XOP9J1NPtBZFIVYxJ9D6YJUfBJfxluf6ESeXAw63oSebaxiizFWYKmL21lSoQ9nNsmBv1tWaapvrSXmL_sOnYhWRmmopFjozXQjeiM-lnaoNN5qeI0kGuWpVMYTmQJ1wQVV3LcT03ph0B2rwqjGWuaOxHX7T5RNOI57IZyT4i5cR1FPnHslpCohodS6JJWG6gwjAfIaOmEz4Cxk0_UxvVVSP2LTuMogdhk0nw/p.jpeg",
+    before: "/assets/portfolio/touch-coffee-before.webp",
+    after: "/assets/portfolio/touch-coffee-after.webp",
   },
 ];
 
@@ -481,14 +481,14 @@ function StillnessGallery() {
 const coffeeAssetsCover = "https://www.dropbox.com/scl/fi/niwau2i7okvwh0o2whh2v/ai-image-generator-1.jpg?rlkey=buddyp8xmtvpwkjzbutdnvd60&raw=1";
 
 const coffeeAssetImages = [
-  "https://uc67c8a1be0cb745e8aa8f406352.previews.dropboxusercontent.com/p/thumb/ADRarViq9rqHmJBE9xC-GuTxptixksHAC0DbO7BLvsun1M3Eoo4S_HzY-5kmle9g7UboWOsACyoW0E3rQwy5e2yHqcEbKD0XaiYO3mIOuCIr0f0PH2RSSuk4XYmJakQ1xWrQIK5Jg5h_JhR4DUhPUulyh9vt1rQ0dx_EmqYAxYQPxrc1RqF783hqWC5qSCdNxZyKLiN4OtL92oHwvaLKn5qH2Rj8uG5LGzedwV0JVNeankAvbaqrkQPbUSGNumo0wg6FMyJx99vkVNA055u1sk-UU2jhlN0AQE9i9xZAejUDqg/p.jpeg",
-  "https://ucdaf8683294916a692005d4733b.previews.dropboxusercontent.com/p/thumb/ADQ-Rlqml43x8c_CZfDzsBT9g0_e-TeoOcBnNkWfNBTXk2ffs44O1CEs4xF1lXM0-zXCyBSo6wFs2SkJ_0o9oxvs7yaNv6Ukb3rSC5M7sbLfFi3S0WI4Yb_A5WgLV9NZDAHXhWVSHVavC6CGky9oJwF_rBdPM4hY-AkxGtjUND_1Vpja960KJzBmld-aUSJmKjKb0l_3quiRxGa22roQ_hIEkhlSrdNsTXixoGRb1Q3za2V_1S6oxHdwhhWhtKcakppQdQHHiZFqWmVrV0AWQCpn4ikR08-R7-ipwrmbFiWtiw/p.jpeg",
-  "https://uc7b479aea63720a509a9268cfee.previews.dropboxusercontent.com/p/thumb/ADS94ncaAQHxewsjfN36TfEqmyur3VUWdwbGa8b0KfufTCDblVNFdGv-pxBWKj_Mv6R7rod1N0pJfAV1XrWCW6aS1r7h4fCdS-KAv5Vo4TTMPP1j9bXcZSPMFnEnGUISDftqOYsLC356HsHjRuQaFy8av_DB-nzUGAQeFoNxbj2hgwbS-ZP5V619yqU-SmofhtSPSjv5Da5ql5DiJtzp7gwye1vhcKmOOYMx8QtsjNQYv4Vpn5qC6tGX_-X6_3MScfxTohA1kkRibCAFAWaVHGLao95cbTVFALmU9t_TXR6IXA/p.jpeg",
-  "https://ucce69b197fb601109f653135fed.previews.dropboxusercontent.com/p/thumb/ADSngAoWAf6TodxRWTnobuT-249he2iS-QrbI2iYPW7aplytVxzAzLChvzUNpSAMs0QmuE7gKO7oPWkWaoXG1QD8wvg2PtoEnHf97mlMm-sE6f6ibGYPOhxDdLQRTnzvvfEz7FDtwFLmc9oEmKHgTkbCcDpzhA3Ymj2zqX2v8oA93LrfZlNiAMkcAMwOnMCNy2MVmAj2kbPjZls33I3D06B94amiZTlkUE96UxgAnc8EzWiJLneodcN-HN6EEMBaMKhu97XW4p8JPRJqwpRFSLksekFE7sfRx2qYTure8ZX61A/p.jpeg",
-  "https://uce0d4adc3425055d15fbaa1fc26.previews.dropboxusercontent.com/p/thumb/ADSkgwMs8D43FQn98tvKZKpD4X7G55PYivuovYsVCT94lkoOFr4mjGYX-xZKnZuHz9bxVRK8Tm4PrhJucLTE58bCKKE08fr__0JhMysDbZs0-qI4mxR7O_-w4gS8dwybwcjZplqSiYRYgrHWV1WNPqLxAs5JwMH06lleagpzuZdlQ1BdcC0CpRkVhGgf_rOCuNOPmPxg0QYqswjQj1-rfl6M1Rw9EX8Z0tY2IoZ5XK1J-Ip2gGgA55iFQHPwTUMuNCOk0_e9oO7swSK0csp5w0eksviu_exz8ojoTmBBEcGutQ/p.jpeg",
-  "https://uce8d4dd8353d44b6ae2c400c34e.previews.dropboxusercontent.com/p/thumb/ADTi3KPSy3u9Sh1uTun02sLX98l9Ivmq5zS6ISX_8jgY8bdkRPHeXGFyZX1c91brZIbfaSQ30TBqfOhKNjJBEGIr_zBjrOzJxDvOpvKBdvZsLsKZ3G1AwmgM7IpwaR3GLJ-CqsW_8h7QjPg6t1KI4C3gWC9vyK9C9F2YBJApVm-QIff_rLcPvYHhtzALhwYDzZuSGH-5VvxdsIBkXGQw8Tz2WOTXTOYxQ36WhqjKlw9dby-H2XiDIG6Cuo9_u01d74XcFhXJNantU5aek0B41ctwUzgdDyPsCbN-sd4BBT_ZNA/p.jpeg",
-  "https://uc2cc8223d2e79af555607ac4a3e.previews.dropboxusercontent.com/p/thumb/ADSwK-RLQfWEgLnS9FS00i7vpOJ8rgkliQBScR01C9AnuntRZDdVWycYqV2MZjEVNdovWubCW_BvmPUn-Vy5HYpuIK1QPUWIEXI97ZXw8h-AtTCyL3XwgFhBopISLSYGJueNgumNl9qfjKbvlwZ3kkmZFT6W-Lr8XSzlWcCmo-dd-ylilnncb8AYgwq2hUoSOtjuXXlZCyYO2wJ002_RBihJ98aEFpr90fUz00xZUQF8QTN302ZWKRej7TKWihnvhH_2RbYMKpGcvgHk584AdffY5SXjAKdULFLD3QAeOAhYAw/p.png",
-  "https://uc6deac2e81b69df2e3588ec9d93.previews.dropboxusercontent.com/p/thumb/ADRjqmicQdw-jva-kytQKe9tg2eH3W7F-UVSqphlPSyXH6_LCf01lhVtGxih8MfvqJWoMMBO-xNq3m7pIPNcUks_RdXwf4qHfbJpzavtpBrLi8wC2rU_zTQxfZNyMnF9zBZeEOFpiaLimN-aCNiOzul1i2zDxyCk-kGxMD-fBAzGSIgwLuMoApXuHUdvvBiWVwF6Ml47tc2w31EJ_I5QXkw27yZs0kJiScx_idf-jnZssn0obbJN1fI75-mIuO2J7YvMTqDJm7l7f9hAMhh05OsYpKDdPPqeh8zWRh4hszjsGQ/p.jpeg",
+  "/assets/portfolio/coffee-1.webp",
+  "/assets/portfolio/coffee-2.webp",
+  "/assets/portfolio/coffee-3.webp",
+  "/assets/portfolio/coffee-4.webp",
+  "/assets/portfolio/coffee-5.webp",
+  "/assets/portfolio/coffee-6.webp",
+  "/assets/portfolio/coffee-7.webp",
+  "/assets/portfolio/coffee-8.webp"
 ];
 
 const randomPiecesImages = [
