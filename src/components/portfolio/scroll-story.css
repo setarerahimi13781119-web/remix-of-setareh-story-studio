@@ -14,7 +14,7 @@
   backdrop-filter: blur(14px);
   transform: translateY(-50%);
   pointer-events: none;
-  color: #244D40;
+  color: #344A24;
 }
 .scroll-story__track {
   position: absolute;
@@ -28,7 +28,7 @@
   display: block;
   width: 2px;
   height: 100%;
-  background: linear-gradient(180deg, #087F62, #F04491);
+  background: linear-gradient(180deg, #526B27, #D94E91);
   transform-origin: top;
   transition: transform .55s cubic-bezier(.2,.75,.25,1);
 }
@@ -77,12 +77,12 @@
   background: var(--background);
   transition: background .25s ease, border-color .25s ease, transform .25s ease;
 }
-.scroll-story li[data-active="true"] .scroll-story__number { color: #D92F7C; opacity: 1; }
-.scroll-story li[data-active="true"] .scroll-story__label { color: #075E52; opacity: 1; transform: translateX(-2px); }
+.scroll-story li[data-active="true"] .scroll-story__number { color: #B92E70; opacity: 1; }
+.scroll-story li[data-active="true"] .scroll-story__label { color: #526B27; opacity: 1; transform: translateX(-2px); }
 .scroll-story li[data-active="true"] i {
   transform: scale(1.35);
-  border-color: #D92F7C;
-  background: #D92F7C;
+  border-color: #B92E70;
+  background: #B92E70;
   box-shadow: 0 0 0 5px rgb(217 47 124 / 12%);
 }
 .scroll-story__current {
@@ -101,7 +101,7 @@
   text-transform: uppercase;
   opacity: .72;
 }
-.scroll-story__current span { color: #D92F7C; }
+.scroll-story__current span { color: #B92E70; }
 @media (max-width: 1100px) {
   .scroll-story { right: 8px; transform: translateY(-50%) scale(.9); transform-origin: right center; }
 }
