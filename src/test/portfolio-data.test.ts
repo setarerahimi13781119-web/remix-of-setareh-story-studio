@@ -15,15 +15,23 @@ describe("Profile contact links", () => {
 });
 
 describe("Portfolio project integrity", () => {
-  it("keeps the five currently approved projects in the intended order", () => {
+  it("keeps the complete portfolio project set in the intended order", () => {
     expect(projects.map((project) => project.id)).toEqual([
-      "nikmehr",
+      "parla-perfume-ad",
+      "sayeh-character-design",
+      "setare-fashion-house-film",
       "khaneh-shalvar",
       "khaneh-mod-setareh",
-      "touch-ups",
       "junoon-podcast",
+      "moodbean",
+      "random-pieces",
+      "turquoise-jewelry-set",
+      "turkish-coffee-packaging",
+      "nikmehr",
+      "touch-ups",
+      "stillness-wellness-spaces",
     ]);
-    expect(new Set(projects.map((project) => project.id)).size).toBe(5);
+    expect(new Set(projects.map((project) => project.id)).size).toBe(13);
   });
 
   it("distinguishes verified work, explorations and team collaboration", () => {
