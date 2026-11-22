@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ScrollWorld } from "@/components/portfolio/ScrollWorld";
+import { ParlaStory } from "@/components/portfolio/ParlaStory";
 import {
   About,
   Capabilities,
@@ -45,6 +46,7 @@ function Index() {
       <Header />
       <main>
         <Hero />
+        <ParlaStory />
         <Work />
         <Capabilities />
         <Experience />
