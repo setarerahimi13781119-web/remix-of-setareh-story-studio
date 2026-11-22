@@ -312,6 +312,23 @@ export const projects: PortfolioProject[] = [
     note: "A conceptual visual project, not architectural documentation or a claim of built interior-design work.",
   },
   {
+    id: "lipstick-campaign",
+    title: "Lipstick Campaign",
+    coverLabel: "Beauty advertising · Campaign film",
+    category: "Beauty Advertising",
+    role: "Campaign video presentation",
+    summary:
+      "A short-form lipstick advertisement presented as a standalone beauty campaign.",
+    context:
+      "A 13-second lipstick advertising video, presented with its supplied campaign cover as an independent portfolio project.",
+    scope: [
+      "Short-form lipstick advertising video",
+      "Campaign cover and video presentation",
+    ],
+    status: "exploration",
+    note: "A standalone beauty advertising project. The video is embedded from the supplied Google Drive link.",
+  },
+  {
     id: "junoon-podcast",
     title: "Junoon Podcast",
     coverLabel: "Recent team collaboration",
