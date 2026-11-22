@@ -583,8 +583,8 @@
 @layer components {
   .portfolio-work-stage { position:relative; isolation:isolate; margin-inline:auto; padding-block:clamp(2.5rem,6vw,6rem); }
   .portfolio-scroll-ribbon { position:absolute; z-index:-1; inset:0; width:100%; height:100%; overflow:visible; pointer-events:none; opacity:.72; }
-  .portfolio-scroll-ribbon__line { fill:none; stroke:#65c64a; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; stroke-dasharray:1; stroke-dashoffset:.58; opacity:.5; }
-  .portfolio-scroll-ribbon__echo { fill:none; stroke:#f18db8; stroke-width:1; stroke-linecap:round; stroke-dasharray:3 10; opacity:.45; }
+  .portfolio-scroll-ribbon__line { fill:none; stroke:#9bdc50; stroke-width:11; vector-effect:non-scaling-stroke; stroke-linecap:round; stroke-linejoin:round; stroke-dasharray:1; stroke-dashoffset:.58; opacity:.82; filter:drop-shadow(0 3px 5px rgb(101 198 74 / 24%)); }
+  .portfolio-scroll-ribbon__echo { fill:none; stroke:#fff4df; stroke-width:2.2; vector-effect:non-scaling-stroke; stroke-linecap:round; stroke-dasharray:1; stroke-dashoffset:.58; opacity:.72; }
   .portfolio-scroll-ribbon__node { fill:#fff4df; stroke:#65c64a; stroke-width:2; transform-box:fill-box; transform-origin:center; }
   .portfolio-scroll-ribbon__node--two { fill:#f18db8; stroke:#fff4df; }
   .portfolio-scroll-ribbon__node--three { fill:#c9ef62; }
