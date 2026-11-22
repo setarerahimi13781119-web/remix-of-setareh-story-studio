@@ -1,4 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";\nimport { ScrollWorld } from "@/components/portfolio/ScrollWorld";
+import { createFileRoute } from "@tanstack/react-router";
+import { ScrollWorld } from "@/components/portfolio/ScrollWorld";
 import {
   About,
   Capabilities,
