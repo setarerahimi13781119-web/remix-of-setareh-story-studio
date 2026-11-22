@@ -627,7 +627,7 @@
 @media (max-width:899px) {
   .portfolio-work-stage { padding-block:2rem; }
   .portfolio-work-grid { row-gap:3.75rem; }
-  .portfolio-work-item--2,.portfolio-work-item--3,.portfolio-work-item--4,.portfolio-work-item--5,.portfolio-work-item--6 { transform:none; }
+  .portfolio-work-item { transform:none; }
   .portfolio-scroll-ribbon { opacity:.35; }
   .portfolio-art-frame { aspect-ratio:4 / 5; }
   .portfolio-art-frame[data-project="setare-fashion-house-film"],.portfolio-art-frame[data-project="nikmehr"],.portfolio-art-frame[data-project="touch-ups"] { aspect-ratio:3 / 2; }
