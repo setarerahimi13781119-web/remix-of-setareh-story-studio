@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import { ScrollWorld } from "@/components/portfolio/ScrollWorld";
+import { EntryExperience } from "@/components/portfolio/EntryExperience";
 import {
   About,
   Capabilities,
@@ -33,6 +35,29 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const [showIntro, setShowIntro] = useState(true);
+  const [videoActive, setVideoActive] = useState(false);
+
+  useEffect(() => {
+    try {
+      if (window.localStorage.getItem("pm-entry-complete") === "yes") {
+        setShowIntro(false);
+        setVideoActive(true);
+      }
+    } catch {
+      // If storage is unavailable, show the intro for this visit.
+    }
+  }, []);
+
+  const startExperience = () => {
+    setVideoActive(true);
+    try {
+      window.localStorage.setItem("pm-entry-complete", "yes");
+    } catch {
+      // The experience still works when storage is unavailable.
+    }
+  };
+
   return (
     <div className="grain min-h-screen">
       <ScrollWorld />
@@ -44,13 +69,19 @@ function Index() {
       </a>
       <Header />
       <main>
-        <Hero />
+        <Hero videoActive={videoActive} />
         <Work />
         <Capabilities />
         <Experience />
         <About />
       </main>
       <Contact />
+      {showIntro && (
+        <EntryExperience
+          onEnter={startExperience}
+          onFinish={() => setShowIntro(false)}
+        />
+      )}
     </div>
   );
 }
