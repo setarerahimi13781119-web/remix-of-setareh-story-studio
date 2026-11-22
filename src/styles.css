@@ -639,3 +639,79 @@
   .portfolio-art-frame[data-project="stillness-wellness-spaces"].is-rippling::after { animation:none; }
   .portfolio-scroll-ribbon__line { stroke-dashoffset:0; }
 }
+
+/* Floating portfolio covers — preserve the complete original artwork. */
+@layer components {
+  .portfolio-work-stage .portfolio-art-frame {
+    display: block;
+    flex: none;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: auto;
+    overflow: visible;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .portfolio-work-stage .portfolio-art-frame::before,
+  .portfolio-work-stage .portfolio-art-frame::after,
+  .portfolio-work-stage .portfolio-art-frame__motif {
+    display: none;
+    content: none;
+  }
+
+  .portfolio-work-stage .portfolio-art-frame > img {
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    max-height: 680px;
+    object-fit: contain;
+    object-position: center;
+    filter: drop-shadow(0 14px 22px rgb(31 34 29 / 13%));
+    transform: none;
+  }
+
+  .portfolio-work-stage .portfolio-art-frame > video {
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    max-height: 680px;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    object-position: center;
+    background: transparent;
+    filter: drop-shadow(0 14px 22px rgb(31 34 29 / 13%));
+    transform: none;
+  }
+
+  .portfolio-work-stage .portfolio-art-frame .random-pieces-cover {
+    display: flex;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 1 / 1;
+    flex: none;
+    filter: drop-shadow(0 14px 22px rgb(31 34 29 / 13%));
+  }
+
+  .portfolio-work-stage .portfolio-cover-trigger:hover .portfolio-art-frame > img,
+  .portfolio-work-stage .portfolio-cover-trigger:hover .portfolio-art-frame > video {
+    transform: none;
+  }
+}
+
+@media (max-width: 899px) {
+  .portfolio-work-stage .portfolio-art-frame {
+    aspect-ratio: auto;
+  }
+  .portfolio-work-stage .portfolio-art-frame > img {
+    max-height: none;
+  }
+}
+
