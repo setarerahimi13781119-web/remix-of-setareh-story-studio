@@ -733,3 +733,33 @@
   }
 }
 
+
+
+/* Scroll-built Playful Matter world — quiet by default, assembled by page progress. */
+@layer components {
+  .grain > .pm-world { position:fixed; z-index:0; inset:0; overflow:hidden; pointer-events:none; background:radial-gradient(ellipse at 52% 48%,rgb(241 141 184 / 8%),transparent 42%),linear-gradient(180deg,#f4f1ea 0%,#f7f1e8 58%,#f4f1ea 100%); }
+  .grain > :not(.pm-world) { position:relative; z-index:1; }
+  .pm-world__art { position:absolute; inset:0; display:block; width:100%; height:100%; opacity:.46; overflow:visible; }
+  .pm-world__early { opacity:.5; }
+  .pm-world__flow { opacity:.58; transform-origin:50% 70%; }
+  .pm-world__assembly { opacity:.72; transform-origin:50% 65%; }
+  .pm-world__details { opacity:.62; }
+  .pm-world__wash { position:absolute; inset:0; background:linear-gradient(180deg,rgb(244 241 234 / 12%),transparent 22%,transparent 78%,rgb(244 241 234 / 28%)); }
+  .pm-world--scroll-ready .pm-world__early { animation:pm-world-early 1s linear both; animation-timeline:scroll(root block); animation-range:0% 100%; }
+  .pm-world--scroll-ready .pm-world__flow { animation:pm-world-flow 1s linear both; animation-timeline:scroll(root block); animation-range:0% 100%; }
+  .pm-world--scroll-ready .pm-world__assembly { animation:pm-world-assembly 1s linear both; animation-timeline:scroll(root block); animation-range:0% 100%; }
+  .pm-world--scroll-ready .pm-world__details { animation:pm-world-details 1s linear both; animation-timeline:scroll(root block); animation-range:0% 100%; }
+  @media (max-width:767px) {
+    .pm-world__art { width:145%; max-width:none; left:-22.5%; opacity:.32; }
+    .pm-world__early { opacity:.35; } .pm-world__flow { opacity:.44; } .pm-world__assembly { opacity:.54; } .pm-world__details { opacity:.38; }
+    .pm-world__wash { background:linear-gradient(180deg,rgb(244 241 234 / 30%),transparent 30%,transparent 72%,rgb(244 241 234 / 40%)); }
+  }
+  @media (prefers-reduced-motion:reduce) {
+    .pm-world__early,.pm-world__flow,.pm-world__assembly,.pm-world__details { animation:none !important; }
+    .pm-world__early { opacity:.12; } .pm-world__flow { opacity:.52; } .pm-world__assembly { opacity:.68; transform:none; } .pm-world__details { opacity:.48; }
+  }
+}
+@keyframes pm-world-early { 0%{opacity:.72;transform:translateY(0) scale(1)} 28%{opacity:.18;transform:translateY(-34px) scale(.94)} 100%{opacity:.04;transform:translateY(-60px) scale(.9)} }
+@keyframes pm-world-flow { 0%{opacity:.12;transform:translateY(110px) scale(.86)} 34%{opacity:.72;transform:translateY(20px) scale(1)} 66%{opacity:.82;transform:translateY(-10px) scale(1.02)} 100%{opacity:.28;transform:translateY(-34px) scale(1.04)} }
+@keyframes pm-world-assembly { 0%{opacity:.04;transform:translateY(100px) scale(.78)} 38%{opacity:.12;transform:translateY(55px) scale(.86)} 72%{opacity:.72;transform:translateY(8px) scale(.98)} 100%{opacity:.88;transform:translateY(0) scale(1)} }
+@keyframes pm-world-details { 0%,38%{opacity:0;transform:scale(.7)} 76%{opacity:.36;transform:scale(.96)} 100%{opacity:.7;transform:scale(1)} }
