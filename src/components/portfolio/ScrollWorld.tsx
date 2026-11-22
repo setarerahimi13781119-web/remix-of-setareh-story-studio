@@ -8,10 +8,10 @@ const liquidStages = [
 ];
 
 function mixPath(from: string, to: string, amount: number) {
-  const a = from.match(/-?\\d+(?:\\.\\d+)?/g)?.map(Number) ?? [];
-  const b = to.match(/-?\\d+(?:\\.\\d+)?/g)?.map(Number) ?? [];
+  const a = from.match(/-?\d+(?:\.\d+)?/g)?.map(Number) ?? [];
+  const b = to.match(/-?\d+(?:\.\d+)?/g)?.map(Number) ?? [];
   let index = 0;
-  return from.replace(/-?\\d+(?:\\.\\d+)?/g, () => {
+  return from.replace(/-?\d+(?:\.\d+)?/g, () => {
     const value = a[index] + (b[index] - a[index]) * amount;
     index += 1;
     return value.toFixed(1);
