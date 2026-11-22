@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1100" viewBox="0 0 1600 1100" fill="none">
+<defs>
+ <linearGradient id="ribbonA" x1="70" y1="160" x2="550" y2="620" gradientUnits="userSpaceOnUse"><stop stop-color="#C9EF62"/><stop offset=".48" stop-color="#78B65B"/><stop offset="1" stop-color="#315D3B"/></linearGradient>
+ <linearGradient id="ribbonB" x1="1110" y1="100" x2="1480" y2="590" gradientUnits="userSpaceOnUse"><stop stop-color="#F7C4D7"/><stop offset=".48" stop-color="#D95D91"/><stop offset="1" stop-color="#8F285E"/></linearGradient>
+ <linearGradient id="fold" x1="1120" y1="720" x2="1510" y2="1030" gradientUnits="userSpaceOnUse"><stop stop-color="#B8E2DC"/><stop offset=".5" stop-color="#68B9B3"/><stop offset="1" stop-color="#287D7A"/></linearGradient>
+ <linearGradient id="petal" x1="70" y1="760" x2="450" y2="1030" gradientUnits="userSpaceOnUse"><stop stop-color="#F6A28E"/><stop offset="1" stop-color="#C94C68"/></linearGradient>
+ <radialGradient id="orb" cx="0" cy="0" r="1" gradientTransform="matrix(100 130 -130 100 0 0)" gradientUnits="userSpaceOnUse"><stop stop-color="#F4F0D8"/><stop offset=".4" stop-color="#E7B7A0"/><stop offset="1" stop-color="#B66C62"/></radialGradient>
+ <filter id="shadow" x="-40%" y="-40%" width="180%" height="190%"><feGaussianBlur stdDeviation="17"/></filter>
+</defs>
+<!-- upper-left folded ribbon -->
+<path d="M-90 210C70 30 205 54 290 166C370 272 290 370 190 405C100 437 73 502 140 554" stroke="#243E24" stroke-opacity=".12" stroke-width="76" stroke-linecap="round" filter="url(#shadow)"/>
+<path d="M-90 170C70 -10 205 14 290 126C370 232 290 330 190 365C100 397 73 462 140 514" stroke="url(#ribbonA)" stroke-width="68" stroke-linecap="round"/>
+<path d="M-90 170C70 -10 205 14 290 126C370 232 290 330 190 365" stroke="#E8F5B5" stroke-opacity=".72" stroke-width="3" stroke-linecap="round"/>
+<!-- upper-right sculptural loop -->
+<path d="M1170 -90C1390 -20 1510 90 1470 235C1437 355 1280 388 1190 300C1110 222 1160 112 1280 108C1390 104 1440 194 1400 270" stroke="#243E24" stroke-opacity=".12" stroke-width="82" stroke-linecap="round" filter="url(#shadow)"/>
+<path d="M1170 -130C1390 -60 1510 50 1470 195C1437 315 1280 348 1190 260C1110 182 1160 72 1280 68C1390 64 1440 154 1400 230" stroke="url(#ribbonB)" stroke-width="70" stroke-linecap="round"/>
+<path d="M1170 -130C1390 -60 1510 50 1470 195" stroke="#FFE7EF" stroke-opacity=".8" stroke-width="3" stroke-linecap="round"/>
+<!-- lower-left folded petal stack -->
+<path d="M-70 900C10 760 145 690 270 735C375 773 418 895 355 985C292 1076 144 1082 30 1010" fill="#243E24" fill-opacity=".12" filter="url(#shadow)"/>
+<path d="M-70 870C10 730 145 660 270 705C375 743 418 865 355 955C292 1046 144 1052 30 980C-45 933 -100 922 -70 870Z" fill="url(#petal)"/>
+<path d="M-15 858C78 770 175 740 265 779C327 806 356 864 329 919C298 981 214 1000 137 966" stroke="#FFE1D5" stroke-opacity=".65" stroke-width="4"/>
+<!-- lower-right paper-fold sculpture -->
+<path d="M1170 760L1510 675L1635 950L1360 1110L1135 1005Z" fill="#243E24" fill-opacity=".12" filter="url(#shadow)"/>
+<path d="M1160 730L1500 645L1625 920L1350 1080L1125 975Z" fill="url(#fold)"/>
+<path d="M1160 730L1350 850L1500 645" fill="#D9F0E9" fill-opacity=".48"/>
+<path d="M1350 850L1625 920L1350 1080Z" fill="#1E6868" fill-opacity=".25"/>
+<path d="M1160 730L1350 850L1125 975" stroke="#E7F8F1" stroke-opacity=".8" stroke-width="3"/>
+<!-- small floating material accent -->
+<path d="M760 65C820 12 900 28 918 91C934 147 875 191 819 166C766 143 729 92 760 65Z" fill="url(#orb)" opacity=".78"/>
+<path d="M800 84C836 53 881 63 892 98" stroke="#FFF4E9" stroke-opacity=".7" stroke-width="3" stroke-linecap="round"/>
+</svg>
