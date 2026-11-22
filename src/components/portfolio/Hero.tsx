@@ -72,7 +72,8 @@ export function Hero() {
                 muted
                 loop
                 playsInline
-                preload="metadata"
+                preload="auto"
+                poster={identityArtwork}
                 aria-label="Animated portrait"
                 onError={() => setPortraitUnavailable(true)}
               >
