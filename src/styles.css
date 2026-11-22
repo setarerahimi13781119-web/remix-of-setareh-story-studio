@@ -763,3 +763,21 @@
 @keyframes pm-world-flow { 0%{opacity:.12;transform:translateY(110px) scale(.86)} 34%{opacity:.72;transform:translateY(20px) scale(1)} 66%{opacity:.82;transform:translateY(-10px) scale(1.02)} 100%{opacity:.28;transform:translateY(-34px) scale(1.04)} }
 @keyframes pm-world-assembly { 0%{opacity:.04;transform:translateY(100px) scale(.78)} 38%{opacity:.12;transform:translateY(55px) scale(.86)} 72%{opacity:.72;transform:translateY(8px) scale(.98)} 100%{opacity:.88;transform:translateY(0) scale(1)} }
 @keyframes pm-world-details { 0%,38%{opacity:0;transform:scale(.7)} 76%{opacity:.36;transform:scale(.96)} 100%{opacity:.7;transform:scale(1)} }
+
+
+/* Liquid material: glossy merged surfaces and stronger scroll response. */
+@layer components {
+  .pm-world__art { opacity:.62; }
+  .pm-world__droplets { filter:drop-shadow(0 18px 20px rgb(126 105 95 / 10%)); }
+  .pm-world__liquid { will-change:transform; }
+  .pm-world__liquid-gloss { pointer-events:none; mix-blend-mode:screen; }
+  .pm-world__sculpture { transform-box:fill-box; transform-origin:50% 70%; will-change:transform,opacity; }
+  .pm-world__finish { pointer-events:none; }
+  @media (max-width:767px) {
+    .pm-world__art { opacity:.48; width:138%; left:-19%; }
+    .pm-world__liquid { filter:url(#pm-goo); }
+  }
+  @media (prefers-reduced-motion:reduce) {
+    .pm-world__art { opacity:.38; }
+  }
+}
