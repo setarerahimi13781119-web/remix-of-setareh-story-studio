@@ -1,31 +1,67 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1100" viewBox="0 0 1600 1100" fill="none">
 <defs>
- <linearGradient id="ribbonA" x1="70" y1="160" x2="550" y2="620" gradientUnits="userSpaceOnUse"><stop stop-color="#C9EF62"/><stop offset=".48" stop-color="#78B65B"/><stop offset="1" stop-color="#315D3B"/></linearGradient>
- <linearGradient id="ribbonB" x1="1110" y1="100" x2="1480" y2="590" gradientUnits="userSpaceOnUse"><stop stop-color="#F7C4D7"/><stop offset=".48" stop-color="#D95D91"/><stop offset="1" stop-color="#8F285E"/></linearGradient>
- <linearGradient id="fold" x1="1120" y1="720" x2="1510" y2="1030" gradientUnits="userSpaceOnUse"><stop stop-color="#B8E2DC"/><stop offset=".5" stop-color="#68B9B3"/><stop offset="1" stop-color="#287D7A"/></linearGradient>
- <linearGradient id="petal" x1="70" y1="760" x2="450" y2="1030" gradientUnits="userSpaceOnUse"><stop stop-color="#F6A28E"/><stop offset="1" stop-color="#C94C68"/></linearGradient>
- <radialGradient id="orb" cx="0" cy="0" r="1" gradientTransform="matrix(100 130 -130 100 0 0)" gradientUnits="userSpaceOnUse"><stop stop-color="#F4F0D8"/><stop offset=".4" stop-color="#E7B7A0"/><stop offset="1" stop-color="#B66C62"/></radialGradient>
- <filter id="shadow" x="-40%" y="-40%" width="180%" height="190%"><feGaussianBlur stdDeviation="17"/></filter>
+ <linearGradient id="lime" x1="110" y1="90" x2="470" y2="430" gradientUnits="userSpaceOnUse"><stop stop-color="#DDF58A"/><stop offset=".55" stop-color="#91C85A"/><stop offset="1" stop-color="#3F7846"/></linearGradient>
+ <linearGradient id="pink" x1="1120" y1="40" x2="1510" y2="400" gradientUnits="userSpaceOnUse"><stop stop-color="#FFD5E3"/><stop offset=".52" stop-color="#E77BA8"/><stop offset="1" stop-color="#A93469"/></linearGradient>
+ <linearGradient id="peach" x1="60" y1="760" x2="430" y2="1050" gradientUnits="userSpaceOnUse"><stop stop-color="#FFD1B7"/><stop offset=".55" stop-color="#F18D78"/><stop offset="1" stop-color="#C9565D"/></linearGradient>
+ <linearGradient id="teal" x1="1190" y1="730" x2="1510" y2="1040" gradientUnits="userSpaceOnUse"><stop stop-color="#D4F0E9"/><stop offset=".5" stop-color="#72C7BC"/><stop offset="1" stop-color="#287D78"/></linearGradient>
+ <linearGradient id="paper" x1="180" y1="720" x2="450" y2="1010" gradientUnits="userSpaceOnUse"><stop stop-color="#FFFDF4"/><stop offset="1" stop-color="#E5DCCB"/></linearGradient>
+ <filter id="shadow" x="-50%" y="-50%" width="200%" height="220%"><feGaussianBlur stdDeviation="15"/></filter>
+ <filter id="soft" x="-30%" y="-30%" width="160%" height="170%"><feGaussianBlur stdDeviation="5"/></filter>
 </defs>
-<!-- upper-left folded ribbon -->
-<path d="M-90 210C70 30 205 54 290 166C370 272 290 370 190 405C100 437 73 502 140 554" stroke="#243E24" stroke-opacity=".12" stroke-width="76" stroke-linecap="round" filter="url(#shadow)"/>
-<path d="M-90 170C70 -10 205 14 290 126C370 232 290 330 190 365C100 397 73 462 140 514" stroke="url(#ribbonA)" stroke-width="68" stroke-linecap="round"/>
-<path d="M-90 170C70 -10 205 14 290 126C370 232 290 330 190 365" stroke="#E8F5B5" stroke-opacity=".72" stroke-width="3" stroke-linecap="round"/>
-<!-- upper-right sculptural loop -->
-<path d="M1170 -90C1390 -20 1510 90 1470 235C1437 355 1280 388 1190 300C1110 222 1160 112 1280 108C1390 104 1440 194 1400 270" stroke="#243E24" stroke-opacity=".12" stroke-width="82" stroke-linecap="round" filter="url(#shadow)"/>
-<path d="M1170 -130C1390 -60 1510 50 1470 195C1437 315 1280 348 1190 260C1110 182 1160 72 1280 68C1390 64 1440 154 1400 230" stroke="url(#ribbonB)" stroke-width="70" stroke-linecap="round"/>
-<path d="M1170 -130C1390 -60 1510 50 1470 195" stroke="#FFE7EF" stroke-opacity=".8" stroke-width="3" stroke-linecap="round"/>
-<!-- lower-left folded petal stack -->
-<path d="M-70 900C10 760 145 690 270 735C375 773 418 895 355 985C292 1076 144 1082 30 1010" fill="#243E24" fill-opacity=".12" filter="url(#shadow)"/>
-<path d="M-70 870C10 730 145 660 270 705C375 743 418 865 355 955C292 1046 144 1052 30 980C-45 933 -100 922 -70 870Z" fill="url(#petal)"/>
-<path d="M-15 858C78 770 175 740 265 779C327 806 356 864 329 919C298 981 214 1000 137 966" stroke="#FFE1D5" stroke-opacity=".65" stroke-width="4"/>
-<!-- lower-right paper-fold sculpture -->
-<path d="M1170 760L1510 675L1635 950L1360 1110L1135 1005Z" fill="#243E24" fill-opacity=".12" filter="url(#shadow)"/>
-<path d="M1160 730L1500 645L1625 920L1350 1080L1125 975Z" fill="url(#fold)"/>
-<path d="M1160 730L1350 850L1500 645" fill="#D9F0E9" fill-opacity=".48"/>
-<path d="M1350 850L1625 920L1350 1080Z" fill="#1E6868" fill-opacity=".25"/>
-<path d="M1160 730L1350 850L1125 975" stroke="#E7F8F1" stroke-opacity=".8" stroke-width="3"/>
-<!-- small floating material accent -->
-<path d="M760 65C820 12 900 28 918 91C934 147 875 191 819 166C766 143 729 92 760 65Z" fill="url(#orb)" opacity=".78"/>
-<path d="M800 84C836 53 881 63 892 98" stroke="#FFF4E9" stroke-opacity=".7" stroke-width="3" stroke-linecap="round"/>
+<!-- sculptural camera aperture: visual storytelling -->
+<g transform="translate(230 235) rotate(-18)">
+ <ellipse cy="28" rx="190" ry="174" fill="#243E24" opacity=".13" filter="url(#shadow)"/>
+ <circle r="170" fill="#315C3A"/>
+ <circle r="153" fill="url(#lime)"/>
+ <g fill="#F4F1EA" opacity=".96">
+  <path d="M-18 -132L66 -145L105 -63L42 -18L-31 -62Z"/>
+  <path d="M89 -103L151 -42L112 43L34 18L42 -18Z"/>
+  <path d="M133 34L105 116L14 131L-18 53L34 18Z"/>
+  <path d="M-12 133L-98 107L-112 16L-31 -18L-18 53Z"/>
+  <path d="M-132 8L-119 -82L-35 -132L-2 -54L-31 -18Z"/>
+  <path d="M-105 -101L-39 -151L42 -117L-2 -54L-35 -132Z"/>
+ </g>
+ <circle r="68" fill="#243E24"/>
+ <circle r="53" fill="#DDF0B4"/>
+ <circle r="35" fill="#456C49"/>
+ <circle cx="-12" cy="-18" r="15" fill="#FFF9E8" opacity=".55"/>
+ <path d="M-147 -82A168 168 0 0 1 -26 -166" stroke="#F7FFE0" stroke-width="5" stroke-linecap="round" opacity=".8"/>
+</g>
+<!-- curled film strip: a visual editing motif -->
+<g transform="translate(1190 205) rotate(13)">
+ <path d="M-60 -105C50 -180 225 -108 250 12C275 132 157 207 43 153C-30 118 -49 55 2 10C43 -26 107 -16 125 23" stroke="#243E24" stroke-opacity=".15" stroke-width="112" stroke-linecap="round" filter="url(#shadow)"/>
+ <path d="M-70 -125C40 -200 215 -128 240 -8C265 112 147 187 33 133C-40 98 -59 35 -8 -10C33 -46 97 -36 115 3" stroke="url(#pink)" stroke-width="88" stroke-linecap="round"/>
+ <path d="M-70 -125C40 -200 215 -128 240 -8C265 112 147 187 33 133" stroke="#FFEAF1" stroke-width="3" opacity=".85" stroke-linecap="round"/>
+ <g fill="#7F2854" opacity=".68">
+  <rect x="-41" y="-145" width="18" height="13" rx="3"/><rect x="5" y="-164" width="18" height="13" rx="3"/><rect x="54" y="-164" width="18" height="13" rx="3"/><rect x="104" y="-145" width="18" height="13" rx="3"/><rect x="151" y="-112" width="18" height="13" rx="3"/><rect x="190" y="-63" width="18" height="13" rx="3"/>
+  <rect x="190" y="10" width="18" height="13" rx="3"/><rect x="163" y="72" width="18" height="13" rx="3"/><rect x="116" y="111" width="18" height="13" rx="3"/>
+ </g>
+</g>
+<!-- layered paper / art direction swatches -->
+<g transform="translate(220 870) rotate(-12)">
+ <path d="M-150 -90L80 -142L205 5L-28 158L-176 40Z" fill="#243E24" opacity=".12" filter="url(#shadow)"/>
+ <path d="M-164 -110L66 -162L191 -15L-42 148L-190 20Z" fill="url(#paper)"/>
+ <path d="M-164 -110L66 -162L191 -15L-42 148L-190 20Z" stroke="#C8BDAA" stroke-width="3"/>
+ <path d="M-164 -110L-42 18L191 -15" stroke="#D7CDBD" stroke-width="3"/>
+ <path d="M-42 18L-42 148" stroke="#D7CDBD" stroke-width="3"/>
+ <path d="M-42 18L53 37L191 -15L66 -162Z" fill="#F1E9D9" opacity=".72"/>
+ <path d="M-190 20L-42 18L-42 148Z" fill="#E7DCCB"/>
+ <path d="M-10 -62L95 -86" stroke="#A6B66C" stroke-width="9" stroke-linecap="round"/>
+ <path d="M-8 -34L65 -50" stroke="#E58BA9" stroke-width="9" stroke-linecap="round"/>
+ <path d="M-8 -6L105 -31" stroke="#77BDB3" stroke-width="9" stroke-linecap="round"/>
+ <path d="M-42 18L-5 56L-42 148Z" fill="#D8CBB7" opacity=".65"/>
+</g>
+<!-- oversized quotation glyph: writing and visual narrative -->
+<g transform="translate(1330 860) rotate(8)">
+ <path d="M-132 -110C-132 -190 -31 -202 -12 -133C-2 -95 -26 -66 -66 -48L-83 8L-154 -8L-132 -110Z" fill="#243E24" opacity=".13" filter="url(#shadow)"/>
+ <path d="M-150 -128C-150 -208 -49 -220 -30 -151C-20 -113 -44 -84 -84 -66L-101 -10L-172 -26L-150 -128Z" fill="url(#teal)"/>
+ <path d="M-30 -128C-30 -208 71 -220 90 -151C100 -113 76 -84 36 -66L19 -10L-52 -26L-30 -128Z" fill="url(#teal)"/>
+ <path d="M-133 -143C-128 -177 -99 -192 -72 -183" stroke="#F2FFFA" stroke-width="5" stroke-linecap="round" opacity=".8"/>
+ <path d="M-13 -143C-8 -177 21 -192 48 -183" stroke="#F2FFFA" stroke-width="5" stroke-linecap="round" opacity=".8"/>
+</g>
+<!-- small alignment / crop marks, like a designer's working canvas -->
+<g stroke="#315D3B" stroke-width="3" stroke-linecap="round" opacity=".38">
+ <path d="M720 160h42M741 139v42"/><path d="M890 900h42M911 879v42"/>
+ <path d="M650 690h28M664 676v28"/><path d="M1010 430h28M1024 416v28"/>
+</g>
 </svg>
