@@ -110,6 +110,25 @@ const parlaImages = [
   },
 ];
 
+function LipstickCampaignGallery() {
+  return (
+    <figure className="border-t border-rule pt-5">
+      <div className="mx-auto aspect-[9/16] w-full max-w-[390px] overflow-hidden bg-card">
+        <iframe
+          src="https://drive.google.com/file/d/16QG59znW5TPfLSwPL125QUo4nmuFNdgQ/preview"
+          title="Lipstick Campaign video"
+          allow="autoplay"
+          allowFullScreen
+          className="h-full w-full border-0"
+        />
+      </div>
+      <figcaption className="mt-3 text-xs leading-relaxed text-muted-foreground">
+        Lipstick Campaign · Beauty advertising · 13-second video
+      </figcaption>
+    </figure>
+  );
+}
+
 function ParlaGallery() {
   return (
     <figure className="border-t border-rule pt-5">
@@ -770,6 +789,14 @@ export function SelectedWork() {
                         aria-hidden="true"
                         className="min-h-0 flex-1 w-full object-contain"
                       />
+                    ) : project.id === "lipstick-campaign" ? (
+                      <img
+                        src="https://www.dropbox.com/scl/fi/6mkjb9nc88abjnf9szn3w/Utool-20261120-210943759.jpg?rlkey=a60mv4tlldwqd5hjuz011fzd1&raw=1"
+                        alt="Lipstick Campaign cover"
+                        aria-hidden="true"
+                        loading="lazy"
+                        className="min-h-0 flex-1 w-full bg-card object-contain"
+                      />
                     ) : project.id === "parla-perfume-ad" ? (
                       <img
                         src="https://www.dropbox.com/scl/fi/8y91i4ep19hykupkpg3tj/lv_0_20261119214004.jpg?rlkey=yfk7l4lwc8pnxis336n27rpoz&raw=1"
@@ -897,6 +924,7 @@ export function SelectedWork() {
                 )}
                 {project.id === "touch-ups" && <TouchUpsGallery />}
                 {project.id === "stillness-wellness-spaces" && <StillnessGallery />}
+                {project.id === "lipstick-campaign" && <LipstickCampaignGallery />}
                 {project.id === "parla-perfume-ad" && <ParlaGallery />}
                 {project.id === "sayeh-character-design" && <SayehGallery />}
                 {project.id === "khaneh-shalvar" && <KhanehShalvarGallery />}
