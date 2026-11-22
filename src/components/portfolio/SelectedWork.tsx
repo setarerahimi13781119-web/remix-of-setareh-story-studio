@@ -708,10 +708,10 @@ export function SelectedWork() {
                       />
                     ) : project.id === "khaneh-mod-setareh" ? (
                       <img
-                        src={assetUrl(kms1.url)}
+                        src="https://www.dropbox.com/scl/fi/cv8n8v95qob28spz7hw9s/file_000000001e08820aba357c22c6315627.png?rlkey=yaf88ili4km1o2vpxi6usg52h&raw=1"
                         alt=""
                         aria-hidden="true"
-                        className="min-h-0 flex-1 w-full object-contain"
+                        className="min-h-0 flex-1 w-full bg-card object-contain"
                       />
                     ) : project.id === "visual-identity-case-study" ? (
                       <span className="relative flex min-h-0 flex-1 flex-col justify-between overflow-hidden border-y border-rule py-5">
