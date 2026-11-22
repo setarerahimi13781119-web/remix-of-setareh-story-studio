@@ -1510,3 +1510,13 @@
     transform: none !important;
   }
 }
+
+
+/* Keep the hero fallback available when the remote video fails to decode or load. */
+.pm-portrait-wrap[data-video-error="true"] .pm-portrait-fallback {
+  display: flex;
+  z-index: 3;
+}
+.pm-portrait-wrap[data-video-error="true"] .pm-portrait-video {
+  visibility: hidden;
+}
