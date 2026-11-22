@@ -34,7 +34,8 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <div className="grain min-h-screen">\n      <ScrollWorld />
+    <div className="grain min-h-screen">
+      <ScrollWorld />
       <a
         href="#work"
         className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[70] focus:bg-primary focus:px-3 focus:py-2 focus:text-primary-foreground"
