@@ -74,6 +74,14 @@
   }
   body {
     background-color: var(--color-background);
+    background-image:
+      radial-gradient(ellipse at 2% 9%, rgb(101 198 74 / 10%) 0 4.5%, transparent 17%),
+      radial-gradient(ellipse at 98% 24%, rgb(241 141 184 / 12%) 0 5%, transparent 19%),
+      radial-gradient(ellipse at 4% 76%, rgb(201 239 98 / 9%) 0 4%, transparent 16%),
+      radial-gradient(ellipse at 96% 91%, rgb(102 199 208 / 9%) 0 5%, transparent 18%),
+      radial-gradient(circle, rgb(36 62 36 / 5%) 0.65px, transparent 0.85px);
+    background-size: auto, auto, auto, auto, 7px 7px;
+    background-attachment: fixed;
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
