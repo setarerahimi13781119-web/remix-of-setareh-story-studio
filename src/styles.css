@@ -293,7 +293,7 @@
     width: min(108%, 620px);
     display: grid;
     place-items: center;
-    animation: pm-float 7s ease-in-out infinite;
+    animation: none;
     isolation: isolate;
   }
   .pm-sculpture {
@@ -344,7 +344,16 @@
   .pm-floating-piece.is-active {
     cursor: grabbing;
     transition: none;
+    animation-play-state: paused;
   }
+  .pm-floating-piece:not(.is-active) {
+    will-change: translate;
+  }
+  .pm-piece-left-flower { animation: pm-piece-drift 6.8s ease-in-out infinite; }
+  .pm-piece-top-form { animation: pm-piece-drift-reverse 8.2s ease-in-out infinite; }
+  .pm-piece-right-flower { animation: pm-piece-bob 5.7s ease-in-out infinite; }
+  .pm-piece-right-loop { animation: pm-piece-drift 7.6s ease-in-out -2.1s infinite; }
+  .pm-piece-left-loop { animation: pm-piece-drift-reverse 9s ease-in-out -3.4s infinite; }
   .pm-floating-piece:focus-visible {
     outline: 2px solid var(--portfolio-magenta);
     outline-offset: -5px;
@@ -411,6 +420,18 @@
     transform: translate3d(0, -10px, 0) rotate(1deg);
   }
 }
+@keyframes pm-piece-drift {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -9px; }
+}
+@keyframes pm-piece-drift-reverse {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 7px; }
+}
+@keyframes pm-piece-bob {
+  0%, 100% { translate: 0 0; rotate: 0deg; }
+  50% { translate: 0 -6px; rotate: 1deg; }
+}
 @media (max-width: 767px) {
   .pm-hero-art {
     min-height: 300px;
@@ -423,8 +444,11 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .pm-sculpture {
-    animation: none;
+  .pm-sculpture,
+  .pm-floating-piece {
+    animation: none !important;
+    translate: none !important;
+    rotate: none !important;
   }
 }
 
