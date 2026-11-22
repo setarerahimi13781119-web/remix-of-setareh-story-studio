@@ -1,0 +1,172 @@
+@layer components {
+  .pm-entry-screen {
+    position: fixed;
+    z-index: 100;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    isolation: isolate;
+    color: #243e24;
+    background:
+      radial-gradient(ellipse at 50% 46%, rgb(255 255 255 / 72%), transparent 54%),
+      #f4f1ea;
+    animation: pm-entry-arrive 700ms cubic-bezier(.2,.8,.2,1) both;
+  }
+  .pm-entry-screen.is-leaving {
+    pointer-events: none;
+    animation: pm-entry-leave 720ms cubic-bezier(.7,0,.2,1) both;
+  }
+  .pm-entry-grain {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: .12;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.28'/%3E%3C/svg%3E");
+  }
+  .pm-entry-content {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    width: min(90vw, 720px);
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .pm-entry-eyebrow,
+  .pm-entry-note,
+  .pm-entry-footer {
+    font-family: var(--font-mono);
+    font-size: .65rem;
+    letter-spacing: .17em;
+  }
+  .pm-entry-eyebrow { margin-bottom: clamp(1.6rem, 4vh, 3rem); color: #66715e; }
+  .pm-entry-wordmark {
+    display: flex;
+    flex-direction: column;
+    color: #243e24;
+    font-family: var(--font-display);
+    font-size: clamp(4rem, 12vw, 9.5rem);
+    font-weight: 800;
+    letter-spacing: -.095em;
+    line-height: .78;
+  }
+  .pm-entry-wordmark > span:last-child { margin-top: .12em; color: #c12864; }
+  .pm-entry-period { color: #c9ef62; }
+  .pm-entry-tagline {
+    margin-top: clamp(1.5rem, 4vh, 2.6rem);
+    color: #53634b;
+    font-family: var(--font-display);
+    font-size: clamp(1.1rem, 2.4vw, 1.6rem);
+    letter-spacing: -.035em;
+  }
+  .pm-entry-button {
+    position: relative;
+    display: inline-flex;
+    min-height: 58px;
+    align-items: center;
+    justify-content: center;
+    gap: 1.4rem;
+    margin-top: clamp(2rem, 5vh, 3.2rem);
+    padding: .9rem 1.4rem .9rem 1.7rem;
+    overflow: hidden;
+    border: 1px solid rgb(36 62 36 / 18%);
+    border-radius: 999px;
+    color: #f4f1ea;
+    background: #243e24;
+    box-shadow: 0 12px 28px rgb(36 62 36 / 16%);
+    cursor: pointer;
+    font: 600 .76rem/1 var(--font-mono);
+    letter-spacing: .1em;
+    transition: transform 260ms cubic-bezier(.2,.8,.2,1), background-color 260ms ease, box-shadow 260ms ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .pm-entry-button:hover {
+    transform: translateY(-4px) scale(1.025);
+    background: #c12864;
+    box-shadow: 0 18px 36px rgb(193 40 100 / 22%);
+  }
+  .pm-entry-button:active { transform: translateY(0) scale(.98); }
+  .pm-entry-button-arrow { font-size: 1.2rem; transition: transform 260ms ease; }
+  .pm-entry-button:hover .pm-entry-button-arrow { transform: translate(3px,-3px); }
+  .pm-entry-note { margin-top: 1rem; color: #7a806f; font-size: .55rem; }
+  .pm-entry-footer {
+    position: absolute;
+    right: var(--page-gutter);
+    bottom: 1.5rem;
+    left: var(--page-gutter);
+    display: flex;
+    justify-content: space-between;
+    color: #7a806f;
+    font-size: .55rem;
+  }
+  .pm-entry-shape {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    filter: drop-shadow(0 24px 24px rgb(44 55 37 / 13%));
+    animation: pm-entry-float 8s ease-in-out infinite;
+  }
+  .pm-entry-shape--lime {
+    top: 12%; left: 10%; width: clamp(90px, 16vw, 220px); aspect-ratio: 1.2;
+    border-radius: 46% 54% 42% 58% / 58% 42% 58% 42%;
+    background: radial-gradient(ellipse at 28% 20%, #f7ffd9 0 7%, #d8f47c 24%, #a6cf4e 63%, #709c38 100%);
+    transform: rotate(-25deg);
+  }
+  .pm-entry-shape--pink {
+    top: 15%; right: 10%; width: clamp(75px, 12vw, 170px); aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at 30% 22%, #fff1f6 0 5%, #f6a7c7 26%, #d85d94 68%, #9f356b 100%);
+    animation-delay: -2.4s;
+  }
+  .pm-entry-shape--green {
+    bottom: 13%; left: 15%; width: clamp(80px, 13vw, 185px); aspect-ratio: 1;
+    border-radius: 42% 58% 62% 38%;
+    background: radial-gradient(ellipse at 28% 20%, #d7edc0 0 7%, #8fbd78 34%, #3e7045 100%);
+    animation-delay: -4.1s;
+  }
+  .pm-entry-shape--cream {
+    right: 13%; bottom: 12%; width: clamp(100px, 17vw, 235px); aspect-ratio: 1.3;
+    border-radius: 50% 50% 18% 18%;
+    background: radial-gradient(ellipse at 30% 18%, #fffdf4 0 8%, #f0ddc7 38%, #c7a88d 100%);
+    transform: rotate(32deg);
+    animation-delay: -5.2s;
+  }
+  .pm-entry-orbit {
+    position: absolute;
+    z-index: 0;
+    width: min(72vw, 760px);
+    aspect-ratio: 1;
+    border: 1px solid rgb(36 62 36 / 10%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .pm-entry-orbit--two { width: min(88vw, 940px); border-color: rgb(193 40 100 / 12%); transform: rotate(28deg) scaleY(.62); }
+  .pm-entry-screen.is-leaving .pm-entry-content { animation: pm-entry-content-out 500ms ease both; }
+  .pm-entry-screen.is-leaving .pm-entry-shape { animation-play-state: paused; }
+  .pm-hero--fullbleed .pm-portrait-video { opacity: 0; transition: opacity 500ms ease; }
+  .pm-hero--fullbleed .pm-portrait-video.is-ready { opacity: 1; }
+  @keyframes pm-entry-arrive { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes pm-entry-leave { to { opacity: 0; visibility: hidden; } }
+  @keyframes pm-entry-content-out { to { transform: translateY(-18px) scale(.97); opacity: 0; } }
+  @keyframes pm-entry-float {
+    0%,100% { translate: 0 0; rotate: -4deg; }
+    50% { translate: 8px -18px; rotate: 5deg; }
+  }
+  @media (max-width: 640px) {
+    .pm-entry-shape--lime { top: 12%; left: -8%; }
+    .pm-entry-shape--pink { top: 15%; right: -7%; }
+    .pm-entry-shape--green { bottom: 12%; left: -5%; }
+    .pm-entry-shape--cream { right: -8%; bottom: 11%; }
+    .pm-entry-footer { right: 1.25rem; left: 1.25rem; font-size: .45rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .pm-entry-screen, .pm-entry-screen.is-leaving,
+    .pm-entry-shape, .pm-entry-screen.is-leaving .pm-entry-content {
+      animation-duration: .01ms !important;
+    }
+    .pm-entry-shape { animation: none !important; }
+    .pm-entry-button { transition: none; }
+  }
+}
