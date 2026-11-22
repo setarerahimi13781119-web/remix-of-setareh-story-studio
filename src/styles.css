@@ -73,14 +73,10 @@
     scroll-padding-top: 5rem;
   }
   body {
-    background-color: var(--color-background);
+    background-color: var(--portfolio-cream);
     background-image:
-      radial-gradient(ellipse at 2% 9%, rgb(101 198 74 / 10%) 0 4.5%, transparent 17%),
-      radial-gradient(ellipse at 98% 24%, rgb(241 141 184 / 12%) 0 5%, transparent 19%),
-      radial-gradient(ellipse at 4% 76%, rgb(201 239 98 / 9%) 0 4%, transparent 16%),
-      radial-gradient(ellipse at 96% 91%, rgb(102 199 208 / 9%) 0 5%, transparent 18%),
-      radial-gradient(circle, rgb(36 62 36 / 5%) 0.65px, transparent 0.85px);
-    background-size: auto, auto, auto, auto, 7px 7px;
+      radial-gradient(circle at 50% 50%, rgb(36 62 36 / 2%) 0 1px, transparent 1.2px);
+    background-size: 11px 11px;
     background-attachment: fixed;
     color: var(--color-foreground);
     font-family: var(--font-sans);
@@ -109,19 +105,25 @@
 }
 
 @utility grain {
+  position: relative;
+  isolation: isolate;
   &::after {
     content: "";
     position: fixed;
     inset: 0;
     z-index: -1;
     pointer-events: none;
-    background:
-      radial-gradient(ellipse 24rem 17rem at 4% 13%, rgb(101 198 74 / 22%) 0 42%, transparent 72%),
-      radial-gradient(ellipse 22rem 18rem at 96% 34%, rgb(241 141 184 / 25%) 0 38%, transparent 72%),
-      radial-gradient(ellipse 26rem 17rem at 10% 88%, rgb(201 239 98 / 24%) 0 40%, transparent 72%),
-      radial-gradient(ellipse 23rem 18rem at 92% 91%, rgb(102 199 208 / 20%) 0 38%, transparent 72%),
-      repeating-linear-gradient(135deg, transparent 0 34px, rgb(36 62 36 / 3%) 35px 36px, transparent 37px 70px),
-      var(--portfolio-cream);
+    background-color: var(--portfolio-cream);
+    background-image:
+      radial-gradient(ellipse 17rem 22rem at 2% 14%, #c9ef62 0 34%, transparent 35%),
+      radial-gradient(ellipse 15rem 19rem at 99% 28%, #f18db8 0 32%, transparent 33%),
+      radial-gradient(ellipse 21rem 12rem at 88% 92%, #66c7d0 0 30%, transparent 31%),
+      radial-gradient(ellipse 18rem 14rem at 8% 86%, #65c64a 0 28%, transparent 29%),
+      radial-gradient(circle at 78% 8%, transparent 0 3.6rem, #f47768 3.7rem 4.2rem, transparent 4.3rem),
+      radial-gradient(circle at 22% 57%, transparent 0 2.4rem, #c12864 2.5rem 2.9rem, transparent 3rem),
+      repeating-linear-gradient(135deg, transparent 0 46px, rgb(36 62 36 / 5%) 47px 48px, transparent 49px 94px);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
   &::before {
     content: "";
@@ -129,7 +131,7 @@
     inset: 0;
     pointer-events: none;
     z-index: 40;
-    opacity: 0.05;
+    opacity: 0.045;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 }
