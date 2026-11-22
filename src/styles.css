@@ -1185,3 +1185,46 @@
   from { transform: translate3d(0,0,0) scale(1); }
   to { transform: translate3d(0,-2rem,0) scale(.94); }
 }
+
+
+/* Portrait should read as the human focal point, not a small framed card. */
+@layer components {
+  .pm-hero-art {
+    min-height: clamp(500px, 48vw, 640px);
+  }
+  .pm-portrait-wrap {
+    width: min(82%, 430px);
+    max-width: none;
+    aspect-ratio: 3 / 4;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    overflow: visible;
+  }
+  .pm-portrait-wrap::before,
+  .pm-portrait-wrap::after {
+    inset: -5%;
+    border-radius: 48% 52% 45% 55%;
+    opacity: .72;
+  }
+  .pm-portrait-wrap::after { inset: -9%; }
+  .pm-portrait-video {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    object-fit: contain;
+    object-position: center;
+    filter: drop-shadow(0 22px 28px rgb(36 48 31 / 17%));
+  }
+  .pm-portrait-fallback {
+    background: transparent;
+  }
+  @media (max-width: 767px) {
+    .pm-hero-art { min-height: clamp(420px, 112vw, 520px); }
+    .pm-portrait-wrap {
+      width: min(78%, 340px);
+      aspect-ratio: 3 / 4;
+    }
+  }
+}
