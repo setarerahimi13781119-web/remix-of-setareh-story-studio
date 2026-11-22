@@ -886,7 +886,8 @@ export function SelectedWork() {
                 {project.id === "parla-perfume-ad" && <ParlaGallery />}
                 {project.id === "sayeh-character-design" && <SayehGallery />}
                 {project.id === "khaneh-shalvar" && <KhanehShalvarGallery />}
-                {project.id === "random-pieces" && <RandomPiecesGallery />}\n                {project.id === "moodbean" && <CoffeeAssetsGallery />}
+                {project.id === "random-pieces" && <RandomPiecesGallery />}
+                {project.id === "moodbean" && <CoffeeAssetsGallery />}
                 {project.id === "junoon-podcast" && <JunoonGallery />}
                 {project.tracks?.map((track) => (
                   <section key={track.title} className="border-t border-rule pt-5">
