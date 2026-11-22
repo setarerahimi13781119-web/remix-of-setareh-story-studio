@@ -113,6 +113,20 @@ const parlaImages = [
 function ParlaGallery() {
   return (
     <figure className="border-t border-rule pt-5">
+      <video
+        controls
+        playsInline
+        preload="metadata"
+        poster={parlaImages[0].src}
+        aria-label="Parla fragrance campaign video"
+        className="mx-auto mb-5 max-h-[680px] w-full max-w-[390px] bg-card object-contain"
+      >
+        <source
+          src="https://www.dropbox.com/scl/fi/xry1vz47ptbc5v7zcq4q4/790111340_1795368385767564.mp4?rlkey=6qzr7fr8aqz80xxqjhszszrsg&raw=1"
+          type="video/mp4"
+        />
+        Your browser does not support the video element.
+      </video>
       <ol className="grid gap-4 sm:grid-cols-2">
         {parlaImages.map((image) => (
           <li key={image.src}>
@@ -126,7 +140,7 @@ function ParlaGallery() {
         ))}
       </ol>
       <figcaption className="mt-3 text-xs leading-relaxed text-muted-foreground">
-        Parla fragrance · Campaign visual explorations
+        Parla fragrance · Campaign video and visual explorations
       </figcaption>
     </figure>
   );
