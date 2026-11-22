@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { profile } from "@/data/portfolio";
 import { Reveal } from "./shared";
 
@@ -7,22 +7,8 @@ const identityArtwork =
 const portraitVideo =
   "https://www.dropbox.com/scl/fi/9mcod1ulkfy8jej9eyjdk/904378526_1795363121570568.mp4?rlkey=hww5vo4rfmhnjp1kto3w93mko&raw=1";
 
-export function Hero({ videoActive = false }: { videoActive?: boolean }) {
-  const videoRef = useRef<HTMLVideoElement>(null);
+export function Hero() {
   const [portraitUnavailable, setPortraitUnavailable] = useState(false);
-  const [videoReady, setVideoReady] = useState(false);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video || !videoActive || portraitUnavailable) return;
-
-    const play = video.play();
-    if (play) {
-      play.catch(() => {
-        // Keep the high-quality poster visible if the browser blocks playback.
-      });
-    }
-  }, [videoActive, portraitUnavailable]);
 
   return (
     <section
@@ -81,15 +67,14 @@ export function Hero({ videoActive = false }: { videoActive?: boolean }) {
             </div>
             {!portraitUnavailable && (
               <video
-                ref={videoRef}
-                className={`pm-portrait-video${videoReady ? " is-ready" : ""}`}
+                className="pm-portrait-video"
+                autoPlay
                 muted
                 loop
                 playsInline
                 preload="auto"
                 poster={identityArtwork}
                 aria-label="Animated portrait"
-                onLoadedData={() => setVideoReady(true)}
                 onError={() => setPortraitUnavailable(true)}
               >
                 <source src={portraitVideo} type="video/mp4" />
