@@ -64,4 +64,44 @@
  <path d="M720 160h42M741 139v42"/><path d="M890 900h42M911 879v42"/>
  <path d="M650 690h28M664 676v28"/><path d="M1010 430h28M1024 416v28"/>
 </g>
+
+<!-- music: dimensional eighth note with a soft extruded edge -->
+<g transform="translate(690 365) rotate(-13)">
+ <path d="M8 -112L86 -128V-5C86 22 61 40 35 34C12 29 8 6 25 -10C36 -21 53 -25 68 -22V-93L26 -84V20C26 47 1 65 -25 59C-48 54 -52 31 -35 15C-24 4 -7 0 8 3Z" fill="#243E24" opacity=".13" filter="url(#shadow)" transform="translate(9 13)"/>
+ <path d="M8 -112L86 -128V-5C86 22 61 40 35 34C12 29 8 6 25 -10C36 -21 53 -25 68 -22V-93L26 -84V20C26 47 1 65 -25 59C-48 54 -52 31 -35 15C-24 4 -7 0 8 3Z" fill="#D7EC75" stroke="#537D42" stroke-width="4" stroke-linejoin="round"/>
+ <path d="M26 -84L68 -93" stroke="#F8FFD9" stroke-width="5" stroke-linecap="round"/>
+</g>
+<!-- coffee: sculptural cup, crema and handle -->
+<g transform="translate(930 690) rotate(9)">
+ <ellipse cx="0" cy="80" rx="112" ry="23" fill="#243E24" opacity=".12" filter="url(#shadow)"/>
+ <path d="M-92 -24H78L61 63C57 89 36 106 10 106H-24C-51 106 -73 87 -78 61Z" fill="#D96D70"/>
+ <path d="M78 -9H105C141 -9 142 44 105 55L67 63" fill="none" stroke="#A9435D" stroke-width="22" stroke-linecap="round"/>
+ <path d="M-92 -24H78L72 7H-86Z" fill="#F7B5A0"/>
+ <ellipse cx="-7" cy="-24" rx="85" ry="20" fill="#F2D7AE"/>
+ <ellipse cx="-7" cy="-24" rx="68" ry="13" fill="#744632"/>
+ <path d="M-28 -27C-20 -39 -3 -39 5 -27C-4 -17 -19 -17 -28 -27Z" fill="#E8B86E"/>
+ <path d="M-14 -60C-33 -84 -2 -93 -16 -116M17 -60C-1 -84 28 -96 13 -120" stroke="#C5B7A3" stroke-width="5" stroke-linecap="round" opacity=".7"/>
+ <path d="M-65 15L-52 66" stroke="#F8D3C2" stroke-width="5" stroke-linecap="round" opacity=".55"/>
+</g>
+<!-- open book: folded pages and a visible spine -->
+<g transform="translate(700 850) rotate(-8)">
+ <path d="M-10 -62C-72 -93 -144 -92 -190 -67V75C-135 49 -69 53 -10 91C49 53 115 49 170 75V-67C124 -92 52 -93 -10 -62Z" fill="#243E24" opacity=".13" filter="url(#shadow)" transform="translate(7 12)"/>
+ <path d="M-10 -73C-72 -104 -144 -103 -190 -78V64C-135 38 -69 42 -10 80C49 42 115 38 170 64V-78C124 -103 52 -104 -10 -73Z" fill="#FFF9E9" stroke="#C7BBA8" stroke-width="4" stroke-linejoin="round"/>
+ <path d="M-10 -73V80" stroke="#D3C5B1" stroke-width="5"/>
+ <path d="M-162 -48C-120 -62 -77 -56 -34 -37M-162 -18C-120 -32 -77 -26 -34 -7M-162 12C-120 -2 -77 4 -34 23" stroke="#B7AD9B" stroke-width="5" stroke-linecap="round"/>
+ <path d="M14 -37C57 -56 100 -62 142 -48M14 -7C57 -26 100 -32 142 -18M14 23C57 4 100 -2 142 12" stroke="#B7AD9B" stroke-width="5" stroke-linecap="round"/>
+ <path d="M-10 -73C-55 -101 -112 -103 -160 -90L-160 -78C-110 -88 -55 -83 -10 -55Z" fill="#E8A4B6"/>
+ <path d="M-10 -73C35 -101 92 -103 140 -90V-78C90 -88 35 -83 -10 -55Z" fill="#83C6BB"/>
+</g>
+<!-- singing / voice: a vintage stage microphone with sound waves -->
+<g transform="translate(1050 390) rotate(12)">
+ <path d="M0 -120C-44 -120 -72 -88 -72 -43V18C-72 64 -43 95 0 95C43 95 72 64 72 18V-43C72 -88 44 -120 0 -120Z" fill="#243E24" opacity=".14" filter="url(#shadow)" transform="translate(8 12)"/>
+ <rect x="-65" y="-126" width="130" height="230" rx="64" fill="#E8B7A0" stroke="#A65D57" stroke-width="5"/>
+ <path d="M-55 -58H55M-62 -30H62M-62 -2H62M-58 26H58" stroke="#A65D57" stroke-width="6" stroke-linecap="round" opacity=".75"/>
+ <path d="M-108 -37C-139 3 -134 54 -104 88M108 -37C139 3 134 54 104 88" stroke="#C94F79" stroke-width="8" stroke-linecap="round"/>
+ <path d="M-89 -65C-110 -37 -108 19 -86 45M89 -65C110 -37 108 19 86 45" stroke="#E7A0BB" stroke-width="6" stroke-linecap="round"/>
+ <path d="M0 105V160M-48 160H48" stroke="#A65D57" stroke-width="13" stroke-linecap="round"/>
+ <path d="M-38 104C-36 139 36 139 38 104" stroke="#A65D57" stroke-width="10" fill="none"/>
+ <path d="M-27 -94C-14 -108 9 -110 25 -98" stroke="#FFF0E6" stroke-width="6" stroke-linecap="round" opacity=".8"/>
+</g>
 </svg>
