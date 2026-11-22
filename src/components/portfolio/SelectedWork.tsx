@@ -773,18 +773,13 @@ export function SelectedWork() {
                         className="min-h-0 flex-1 w-full bg-card object-contain"
                       />
                     ) : project.id === "setare-fashion-house-film" ? (
-                      <video
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        preload="metadata"
-                        poster="https://www.dropbox.com/scl/fi/xncc2r3didacdnzew9hgy/setare-fashion-house-cover.jpg?rlkey=ql6x1krumtrk310mbebmloefx&raw=1"
+                      <img
+                        src="https://www.dropbox.com/scl/fi/xncc2r3didacdnzew9hgy/setare-fashion-house-cover.jpg?rlkey=ql6x1krumtrk310mbebmloefx&raw=1"
+                        alt="Setare Fashion House autumn collection film cover"
                         aria-hidden="true"
-                        className="min-h-0 flex-1 w-full bg-card object-cover"
-                      >
-                        <source src={setareFashionFilmVideo} type="video/mp4" />
-                      </video>
+                        loading="lazy"
+                        className="min-h-0 flex-1 w-full bg-card object-contain"
+                      />
                     ) : project.id === "nikmehr" ? (
                       <img
                         src="/assets/portfolio/nikmehr-v2.webp"
