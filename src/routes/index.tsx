@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";\nimport { ScrollWorld } from "@/components/portfolio/ScrollWorld";
 import {
   About,
   Capabilities,
@@ -33,7 +33,7 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <div className="grain min-h-screen">
+    <div className="grain min-h-screen">\n      <ScrollWorld />
       <a
         href="#work"
         className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[70] focus:bg-primary focus:px-3 focus:py-2 focus:text-primary-foreground"
