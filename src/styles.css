@@ -109,6 +109,20 @@
 }
 
 @utility grain {
+  &::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 24rem 17rem at 4% 13%, rgb(101 198 74 / 22%) 0 42%, transparent 72%),
+      radial-gradient(ellipse 22rem 18rem at 96% 34%, rgb(241 141 184 / 25%) 0 38%, transparent 72%),
+      radial-gradient(ellipse 26rem 17rem at 10% 88%, rgb(201 239 98 / 24%) 0 40%, transparent 72%),
+      radial-gradient(ellipse 23rem 18rem at 92% 91%, rgb(102 199 208 / 20%) 0 38%, transparent 72%),
+      repeating-linear-gradient(135deg, transparent 0 34px, rgb(36 62 36 / 3%) 35px 36px, transparent 37px 70px),
+      var(--portfolio-cream);
+  }
   &::before {
     content: "";
     position: fixed;
