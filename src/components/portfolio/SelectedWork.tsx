@@ -647,15 +647,7 @@ export function SelectedWork() {
   return (
     <>
       <div className="portfolio-work-stage">
-        <svg className="portfolio-scroll-ribbon" viewBox="0 0 100 1820" preserveAspectRatio="none" aria-hidden="true">
-          <path className="portfolio-scroll-ribbon__line" pathLength="1" d="M50 0 C12 90 88 160 50 260 S12 430 50 520 S88 690 50 780 S12 950 50 1040 S88 1210 50 1300 S12 1470 50 1560 S88 1730 50 1820" />
-          <path className="portfolio-scroll-ribbon__echo" d="M50 0 C12 90 88 160 50 260 S12 430 50 520 S88 690 50 780 S12 950 50 1040 S88 1210 50 1300 S12 1470 50 1560 S88 1730 50 1820" />
-          <circle className="portfolio-scroll-ribbon__node portfolio-scroll-ribbon__node--one" cx="50" cy="260" r="7" />
-          <circle className="portfolio-scroll-ribbon__node portfolio-scroll-ribbon__node--two" cx="50" cy="780" r="10" />
-          <circle className="portfolio-scroll-ribbon__node portfolio-scroll-ribbon__node--three" cx="50" cy="1300" r="8" />
-          <circle className="portfolio-scroll-ribbon__finish" cx="50" cy="1770" r="22" />
-          <circle className="portfolio-scroll-ribbon__finish portfolio-scroll-ribbon__finish--inner" cx="50" cy="1770" r="10" />
-        </svg>
+        
         <ol className="portfolio-work-grid">
         {projects.map((project, projectIndex) => (
           <li key={project.id} className={`portfolio-work-item portfolio-work-item--${(projectIndex % 6) + 1}`}>
