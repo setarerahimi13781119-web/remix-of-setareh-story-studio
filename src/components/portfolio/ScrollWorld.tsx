@@ -1,9 +1,32 @@
 import { useEffect, useState } from "react";
 
-/**
- * Scroll-linked liquid artwork. The material follows document progress directly,
- * then solidifies into the final Playful Matter sculpture near the page end.
- */
+const liquidStages = [
+  "M-90 760 C150 680 260 790 470 750 C620 720 820 720 970 750 C1180 800 1300 680 1530 740 L1530 1050 L-90 1050Z",
+  "M-90 760 C150 680 260 790 470 700 C590 650 610 500 720 500 C830 500 850 650 970 700 C1180 800 1300 680 1530 740 L1530 1050 L-90 1050Z",
+  "M-90 760 C150 680 260 790 470 650 C560 580 550 350 650 350 C710 350 680 570 720 570 C760 570 730 350 790 350 C890 350 880 580 970 650 C1180 800 1300 680 1530 740 L1530 1050 L-90 1050Z",
+  "M-90 760 C150 680 260 790 430 650 C500 590 470 390 570 330 C650 280 680 430 720 470 C760 430 790 280 870 330 C970 390 940 590 1010 650 C1180 800 1300 680 1530 740 L1530 1050 L-90 1050Z",
+];
+
+function mixPath(from: string, to: string, amount: number) {
+  const a = from.match(/-?\\d+(?:\\.\\d+)?/g)?.map(Number) ?? [];
+  const b = to.match(/-?\\d+(?:\\.\\d+)?/g)?.map(Number) ?? [];
+  let index = 0;
+  return from.replace(/-?\\d+(?:\\.\\d+)?/g, () => {
+    const value = a[index] + (b[index] - a[index]) * amount;
+    index += 1;
+    return value.toFixed(1);
+  });
+}
+
+function shapeAt(progress: number) {
+  const scaled = Math.min(liquidStages.length - 1, Math.max(0, progress) * (liquidStages.length - 1));
+  const stage = Math.floor(scaled);
+  return stage >= liquidStages.length - 1
+    ? liquidStages[liquidStages.length - 1]
+    : mixPath(liquidStages[stage], liquidStages[stage + 1], scaled - stage);
+}
+
+/** One continuous liquid body that physically changes silhouette with page scroll. */
 export function ScrollWorld() {
   const [progress, setProgress] = useState(0);
 
@@ -27,79 +50,70 @@ export function ScrollWorld() {
     };
   }, []);
 
-  const liquidY = 125 - progress * 148;
-  const liquidScale = 0.82 + progress * 0.2;
-  const build = Math.min(1, Math.max(0, (progress - 0.28) / 0.58));
-  const finale = Math.min(1, Math.max(0, (progress - 0.72) / 0.25));
+  const build = Math.min(1, Math.max(0, (progress - 0.48) / 0.48));
+  const finale = Math.min(1, Math.max(0, (progress - 0.86) / 0.14));
+  const surfacePath = shapeAt(progress);
+  const wobble = 10 + progress * 24;
 
   return (
     <div className="pm-world" aria-hidden="true">
       <svg className="pm-world__art" viewBox="0 0 1440 1000" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="pm-liquid-pink" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stopColor="#ffe0e8" /><stop offset=".38" stopColor="#f6a2c4" /><stop offset=".75" stopColor="#ed78aa" /><stop offset="1" stopColor="#d95b91" />
+            <stop offset="0" stopColor="#ffe5ed" /><stop offset=".38" stopColor="#f6a2c4" /><stop offset=".78" stopColor="#e96fa5" /><stop offset="1" stopColor="#c94f85" />
           </linearGradient>
           <linearGradient id="pm-liquid-lime" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stopColor="#efffae" /><stop offset=".48" stopColor="#c8eb70" /><stop offset="1" stopColor="#83c84f" />
+            <stop offset="0" stopColor="#f1ffb8" /><stop offset=".5" stopColor="#c9ed72" /><stop offset="1" stopColor="#82bd4c" />
           </linearGradient>
-          <linearGradient id="pm-liquid-peach" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stopColor="#fff1d9" /><stop offset="1" stopColor="#f4c4a9" />
+          <linearGradient id="pm-liquid-cream" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stopColor="#fff5df" /><stop offset="1" stopColor="#efc3a9" />
           </linearGradient>
-          <radialGradient id="pm-liquid-gloss" cx="30%" cy="20%" r="80%">
-            <stop offset="0" stopColor="#fff" stopOpacity=".88" /><stop offset=".28" stopColor="#fff" stopOpacity=".22" /><stop offset="1" stopColor="#fff" stopOpacity="0" />
+          <radialGradient id="pm-liquid-shine" cx="28%" cy="18%" r="82%">
+            <stop offset="0" stopColor="#fff" stopOpacity=".92" /><stop offset=".34" stopColor="#fff" stopOpacity=".22" /><stop offset="1" stopColor="#fff" stopOpacity="0" />
           </radialGradient>
-          <filter id="pm-goo" x="-30%" y="-35%" width="160%" height="180%">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="23" result="blur" />
-            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 26 -11" result="goo" />
-            <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+          <filter id="pm-goo" x="-25%" y="-35%" width="150%" height="180%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="19" result="blur" />
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -9" result="goo" />
           </filter>
-          <filter id="pm-depth" x="-35%" y="-35%" width="170%" height="180%">
-            <feGaussianBlur in="SourceAlpha" stdDeviation="17" result="shadow" />
-            <feOffset in="shadow" dy="20" result="offset" />
-            <feColorMatrix in="offset" type="matrix" values="0 0 0 0 .22  0 0 0 0 .19  0 0 0 0 .24  0 0 0 .17 0" result="shade" />
+          <filter id="pm-depth" x="-30%" y="-35%" width="160%" height="180%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="18" result="shadow" />
+            <feOffset in="shadow" dy="22" result="offset" />
+            <feColorMatrix in="offset" type="matrix" values="0 0 0 0 .22  0 0 0 0 .18  0 0 0 0 .23  0 0 0 .18 0" result="shade" />
             <feMerge><feMergeNode in="shade" /><feMergeNode in="SourceGraphic" /></feMerge>
           </filter>
         </defs>
 
-        {/* Early droplets gather into one continuous, soft-edged liquid body. */}
-        <g className="pm-world__droplets" opacity={1 - build * .9} transform={`translate(0 ${progress * 42})`}>
-          <ellipse cx="250" cy="250" rx="112" ry="72" fill="url(#pm-liquid-lime)" />
-          <ellipse cx="1130" cy="270" rx="92" ry="64" fill="url(#pm-liquid-pink)" />
-          <ellipse cx="1010" cy="440" rx="34" ry="25" fill="url(#pm-liquid-peach)" />
-          <ellipse cx="390" cy="550" rx="26" ry="20" fill="url(#pm-liquid-lime)" />
+        {/* The same pool stretches upward; overlapping volumes fuse into one silhouette. */}
+        <g className="pm-world__liquid" filter="url(#pm-goo)">
+          <path d={surfacePath} fill="url(#pm-liquid-pink)" />
+          <ellipse cx="260" cy="770" rx="205" ry="116" fill="url(#pm-liquid-lime)" />
+          <ellipse cx="720" cy={790 - progress * 155} rx={235 - progress * 38} ry={112 + progress * 48} fill="url(#pm-liquid-cream)" />
+          <ellipse cx="1180" cy="770" rx="220" ry="128" fill="url(#pm-liquid-pink)" />
+          <path d={`M720 860 C${600 - progress * 45} 760 ${640 - progress * 65} ${620 - progress * 235} 720 ${610 - progress * 250} C${800 + progress * 65} ${620 - progress * 235} ${840 + progress * 45} 760 720 860Z`} fill="url(#pm-liquid-lime)" opacity=".96" />
+          <circle cx={440 - progress * 65} cy={690 - progress * 210} r={48 + progress * 34} fill="url(#pm-liquid-lime)" />
+          <circle cx={1000 + progress * 55} cy={690 - progress * 210} r={55 + progress * 34} fill="url(#pm-liquid-pink)" />
         </g>
 
-        {/* The goo filter makes the streams merge as one viscous, organic material. */}
-        <g className="pm-world__liquid" filter="url(#pm-goo)" transform={`translate(0 ${liquidY}) translate(720 690) scale(${liquidScale}) translate(-720 -690)`}>
-          <path d="M-90 760 C80 625 220 850 390 740 C520 655 580 675 700 720 C835 770 925 835 1055 730 C1180 630 1330 650 1530 720 L1530 1040 L-90 1040Z" fill="url(#pm-liquid-pink)" />
-          <ellipse cx="245" cy="745" rx="190" ry="115" fill="url(#pm-liquid-lime)" />
-          <ellipse cx="710" cy="770" rx="250" ry="105" fill="url(#pm-liquid-peach)" />
-          <ellipse cx="1190" cy="735" rx="210" ry="125" fill="url(#pm-liquid-pink)" />
-          <circle cx="425" cy="680" r="82" fill="url(#pm-liquid-lime)" />
-          <circle cx="980" cy="680" r="95" fill="url(#pm-liquid-pink)" />
-          <path d="M-30 735 C170 625 265 815 430 715 S680 650 820 720 S1060 820 1210 700 S1410 665 1510 715" fill="none" stroke="#fff4e8" strokeWidth="13" strokeLinecap="round" opacity=".56" />
-        </g>
-        <g className="pm-world__liquid-gloss" opacity={.24 + progress * .18} transform={`translate(0 ${liquidY}) translate(720 690) scale(${liquidScale}) translate(-720 -690)`}>
-          <path d="M40 725 C190 650 280 775 420 700 S670 660 800 710 S1040 785 1190 690" fill="none" stroke="url(#pm-liquid-gloss)" strokeWidth="28" strokeLinecap="round" />
-          <ellipse cx="360" cy="680" rx="105" ry="24" fill="#fff" opacity=".3" />
-          <ellipse cx="1080" cy="682" rx="92" ry="22" fill="#fff" opacity=".26" />
+        {/* A moving highlight makes the surface read as glossy, viscous material. */}
+        <g className="pm-world__liquid-gloss" opacity=".62">
+          <path d={surfacePath} fill="url(#pm-liquid-shine)" />
+          <path d={`M80 ${735 - progress * 120} C260 ${665 - progress * 90} 360 ${790 - progress * 160} 520 ${690 - progress * 240} S820 ${660 - progress * 230} 970 ${710 - progress * 150} S1200 ${770 - progress * 90} 1370 ${690 - progress * 140}`} fill="none" stroke="#fff" strokeWidth={wobble} strokeLinecap="round" opacity=".46" />
+          <ellipse cx={350 + progress * 210} cy={650 - progress * 185} rx="112" ry="24" fill="#fff" opacity=".42" />
         </g>
 
-        {/* A single sculptural world rises out of the liquid as the page progresses. */}
-        <g className="pm-world__sculpture" opacity={build} transform={`translate(0 ${(1 - build) * 155}) scale(${.86 + build * .14})`} transform-origin="720 680" filter="url(#pm-depth)">
-          <path d="M410 760 V565 C410 420 520 330 655 330 H790 C925 330 1030 425 1030 565 V760 H930 V570 C930 480 865 425 785 425 H660 C575 425 510 480 510 570 V760Z" fill="url(#pm-liquid-peach)" />
-          <path d="M530 760 V600 C530 520 585 470 660 470 H785 C860 470 910 520 910 600 V760 H835 V610 C835 565 815 545 775 545 H670 C630 545 605 565 605 610 V760Z" fill="url(#pm-liquid-lime)" />
-          <path d="M665 760 V660 C665 625 685 605 720 605 C755 605 775 625 775 660 V760Z" fill="url(#pm-liquid-pink)" />
-          <path d="M330 760 C470 720 550 785 720 760 C890 735 990 720 1110 760 L1080 820 H360Z" fill="url(#pm-liquid-lime)" />
-          <path d="M470 820 C560 790 640 830 720 815 C810 798 895 790 970 820 L940 860 H500Z" fill="url(#pm-liquid-pink)" />
-          <path d="M520 460 C560 375 635 360 700 360" fill="none" stroke="#fff" strokeWidth="12" strokeLinecap="round" opacity=".56" />
-          <path d="M800 360 C890 380 930 430 945 490" fill="none" stroke="#fff" strokeWidth="10" strokeLinecap="round" opacity=".48" />
+        {/* The final arch is revealed only after the liquid has already grown into it. */}
+        <g className="pm-world__sculpture" opacity={build} transform={`translate(0 ${(1 - build) * 105})`} filter="url(#pm-depth)">
+          <path d="M410 780 V565 C410 420 520 330 655 330 H790 C925 330 1030 425 1030 565 V780 H930 V570 C930 480 865 425 785 425 H660 C575 425 510 480 510 570 V780Z" fill="url(#pm-liquid-cream)" />
+          <path d="M530 780 V600 C530 520 585 470 660 470 H785 C860 470 910 520 910 600 V780 H835 V610 C835 565 815 545 775 545 H670 C630 545 605 565 605 610 V780Z" fill="url(#pm-liquid-lime)" />
+          <path d="M665 780 V660 C665 625 685 605 720 605 C755 605 775 625 775 660 V780Z" fill="url(#pm-liquid-pink)" />
+          <path d="M330 770 C470 720 550 795 720 765 C890 735 990 720 1110 770 L1080 835 H360Z" fill="url(#pm-liquid-lime)" />
+          <path d="M520 455 C560 375 635 360 700 360" fill="none" stroke="#fff" strokeWidth="13" strokeLinecap="round" opacity=".68" />
+          <path d="M800 360 C890 380 930 430 945 490" fill="none" stroke="#fff" strokeWidth="11" strokeLinecap="round" opacity=".56" />
         </g>
-        <g className="pm-world__finish" opacity={finale} transform={`translate(0 ${(1 - finale) * 45})`}>
-          <ellipse cx="720" cy="315" rx="185" ry="82" fill="url(#pm-liquid-gloss)" />
-          <circle cx="720" cy="300" r="37" fill="url(#pm-liquid-pink)" />
-          <circle cx="720" cy="288" r="12" fill="#fff" opacity=".65" />
-          <path d="M690 250 Q720 220 750 250" fill="none" stroke="#fff" strokeWidth="8" strokeLinecap="round" opacity=".72" />
+        <g opacity={finale} transform={`translate(0 ${(1 - finale) * 35})`}>
+          <ellipse cx="720" cy="300" rx="175" ry="66" fill="url(#pm-liquid-shine)" />
+          <circle cx="720" cy="286" r="28" fill="url(#pm-liquid-pink)" />
+          <circle cx="710" cy="277" r="9" fill="#fff" opacity=".72" />
         </g>
       </svg>
       <div className="pm-world__wash" />
