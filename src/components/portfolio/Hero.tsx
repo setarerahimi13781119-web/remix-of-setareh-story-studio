@@ -110,6 +110,22 @@ export function Hero() {
               <FloatingImagePiece key={piece.className} {...piece} />
             ))}
           </div>
+          <div className="pm-portrait-wrap">
+            <video
+              className="pm-portrait-video"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              aria-label="Animated portrait"
+            >
+              <source
+                src="https://www.dropbox.com/scl/fi/9mcod1ulkfy8jej9eyjdk/904378526_1795363121570568.mp4?rlkey=hww5vo4rfmhnjp1kto3w93mko&raw=1"
+                type="video/mp4"
+              />
+            </video>
+          </div>
           <span className="pm-art-index">PM — 001 / FORM STUDY</span>
         </div>
       </Reveal>
