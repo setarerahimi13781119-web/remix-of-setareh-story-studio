@@ -60,26 +60,28 @@ export function Hero() {
             <span className="pm-form pm-form--green" />
           </div>
 
-          <div className="pm-portrait-wrap">
+          <div
+            className="pm-portrait-wrap"
+            data-video-error={portraitUnavailable ? "true" : "false"}
+          >
             <div className="pm-portrait-fallback" aria-hidden="true">
-              <span>Portrait</span>
+              <span>{portraitUnavailable ? "Video unavailable" : "Portrait"}</span>
               <small>Ideas in motion</small>
             </div>
-            {!portraitUnavailable && (
-              <video
-                className="pm-portrait-video"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="auto"
-                poster={identityArtwork}
-                aria-label="Animated portrait"
-                onError={() => setPortraitUnavailable(true)}
-              >
-                <source src={portraitVideo} type="video/mp4" />
-              </video>
-            )}
+            <video
+              className="pm-portrait-video"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+              poster={identityArtwork}
+              aria-label="Animated portrait"
+              onLoadedData={() => setPortraitUnavailable(false)}
+              onError={() => setPortraitUnavailable(true)}
+            >
+              <source src={portraitVideo} type="video/mp4" />
+            </video>
           </div>
 
           <p className="pm-art-caption">
