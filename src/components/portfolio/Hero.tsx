@@ -14,7 +14,7 @@ export function Hero() {
     <section
       id="top"
       aria-labelledby="hero-title"
-      className="pm-hero mx-auto grid max-w-7xl grid-cols-1 items-center gap-8 px-5 py-14 md:grid-cols-12 md:gap-6 md:px-10 md:py-20 lg:min-h-[min(820px,calc(100svh-76px))] lg:py-24"
+      className="pm-hero pm-hero--fullbleed"
     >
       <Reveal className="pm-hero-copy col-span-1 md:col-span-7">
         <p className="pm-hero-eyebrow eyebrow mb-7 flex items-center gap-3">
