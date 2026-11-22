@@ -797,7 +797,7 @@
   }
   .pm-world__liquid {
     transform-origin: 50% 80%;
-    filter: drop-shadow(0 28px 35px rgb(75 57 63 / 12%));
+    filter: url(#pm-goo) drop-shadow(0 28px 35px rgb(75 57 63 / 12%));
   }
   .pm-world__gloss {
     mix-blend-mode: screen;
