@@ -1708,3 +1708,75 @@
     filter: brightness(.76) saturate(.82);
   }
 }
+
+
+/* UX and rendering pass — keep the gallery fluid without clipping its depth. */
+@layer components {
+  .portfolio-work-stage {
+    overflow: visible;
+  }
+
+  .portfolio-work-card {
+    will-change: auto;
+    backface-visibility: hidden;
+  }
+
+  .portfolio-art-frame::before {
+    content: attr(data-index) " / 14";
+  }
+
+  .portfolio-work-grid > .portfolio-work-item {
+    --gallery-x: -1.8vw;
+    --gallery-tilt: -4.5deg;
+  }
+
+  .portfolio-work-grid > .portfolio-work-item:nth-child(even) {
+    --gallery-x: 1.8vw;
+    --gallery-tilt: 4.5deg;
+  }
+
+  @media (max-width: 767px) {
+    .portfolio-work-grid > .portfolio-work-item {
+      --gallery-x: -.45rem;
+      --gallery-tilt: -1.5deg;
+    }
+
+    .portfolio-work-grid > .portfolio-work-item:nth-child(even) {
+      --gallery-x: .45rem;
+      --gallery-tilt: 1.5deg;
+    }
+  }
+
+  @media (hover: none) {
+    .portfolio-cover-trigger:hover {
+      transform: none;
+    }
+    .portfolio-cover-trigger:hover .portfolio-art-frame::after {
+      inset: .42rem;
+      border-color: rgb(255 255 255 / 64%);
+    }
+  }
+}
+
+@keyframes portfolio-camera-pass {
+  0% {
+    transform: perspective(1900px) translate3d(var(--gallery-x, -1.8vw), 4rem, -260px) rotateX(12deg) rotateY(var(--gallery-tilt, -4.5deg)) scale(.86);
+    opacity: .82;
+  }
+  25% {
+    transform: perspective(1900px) translate3d(calc(var(--gallery-x, -1.8vw) * .35), 1rem, -78px) rotateX(4deg) rotateY(calc(var(--gallery-tilt, -4.5deg) * .35)) scale(.95);
+    opacity: .96;
+  }
+  44%, 58% {
+    transform: perspective(1900px) translate3d(0, 0, 0) rotateX(0) rotateY(0) scale(1);
+    opacity: 1;
+  }
+  78% {
+    transform: perspective(1900px) translate3d(calc(var(--gallery-x, -1.8vw) * -.35), -1rem, -80px) rotateX(-4deg) rotateY(calc(var(--gallery-tilt, -4.5deg) * -.35)) scale(.94);
+    opacity: .96;
+  }
+  100% {
+    transform: perspective(1900px) translate3d(calc(var(--gallery-x, -1.8vw) * -1), -4rem, -260px) rotateX(-11deg) rotateY(calc(var(--gallery-tilt, -4.5deg) * -1)) scale(.86);
+    opacity: .82;
+  }
+}
