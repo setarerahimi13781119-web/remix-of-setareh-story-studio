@@ -44,6 +44,18 @@ export function Hero() {
       <Reveal className="pm-hero-visual-col col-span-1 md:col-span-5">
         <div className="pm-hero-art" aria-label="Playful Matter portrait and sculptural artwork">
           <div className="pm-sculpture-stage" aria-hidden="true">
+            <svg className="sr-only" aria-hidden="true" focusable="false">
+              <defs>
+                <filter id="pm-liquid-warp" x="-35%" y="-35%" width="170%" height="170%" colorInterpolationFilters="sRGB">
+                  <feTurbulence type="fractalNoise" baseFrequency="0.014 0.021" numOctaves="2" seed="8" result="liquidNoise">
+                    <animate attributeName="baseFrequency" values="0.012 0.018;0.025 0.012;0.014 0.026;0.012 0.018" dur="8s" repeatCount="indefinite" />
+                  </feTurbulence>
+                  <feDisplacementMap in="SourceGraphic" in2="liquidNoise" scale="25" xChannelSelector="R" yChannelSelector="G">
+                    <animate attributeName="scale" values="18;34;22;18" dur="6s" repeatCount="indefinite" />
+                  </feDisplacementMap>
+                </filter>
+              </defs>
+            </svg>
             <img
               className="pm-sculpture"
               src={identityArtwork}
