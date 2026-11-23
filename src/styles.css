@@ -3081,3 +3081,54 @@
     .pm-world__art { opacity: .36 !important; }
   }
 }
+
+
+/* Scroll response — quiet progress, editorial reveals, and no decorative objects. */
+@layer components {
+  .scroll-progress {
+    position: fixed;
+    z-index: 80;
+    inset: 0 auto auto 0;
+    width: 100%;
+    height: 3px;
+    pointer-events: none;
+    transform: scaleX(var(--scroll-progress, 0));
+    transform-origin: left center;
+    background: linear-gradient(90deg, #243e24 0%, #9eb67a 42%, #c12864 100%);
+    box-shadow: 0 1px 5px rgb(36 62 36 / 12%);
+    will-change: transform;
+  }
+  html.has-scroll-observer .portfolio-category-section,
+  html.has-scroll-observer .portfolio-work-item {
+    opacity: 0;
+    transform: translate3d(0, 22px, 0);
+    transition:
+      opacity 620ms cubic-bezier(.2,.7,.2,1),
+      transform 720ms cubic-bezier(.2,.7,.2,1);
+  }
+  html.has-scroll-observer .portfolio-category-section.scroll-in-view,
+  html.has-scroll-observer .portfolio-work-item.scroll-in-view {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  .portfolio-work-item:nth-child(3n + 2) { transition-delay: 70ms; }
+  .portfolio-work-item:nth-child(3n + 3) { transition-delay: 140ms; }
+  @media (max-width: 767px) {
+    .scroll-progress { height: 2px; }
+    html.has-scroll-observer .portfolio-category-section,
+    html.has-scroll-observer .portfolio-work-item {
+      transform: translate3d(0, 14px, 0);
+      transition-duration: 460ms;
+    }
+    .portfolio-work-item:nth-child(n) { transition-delay: 0ms; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .scroll-progress { display: none; }
+    html.has-scroll-observer .portfolio-category-section,
+    html.has-scroll-observer .portfolio-work-item {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+}
