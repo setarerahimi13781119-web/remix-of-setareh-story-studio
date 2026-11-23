@@ -685,7 +685,27 @@ export function SelectedWork() {
         {projects.map((project, projectIndex) => (
           <li key={project.id} className={`portfolio-work-item portfolio-work-item--${(projectIndex % 6) + 1}`}>
             <Dialog>
-              <article className="portfolio-work-card flex h-full flex-col">
+              <article
+                className="portfolio-work-card flex h-full flex-col"
+                onPointerMove={(event) => {
+                  if (event.pointerType !== "mouse") return;
+                  const card = event.currentTarget;
+                  const rect = card.getBoundingClientRect();
+                  const x = (event.clientX - rect.left) / rect.width;
+                  const y = (event.clientY - rect.top) / rect.height;
+                  card.style.setProperty("--card-rotate-y", `${(x - 0.5) * 8}deg`);
+                  card.style.setProperty("--card-rotate-x", `${(0.5 - y) * 8}deg`);
+                  card.style.setProperty("--card-pointer-x", `${x * 100}%`);
+                  card.style.setProperty("--card-pointer-y", `${y * 100}%`);
+                  card.classList.add("is-3d-active");
+                }}
+                onPointerLeave={(event) => {
+                  const card = event.currentTarget;
+                  card.classList.remove("is-3d-active");
+                  card.style.removeProperty("--card-rotate-x");
+                  card.style.removeProperty("--card-rotate-y");
+                }}
+              >
                 <DialogTrigger asChild>
                   <Button
                     variant="ghost"
