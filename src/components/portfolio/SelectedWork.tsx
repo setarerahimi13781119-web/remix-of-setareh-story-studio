@@ -720,7 +720,14 @@ export function SelectedWork() {
                 </span>
               </button>
               {openCategory === group.id && (
-              <ol id={`projects-${group.id}`} className="portfolio-work-grid">
+              <div className="portfolio-carousel-shell">
+                <button
+                  type="button"
+                  className="portfolio-carousel-arrow portfolio-carousel-arrow--prev"
+                  aria-label={`Previous projects in ${group.title}`}
+                  onClick={() => document.getElementById(`projects-${group.id}`)?.scrollBy({ left: -420, behavior: "smooth" })}
+                >←</button>
+                <ol id={`projects-${group.id}`} className="portfolio-work-grid" tabIndex={0} aria-label={`${group.title} projects`}>
                 {groupedProjects.map((project, projectIndex) => (
           <li key={project.id} className={`portfolio-work-item portfolio-work-item--${(projectIndex % 6) + 1}`}>
             <Dialog>
@@ -1036,7 +1043,14 @@ export function SelectedWork() {
             </Dialog>
           </li>
                 ))}
-              </ol>
+                </ol>
+                <button
+                  type="button"
+                  className="portfolio-carousel-arrow portfolio-carousel-arrow--next"
+                  aria-label={`Next projects in ${group.title}`}
+                  onClick={() => document.getElementById(`projects-${group.id}`)?.scrollBy({ left: 420, behavior: "smooth" })}
+                >→</button>
+              </div>
               )}
             </section>
           );
