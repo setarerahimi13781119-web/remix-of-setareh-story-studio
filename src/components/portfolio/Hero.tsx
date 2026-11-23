@@ -48,10 +48,10 @@ export function Hero() {
               <defs>
                 <filter id="pm-liquid-warp" x="-35%" y="-35%" width="170%" height="170%" colorInterpolationFilters="sRGB">
                   <feTurbulence type="fractalNoise" baseFrequency="0.014 0.021" numOctaves="2" seed="8" result="liquidNoise">
-                    <animate attributeName="baseFrequency" values="0.012 0.018;0.025 0.012;0.014 0.026;0.012 0.018" dur="8s" repeatCount="indefinite" />
+                    <animate attributeName="baseFrequency" values="0.010 0.016;0.030 0.012;0.014 0.032;0.010 0.016" dur="5.6s" repeatCount="indefinite" />
                   </feTurbulence>
                   <feDisplacementMap in="SourceGraphic" in2="liquidNoise" scale="25" xChannelSelector="R" yChannelSelector="G">
-                    <animate attributeName="scale" values="18;34;22;18" dur="6s" repeatCount="indefinite" />
+                    <animate attributeName="scale" values="22;46;28;40;22" dur="4.8s" repeatCount="indefinite" />
                   </feDisplacementMap>
                 </filter>
               </defs>
