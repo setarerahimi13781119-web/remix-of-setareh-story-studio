@@ -1523,120 +1523,73 @@
 }
 
 
-/* Interactive 3D portfolio frames — preserves the original artwork and dialog flow. */
+/* Cinematic scroll gallery: each complete project card travels through a shared 3D focal plane. */
 @layer components {
   .portfolio-work-stage {
-    perspective: 1600px;
-    perspective-origin: 50% 42%;
-  }
-
-  .portfolio-work-item {
-    perspective: 1200px;
+    perspective: 1800px;
+    perspective-origin: 50% 46%;
+    transform-style: preserve-3d;
   }
 
   .portfolio-work-card {
     position: relative;
     transform-style: preserve-3d;
-    transform: rotateX(0deg) rotateY(0deg);
-    transition:
-      transform 420ms cubic-bezier(.2,.8,.2,1),
-      filter 420ms ease;
-    will-change: transform;
-  }
-
-  .portfolio-work-card.is-3d-active {
-    transform:
-      perspective(1200px)
-      rotateX(var(--card-rotate-x, 0deg))
-      rotateY(var(--card-rotate-y, 0deg))
-      translateY(-5px);
-    filter: drop-shadow(0 24px 30px rgb(31 34 29 / 16%));
+    transform-origin: 50% 50%;
+    backface-visibility: visible;
   }
 
   .portfolio-work-card .portfolio-art-frame {
-    position: relative;
-    transform: translateZ(22px);
+    transform: translateZ(18px);
     transform-style: preserve-3d;
-    padding: clamp(7px, 1.15vw, 12px);
-    border: 1px solid rgb(101 198 74 / 38%);
-    background:
-      linear-gradient(145deg, rgb(255 255 255 / 92%), rgb(236 232 220 / 88%));
-    box-shadow:
-      0 18px 28px rgb(31 34 29 / 12%),
-      inset 0 1px 0 rgb(255 255 255 / 95%);
-    transition:
-      transform 420ms cubic-bezier(.2,.8,.2,1),
-      box-shadow 420ms ease;
-  }
-
-  .portfolio-work-card .portfolio-art-frame::before {
-    display: block;
-    content: "";
-    position: absolute;
-    z-index: 3;
-    inset: 5px;
-    border: 1px solid rgb(255 255 255 / 72%);
-    pointer-events: none;
-  }
-
-  .portfolio-work-card .portfolio-art-frame::after {
-    display: block;
-    content: "";
-    position: absolute;
-    z-index: 2;
-    inset: 0;
-    opacity: 0;
-    background: radial-gradient(
-      circle at var(--card-pointer-x, 50%) var(--card-pointer-y, 50%),
-      rgb(255 255 255 / 42%),
-      transparent 48%
-    );
-    mix-blend-mode: screen;
-    pointer-events: none;
-    transition: opacity 220ms ease;
-  }
-
-  .portfolio-work-card.is-3d-active .portfolio-art-frame {
-    box-shadow:
-      0 26px 38px rgb(31 34 29 / 18%),
-      inset 0 1px 0 rgb(255 255 255 / 95%);
-  }
-
-  .portfolio-work-card.is-3d-active .portfolio-art-frame::after {
-    opacity: 1;
-  }
-
-  .portfolio-work-card .portfolio-art-frame > img,
-  .portfolio-work-card .portfolio-art-frame > video {
-    transform: translateZ(10px);
     backface-visibility: hidden;
   }
 
-  .portfolio-work-card .portfolio-cover-trigger:hover .portfolio-art-frame > img,
-  .portfolio-work-card .portfolio-cover-trigger:hover .portfolio-art-frame > video {
-    transform: translateZ(10px) scale(1.012);
+  @supports (animation-timeline: view()) {
+    .portfolio-work-card {
+      animation: portfolio-camera-pass 1s linear both;
+      animation-timeline: view(block);
+      animation-range: entry 0% exit 100%;
+    }
   }
 
   @media (max-width: 899px) {
     .portfolio-work-stage {
-      perspective: 1100px;
-    }
-
-    .portfolio-work-card .portfolio-art-frame {
-      padding: 7px;
+      perspective: 1300px;
+      perspective-origin: 50% 48%;
     }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .portfolio-work-card,
-    .portfolio-work-card .portfolio-art-frame,
-    .portfolio-work-card .portfolio-art-frame::after {
-      transition: none;
+    .portfolio-work-card {
+      animation: none !important;
+      transform: none !important;
+      filter: none !important;
     }
+    .portfolio-work-card .portfolio-art-frame {
+      transform: none !important;
+    }
+  }
+}
 
-    .portfolio-work-card.is-3d-active {
-      transform: none;
-      filter: none;
-    }
+@keyframes portfolio-camera-pass {
+  0% {
+    transform: perspective(1800px) translate3d(0, 4.5rem, -220px) rotateX(13deg) rotateY(-4deg) scale(.86);
+    filter: brightness(.82);
+  }
+  28% {
+    transform: perspective(1800px) translate3d(0, 1.2rem, -70px) rotateX(5deg) rotateY(-1.5deg) scale(.95);
+    filter: brightness(.94);
+  }
+  48%, 56% {
+    transform: perspective(1800px) translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) scale(1);
+    filter: brightness(1);
+  }
+  76% {
+    transform: perspective(1800px) translate3d(0, -1.2rem, -75px) rotateX(-5deg) rotateY(2deg) scale(.94);
+    filter: brightness(.93);
+  }
+  100% {
+    transform: perspective(1800px) translate3d(0, -4rem, -220px) rotateX(-12deg) rotateY(4deg) scale(.86);
+    filter: brightness(.82);
   }
 }
