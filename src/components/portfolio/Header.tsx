@@ -17,6 +17,7 @@ export function BrandMark() {
         <circle cx="36.5" cy="6.5" r="2.5" fill="#C12864" />
       </svg>
       <span>Setareh Rahimi</span>
+      <span className="pm-mascot-mark" aria-hidden="true"><i /><i /><b /></span>
     </a>
   );
 }
