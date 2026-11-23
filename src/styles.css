@@ -1850,3 +1850,153 @@
   }
 }
 
+
+
+/* Selected work — elevated editorial gallery cards. */
+@layer components {
+  .portfolio-category-section .portfolio-work-card {
+    height: 100%;
+    padding: clamp(.85rem, 1.8vw, 1.35rem);
+    border: 1px solid rgb(48 57 43 / 10%);
+    border-radius: 22px;
+    background: linear-gradient(155deg, rgb(255 255 255 / 94%), rgb(249 246 239 / 88%));
+    box-shadow: 0 3px 0 rgb(46 54 42 / 5%), 0 14px 34px rgb(43 49 39 / 7%);
+    transition: transform 420ms cubic-bezier(.2,.8,.2,1), box-shadow 420ms ease, border-color 420ms ease;
+  }
+
+  .portfolio-category-section .portfolio-work-card:hover {
+    transform: translateY(-6px);
+    border-color: rgb(101 198 74 / 34%);
+    box-shadow: 0 4px 0 rgb(46 54 42 / 5%), 0 24px 48px rgb(43 49 39 / 12%);
+  }
+
+  .portfolio-category-section .portfolio-cover-trigger {
+    gap: clamp(.8rem, 1.4vw, 1.1rem);
+  }
+
+  .portfolio-category-section .portfolio-cover-trigger > .eyebrow {
+    display: flex;
+    align-items: center;
+    min-height: 2rem;
+    padding: .35rem .65rem;
+    border: 1px solid rgb(48 57 43 / 10%);
+    border-radius: 999px;
+    background: rgb(244 241 234 / 78%);
+    letter-spacing: .1em;
+    font-size: .6rem;
+  }
+
+  .portfolio-category-section .portfolio-cover-trigger > .eyebrow svg {
+    width: 1rem;
+    height: 1rem;
+    opacity: .72;
+    transition: transform 260ms ease, opacity 260ms ease;
+  }
+
+  .portfolio-category-section .portfolio-cover-trigger:hover > .eyebrow svg {
+    transform: rotate(90deg);
+    opacity: 1;
+  }
+
+  .portfolio-category-section .portfolio-art-frame {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    min-height: 0;
+    padding: clamp(.55rem, 1.3vw, 1rem);
+    overflow: hidden;
+    border: 1px solid rgb(48 57 43 / 8%);
+    border-radius: 15px;
+    background:
+      radial-gradient(ellipse at 50% 35%, rgb(255 255 255 / 96%), transparent 72%),
+      #eeece5;
+  }
+
+  .portfolio-category-section .portfolio-art-frame > img,
+  .portfolio-category-section .portfolio-art-frame > video {
+    width: 100%;
+    max-height: 680px;
+    border-radius: 8px;
+    object-fit: contain;
+    filter: drop-shadow(0 12px 18px rgb(31 34 29 / 13%));
+  }
+
+  .portfolio-category-section .portfolio-cover-trigger > span:last-child {
+    max-width: 22ch;
+    padding: .15rem .1rem .25rem;
+    font-size: clamp(1.45rem, 2.55vw, 2.35rem);
+    line-height: 1.04;
+    letter-spacing: -.04em;
+  }
+
+  .portfolio-category-section .portfolio-work-card > div {
+    margin-top: clamp(.85rem, 1.6vw, 1.25rem);
+    padding: clamp(.8rem, 1.5vw, 1.1rem) .1rem .1rem;
+    border-top: 1px solid rgb(48 57 43 / 11%);
+  }
+
+  .portfolio-category-section .portfolio-work-card > div > .eyebrow {
+    color: #687064;
+    font-size: .58rem;
+    letter-spacing: .13em;
+  }
+
+  .portfolio-category-section .portfolio-work-card > div > p:nth-child(2) {
+    font-size: .78rem;
+    font-weight: 600;
+    letter-spacing: .005em;
+  }
+
+  .portfolio-category-section .portfolio-work-card > div > p:nth-child(3) {
+    max-width: 42ch;
+    font-size: .82rem;
+    line-height: 1.75;
+  }
+
+  .portfolio-category-section .portfolio-work-card > div > button {
+    display: inline-flex;
+    align-items: center;
+    gap: .45rem;
+    margin-top: 1rem;
+    padding: .55rem .8rem;
+    border: 1px solid rgb(48 57 43 / 18%);
+    border-radius: 999px;
+    color: #344b35;
+    background: rgb(255 255 255 / 68%);
+    text-decoration: none;
+    transition: color 220ms ease, background 220ms ease, border-color 220ms ease, transform 220ms ease;
+  }
+
+  .portfolio-category-section .portfolio-work-card > div > button:hover {
+    transform: translateX(3px);
+    border-color: #65c64a;
+    color: #20251f;
+    background: #e8f3d9;
+  }
+
+  @media (max-width: 560px) {
+    .portfolio-category-section .portfolio-work-card {
+      padding: .75rem;
+      border-radius: 18px;
+    }
+    .portfolio-category-section .portfolio-art-frame {
+      padding: .55rem;
+      border-radius: 12px;
+    }
+    .portfolio-category-section .portfolio-work-card > div > p:nth-child(3) {
+      font-size: .78rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .portfolio-category-section .portfolio-work-card,
+    .portfolio-category-section .portfolio-cover-trigger > .eyebrow svg,
+    .portfolio-category-section .portfolio-work-card > div > button {
+      transition: none;
+    }
+    .portfolio-category-section .portfolio-work-card:hover,
+    .portfolio-category-section .portfolio-work-card > div > button:hover {
+      transform: none;
+    }
+  }
+}
