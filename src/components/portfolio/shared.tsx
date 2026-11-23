@@ -36,6 +36,7 @@ export function SectionHead({ index, title, id }: { index: string; title: string
       >
         {title}
       </h2>
+      <span className="pm-mascot-mark pm-mascot-mark--section" aria-hidden="true"><i /><i /><b /></span>
     </div>
   );
 }
