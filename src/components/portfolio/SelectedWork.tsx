@@ -643,13 +643,60 @@ function PublishedExamples({ compact = false }: { compact?: boolean }) {
   );
 }
 
+const categoryGroups = [
+  {
+    id: "prism-form",
+    title: "The Prism & Form",
+    subtitle: "Character, campaigns & graphic explorations",
+    projectIds: [
+      "sayeh-character-design",
+      "parla-perfume-ad",
+      "khaneh-mod-setareh",
+      "turkish-coffee-packaging",
+      "turquoise-jewelry-set",
+      "random-pieces",
+    ],
+  },
+  {
+    id: "spatial-architectures",
+    title: "Spatial Architectures",
+    subtitle: "Atmosphere, environments & visual worlds",
+    projectIds: ["stillness-wellness-spaces", "moodbean"],
+  },
+  {
+    id: "vision-lens",
+    title: "Vision & Lens",
+    subtitle: "Fashion, image-making & content",
+    projectIds: [
+      "khaneh-shalvar",
+      "setare-fashion-house-film",
+      "touch-ups",
+      "nikmehr",
+    ],
+  },
+];
+
 export function SelectedWork() {
   return (
     <>
       <div className="portfolio-work-stage">
         
-        <ol className="portfolio-work-grid">
-        {projects.map((project, projectIndex) => (
+        {categoryGroups.map((group) => {
+          const groupedProjects = group.projectIds
+            .map((id) => projects.find((project) => project.id === id))
+            .filter((project): project is (typeof projects)[number] => Boolean(project));
+          return (
+            <section key={group.id} className="portfolio-category-section" aria-labelledby={`category-${group.id}`}>
+              <a className="portfolio-category-card" href={`#projects-${group.id}`}>
+                <span className="portfolio-category-card__index">{String(categoryGroups.indexOf(group) + 1).padStart(2, "0")} / SELECTED WORK</span>
+                <span className="portfolio-category-card__title" id={`category-${group.id}`}>{group.title}</span>
+                <span className="portfolio-category-card__footer">
+                  <span>{group.subtitle}</span>
+                  <span className="portfolio-category-card__arrow" aria-hidden="true">↘</span>
+                </span>
+              </a>
+              <ol id={`projects-${group.id}`} className="portfolio-work-grid">
+                {groupedProjects.map((project, projectIndex) => (
           <li key={project.id} className={`portfolio-work-item portfolio-work-item--${(projectIndex % 6) + 1}`}>
             <Dialog>
               <article className="portfolio-work-card flex h-full flex-col">
@@ -959,8 +1006,11 @@ export function SelectedWork() {
               </DialogContent>
             </Dialog>
           </li>
-        ))}
-      </ol>
+                ))}
+              </ol>
+            </section>
+          );
+        })}
       </div>
     </>
   );
