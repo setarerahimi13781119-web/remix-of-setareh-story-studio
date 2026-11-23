@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { ArrowUpRight, BookOpen, Coffee, Flower2, Gem, Play, Plus, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -680,6 +681,7 @@ const categoryGroups = [
 ];
 
 export function SelectedWork() {
+  const [openCategory, setOpenCategory] = useState<string | null>(null);
   return (
     <>
       <div className="portfolio-work-stage">
@@ -690,15 +692,22 @@ export function SelectedWork() {
             .filter((project): project is (typeof projects)[number] => Boolean(project));
           return (
             <section key={group.id} className="portfolio-category-section" aria-labelledby={`category-${group.id}`}>
-              <a className="portfolio-category-card" href={`#projects-${group.id}`}>
+              <button
+                type="button"
+                className="portfolio-category-card w-full text-left"
+                aria-expanded={openCategory === group.id}
+                aria-controls={`projects-${group.id}`}
+                onClick={() => setOpenCategory(openCategory === group.id ? null : group.id)}
+              >
                 <img className="portfolio-category-card__image" src={group.cover} alt="" aria-hidden="true" loading="lazy" />
                 <span className="portfolio-category-card__index">{String(categoryGroups.indexOf(group) + 1).padStart(2, "0")} / SELECTED WORK</span>
                 <span className="portfolio-category-card__title" id={`category-${group.id}`}>{group.title}</span>
                 <span className="portfolio-category-card__footer">
                   <span>{group.subtitle}</span>
-                  <span className="portfolio-category-card__arrow" aria-hidden="true">↘</span>
+                  <span className="portfolio-category-card__arrow" aria-hidden="true">{openCategory === group.id ? "↗" : "↘"}</span>
                 </span>
-              </a>
+              </button>
+              {openCategory === group.id && (
               <ol id={`projects-${group.id}`} className="portfolio-work-grid">
                 {groupedProjects.map((project, projectIndex) => (
           <li key={project.id} className={`portfolio-work-item portfolio-work-item--${(projectIndex % 6) + 1}`}>
@@ -1012,6 +1021,7 @@ export function SelectedWork() {
           </li>
                 ))}
               </ol>
+              )}
             </section>
           );
         })}
