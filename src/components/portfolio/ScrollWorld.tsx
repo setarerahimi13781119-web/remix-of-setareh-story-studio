@@ -112,6 +112,31 @@ export function ScrollWorld() {
           <circle cx="720" cy="265" r="30" fill="url(#pm-liquid-pink)" />
           <circle cx="709" cy="254" r="10" fill="#fff" opacity=".8" />
         </g>
+
+        <g className="pm-world__glitter-visible" pointerEvents="none">
+          {Array.from({ length: 28 }, (_, i) => {
+            const x = 90 + ((i * 173) % 1260);
+            const y = 390 + ((i * 97) % 480);
+            const drift = i % 2 === 0 ? 1 : -1;
+            const duration = 6 + (i % 5) * 1.7;
+            const radius = i % 4 === 0 ? 4 : i % 3 === 0 ? 3 : 2.2;
+            return (
+              <g key={i} transform={`translate(${x} ${y})`}>
+                <circle r={radius * 2.8} fill={i % 3 === 0 ? "#f58fbd" : "#fff9e9"} opacity=".16">
+                  <animate attributeName="opacity" values=".05;.42;.12;.05" dur={`${duration}s`} begin={`${-i * .41}s`} repeatCount="indefinite" />
+                </circle>
+                <circle r={radius} fill={i % 3 === 0 ? "#fff0f7" : "#ffffff"} opacity=".9">
+                  <animate attributeName="opacity" values=".25;1;.45;.25" dur={`${duration}s`} begin={`${-i * .41}s`} repeatCount="indefinite" />
+                  <animateTransform attributeName="transform" type="translate" values={`0 0; ${drift * 24} -22; ${drift * 8} -48; ${-drift * 18} -24; 0 0`} dur={`${duration + 2}s`} begin={`${-i * .37}s`} repeatCount="indefinite" />
+                </circle>
+              </g>
+            );
+          })}
+          <g fill="#fff" opacity=".95">
+            <path d="M0 -10L2.5 -2.5L10 0L2.5 2.5L0 10L-2.5 2.5L-10 0L-2.5 -2.5Z" transform="translate(300 540)"><animateTransform attributeName="transform" type="translate" values="300 540;330 505;300 540" dur="8s" repeatCount="indefinite"/><animate attributeName="opacity" values=".2;1;.3;.2" dur="4s" repeatCount="indefinite"/></path>
+            <path d="M0 -8L2 -2L8 0L2 2L0 8L-2 2L-8 0L-2 -2Z" transform="translate(1050 590)"><animateTransform attributeName="transform" type="translate" values="1050 590;1018 555;1050 590" dur="9s" repeatCount="indefinite"/><animate attributeName="opacity" values=".25;1;.35;.25" dur="5s" repeatCount="indefinite"/></path>
+          </g>
+        </g>
       </svg>
       <div className="pm-world__wash" />
     </div>
