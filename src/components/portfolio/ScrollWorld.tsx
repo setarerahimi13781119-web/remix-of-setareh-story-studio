@@ -26,7 +26,7 @@ function shapeAt(progress: number) {
     : mixPath(liquidStages[stage], liquidStages[stage + 1], scaled - stage);
 }
 
-/** A vivid, continuous material study that gathers into a sculptural arch as the page moves. */
+/** A continuous hybrid petal sculpture that opens and rises throughout the scroll journey. */
 export function ScrollWorld() {
   const [progress, setProgress] = useState(0);
   const [scrollImpulse, setScrollImpulse] = useState(0);
@@ -85,7 +85,7 @@ export function ScrollWorld() {
     return () => cancelAnimationFrame(frame);
   }, [scrollImpulse]);
 
-  const build = Math.min(1, Math.max(0, (progress - 0.42) / 0.5));
+  const build = progress;
   const finale = Math.min(1, Math.max(0, (progress - 0.84) / 0.16));
   const surfacePath = shapeAt(progress);
   const rise = progress * 190;
@@ -143,86 +143,50 @@ export function ScrollWorld() {
           </linearGradient>
         </defs>
 
-        <g className="pm-world__liquid" transform={`translate(0 ${liquidShift})`}>
-          <path d={surfacePath} fill="url(#pm-glass-pink)" opacity=".62" filter="url(#pm-depth)" />
-
-          <g transform={`translate(0 ${-rise * .16})`} filter="url(#pm-depth)" opacity=".9">
-            <path d="M-100 760 C35 710 125 755 235 716 C350 675 420 760 535 710 C650 660 710 724 820 682 C940 635 1010 733 1125 694 C1250 650 1370 735 1540 680 L1540 1120 L-100 1120Z" fill="url(#pm-glass-pink)" />
-            <path d="M-100 760 C35 710 125 755 235 716 C350 675 420 760 535 710 C650 660 710 724 820 682 C940 635 1010 733 1125 694 C1250 650 1370 735 1540 680" fill="none" stroke="#fff" strokeWidth="5" strokeLinecap="round" opacity=".58" />
-            <path d="M80 772 C210 720 300 770 400 735 C500 700 565 770 670 730 C770 690 850 750 950 714 C1060 675 1140 755 1250 720" fill="none" stroke="#fff" strokeWidth="2" opacity=".46" />
-          </g>
-
-          <g transform={`translate(0 ${-rise * .31})`} filter="url(#pm-depth)" opacity=".94">
-            <path d="M-100 842 C40 790 145 850 265 804 C380 760 455 846 570 800 C690 752 760 825 875 778 C990 730 1080 824 1190 780 C1320 730 1410 810 1540 760 L1540 1120 L-100 1120Z" fill="url(#pm-glass-lime)" />
-            <path d="M-100 842 C40 790 145 850 265 804 C380 760 455 846 570 800 C690 752 760 825 875 778 C990 730 1080 824 1190 780 C1320 730 1410 810 1540 760" fill="none" stroke="#fff" strokeWidth="6" strokeLinecap="round" opacity=".68" />
-            <path d="M190 856 C300 810 385 858 490 820 C600 780 675 850 780 810 C885 770 970 830 1075 792" fill="none" stroke="#fff" strokeWidth="2.5" opacity=".5" />
-          </g>
-
-          <g transform={`translate(0 ${-rise * .48})`} filter="url(#pm-depth)" opacity=".96">
-            <path d="M-100 930 C30 880 155 940 280 892 C405 845 480 930 600 882 C720 834 800 910 920 862 C1040 814 1120 900 1240 850 C1360 800 1450 880 1540 835 L1540 1120 L-100 1120Z" fill="url(#pm-glass-cream)" />
-            <path d="M-100 930 C30 880 155 940 280 892 C405 845 480 930 600 882 C720 834 800 910 920 862 C1040 814 1120 900 1240 850 C1360 800 1450 880 1540 835" fill="none" stroke="#fff" strokeWidth="7" strokeLinecap="round" opacity=".78" />
-            <path d="M230 940 C350 895 435 940 545 900 C655 860 745 930 850 890 C960 850 1045 910 1155 870" fill="none" stroke="#fff" strokeWidth="2.5" opacity=".58" />
-          </g>
-
-        </g>
-
-        <g className="pm-world__glitter" pointerEvents="none" fill="#fff9e9">\n          <circle cx="155" cy="700" r="3"><animate attributeName="opacity" values=".15;.9;.3;.15" dur="5s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;-12 -22;8 -38;0 0" dur="9s" repeatCount="indefinite"/></circle>\n          <circle cx="285" cy="745" r="2"><animate attributeName="opacity" values=".2;.8;.2" dur="6s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;14 -18;-4 -34;0 0" dur="10s" repeatCount="indefinite"/></circle>\n          <circle cx="365" cy="650" r="2.5"><animate attributeName="opacity" values=".1;.9;.25;.1" dur="7s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;10 -20;-8 -36;0 0" dur="8s" repeatCount="indefinite"/></circle>\n          <circle cx="495" cy="760" r="2"><animate attributeName="opacity" values=".2;.85;.2" dur="5.8s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;-14 -16;5 -30;0 0" dur="11s" repeatCount="indefinite"/></circle>\n          <circle cx="585" cy="680" r="3"><animate attributeName="opacity" values=".15;.9;.15" dur="6.5s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;12 -24;-5 -40;0 0" dur="9.5s" repeatCount="indefinite"/></circle>\n          <circle cx="665" cy="735" r="2"><animate attributeName="opacity" values=".1;.8;.2" dur="5.4s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;-9 -18;8 -32;0 0" dur="8.5s" repeatCount="indefinite"/></circle>\n          <circle cx="790" cy="665" r="2.5"><animate attributeName="opacity" values=".15;.9;.15" dur="7.2s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;14 -20;-6 -36;0 0" dur="10.5s" repeatCount="indefinite"/></circle>\n          <circle cx="875" cy="745" r="3"><animate attributeName="opacity" values=".2;.85;.2" dur="6s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;-12 -22;7 -38;0 0" dur="9s" repeatCount="indefinite"/></circle>\n          <circle cx="980" cy="680" r="2"><animate attributeName="opacity" values=".1;.9;.2" dur="5.5s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;11 -17;-5 -31;0 0" dur="8s" repeatCount="indefinite"/></circle>\n          <circle cx="1090" cy="735" r="2.5"><animate attributeName="opacity" values=".15;.85;.15" dur="6.8s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;-13 -19;6 -35;0 0" dur="10s" repeatCount="indefinite"/></circle>\n          <circle cx="1190" cy="660" r="3"><animate attributeName="opacity" values=".1;.9;.2" dur="5.9s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;12 -21;-7 -37;0 0" dur="9.2s" repeatCount="indefinite"/></circle>\n          <circle cx="1310" cy="730" r="2"><animate attributeName="opacity" values=".2;.8;.2" dur="7s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;-10 -18;5 -32;0 0" dur="11s" repeatCount="indefinite"/></circle>\n          <path d="M0 -7L2 -2L7 0L2 2L0 7L-2 2L-7 0L-2 -2Z" transform="translate(555 705)"><animate attributeName="opacity" values=".2;.9;.2" dur="4.5s" repeatCount="indefinite"/><animateTransform attributeName="transform" additive="sum" type="translate" values="0 0;10 -22;0 0" dur="9s" repeatCount="indefinite"/></path>\n          <path d="M0 -5L1.5 -1.5L5 0L1.5 1.5L0 5L-1.5 1.5L-5 0L-1.5 -1.5Z" transform="translate(1135 690)"><animate attributeName="opacity" values=".15;.85;.15" dur="5.5s" repeatCount="indefinite"/><animateTransform attributeName="transform" additive="sum" type="translate" values="0 0;-12 -20;0 0" dur="11s" repeatCount="indefinite"/></path>\n        </g>\n\n        <g className="pm-world__gloss" opacity=".8" transform={`translate(0 ${liquidShift * 0.72}) translate(720 820) scale(1 ${1 + Math.abs(scrollImpulse) * 0.025}) translate(-720 -820)`}>
-          <path d={surfacePath} fill="url(#pm-liquid-shine)" />
-          <path d={`M90 ${780 - rise * .4} C270 ${700 - rise * .42} 370 ${825 - rise * .5} 520 ${720 - rise * .75} S830 ${690 - rise * .72} 970 ${750 - rise * .48} S1200 ${810 - rise * .38} 1360 ${730 - rise * .5}`} fill="none" stroke="#fff" strokeWidth={12 + progress * 15} strokeLinecap="round" opacity=".58" />
-          <ellipse cx={340 + progress * 220} cy={690 - rise * .7} rx="115" ry="25" fill="#fff" opacity=".56" />
-        </g>
-
         <g
-          className="pm-world__sculpture pm-world__bloom"
-          opacity={build}
-          transform={`translate(720 ${760 - (1 - build) * 95}) rotate(${-8 + build * 8}) scale(${0.72 + build * 0.28}) translate(-720 -760)`}
-          filter="url(#pm-depth)"
+          className="pm-world__liquid pm-world__petal-field"
+          transform={`translate(720 ${800 - progress * 150}) rotate(${progress * 18}) scale(${0.68 + progress * 0.32}) translate(-720 -800)`}
         >
           {[
-            { angle: -144, fill: "url(#pm-glass-pink)", scale: 0.88 },
-            { angle: -72, fill: "url(#pm-glass-cream)", scale: 0.96 },
-            { angle: 0, fill: "url(#pm-glass-lime)", scale: 1.04 },
-            { angle: 72, fill: "url(#pm-glass-pink)", scale: 0.96 },
-            { angle: 144, fill: "url(#pm-glass-cream)", scale: 0.88 },
-          ].map((petal, index) => (
-            <g
-              key={petal.angle}
-              transform={`translate(720 760) rotate(${petal.angle + build * (index % 2 === 0 ? 7 : -7)}) scale(${petal.scale}) translate(-720 -760)`}
-            >
-              <path
-                d="M720 778 C650 720 610 625 625 555 C637 493 681 447 720 420 C759 447 803 493 815 555 C830 625 790 720 720 778Z"
-                fill={petal.fill}
-                stroke="#fff"
-                strokeWidth="3"
-                strokeOpacity=".52"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M720 755 C682 690 665 610 677 548 C686 505 705 472 720 454 C735 472 754 505 763 548 C775 610 758 690 720 755Z"
-                fill="url(#pm-glass-reflection)"
-                opacity=".62"
-              />
-              <path
-                d="M720 755 C687 680 681 590 720 475"
-                fill="none"
-                stroke="#fff"
-                strokeWidth="4"
-                strokeLinecap="round"
-                opacity=".5"
-              />
-            </g>
-          ))}
-          <path
-            d="M720 760 C682 728 675 690 720 652 C765 690 758 728 720 760Z"
-            fill="url(#pm-glass-cream)"
-            stroke="#fff"
-            strokeWidth="3"
-            strokeOpacity=".8"
-          />
-          <ellipse cx="720" cy="705" rx="22" ry="34" fill="url(#pm-glass-pink)" opacity=".9" />
-          <ellipse cx="712" cy="692" rx="7" ry="15" fill="#fff" opacity=".72" />
+            { base: -112, color: "url(#pm-glass-pink)", depth: 0.88 },
+            { base: -56, color: "url(#pm-glass-cream)", depth: 0.96 },
+            { base: 0, color: "url(#pm-glass-lime)", depth: 1.04 },
+            { base: 56, color: "url(#pm-glass-pink)", depth: 0.96 },
+            { base: 112, color: "url(#pm-glass-cream)", depth: 0.88 },
+          ].map((petal) => {
+            const spread = 12 + progress * 0.78;
+            const angle = petal.base * spread / 112;
+            const lift = 105 + progress * 245;
+            return (
+              <g
+                key={petal.base}
+                transform={`translate(720 800) rotate(${angle}) scale(${petal.depth}) translate(-720 -800)`}
+                opacity={0.72 + progress * 0.28}
+                filter="url(#pm-depth)"
+              >
+                <path
+                  d={`M720 812 C650 ${770 - lift * .35} 610 ${680 - lift * .72} 625 ${610 - lift} C637 ${548 - lift} 681 ${505 - lift} 720 ${480 - lift} C759 ${505 - lift} 803 ${548 - lift} 815 ${610 - lift} C830 ${680 - lift * .72} 790 ${770 - lift * .35} 720 812Z`}
+                  fill={petal.color}
+                  stroke="#fff"
+                  strokeWidth="3"
+                  strokeOpacity=".62"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d={`M720 790 C682 720 665 650 677 ${590 - lift * .55} C686 ${545 - lift * .55} 705 ${510 - lift * .55} 720 ${492 - lift * .55} C735 ${510 - lift * .55} 754 ${545 - lift * .55} 763 ${590 - lift * .55} C775 650 758 720 720 790Z`}
+                  fill="url(#pm-glass-reflection)"
+                  opacity=".62"
+                />
+                <path d={`M720 790 C687 700 681 610 720 ${510 - lift * .45}`} fill="none" stroke="#fff" strokeWidth="4" strokeLinecap="round" opacity=".48" />
+              </g>
+            );
+          })}
+          <path d="M720 812 C682 780 675 742 720 704 C765 742 758 780 720 812Z" fill="url(#pm-glass-cream)" stroke="#fff" strokeWidth="3" strokeOpacity=".82" />
+          <ellipse cx="720" cy="760" rx="22" ry="34" fill="url(#pm-glass-pink)" opacity=".92" />
+          <ellipse cx="712" cy="747" rx="7" ry="15" fill="#fff" opacity=".74" />
         </g>
-        <g opacity={finale} transform={`translate(0 ${(1 - finale) * 34})`}>
+
+        <g className="pm-world__glitter" pointerEvents="none" fill="#fff9e9">\n          <circle cx="155" cy="700" r="3"><animate attributeName="opacity" values=".15;.9;.3;.15" dur="5s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;-12 -22;8 -38;0 0" dur="9s" repeatCount="indefinite"/></circle>\n          <circle cx="285" cy="745" r="2"><animate attributeName="opacity" values=".2;.8;.2" dur="6s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;14 -18;-4 -34;0 0" dur="10s" repeatCount="indefinite"/></circle>\n          <circle cx="365" cy="650" r="2.5"><animate attributeName="opacity" values=".1;.9;.25;.1" dur="7s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;10 -20;-8 -36;0 0" dur="8s" repeatCount="indefinite"/></circle>\n          <circle cx="495" cy="760" r="2"><animate attributeName="opacity" values=".2;.85;.2" dur="5.8s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;-14 -16;5 -30;0 0" dur="11s" repeatCount="indefinite"/></circle>\n          <circle cx="585" cy="680" r="3"><animate attributeName="opacity" values=".15;.9;.15" dur="6.5s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;12 -24;-5 -40;0 0" dur="9.5s" repeatCount="indefinite"/></circle>\n          <circle cx="665" cy="735" r="2"><animate attributeName="opacity" values=".1;.8;.2" dur="5.4s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;-9 -18;8 -32;0 0" dur="8.5s" repeatCount="indefinite"/></circle>\n          <circle cx="790" cy="665" r="2.5"><animate attributeName="opacity" values=".15;.9;.15" dur="7.2s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;14 -20;-6 -36;0 0" dur="10.5s" repeatCount="indefinite"/></circle>\n          <circle cx="875" cy="745" r="3"><animate attributeName="opacity" values=".2;.85;.2" dur="6s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;-12 -22;7 -38;0 0" dur="9s" repeatCount="indefinite"/></circle>\n          <circle cx="980" cy="680" r="2"><animate attributeName="opacity" values=".1;.9;.2" dur="5.5s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;11 -17;-5 -31;0 0" dur="8s" repeatCount="indefinite"/></circle>\n          <circle cx="1090" cy="735" r="2.5"><animate attributeName="opacity" values=".15;.85;.15" dur="6.8s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;-13 -19;6 -35;0 0" dur="10s" repeatCount="indefinite"/></circle>\n          <circle cx="1190" cy="660" r="3"><animate attributeName="opacity" values=".1;.9;.2" dur="5.9s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;12 -21;-7 -37;0 0" dur="9.2s" repeatCount="indefinite"/></circle>\n          <circle cx="1310" cy="730" r="2"><animate attributeName="opacity" values=".2;.8;.2" dur="7s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;-10 -18;5 -32;0 0" dur="11s" repeatCount="indefinite"/></circle>\n          <path d="M0 -7L2 -2L7 0L2 2L0 7L-2 2L-7 0L-2 -2Z" transform="translate(555 705)"><animate attributeName="opacity" values=".2;.9;.2" dur="4.5s" repeatCount="indefinite"/><animateTransform attributeName="transform" additive="sum" type="translate" values="0 0;10 -22;0 0" dur="9s" repeatCount="indefinite"/></path>\n          <path d="M0 -5L1.5 -1.5L5 0L1.5 1.5L0 5L-1.5 1.5L-5 0L-1.5 -1.5Z" transform="translate(1135 690)"><animate attributeName="opacity" values=".15;.85;.15" dur="5.5s" repeatCount="indefinite"/><animateTransform attributeName="transform" additive="sum" type="translate" values="0 0;-12 -20;0 0" dur="11s" repeatCount="indefinite"/></path>\n        </g>\n\n        <g opacity={finale} transform={`translate(0 ${(1 - finale) * 34})`}>
           <ellipse cx="720" cy="280" rx="185" ry="70" fill="url(#pm-liquid-shine)" />
           <circle cx="720" cy="265" r="30" fill="url(#pm-liquid-pink)" />
           <circle cx="709" cy="254" r="10" fill="#fff" opacity=".8" />
