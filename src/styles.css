@@ -2293,3 +2293,44 @@
     opacity: .7;
   }
 }
+
+/* Final visual polish: softer pearlescent color and balanced organic contours. */
+.pm-hero--fullbleed .pm-form {
+  filter: url(#pm-liquid-warp) drop-shadow(0 22px 25px rgb(39 48 31 / 12%)) drop-shadow(0 6px 9px rgb(39 48 31 / 7%));
+}
+.pm-hero--fullbleed .pm-form--lime {
+  background: radial-gradient(ellipse 34% 23% at 27% 16%,rgb(255 255 250 / 96%),transparent 100%),radial-gradient(ellipse 70% 58% at 76% 83%,rgb(76 101 43 / 20%),transparent 72%),linear-gradient(145deg,#f1f8d8 0%,#d9ed9f 30%,#b8d875 64%,#83a94b 100%);
+  box-shadow:inset 7px 9px 20px rgb(255 255 255 / 68%),inset -17px -20px 27px rgb(69 91 38 / 16%),0 22px 32px rgb(63 76 39 / 11%);
+}
+.pm-hero--fullbleed .pm-form--pink {
+  background:radial-gradient(ellipse 34% 23% at 27% 16%,rgb(255 255 255 / 98%),transparent 100%),radial-gradient(ellipse 70% 58% at 76% 83%,rgb(126 39 82 / 19%),transparent 72%),linear-gradient(145deg,#fce8ed 0%,#f4c2d4 30%,#e69ab9 64%,#bd668e 100%);
+  box-shadow:inset 7px 9px 20px rgb(255 255 255 / 72%),inset -17px -20px 27px rgb(105 42 75 / 15%),0 22px 32px rgb(88 48 66 / 11%);
+}
+.pm-hero--fullbleed .pm-form--cream {
+  background:radial-gradient(ellipse 34% 23% at 27% 16%,rgb(255 255 255 / 100%),transparent 100%),radial-gradient(ellipse 70% 58% at 76% 83%,rgb(111 81 57 / 15%),transparent 72%),linear-gradient(145deg,#fffdf7 0%,#f2e6d8 31%,#dfcbb7 65%,#bda58e 100%);
+  box-shadow:inset 7px 9px 20px rgb(255 255 255 / 78%),inset -17px -20px 27px rgb(104 76 55 / 12%),0 23px 34px rgb(78 62 51 / 10%);
+}
+.pm-hero--fullbleed .pm-form--green {
+  background:radial-gradient(ellipse 34% 23% at 27% 16%,rgb(255 255 250 / 91%),transparent 100%),radial-gradient(ellipse 70% 58% at 76% 83%,rgb(25 61 37 / 23%),transparent 72%),linear-gradient(145deg,#e1edd6 0%,#b4d09e 30%,#83ad7d 64%,#4b7654 100%);
+  box-shadow:inset 7px 9px 20px rgb(255 255 255 / 62%),inset -17px -20px 27px rgb(27 62 39 / 19%),0 22px 32px rgb(46 70 44 / 11%);
+}
+.pm-hero--fullbleed .pm-form::before { opacity:.62; filter:blur(10px) saturate(1.08); mix-blend-mode:soft-light; }
+.pm-hero--fullbleed .pm-form::after { border:1px solid rgb(255 255 255 / 15%); opacity:.66; }
+@keyframes pm-hero-liquid-a {
+  0%,100% { scale:1 1; border-radius:56% 44% 59% 41% / 43% 58% 42% 57%; }
+  24% { scale:1.075 .94; border-radius:48% 52% 39% 61% / 57% 42% 58% 43%; }
+  51% { scale:.94 1.07; border-radius:61% 39% 48% 52% / 39% 61% 39% 61%; }
+  76% { scale:1.045 .97; border-radius:43% 57% 63% 37% / 61% 43% 57% 39%; }
+}
+@keyframes pm-hero-liquid-b {
+  0%,100% { scale:1 1; border-radius:44% 56% 41% 59% / 58% 42% 58% 42%; }
+  27% { scale:.95 1.065; border-radius:59% 41% 57% 43% / 42% 59% 41% 58%; }
+  53% { scale:1.07 .94; border-radius:39% 61% 48% 52% / 62% 38% 62% 38%; }
+  78% { scale:.98 1.035; border-radius:62% 38% 42% 58% / 46% 58% 42% 54%; }
+}
+@keyframes pm-hero-liquid-c {
+  0%,100% { scale:1 1; border-radius:59% 41% 47% 53% / 42% 61% 39% 58%; }
+  23% { scale:1.06 .95; border-radius:41% 59% 62% 38% / 58% 42% 58% 42%; }
+  49% { scale:.95 1.065; border-radius:63% 37% 43% 57% / 39% 62% 38% 61%; }
+  75% { scale:1.035 .98; border-radius:47% 53% 58% 42% / 62% 41% 59% 38%; }
+}
