@@ -664,12 +664,11 @@ const categoryGroups = [
     subtitle: "Character, campaigns & graphic explorations",
     cover: "https://www.dropbox.com/scl/fi/0i11h61bf2v55as0rqzrw/portfolio_card_branding_v2.jpg?rlkey=86qbjl7b25lfco4yvtvbrlh6x&raw=1",
     projectIds: [
-      "sayeh-character-design",
+      "turquoise-jewelry-set",
       "parla-perfume-ad",
       "khaneh-mod-setareh",
+      "sayeh-character-design",
       "turkish-coffee-packaging",
-      "turquoise-jewelry-set",
-      "random-pieces",
     ],
   },
   {
@@ -685,8 +684,8 @@ const categoryGroups = [
     subtitle: "Fashion, image-making & content",
     cover: "https://www.dropbox.com/scl/fi/6uwq123o8dnxpey22g08s/portfolio_card_photography_v4.jpg?rlkey=fs5exohgxrkyy74n1oufh7tqp&raw=1",
     projectIds: [
-      "khaneh-shalvar",
       "setare-fashion-house-film",
+      "khaneh-shalvar",
       "touch-ups",
       "nikmehr",
     ],
