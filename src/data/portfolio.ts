@@ -207,24 +207,6 @@ export const projects: PortfolioProject[] = [
     note: "A growing visual collection. Additional assets will be added as the project develops.",
   },
   {
-    id: "random-pieces",
-    title: "Random Pieces",
-    coverLabel: "Poster & graphic design collection",
-    category: "Graphic Design · Posters",
-    role: "Poster design & visual exploration",
-    summary:
-      "A selection of standalone poster and graphic-design pieces gathered into an evolving visual collection.",
-    context:
-      "Random Pieces brings together selected poster works and graphic experiments that sit outside the larger case studies in this portfolio.",
-    scope: [
-      "Selected poster designs",
-      "Standalone graphic compositions",
-      "An evolving collection of visual experiments",
-    ],
-    status: "exploration",
-    note: "A curated collection of individual pieces rather than one continuous client project.",
-  },
-  {
     id: "turquoise-jewelry-set",
     title: "Turquoise Jewelry Set",
     coverLabel: "AI-generated product concept",
@@ -311,42 +293,7 @@ export const projects: PortfolioProject[] = [
     status: "exploration",
     note: "A conceptual visual project, not architectural documentation or a claim of built interior-design work.",
   },
-  {
-    id: "junoon-podcast",
-    title: "Junoon Podcast",
-    coverLabel: "Recent team collaboration",
-    category: "Podcast · Video editing & visual design",
-    role: "Full video editing · Visual design exploration",
-    summary:
-      "Recently joined the team of this long-running true-crime podcast: full editing of the first completed video, plus personal cover and social visual explorations.",
-    context:
-      "Junoon is a long-running true-crime podcast that existed before this collaboration. Setareh recently joined the team; her contribution is limited to the two tracks below.",
-    scope: [
-      "Full video editing — first completed video: Brian Yassipour",
-      "Personal documentary crime-podcast cover and social visual explorations",
-    ],
-    status: "team-collaboration",
-    note: "The podcast, its original identity and its brand history predate this collaboration and are not claimed. The five images shown here are Setareh's own visual explorations from this collaboration; no video file has been added to this portfolio.",
-    tracks: [
-      {
-        title: "Video Editing",
-        label: "Full video editing · First completed video: Brian Yassipour (برایان یاسی‌پور)",
-        items: [
-          "End-to-end editing of the episode video on the Brian Yassipour case",
-          "Carried through from editing to final export",
-        ],
-      },
-      {
-        title: "Visual Design Exploration",
-        label: "Own contribution · Exploration",
-        items: [
-          "Documentary crime-podcast cover explorations",
-          "High-contrast portrait treatments with red / black / white accents",
-          "Social visual treatments for highlight and reels covers",
-        ],
-      },
-    ],
-  },
+
 ];
 
 export const capabilities = [
@@ -356,7 +303,7 @@ export const capabilities = [
   },
   {
     name: "Video editing",
-    note: "End-to-end editing and final export of the first completed Junoon Podcast episode on the Brian Yassipour case.",
+    note: "End-to-end video editing, from timeline assembly through final export.",
   },
   {
     name: "Visual design exploration",
