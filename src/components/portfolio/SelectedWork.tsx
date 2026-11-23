@@ -114,6 +114,19 @@ const parlaImages = [
 function ParlaGallery() {
   return (
     <figure className="border-t border-rule pt-5">
+      <video
+        controls
+        playsInline
+        preload="metadata"
+        className="mb-5 max-h-[900px] w-full bg-card object-contain"
+        aria-label="Parla perfume campaign video"
+      >
+        <source
+          src="https://www.dropbox.com/scl/fi/xry1vz47ptbc5v7zcq4q4/790111340_1795368385767564.mp4?rlkey=6qzr7fr8aqz80xxqjhszszrsg&raw=1"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
       <ol className="grid gap-4 sm:grid-cols-2">
         {parlaImages.map((image) => (
           <li key={image.src}>
