@@ -3001,3 +3001,14 @@
     filter: blur(.2px);
   }
 }
+
+/* Petal sculpture: keep individual petal contours crisp instead of merging them into the old liquid blob. */
+@layer components {
+  .pm-world__petal-field {
+    filter: drop-shadow(0 24px 28px rgb(75 57 63 / 16%)) !important;
+    isolation: isolate;
+  }
+  .pm-world__petal-field > g {
+    transform-box: view-box;
+  }
+}
