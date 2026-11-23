@@ -2642,3 +2642,62 @@ radial-gradient(ellipse 48% 38% at 70% 72%,rgb(24 31 22 / 12%),transparent 100%)
     .portfolio-work-item, .portfolio-work-card, .portfolio-carousel-arrow { transition: none; }
   }
 }
+
+
+/* Raised, tactile project cards */
+.portfolio-work-card {
+  position: relative;
+  padding: clamp(.7rem, 1.4vw, 1.1rem);
+  border: 1px solid color-mix(in srgb, var(--foreground) 12%, transparent);
+  border-radius: clamp(1.15rem, 2vw, 1.7rem);
+  background: color-mix(in srgb, var(--card) 94%, var(--background));
+  box-shadow:
+    0 2px 0 color-mix(in srgb, var(--foreground) 12%, transparent),
+    0 8px 18px color-mix(in srgb, var(--foreground) 7%, transparent),
+    0 18px 36px color-mix(in srgb, var(--foreground) 5%, transparent);
+  transition: transform 280ms cubic-bezier(.2,.8,.2,1), box-shadow 280ms ease, border-color 280ms ease;
+}
+.portfolio-work-card:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--cover-accent, var(--foreground)) 42%, transparent);
+  box-shadow:
+    0 3px 0 color-mix(in srgb, var(--foreground) 13%, transparent),
+    0 12px 24px color-mix(in srgb, var(--foreground) 9%, transparent),
+    0 24px 42px color-mix(in srgb, var(--foreground) 7%, transparent);
+}
+.portfolio-cover-trigger {
+  gap: clamp(.75rem, 1.4vw, 1.1rem);
+  border-radius: inherit;
+  outline-offset: 5px;
+}
+.portfolio-cover-trigger > .eyebrow {
+  padding: .15rem .2rem;
+  font-size: .72rem;
+  letter-spacing: .04em;
+}
+.portfolio-art-frame {
+  border-radius: clamp(.8rem, 1.5vw, 1.2rem);
+  box-shadow:
+    inset 0 0 0 1px rgb(255 255 255 / 32%),
+    0 2px 0 color-mix(in srgb, var(--cover-accent) 45%, transparent);
+}
+.portfolio-art-frame::after {
+  border-radius: calc(clamp(.8rem, 1.5vw, 1.2rem) - .25rem);
+}
+.portfolio-work-card:focus-within {
+  outline: 2px solid color-mix(in srgb, var(--cover-accent, var(--foreground)) 72%, transparent);
+  outline-offset: 4px;
+}
+@media (hover: none) {
+  .portfolio-work-card:active {
+    transform: translateY(2px) scale(.992);
+    box-shadow:
+      0 1px 0 color-mix(in srgb, var(--foreground) 12%, transparent),
+      0 3px 9px color-mix(in srgb, var(--foreground) 8%, transparent);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-work-card, .portfolio-cover-trigger {
+    transition: none;
+  }
+}
