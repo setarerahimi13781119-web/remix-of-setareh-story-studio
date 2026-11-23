@@ -54,6 +54,10 @@ export function Hero() {
                     <animate attributeName="scale" values="16;30;20;27;16" dur="6.4s" repeatCount="indefinite" />
                   </feDisplacementMap>
                 </filter>
+                <filter id="pm-cloud-merge" x="-35%" y="-35%" width="170%" height="170%" colorInterpolationFilters="sRGB">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="cloudBlur" />
+                  <feColorMatrix in="cloudBlur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -7.6" />
+                </filter>
               </defs>
             </svg>
             <img
@@ -66,10 +70,12 @@ export function Hero() {
                 event.currentTarget.style.visibility = "hidden";
               }}
             />
-            <span className="pm-form pm-form--lime" />
-            <span className="pm-form pm-form--pink" />
-            <span className="pm-form pm-form--cream" />
-            <span className="pm-form pm-form--green" />
+            <div className="pm-cloud-field">
+              <span className="pm-form pm-form--lime" />
+              <span className="pm-form pm-form--pink" />
+              <span className="pm-form pm-form--cream" />
+              <span className="pm-form pm-form--green" />
+            </div>
           </div>
 
           <div className="pm-portrait-wrap">
