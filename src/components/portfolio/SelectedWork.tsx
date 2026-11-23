@@ -912,16 +912,6 @@ export function SelectedWork() {
                     </div>
                   )}
                   {project.id === "nikmehr" && <PageLinks />}
-                  <DialogTrigger asChild>
-                    <Button
-                      variant="link"
-                      className="mt-auto h-auto justify-start self-start rounded-none px-0 pt-5 pb-0 font-normal"
-                    >
-                      Project context
-                      <Plus aria-hidden="true" />
-                      <span className="sr-only">: {project.title}</span>
-                    </Button>
-                  </DialogTrigger>
                 </div>
               </article>
               <DialogContent className="z-[70] max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-3xl gap-5 overflow-y-auto rounded-none p-6 shadow-none sm:rounded-none md:p-10">
