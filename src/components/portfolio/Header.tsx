@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const nav = [
   { href: "#work", label: "Work" },
@@ -23,6 +23,19 @@ export function BrandMark() {
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [open]);
   return (
     <header className="pm-header sticky top-0 z-50 border-b backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-10">
@@ -37,7 +50,9 @@ export function Header() {
           </ul>
         </nav>
         <button
+          ref={menuButtonRef}
           type="button"
+          aria-label={open ? "Close navigation menu" : "Open navigation menu"}
           className="md:hidden eyebrow text-foreground"
           aria-expanded={open}
           aria-controls="mobile-nav"
