@@ -54,9 +54,16 @@ export function Hero() {
                     <animate attributeName="scale" values="16;30;20;27;16" dur="6.4s" repeatCount="indefinite" />
                   </feDisplacementMap>
                 </filter>
-                <filter id="pm-cloud-merge" x="-35%" y="-35%" width="170%" height="170%" colorInterpolationFilters="sRGB">
-                  <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="cloudBlur" />
-                  <feColorMatrix in="cloudBlur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -7.6" />
+                <filter id="pm-cloud-merge" x="-45%" y="-45%" width="190%" height="190%" colorInterpolationFilters="sRGB">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="9" result="cloudBlur" />
+                  <feColorMatrix in="cloudBlur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 15 -5.7" result="cloudMass" />
+                  <feTurbulence type="fractalNoise" baseFrequency="0.018 0.026" numOctaves="3" seed="17" result="cloudNoise">
+                    <animate attributeName="baseFrequency" values="0.014 0.021;0.024 0.032;0.017 0.027;0.014 0.021" dur="11s" repeatCount="indefinite" />
+                  </feTurbulence>
+                  <feDisplacementMap in="cloudMass" in2="cloudNoise" scale="17" xChannelSelector="R" yChannelSelector="G" result="softCloudEdge">
+                    <animate attributeName="scale" values="11;21;15;11" dur="9s" repeatCount="indefinite" />
+                  </feDisplacementMap>
+                  <feGaussianBlur in="softCloudEdge" stdDeviation="1.2" />
                 </filter>
               </defs>
             </svg>
