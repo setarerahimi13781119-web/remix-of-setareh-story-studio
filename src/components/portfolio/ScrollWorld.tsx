@@ -30,6 +30,7 @@ function shapeAt(progress: number) {
 export function ScrollWorld() {
   const [progress, setProgress] = useState(0);
   const [scrollImpulse, setScrollImpulse] = useState(0);
+  const [chaser, setChaser] = useState({ x: 720, y: 790, active: false });
 
   useEffect(() => {
     let frame = 0;
@@ -53,6 +54,27 @@ export function ScrollWorld() {
       cancelAnimationFrame(frame);
       window.removeEventListener("scroll", update);
       window.removeEventListener("resize", update);
+    };
+  }, []);
+
+  useEffect(() => {
+    const trackFinger = (event: TouchEvent) => {
+      const touch = event.touches[0];
+      const svg = document.querySelector(".pm-world__art");
+      if (!touch || !svg) return;
+      const rect = svg.getBoundingClientRect();
+      const x = Math.max(55, Math.min(1385, ((touch.clientX - rect.left) / rect.width) * 1440));
+      const y = Math.max(700, Math.min(930, ((touch.clientY - rect.top) / rect.height) * 1100));
+      setChaser({ x, y, active: true });
+    };
+    const releaseFinger = () => setChaser((point) => ({ ...point, active: false }));
+    window.addEventListener("touchmove", trackFinger, { passive: true });
+    window.addEventListener("touchend", releaseFinger, { passive: true });
+    window.addEventListener("touchcancel", releaseFinger, { passive: true });
+    return () => {
+      window.removeEventListener("touchmove", trackFinger);
+      window.removeEventListener("touchend", releaseFinger);
+      window.removeEventListener("touchcancel", releaseFinger);
     };
   }, []);
 
@@ -102,6 +124,12 @@ export function ScrollWorld() {
 
         <g className="pm-world__liquid" filter="url(#pm-goo)" transform={`translate(0 ${liquidShift}) translate(720 820) scale(1 ${liquidStretch}) translate(-720 -820)`}>
           <path d={surfacePath} fill="url(#pm-liquid-pink)" />
+          <g transform={`translate(${chaser.x} ${chaser.y})`} opacity={chaser.active ? 1 : 0.42} style={{ transition: "transform 260ms cubic-bezier(.2,.8,.2,1), opacity 450ms ease" }}>
+            <ellipse rx="13" ry="8" fill="url(#pm-liquid-cream)" />
+            <ellipse cx="-3" cy="-3" rx="4" ry="2.2" fill="#fff" opacity=".88" />
+            <ellipse cx="3" cy="5" rx="8" ry="2.5" fill="#b93678" opacity=".2" />
+          </g>
+
           <ellipse cx="210" cy={815 - rise * .34} rx={210 + progress * 25} ry={118 + progress * 30} fill="url(#pm-liquid-lime)"><animate attributeName="rx" values="210;224;202;216;210" dur="7.5s" repeatCount="indefinite" /><animate attributeName="ry" values="118;108;128;114;118" dur="6.2s" repeatCount="indefinite" /><animate attributeName="cy" values="0;-9;5;0" additive="sum" dur="8s" repeatCount="indefinite" /></ellipse>
           <ellipse cx="720" cy={835 - rise * .56} rx={240 - progress * 40} ry={124 + progress * 42} fill="url(#pm-liquid-cream)"><animate attributeName="rx" values="240;226;250;232;240" dur="8.4s" repeatCount="indefinite" /><animate attributeName="ry" values="124;136;116;130;124" dur="7s" repeatCount="indefinite" /><animate attributeName="cy" values="0;7;-5;0" additive="sum" dur="7.8s" repeatCount="indefinite" /></ellipse>
           <ellipse cx="1230" cy={815 - rise * .34} rx={218 + progress * 20} ry={132 + progress * 25} fill="url(#pm-liquid-pink)"><animate attributeName="rx" values="218;232;210;224;218" dur="7.8s" repeatCount="indefinite" /><animate attributeName="ry" values="132;120;140;126;132" dur="6.6s" repeatCount="indefinite" /><animate attributeName="cy" values="0;-6;8;0" additive="sum" dur="8.6s" repeatCount="indefinite" /></ellipse>
