@@ -2512,28 +2512,30 @@
 }
 
 
-/* Tiny cartoon clouds: varied puffy silhouettes, soft white and blush highlights. */
-.pm-hero--fullbleed .pm-cloud-field{position:absolute;inset:-2% -2% 0;z-index:2;pointer-events:none;filter:none;isolation:isolate}
-.pm-hero--fullbleed .pm-cloud-field .pm-form{position:absolute;display:block;width:clamp(72px,11vw,118px);height:clamp(38px,6vw,62px);border:0;border-radius:0;opacity:.94;overflow:visible;filter:none;box-shadow:none;will-change:transform;background:
-radial-gradient(circle at 20% 66%,var(--cloud-core) 0 24%,transparent 25%),
-radial-gradient(circle at 39% 39%,var(--cloud-highlight) 0 31%,transparent 32%),
-radial-gradient(circle at 61% 31%,var(--cloud-light) 0 35%,transparent 36%),
-radial-gradient(circle at 80% 62%,var(--cloud-mid) 0 24%,transparent 25%),
-linear-gradient(180deg,transparent 0 48%,var(--cloud-core) 49% 83%,transparent 84%)}
-.pm-hero--fullbleed .pm-cloud-field .pm-form::before{content:"";position:absolute;inset:12% 10% 18%;border-radius:50%;background:radial-gradient(ellipse at 42% 24%,rgb(255 255 255 / 75%),transparent 58%);filter:blur(3px);opacity:.8}
-.pm-hero--fullbleed .pm-cloud-field .pm-form::after{content:"";position:absolute;inset:16% 8% 4%;border-radius:50%;background:radial-gradient(ellipse at 50% 100%,rgb(215 160 190 / 13%),transparent 70%);filter:blur(4px);opacity:.7}
-.pm-hero--fullbleed .pm-cloud-field .pm-form--lime{--cloud-core:#fffafd;--cloud-mid:#f7e5ee;--cloud-light:#fff4f9;--cloud-highlight:#fff;left:8%;top:12%;width:clamp(68px,8vw,94px);height:clamp(36px,4.5vw,50px);animation:pm-cloud-lime 19s ease-in-out infinite}
-.pm-hero--fullbleed .pm-cloud-field .pm-form--pink{--cloud-core:#fff7fb;--cloud-mid:#f2d6e4;--cloud-light:#fff0f6;--cloud-highlight:#fff;right:7%;top:18%;width:clamp(92px,12vw,132px);height:clamp(48px,6.2vw,68px);animation:pm-cloud-pink 22s ease-in-out infinite}
-.pm-hero--fullbleed .pm-cloud-field .pm-form--cream{--cloud-core:#fff;--cloud-mid:#f5eaf0;--cloud-light:#fffafd;--cloud-highlight:#fff;right:18%;bottom:12%;width:clamp(58px,7vw,82px);height:clamp(31px,3.8vw,43px);animation:pm-cloud-cream 20s ease-in-out infinite}
-.pm-hero--fullbleed .pm-cloud-field .pm-form--green{--cloud-core:#fff9fc;--cloud-mid:#efd2e0;--cloud-light:#fff2f7;--cloud-highlight:#fff;left:4%;bottom:17%;width:clamp(82px,10vw,108px);height:clamp(43px,5.2vw,57px);animation:pm-cloud-green 24s ease-in-out infinite}
-@keyframes pm-cloud-lime{0%,100%{transform:translate(0,0) scale(.96)}50%{transform:translate(12px,-8px) scale(1.04)}}
-@keyframes pm-cloud-pink{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-15px,9px) scale(.96)}}
-@keyframes pm-cloud-cream{0%,100%{transform:translate(0,0) scale(.98)}50%{transform:translate(-9px,-11px) scale(1.06)}}
-@keyframes pm-cloud-green{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(13px,-7px) scale(.95)}}
+/* 16-bit pastel pixel clouds — crisp stepped silhouettes, layered highlights and blush shadows. */
+.pm-hero--fullbleed .pm-cloud-field{position:absolute;inset:-2% -2% 0;z-index:2;pointer-events:none;isolation:isolate}
+.pm-hero--fullbleed .pm-cloud-field .pm-form{position:absolute;display:block;width:128px;height:72px;border:0;border-radius:0;opacity:.98;overflow:visible;filter:none;box-shadow:none;will-change:transform;background:none}
+.pm-hero--fullbleed .pm-cloud-field .pm-form::before,
+.pm-hero--fullbleed .pm-cloud-field .pm-form::after{content:"";position:absolute;left:50%;top:50%;width:8px;height:8px;border-radius:0;transform:translate(-50%,-50%);image-rendering:pixelated}
+.pm-hero--fullbleed .pm-cloud-field .pm-form::before{background:var(--pixel-cloud-mid);box-shadow:
+-40px 8px 0 var(--pixel-cloud-mid),-32px 8px 0 var(--pixel-cloud-mid),-24px 8px 0 var(--pixel-cloud-mid),-16px 8px 0 var(--pixel-cloud-mid),-8px 8px 0 var(--pixel-cloud-mid),0 8px 0 var(--pixel-cloud-mid),8px 8px 0 var(--pixel-cloud-mid),16px 8px 0 var(--pixel-cloud-mid),24px 8px 0 var(--pixel-cloud-mid),32px 8px 0 var(--pixel-cloud-mid),40px 8px 0 var(--pixel-cloud-mid),
+-48px 0 0 var(--pixel-cloud-mid),-40px 0 0 var(--pixel-cloud-mid),-32px 0 0 var(--pixel-cloud-mid),-24px 0 0 var(--pixel-cloud-light),-16px 0 0 var(--pixel-cloud-light),-8px 0 0 var(--pixel-cloud-light),0 0 0 var(--pixel-cloud-light),8px 0 0 var(--pixel-cloud-light),16px 0 0 var(--pixel-cloud-light),24px 0 0 var(--pixel-cloud-mid),32px 0 0 var(--pixel-cloud-mid),40px 0 0 var(--pixel-cloud-mid),48px 0 0 var(--pixel-cloud-mid),
+-32px -8px 0 var(--pixel-cloud-mid),-24px -8px 0 var(--pixel-cloud-light),-16px -8px 0 var(--pixel-cloud-light),-8px -8px 0 var(--pixel-cloud-light),0 -8px 0 var(--pixel-cloud-light),8px -8px 0 var(--pixel-cloud-light),16px -8px 0 var(--pixel-cloud-light),24px -8px 0 var(--pixel-cloud-mid),
+-16px -16px 0 var(--pixel-cloud-light),-8px -16px 0 var(--pixel-cloud-light),0 -16px 0 var(--pixel-cloud-light),8px -16px 0 var(--pixel-cloud-light),16px -16px 0 var(--pixel-cloud-light),
+-8px -24px 0 var(--pixel-cloud-light),0 -24px 0 var(--pixel-cloud-light),8px -24px 0 var(--pixel-cloud-light)}
+.pm-hero--fullbleed .pm-cloud-field .pm-form::after{left:50%;top:50%;width:8px;height:8px;background:var(--pixel-cloud-highlight);box-shadow:
+-24px -8px 0 var(--pixel-cloud-highlight),-16px -16px 0 var(--pixel-cloud-highlight),-8px -16px 0 var(--pixel-cloud-highlight),0 -16px 0 var(--pixel-cloud-highlight),8px -16px 0 var(--pixel-cloud-highlight),-8px -8px 0 var(--pixel-cloud-highlight),0 -8px 0 var(--pixel-cloud-highlight),8px -8px 0 var(--pixel-cloud-highlight),16px -8px 0 var(--pixel-cloud-highlight),-32px 0 0 var(--pixel-cloud-highlight),-24px 0 0 var(--pixel-cloud-highlight),-16px 0 0 var(--pixel-cloud-highlight),-8px 0 0 var(--pixel-cloud-highlight),0 0 0 var(--pixel-cloud-highlight),8px 0 0 var(--pixel-cloud-highlight),16px 0 0 var(--pixel-cloud-highlight),24px 0 0 var(--pixel-cloud-highlight);opacity:.55}
+.pm-hero--fullbleed .pm-cloud-field .pm-form--lime{--pixel-cloud-mid:#f3dce8;--pixel-cloud-light:#fff7fb;--pixel-cloud-highlight:#fff;left:8%;top:12%;transform:scale(.78);animation:pm-cloud-lime 19s ease-in-out infinite}
+.pm-hero--fullbleed .pm-cloud-field .pm-form--pink{--pixel-cloud-mid:#edc8da;--pixel-cloud-light:#fff1f7;--pixel-cloud-highlight:#fff;right:7%;top:18%;transform:scale(1.02);animation:pm-cloud-pink 22s ease-in-out infinite}
+.pm-hero--fullbleed .pm-cloud-field .pm-form--cream{--pixel-cloud-mid:#f0e3eb;--pixel-cloud-light:#fffafd;--pixel-cloud-highlight:#fff;right:18%;bottom:12%;transform:scale(.62);animation:pm-cloud-cream 20s ease-in-out infinite}
+.pm-hero--fullbleed .pm-cloud-field .pm-form--green{--pixel-cloud-mid:#f0d2e0;--pixel-cloud-light:#fff4f8;--pixel-cloud-highlight:#fff;left:4%;bottom:17%;transform:scale(.88);animation:pm-cloud-green 24s ease-in-out infinite}
+@keyframes pm-cloud-lime{0%,100%{translate:0 0}50%{translate:8px -5px}}
+@keyframes pm-cloud-pink{0%,100%{translate:0 0}50%{translate:-10px 6px}}
+@keyframes pm-cloud-cream{0%,100%{translate:0 0}50%{translate:-6px -7px}}
+@keyframes pm-cloud-green{0%,100%{translate:0 0}50%{translate:9px -5px}}
 @media(max-width:640px){.pm-hero--fullbleed .pm-cloud-field .pm-form--lime{left:3%;top:12%}.pm-hero--fullbleed .pm-cloud-field .pm-form--pink{right:2%;top:20%}.pm-hero--fullbleed .pm-cloud-field .pm-form--cream{right:12%;bottom:9%}.pm-hero--fullbleed .pm-cloud-field .pm-form--green{left:1%;bottom:14%}}
 @media(prefers-reduced-motion:reduce){.pm-hero--fullbleed .pm-cloud-field .pm-form{animation:none!important}}
-
-
+ 
 /* Crowd carousel — tactile project cards, shared across all categories. */
 @layer components {
   .portfolio-carousel-shell {
