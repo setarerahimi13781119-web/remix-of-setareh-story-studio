@@ -2510,3 +2510,101 @@
   50% { scale: .93 1.09; border-radius: 65% 35% 45% 55% / 36% 64% 36% 64%; }
   75% { scale: 1.045 .97; border-radius: 46% 54% 64% 36% / 61% 40% 60% 39%; }
 }
+
+
+/* Cloud study: four colored vapor masses that merge and separate as one soft system. */
+.pm-hero--fullbleed .pm-cloud-field {
+  position: absolute;
+  inset: 2% -2% 3%;
+  z-index: 2;
+  pointer-events: none;
+  filter: url(#pm-cloud-merge);
+  isolation: isolate;
+}
+.pm-hero--fullbleed .pm-cloud-field .pm-form {
+  position: absolute;
+  display: block;
+  width: clamp(132px, 27%, 230px);
+  height: clamp(118px, 25%, 205px);
+  aspect-ratio: auto;
+  border: 0;
+  border-radius: 50%;
+  opacity: .94;
+  overflow: visible;
+  filter: none;
+  box-shadow: none;
+  will-change: transform, border-radius;
+  background:
+    radial-gradient(ellipse 43% 32% at 34% 25%, rgb(255 255 255 / 83%), transparent 100%),
+    radial-gradient(ellipse 64% 57% at 49% 54%, var(--cloud-core), transparent 78%),
+    radial-gradient(ellipse 54% 43% at 70% 75%, var(--cloud-shadow), transparent 100%),
+    radial-gradient(ellipse 36% 30% at 18% 70%, var(--cloud-light), transparent 100%);
+}
+.pm-hero--fullbleed .pm-cloud-field .pm-form::before {
+  content: "";
+  position: absolute;
+  inset: -17% -15%;
+  border-radius: 50%;
+  background:
+    radial-gradient(ellipse 32% 27% at 23% 38%, var(--cloud-core) 0 65%, transparent 100%),
+    radial-gradient(ellipse 37% 31% at 48% 19%, var(--cloud-light) 0 62%, transparent 100%),
+    radial-gradient(ellipse 35% 30% at 76% 37%, var(--cloud-core) 0 63%, transparent 100%),
+    radial-gradient(ellipse 42% 35% at 68% 76%, var(--cloud-shadow) 0 58%, transparent 100%),
+    radial-gradient(ellipse 32% 28% at 27% 78%, var(--cloud-core) 0 62%, transparent 100%);
+  filter: blur(5px);
+  opacity: .88;
+}
+.pm-hero--fullbleed .pm-cloud-field .pm-form::after {
+  content: "";
+  position: absolute;
+  inset: 9% 12% 15%;
+  border-radius: 50%;
+  background:
+    radial-gradient(ellipse at 35% 27%, rgb(255 255 255 / 44%), transparent 48%),
+    radial-gradient(ellipse at 70% 72%, rgb(30 35 26 / 14%), transparent 64%);
+  filter: blur(13px);
+  opacity: .7;
+}
+.pm-hero--fullbleed .pm-cloud-field .pm-form--lime {
+  --cloud-core: #cbe77f; --cloud-light: #f3f8d4; --cloud-shadow: #91b94f;
+  left: 5%; top: 11%;
+  animation: pm-cloud-lime 13s ease-in-out infinite;
+}
+.pm-hero--fullbleed .pm-cloud-field .pm-form--pink {
+  --cloud-core: #e9a9c3; --cloud-light: #f9e3eb; --cloud-shadow: #bd668e;
+  right: 2%; top: 12%;
+  animation: pm-cloud-pink 15s ease-in-out infinite;
+}
+.pm-hero--fullbleed .pm-cloud-field .pm-form--cream {
+  --cloud-core: #e9d8c1; --cloud-light: #fffaf0; --cloud-shadow: #c7ad91;
+  right: 6%; bottom: 5%;
+  animation: pm-cloud-cream 14s ease-in-out infinite;
+}
+.pm-hero--fullbleed .pm-cloud-field .pm-form--green {
+  --cloud-core: #9fc58b; --cloud-light: #e0efd3; --cloud-shadow: #4f805b;
+  left: 0%; bottom: 8%;
+  animation: pm-cloud-green 16s ease-in-out infinite;
+}
+@keyframes pm-cloud-lime {
+  0%,100% { transform: translate(0,0) scale(1); border-radius: 54% 46% 58% 42%; }
+  35% { transform: translate(18%,17%) scale(1.12,.94); border-radius: 48% 52% 43% 57%; }
+  68% { transform: translate(4%,5%) scale(.94,1.08); border-radius: 61% 39% 52% 48%; }
+}
+@keyframes pm-cloud-pink {
+  0%,100% { transform: translate(0,0) scale(1); border-radius: 48% 52% 56% 44%; }
+  35% { transform: translate(-19%,18%) scale(1.08,1.02); border-radius: 58% 42% 46% 54%; }
+  68% { transform: translate(-3%,4%) scale(1.02,.93); border-radius: 43% 57% 60% 40%; }
+}
+@keyframes pm-cloud-cream {
+  0%,100% { transform: translate(0,0) scale(1); border-radius: 57% 43% 47% 53%; }
+  35% { transform: translate(-17%,-17%) scale(1.1,.96); border-radius: 44% 56% 58% 42%; }
+  68% { transform: translate(-4%,-5%) scale(.95,1.08); border-radius: 62% 38% 45% 55%; }
+}
+@keyframes pm-cloud-green {
+  0%,100% { transform: translate(0,0) scale(1); border-radius: 49% 51% 59% 41%; }
+  35% { transform: translate(18%,-18%) scale(1.12,.95); border-radius: 59% 41% 44% 56%; }
+  68% { transform: translate(3%,-4%) scale(.95,1.08); border-radius: 42% 58% 55% 45%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pm-hero--fullbleed .pm-cloud-field .pm-form { animation: none !important; }
+}
