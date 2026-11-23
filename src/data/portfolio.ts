@@ -95,24 +95,7 @@ export type PortfolioProject = {
   liveUrl?: string;
 };
 
-export const projects: PortfolioProject[] = [
-  {
-    id: "parla-perfume-ad",
-    title: "Parla — Perfume Campaign",
-    coverLabel: "Fragrance video ad",
-    category: "Fragrance · Video content",
-    role: "Video editing & visual content",
-    summary:
-      "A vertical short-form advertisement created for a Parla fragrance, presented as a finished video piece.",
-    context:
-      "A perfume advertising video for Parla, prepared in a vertical 9:16 format for social media placement.",
-    scope: [
-      "Short-form fragrance advertising video",
-      "Vertical 9:16 video presentation",
-    ],
-    status: "exploration",
-    note: "Presented as a video-content project. Production, scripting and art-direction responsibilities are not claimed.",
-  },
+export const projects: PortfolioProject[
   {
     id: "sayeh-character-design",
     title: "SAYEH — Character Design",
@@ -136,21 +119,89 @@ export const projects: PortfolioProject[] = [
       "An independently designed original character. All character design and visual development were completed by Setareh Rahimi.",
   },
   {
-    id: "setare-fashion-house-film",
-    title: "Setare Fashion House — Autumn Collection Film",
-    coverLabel: "Personal fashion film",
-    category: "Fashion · Video & Motion Content",
-    role: "Personal concept & video creation",
+    id: "lipstick-campaign",
+    title: "Lipstick Campaign",
+    coverLabel: "Beauty advertising · Campaign film",
+    category: "Beauty Advertising",
+    role: "Campaign video presentation",
     summary:
-      "A self-directed fashion film created around an autumn collection concept for Setare Fashion House.",
+      "A short-form lipstick advertisement presented as a standalone beauty campaign.",
     context:
-      "An independent fashion video project developed as a personal creative work, separate from the Khaneh Mod Setareh and Khaneh Shalvar projects.",
+      "A 13-second lipstick advertising video, presented with its supplied campaign cover as an independent portfolio project.",
     scope: [
-      "Autumn collection fashion-film concept",
-      "Video creation and visual presentation",
+      "Short-form lipstick advertising video",
+      "Campaign cover and video presentation",
     ],
     status: "exploration",
-    note: "A self-directed personal project.",
+    note: "A standalone beauty advertising project. The video is embedded from the supplied Google Drive link.",
+  },
+  {
+    id: "parla-perfume-ad",
+    title: "Parla — Perfume Campaign",
+    coverLabel: "Fragrance video ad",
+    category: "Fragrance · Video content",
+    role: "Video editing & visual content",
+    summary:
+      "A vertical short-form advertisement created for a Parla fragrance, presented as a finished video piece.",
+    context:
+      "A perfume advertising video for Parla, prepared in a vertical 9:16 format for social media placement.",
+    scope: [
+      "Short-form fragrance advertising video",
+      "Vertical 9:16 video presentation",
+    ],
+    status: "exploration",
+    note: "Presented as a video-content project. Production, scripting and art-direction responsibilities are not claimed.",
+  },
+  {
+    id: "touch-ups",
+    title: "Touch Ups",
+    coverLabel: "Restaurant food retouching",
+    category: "Food Photography · Retouching · Motion",
+    role: "Food photo retouching & logo motion",
+    summary: "A before-and-after collection of restaurant food image retouching, accompanied by a motion treatment for the Chenjeh logo.",
+    context: "A visual editing project focused on refining restaurant food photography, presenting each original image alongside its retouched result, with an additional animated logo treatment for Chenjeh.",
+    scope: [
+      "Restaurant and café image retouching — five before-and-after pairs",
+      "Logo motion — animated treatment of the Chenjeh logo",
+    ],
+    status: "exploration",
+    note: "The five food and café photo pairs show before-and-after image editing, and the Chenjeh logo animation is a separate motion piece. The tea BEFORE/AFTER cover is an AI-assisted visual reconstruction based on the original photograph, not a pixel-level retouch of that file.",
+  },
+  {
+    id: "junoon-podcast",
+    title: "Junoon Podcast",
+    coverLabel: "Recent team collaboration",
+    category: "Podcast · Video editing & visual design",
+    role: "Full video editing · Visual design exploration",
+    summary:
+      "Recently joined the team of this long-running true-crime podcast: full editing of the first completed video, plus personal cover and social visual explorations.",
+    context:
+      "Junoon is a long-running true-crime podcast that existed before this collaboration. Setareh recently joined the team; her contribution is limited to the two tracks below.",
+    scope: [
+      "Full video editing — first completed video: Brian Yassipour",
+      "Personal documentary crime-podcast cover and social visual explorations",
+    ],
+    status: "team-collaboration",
+    note: "The podcast, its original identity and its brand history predate this collaboration and are not claimed. The five images shown here are Setareh's own visual explorations from this collaboration; no video file has been added to this portfolio.",
+    tracks: [
+      {
+        title: "Video Editing",
+        label: "Full video editing · First completed video: Brian Yassipour (برایان یاسی‌پور)",
+        items: [
+          "End-to-end editing of the episode video on the Brian Yassipour case",
+          "Carried through from editing to final export",
+        ],
+      },
+      {
+        title: "Visual Design Exploration",
+        label: "Own contribution · Exploration",
+        items: [
+          "Documentary crime-podcast cover explorations",
+          "High-contrast portrait treatments with red / black / white accents",
+          "Social visual treatments for highlight and reels covers",
+        ],
+      },
+    ],
   },
   {
     id: "khaneh-shalvar",
@@ -189,6 +240,79 @@ export const projects: PortfolioProject[] = [
     note: "The LinkedIn presentation is part of the project scope; no publication or client-delivery claim is made.",
   },
   {
+    id: "setare-fashion-house-film",
+    title: "Setare Fashion House — Autumn Collection Film",
+    coverLabel: "Personal fashion film",
+    category: "Fashion · Video & Motion Content",
+    role: "Personal concept & video creation",
+    summary:
+      "A self-directed fashion film created around an autumn collection concept for Setare Fashion House.",
+    context:
+      "An independent fashion video project developed as a personal creative work, separate from the Khaneh Mod Setareh and Khaneh Shalvar projects.",
+    scope: [
+      "Autumn collection fashion-film concept",
+      "Video creation and visual presentation",
+    ],
+    status: "exploration",
+    note: "A self-directed personal project.",
+  },
+  {
+    id: "stillness-wellness-spaces",
+    title: "STILLNESS — Wellness Space Concepts",
+    coverLabel: "Restorative environments · Motion & stills",
+    category: "Visual Concept · AI-assisted Imagery · Motion",
+    role: "Visual concept development & motion studies",
+    summary:
+      "A visual exploration of calm, nature-led environments, bringing together atmospheric still imagery and motion pieces.",
+    context:
+      "An independent visual study of restorative spaces and quiet moments in nature. The work is presented as a multimedia exploration through still images and motion clips.",
+    scope: [
+      "AI-assisted visual exploration of wellness and meditation environments",
+      "Motion studies and video presentation",
+      "Art direction around atmosphere, natural materials and visual calm",
+    ],
+    status: "exploration",
+    note: "A conceptual visual project, not architectural documentation or a claim of built interior-design work.",
+  },
+  {
+    id: "turkish-coffee-packaging",
+    title: "Turkish Coffee Packaging Concept",
+    coverLabel: "Three roast colorways",
+    category: "Coffee · Packaging Design",
+    role: "Front-of-pack visual design",
+    summary:
+      "Front-of-pack design for a conceptual Turkish coffee brand, presented as a consistent three-product range with color variations for each roast.",
+    context:
+      "A self-initiated packaging concept for a Turkish coffee brand, exploring a unified visual system across three roast varieties.",
+    scope: [
+      "Front-of-pack design for three coffee roast varieties",
+      "Consistent layout and graphic system across the product range",
+      "Color variations to distinguish the three roasts",
+    ],
+    status: "exploration",
+    note: "A self-initiated concept project. The three variants share the same design and differ only in color; no separate visual identities are claimed.",
+    liveUrl: "https://lnkd.in/p/eYKH42N3",
+  },
+  {
+    id: "turquoise-jewelry-set",
+    title: "Turquoise Jewelry Set",
+    coverLabel: "AI-generated product concept",
+    category: "AI-assisted · Product visual design",
+    role: "AI Art Direction · Concept Development · Product Visual Creation",
+    summary:
+      "An end-to-end AI-generated turquoise jewelry concept, developed from the initial idea through the final product visuals.",
+    context:
+      "A self-directed AI product-visual project exploring a coordinated turquoise jewelry set. The concept, design development and final imagery were all created with AI tools.",
+    scope: [
+      "AI-assisted concept development",
+      "Jewelry set design exploration",
+      "AI-generated product and model imagery",
+      "Art direction and visual refinement",
+    ],
+    status: "exploration",
+    note: "All visuals are AI-generated concept imagery; they do not document a physically manufactured product or a real-life photoshoot.",
+  },
+  {
     id: "moodbean",
     title: "Coffee Assets",
     coverLabel: "Coffee visual collection",
@@ -225,44 +349,6 @@ export const projects: PortfolioProject[] = [
     note: "A curated collection of individual pieces rather than one continuous client project.",
   },
   {
-    id: "turquoise-jewelry-set",
-    title: "Turquoise Jewelry Set",
-    coverLabel: "AI-generated product concept",
-    category: "AI-assisted · Product visual design",
-    role: "AI Art Direction · Concept Development · Product Visual Creation",
-    summary:
-      "An end-to-end AI-generated turquoise jewelry concept, developed from the initial idea through the final product visuals.",
-    context:
-      "A self-directed AI product-visual project exploring a coordinated turquoise jewelry set. The concept, design development and final imagery were all created with AI tools.",
-    scope: [
-      "AI-assisted concept development",
-      "Jewelry set design exploration",
-      "AI-generated product and model imagery",
-      "Art direction and visual refinement",
-    ],
-    status: "exploration",
-    note: "All visuals are AI-generated concept imagery; they do not document a physically manufactured product or a real-life photoshoot.",
-  },
-  {
-    id: "turkish-coffee-packaging",
-    title: "Turkish Coffee Packaging Concept",
-    coverLabel: "Three roast colorways",
-    category: "Coffee · Packaging Design",
-    role: "Front-of-pack visual design",
-    summary:
-      "Front-of-pack design for a conceptual Turkish coffee brand, presented as a consistent three-product range with color variations for each roast.",
-    context:
-      "A self-initiated packaging concept for a Turkish coffee brand, exploring a unified visual system across three roast varieties.",
-    scope: [
-      "Front-of-pack design for three coffee roast varieties",
-      "Consistent layout and graphic system across the product range",
-      "Color variations to distinguish the three roasts",
-    ],
-    status: "exploration",
-    note: "A self-initiated concept project. The three variants share the same design and differ only in color; no separate visual identities are claimed.",
-    liveUrl: "https://lnkd.in/p/eYKH42N3",
-  },
-  {
     id: "nikmehr",
     title: "Nikmehr",
     coverLabel: "Content publishing",
@@ -277,93 +363,8 @@ export const projects: PortfolioProject[] = [
     ],
     status: "verified-role",
     note: "The role was coordination and publishing, not authorship, copywriting, graphic design, video editing, strategy ownership or account ownership. The selected reels relate to this Nikmehr work overall and are not assigned to either page individually.",
-  },
-  {
-    id: "touch-ups",
-    title: "Touch Ups",
-    coverLabel: "Restaurant food retouching",
-    category: "Food Photography · Retouching · Motion",
-    role: "Food photo retouching & logo motion",
-    summary: "A before-and-after collection of restaurant food image retouching, accompanied by a motion treatment for the Chenjeh logo.",
-    context: "A visual editing project focused on refining restaurant food photography, presenting each original image alongside its retouched result, with an additional animated logo treatment for Chenjeh.",
-    scope: [
-      "Restaurant and café image retouching — five before-and-after pairs",
-      "Logo motion — animated treatment of the Chenjeh logo",
-    ],
-    status: "exploration",
-    note: "The five food and café photo pairs show before-and-after image editing, and the Chenjeh logo animation is a separate motion piece. The tea BEFORE/AFTER cover is an AI-assisted visual reconstruction based on the original photograph, not a pixel-level retouch of that file.",
-  },
-  {
-    id: "stillness-wellness-spaces",
-    title: "STILLNESS — Wellness Space Concepts",
-    coverLabel: "Restorative environments · Motion & stills",
-    category: "Visual Concept · AI-assisted Imagery · Motion",
-    role: "Visual concept development & motion studies",
-    summary:
-      "A visual exploration of calm, nature-led environments, bringing together atmospheric still imagery and motion pieces.",
-    context:
-      "An independent visual study of restorative spaces and quiet moments in nature. The work is presented as a multimedia exploration through still images and motion clips.",
-    scope: [
-      "AI-assisted visual exploration of wellness and meditation environments",
-      "Motion studies and video presentation",
-      "Art direction around atmosphere, natural materials and visual calm",
-    ],
-    status: "exploration",
-    note: "A conceptual visual project, not architectural documentation or a claim of built interior-design work.",
-  },
-  {
-    id: "lipstick-campaign",
-    title: "Lipstick Campaign",
-    coverLabel: "Beauty advertising · Campaign film",
-    category: "Beauty Advertising",
-    role: "Campaign video presentation",
-    summary:
-      "A short-form lipstick advertisement presented as a standalone beauty campaign.",
-    context:
-      "A 13-second lipstick advertising video, presented with its supplied campaign cover as an independent portfolio project.",
-    scope: [
-      "Short-form lipstick advertising video",
-      "Campaign cover and video presentation",
-    ],
-    status: "exploration",
-    note: "A standalone beauty advertising project. The video is embedded from the supplied Google Drive link.",
-  },
-  {
-    id: "junoon-podcast",
-    title: "Junoon Podcast",
-    coverLabel: "Recent team collaboration",
-    category: "Podcast · Video editing & visual design",
-    role: "Full video editing · Visual design exploration",
-    summary:
-      "Recently joined the team of this long-running true-crime podcast: full editing of the first completed video, plus personal cover and social visual explorations.",
-    context:
-      "Junoon is a long-running true-crime podcast that existed before this collaboration. Setareh recently joined the team; her contribution is limited to the two tracks below.",
-    scope: [
-      "Full video editing — first completed video: Brian Yassipour",
-      "Personal documentary crime-podcast cover and social visual explorations",
-    ],
-    status: "team-collaboration",
-    note: "The podcast, its original identity and its brand history predate this collaboration and are not claimed. The five images shown here are Setareh's own visual explorations from this collaboration; no video file has been added to this portfolio.",
-    tracks: [
-      {
-        title: "Video Editing",
-        label: "Full video editing · First completed video: Brian Yassipour (برایان یاسی‌پور)",
-        items: [
-          "End-to-end editing of the episode video on the Brian Yassipour case",
-          "Carried through from editing to final export",
-        ],
-      },
-      {
-        title: "Visual Design Exploration",
-        label: "Own contribution · Exploration",
-        items: [
-          "Documentary crime-podcast cover explorations",
-          "High-contrast portrait treatments with red / black / white accents",
-          "Social visual treatments for highlight and reels covers",
-        ],
-      },
-    ],
-  },
+  }
+
 ];
 
 export const capabilities = [
