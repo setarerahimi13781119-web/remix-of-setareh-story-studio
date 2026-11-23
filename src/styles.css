@@ -2543,3 +2543,102 @@ radial-gradient(ellipse 48% 38% at 70% 72%,rgb(24 31 22 / 12%),transparent 100%)
 @keyframes pm-cloud-cream{0%,100%{transform:translate(0,0) scale(1,1)}28%{transform:translate(-21%,-19%) scale(1.12,.98)}58%{transform:translate(-10%,-8%) scale(1.03,1.1)}82%{transform:translate(2%,-2%) scale(.97,1.01)}}
 @keyframes pm-cloud-green{0%,100%{transform:translate(0,0) scale(1,1)}28%{transform:translate(23%,-20%) scale(1.13,.96)}58%{transform:translate(11%,-9%) scale(1.03,1.1)}82%{transform:translate(-2%,-2%) scale(.97,1.01)}}
 @media(prefers-reduced-motion:reduce){.pm-hero--fullbleed .pm-cloud-field .pm-form{animation:none!important}}
+
+
+/* Crowd carousel — tactile project cards, shared across all categories. */
+@layer components {
+  .portfolio-carousel-shell {
+    position: relative;
+    margin-top: clamp(1.5rem, 3vw, 2.5rem);
+    padding-inline: clamp(.25rem, 2.8vw, 2.5rem);
+  }
+  .portfolio-work-grid {
+    display: flex;
+    align-items: stretch;
+    gap: clamp(1rem, 2.2vw, 2rem);
+    overflow-x: auto;
+    overflow-y: visible;
+    padding: 1.15rem clamp(.35rem, 1vw, .85rem) 2.1rem;
+    margin: 0;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 1rem;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .portfolio-work-grid::-webkit-scrollbar { display: none; }
+  .portfolio-work-item {
+    flex: 0 0 min(34%, 390px);
+    scroll-snap-align: center;
+    transform: scale(.94);
+    transform-origin: center center;
+    transition: transform 420ms cubic-bezier(.2,.8,.2,1), filter 420ms ease;
+    filter: saturate(.92);
+  }
+  .portfolio-work-item:first-child { margin-left: .2rem; }
+  .portfolio-work-item:hover,
+  .portfolio-work-item:focus-within {
+    transform: translateY(-7px) scale(1);
+    filter: saturate(1);
+    z-index: 2;
+  }
+  .portfolio-work-card {
+    height: 100%;
+    padding: clamp(.8rem, 1.4vw, 1.2rem);
+    border: 1px solid color-mix(in srgb, var(--foreground) 10%, transparent);
+    border-radius: 25px;
+    background: linear-gradient(150deg, color-mix(in srgb, var(--card) 96%, white), var(--card));
+    box-shadow: 0 2px 0 color-mix(in srgb, var(--foreground) 13%, transparent),
+      0 6px 0 color-mix(in srgb, var(--background) 75%, white),
+      0 12px 24px rgb(28 37 29 / 9%),
+      0 22px 34px rgb(28 37 29 / 8%);
+    transition: box-shadow 260ms ease, transform 260ms ease;
+  }
+  .portfolio-work-item:hover .portfolio-work-card,
+  .portfolio-work-item:focus-within .portfolio-work-card {
+    box-shadow: 0 2px 0 color-mix(in srgb, var(--foreground) 16%, transparent),
+      0 7px 0 color-mix(in srgb, var(--background) 75%, white),
+      0 18px 30px rgb(28 37 29 / 13%),
+      0 28px 42px rgb(28 37 29 / 10%);
+  }
+  .portfolio-cover-trigger { border-radius: 18px !important; }
+  .portfolio-cover-trigger:active { transform: translateY(2px) scale(.99); }
+  .portfolio-art-frame { border-radius: 17px; }
+  .portfolio-carousel-arrow {
+    position: absolute;
+    z-index: 5;
+    top: 46%;
+    display: grid;
+    width: 2.8rem;
+    height: 2.8rem;
+    place-items: center;
+    border: 1px solid color-mix(in srgb, var(--foreground) 13%, transparent);
+    border-radius: 999px;
+    color: var(--foreground);
+    background: color-mix(in srgb, var(--card) 92%, white);
+    box-shadow: 0 3px 0 color-mix(in srgb, var(--foreground) 12%, transparent), 0 8px 18px rgb(28 37 29 / 12%);
+    font-size: 1.25rem;
+    transition: transform 180ms ease, box-shadow 180ms ease;
+  }
+  .portfolio-carousel-arrow:hover { transform: translateY(-2px); }
+  .portfolio-carousel-arrow:active { transform: translateY(2px); box-shadow: 0 1px 0 color-mix(in srgb, var(--foreground) 12%, transparent), 0 3px 8px rgb(28 37 29 / 10%); }
+  .portfolio-carousel-arrow--prev { left: -.15rem; }
+  .portfolio-carousel-arrow--next { right: -.15rem; }
+  @media (max-width: 767px) {
+    .portfolio-carousel-shell { padding-inline: 0; }
+    .portfolio-work-grid {
+      gap: .85rem;
+      padding: 1rem 8vw 1.8rem;
+      scroll-padding-inline: 8vw;
+    }
+    .portfolio-work-item { flex-basis: 82%; transform: scale(.97); }
+    .portfolio-work-card { padding: .85rem; border-radius: 21px; }
+    .portfolio-carousel-arrow { display: none; }
+  }
+  @media (min-width: 768px) and (max-width: 1100px) {
+    .portfolio-work-item { flex-basis: 42%; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .portfolio-work-item, .portfolio-work-card, .portfolio-carousel-arrow { transition: none; }
+  }
+}
