@@ -151,7 +151,7 @@ function Index() {
         <span className="scroll-art-orbit" />
       </div>
       <style>{`
-        .grain > .scroll-art-layer { position: absolute !important; z-index: 0 !important; top: var(--art-start-y, 100vh); right: 0; bottom: 0; left: 0; min-height: 100vh; overflow: hidden; pointer-events: none; isolation: isolate; }
+        .grain > .scroll-art-layer { position: absolute !important; z-index: 0 !important; top: 0; right: 0; bottom: 0; left: 0; min-height: 100%; overflow: hidden; pointer-events: none; isolation: isolate; clip-path: inset(var(--art-start-y, 0px) 0 0 0); }
         .scroll-art-shape { position: absolute; display: block; border-radius: 46% 54% 62% 38% / 43% 38% 62% 57%; will-change: transform; opacity: .9; filter: saturate(1.12); }
         .scroll-art-shape-a { width: clamp(190px,27vw,390px); height: clamp(180px,25vw,360px); left:-9vw; top:19vh; transform:translate3d(calc(var(--scroll-progress,0) * 18vw),calc(var(--scroll-progress,0) * 22vh),0) rotate(calc(-18deg + var(--scroll-progress,0) * 48deg)); background:radial-gradient(ellipse at 62% 60%,rgba(158,182,122,.78),rgba(158,182,122,.36) 52%,transparent 74%); }
         .scroll-art-shape-b { width:clamp(190px,25vw,350px); height:clamp(190px,24vw,340px); right:-9vw; top:23vh; transform:translate3d(calc(var(--scroll-progress,0) * -18vw),calc(var(--scroll-progress,0) * 14vh),0) rotate(calc(22deg - var(--scroll-progress,0) * 48deg)); background:radial-gradient(ellipse at 42% 45%,rgba(193,40,100,.36),rgba(245,230,237,.8) 54%,transparent 75%); }
