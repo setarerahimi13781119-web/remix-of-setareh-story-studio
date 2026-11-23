@@ -1593,3 +1593,118 @@
     filter: brightness(.82);
   }
 }
+
+
+/* Gallery refinement: one shared focal lane, alternating approach vectors,
+   and a clean focal pause. The artwork itself stays uncropped and unframed. */
+@layer components {
+  .portfolio-work-stage {
+    perspective: 1900px;
+    perspective-origin: 50% 44%;
+    overflow: clip;
+  }
+
+  .portfolio-work-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    row-gap: clamp(5.5rem, 11vw, 10rem);
+  }
+
+  .portfolio-work-grid > .portfolio-work-item {
+    grid-column: 1 / -1;
+    width: min(100%, 820px);
+    margin-inline: auto;
+    transform: none;
+    --gallery-x: -3.2vw;
+    --gallery-tilt: -7deg;
+  }
+
+  .portfolio-work-grid > .portfolio-work-item:nth-child(even) {
+    --gallery-x: 3.2vw;
+    --gallery-tilt: 7deg;
+  }
+
+  .portfolio-work-card {
+    width: 100%;
+    transform-style: preserve-3d;
+    will-change: transform, filter;
+  }
+
+  /* Prevent the old per-image travel animation from competing with the card camera. */
+  .portfolio-work-card .portfolio-art-frame {
+    animation: none !important;
+    transform: translateZ(22px);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+  }
+
+  .portfolio-work-card .portfolio-art-frame > img,
+  .portfolio-work-card .portfolio-art-frame > video {
+    max-height: min(78vh, 860px);
+    object-fit: contain;
+    object-position: center;
+  }
+
+  @supports (animation-timeline: view()) {
+    .portfolio-work-card {
+      animation: portfolio-camera-pass 1s cubic-bezier(.2,.65,.25,1) both;
+      animation-timeline: view(block);
+      animation-range: entry 0% exit 100%;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .portfolio-work-grid {
+      row-gap: 4.5rem;
+    }
+    .portfolio-work-grid > .portfolio-work-item {
+      width: 100%;
+      --gallery-x: -1.2rem;
+      --gallery-tilt: -4deg;
+    }
+    .portfolio-work-grid > .portfolio-work-item:nth-child(even) {
+      --gallery-x: 1.2rem;
+      --gallery-tilt: 4deg;
+    }
+    .portfolio-work-card .portfolio-art-frame > img,
+    .portfolio-work-card .portfolio-art-frame > video {
+      max-height: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .portfolio-work-card {
+      animation: none !important;
+      transform: none !important;
+      filter: none !important;
+      will-change: auto;
+    }
+    .portfolio-work-card .portfolio-art-frame {
+      transform: none !important;
+    }
+  }
+}
+
+@keyframes portfolio-camera-pass {
+  0% {
+    transform: perspective(1900px) translate3d(var(--gallery-x, -3vw), 5rem, -320px) rotateX(15deg) rotateY(var(--gallery-tilt, -7deg)) scale(.82);
+    filter: brightness(.76) saturate(.82);
+  }
+  24% {
+    transform: perspective(1900px) translate3d(calc(var(--gallery-x, -3vw) * .35), 1.4rem, -95px) rotateX(5deg) rotateY(calc(var(--gallery-tilt, -7deg) * .35)) scale(.94);
+    filter: brightness(.93) saturate(.96);
+  }
+  44%, 58% {
+    transform: perspective(1900px) translate3d(0, 0, 0) rotateX(0) rotateY(0) scale(1);
+    filter: brightness(1) saturate(1);
+  }
+  78% {
+    transform: perspective(1900px) translate3d(calc(var(--gallery-x, -3vw) * -.35), -1.4rem, -100px) rotateX(-5deg) rotateY(calc(var(--gallery-tilt, -7deg) * -.35)) scale(.93);
+    filter: brightness(.92) saturate(.95);
+  }
+  100% {
+    transform: perspective(1900px) translate3d(calc(var(--gallery-x, -3vw) * -1), -5rem, -320px) rotateX(-14deg) rotateY(calc(var(--gallery-tilt, -7deg) * -1)) scale(.82);
+    filter: brightness(.76) saturate(.82);
+  }
+}
