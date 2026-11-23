@@ -1877,8 +1877,11 @@
     border-radius: 50%;
   }
   .pm-mascot-mark--section {
-    align-self: start;
-    justify-self: end;
+    position: absolute;
+    top: .85rem;
+    right: 0;
+    align-self: auto;
+    justify-self: auto;
     width: 2.15rem;
     height: 2.15rem;
     margin-top: -.45rem;
