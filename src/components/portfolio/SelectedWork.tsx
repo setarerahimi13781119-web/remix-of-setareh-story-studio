@@ -648,6 +648,7 @@ const categoryGroups = [
     id: "prism-form",
     title: "The Prism & Form",
     subtitle: "Character, campaigns & graphic explorations",
+    cover: "https://www.dropbox.com/scl/fi/0i11h61bf2v55as0rqzrw/portfolio_card_branding_v2.jpg?rlkey=86qbjl7b25lfco4yvtvbrlh6x&raw=1",
     projectIds: [
       "sayeh-character-design",
       "parla-perfume-ad",
@@ -661,12 +662,14 @@ const categoryGroups = [
     id: "spatial-architectures",
     title: "Spatial Architectures",
     subtitle: "Atmosphere, environments & visual worlds",
+    cover: "https://www.dropbox.com/scl/fi/v0modiigtebmdqcswhswt/portfolio_card_spatial_3d_v3.jpg?rlkey=l3w6cucxhi28ntu0h03rvk3m3&raw=1",
     projectIds: ["stillness-wellness-spaces", "moodbean"],
   },
   {
     id: "vision-lens",
     title: "Vision & Lens",
     subtitle: "Fashion, image-making & content",
+    cover: "https://www.dropbox.com/scl/fi/6uwq123o8dnxpey22g08s/portfolio_card_photography_v4.jpg?rlkey=fs5exohgxrkyy74n1oufh7tqp&raw=1",
     projectIds: [
       "khaneh-shalvar",
       "setare-fashion-house-film",
@@ -688,6 +691,7 @@ export function SelectedWork() {
           return (
             <section key={group.id} className="portfolio-category-section" aria-labelledby={`category-${group.id}`}>
               <a className="portfolio-category-card" href={`#projects-${group.id}`}>
+                <img className="portfolio-category-card__image" src={group.cover} alt="" aria-hidden="true" loading="lazy" />
                 <span className="portfolio-category-card__index">{String(categoryGroups.indexOf(group) + 1).padStart(2, "0")} / SELECTED WORK</span>
                 <span className="portfolio-category-card__title" id={`category-${group.id}`}>{group.title}</span>
                 <span className="portfolio-category-card__footer">
