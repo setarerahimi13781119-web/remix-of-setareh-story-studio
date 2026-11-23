@@ -95,7 +95,7 @@ export type PortfolioProject = {
   liveUrl?: string;
 };
 
-export const projects: PortfolioProject[
+export const projects: PortfolioProject[] = [
   {
     id: "sayeh-character-design",
     title: "SAYEH — Character Design",
