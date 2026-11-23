@@ -28,7 +28,7 @@ export function Reveal({ children, className = "" }: { children: ReactNode; clas
 
 export function SectionHead({ index, title, id }: { index: string; title: string; id: string }) {
   return (
-    <div className="grid grid-cols-12 gap-6 border-t border-rule pt-5 pb-12 md:pb-16">
+    <div className="relative grid grid-cols-12 gap-6 border-t border-rule pt-5 pb-12 md:pb-16">
       <p className="eyebrow col-span-4 md:col-span-3">§ {index}</p>
       <h2
         id={id}
