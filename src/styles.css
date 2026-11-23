@@ -3014,11 +3014,19 @@
 }
 
 
-/* Liquid glass test: preserve separate glass ribbons and crisp refraction edges. */
+/* Dimensional liquid glass: retain the SVG's internal shadow/refraction filter instead of flattening it. */
 @layer components {
+  .pm-world__art { opacity: .88; }
   .pm-world__glass-sculpture {
-    filter: drop-shadow(0 26px 34px rgb(75 57 63 / 18%)) !important;
+    filter: url(#pm-glass-shadow) drop-shadow(0 30px 34px rgb(75 42 65 / 24%)) !important;
     isolation: isolate;
     transform-box: view-box;
+    shape-rendering: geometricPrecision;
+  }
+  @media (max-width:767px) {
+    .pm-world__art { opacity: .68; }
+    .pm-world__glass-sculpture {
+      filter: url(#pm-glass-shadow) drop-shadow(0 20px 26px rgb(75 42 65 / 20%)) !important;
+    }
   }
 }
