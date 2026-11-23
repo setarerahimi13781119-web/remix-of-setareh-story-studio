@@ -2760,3 +2760,225 @@ radial-gradient(ellipse 48% 38% at 70% 72%,rgb(24 31 22 / 12%),transparent 100%)
 .portfolio-work-card:has(.portfolio-art-frame[data-project="parla-perfume-ad"]) .mt-5 > .eyebrow {
   color: #94616e;
 }
+
+
+/* Individual tactile identities for the remaining selected-work cards.
+   Each palette and surface treatment is tied to the project's own visual language. */
+
+/* SAYEH — lilac character dossier: precise, playful, softly technical. */
+.portfolio-work-card:has([data-project="sayeh-character-design"]) {
+  --cover-accent: #9b83c8;
+  background: linear-gradient(148deg, #fbf8ff 0%, #eee8fa 58%, #e1d8f1 100%);
+  border-color: rgb(126 99 173 / 26%);
+  box-shadow: 0 2px 0 rgb(87 65 128 / 15%), 0 10px 22px rgb(87 65 128 / 9%), 0 22px 40px rgb(87 65 128 / 7%);
+}
+.portfolio-work-card:has([data-project="sayeh-character-design"]):hover {
+  border-color: rgb(126 99 173 / 62%);
+  box-shadow: 0 3px 0 rgb(87 65 128 / 17%), 0 15px 27px rgb(87 65 128 / 13%), 0 28px 46px rgb(87 65 128 / 9%);
+}
+.portfolio-art-frame[data-project="sayeh-character-design"] {
+  background: radial-gradient(circle at 50% 42%, #fff 0%, #f0eafa 58%, #ded4ef 100%);
+  border-color: rgb(126 99 173 / 28%);
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 75%), 0 3px 0 rgb(155 131 200 / 36%);
+}
+.portfolio-art-frame[data-project="sayeh-character-design"]::before { background: #78619f; color: #fbf8ff; }
+.portfolio-art-frame[data-project="sayeh-character-design"]::after { inset: .42rem; border: 1px dashed rgb(120 97 159 / 38%); }
+.portfolio-work-card:has([data-project="sayeh-character-design"]) .portfolio-cover-trigger > .eyebrow,
+.portfolio-work-card:has([data-project="sayeh-character-design"]) .mt-5 > .eyebrow { color: #78619f; }
+
+/* Fashion film — warm coral, cinematic framing and a deeper film-stock shadow. */
+.portfolio-work-card:has([data-project="setare-fashion-house-film"]) {
+  --cover-accent: #df7567;
+  background: linear-gradient(150deg, #fff9f4 0%, #f8e8df 55%, #efd3c8 100%);
+  border-color: rgb(176 83 68 / 25%);
+  box-shadow: 0 2px 0 rgb(119 58 48 / 16%), 0 10px 22px rgb(119 58 48 / 9%), 0 23px 40px rgb(119 58 48 / 8%);
+}
+.portfolio-work-card:has([data-project="setare-fashion-house-film"]):hover {
+  border-color: rgb(176 83 68 / 58%);
+  box-shadow: 0 3px 0 rgb(119 58 48 / 18%), 0 15px 28px rgb(119 58 48 / 14%), 0 30px 48px rgb(119 58 48 / 10%);
+}
+.portfolio-art-frame[data-project="setare-fashion-house-film"] {
+  background: linear-gradient(135deg, #ead0c5, #f8eee7 48%, #d9b4a8);
+  border-color: rgb(176 83 68 / 30%);
+  box-shadow: inset 0 0 0 1px rgb(255 248 242 / 70%), 0 4px 0 rgb(223 117 103 / 30%);
+}
+.portfolio-art-frame[data-project="setare-fashion-house-film"]::before { background: #a95046; color: #fff8f1; }
+.portfolio-art-frame[data-project="setare-fashion-house-film"]::after { inset: .38rem; border: 1px solid rgb(255 248 242 / 65%); }
+.portfolio-work-card:has([data-project="setare-fashion-house-film"]) .portfolio-cover-trigger > .eyebrow,
+.portfolio-work-card:has([data-project="setare-fashion-house-film"]) .mt-5 > .eyebrow { color: #a95046; }
+
+/* Khaneh Shalvar — tailored peach and soft leather-like warmth. */
+.portfolio-work-card:has([data-project="khaneh-shalvar"]) {
+  --cover-accent: #d99a76;
+  background: linear-gradient(145deg, #fffaf4 0%, #f5e7db 58%, #ead4c4 100%);
+  border-color: rgb(159 105 75 / 26%);
+  box-shadow: 0 2px 0 rgb(110 75 54 / 14%), 0 9px 21px rgb(110 75 54 / 8%), 0 21px 38px rgb(110 75 54 / 7%);
+}
+.portfolio-work-card:has([data-project="khaneh-shalvar"]):hover {
+  border-color: rgb(159 105 75 / 60%);
+  box-shadow: 0 3px 0 rgb(110 75 54 / 16%), 0 14px 27px rgb(110 75 54 / 12%), 0 28px 45px rgb(110 75 54 / 9%);
+}
+.portfolio-art-frame[data-project="khaneh-shalvar"] {
+  background: linear-gradient(145deg, #f4e4d7, #e8d0bf);
+  border-color: rgb(159 105 75 / 28%);
+  box-shadow: inset 0 0 0 1px rgb(255 250 244 / 72%), 0 3px 0 rgb(217 154 118 / 34%);
+}
+.portfolio-art-frame[data-project="khaneh-shalvar"]::before { background: #9e6b50; color: #fff9f1; }
+.portfolio-art-frame[data-project="khaneh-shalvar"]::after { inset: .5rem; border-color: rgb(255 249 241 / 75%); }
+.portfolio-work-card:has([data-project="khaneh-shalvar"]) .portfolio-cover-trigger > .eyebrow,
+.portfolio-work-card:has([data-project="khaneh-shalvar"]) .mt-5 > .eyebrow { color: #9e6b50; }
+
+/* Khaneh Mod Setareh — bright atelier yellow with crisp graphic edges. */
+.portfolio-work-card:has([data-project="khaneh-mod-setareh"]) {
+  --cover-accent: #c9a52f;
+  background: linear-gradient(145deg, #fffdf3 0%, #f7f0d5 56%, #eee2b6 100%);
+  border-color: rgb(151 119 31 / 27%);
+  box-shadow: 0 2px 0 rgb(105 83 23 / 15%), 0 10px 21px rgb(105 83 23 / 8%), 0 22px 39px rgb(105 83 23 / 7%);
+}
+.portfolio-work-card:has([data-project="khaneh-mod-setareh"]):hover {
+  border-color: rgb(151 119 31 / 62%);
+  box-shadow: 0 3px 0 rgb(105 83 23 / 17%), 0 15px 27px rgb(105 83 23 / 12%), 0 28px 46px rgb(105 83 23 / 9%);
+}
+.portfolio-art-frame[data-project="khaneh-mod-setareh"] {
+  background: linear-gradient(145deg, #fff9df, #eee2b6);
+  border-color: rgb(151 119 31 / 30%);
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 75%), 0 3px 0 rgb(201 165 47 / 38%);
+}
+.portfolio-art-frame[data-project="khaneh-mod-setareh"]::before { background: #8d762e; color: #fffbea; }
+.portfolio-art-frame[data-project="khaneh-mod-setareh"]::after { inset: .44rem; border: 1px solid rgb(141 118 46 / 25%); }
+.portfolio-work-card:has([data-project="khaneh-mod-setareh"]) .portfolio-cover-trigger > .eyebrow,
+.portfolio-work-card:has([data-project="khaneh-mod-setareh"]) .mt-5 > .eyebrow { color: #8d762e; }
+
+/* Coffee Assets — roasted espresso browns with a quiet tactile paper surface. */
+.portfolio-work-card:has([data-project="moodbean"]) {
+  --cover-accent: #9b7050;
+  background: linear-gradient(148deg, #fcf8f1 0%, #eee3d5 58%, #dfcbb7 100%);
+  border-color: rgb(105 72 49 / 28%);
+  box-shadow: 0 2px 0 rgb(76 52 36 / 16%), 0 10px 22px rgb(76 52 36 / 9%), 0 22px 40px rgb(76 52 36 / 8%);
+}
+.portfolio-work-card:has([data-project="moodbean"]):hover {
+  border-color: rgb(105 72 49 / 62%);
+  box-shadow: 0 3px 0 rgb(76 52 36 / 18%), 0 15px 28px rgb(76 52 36 / 13%), 0 29px 47px rgb(76 52 36 / 10%);
+}
+.portfolio-art-frame[data-project="moodbean"] {
+  background: radial-gradient(ellipse at 50% 35%, #fffaf2, #e8d7c5 78%);
+  border-color: rgb(105 72 49 / 30%);
+  box-shadow: inset 0 0 0 1px rgb(255 250 242 / 70%), 0 3px 0 rgb(155 112 80 / 36%);
+}
+.portfolio-art-frame[data-project="moodbean"]::before { background: #65452f; color: #fff8ed; }
+.portfolio-art-frame[data-project="moodbean"]::after { inset: .46rem; border-color: rgb(101 69 47 / 24%); }
+.portfolio-work-card:has([data-project="moodbean"]) .portfolio-cover-trigger > .eyebrow,
+.portfolio-work-card:has([data-project="moodbean"]) .mt-5 > .eyebrow { color: #65452f; }
+
+/* Turquoise jewelry — mineral teal, cool highlights and a polished stone edge. */
+.portfolio-work-card:has([data-project="turquoise-jewelry-set"]) {
+  --cover-accent: #4baeb5;
+  background: linear-gradient(145deg, #f4ffff 0%, #dff2ef 56%, #c5e5e2 100%);
+  border-color: rgb(40 126 133 / 27%);
+  box-shadow: 0 2px 0 rgb(29 91 96 / 16%), 0 10px 22px rgb(29 91 96 / 9%), 0 22px 40px rgb(29 91 96 / 7%);
+}
+.portfolio-work-card:has([data-project="turquoise-jewelry-set"]):hover {
+  border-color: rgb(40 126 133 / 64%);
+  box-shadow: 0 3px 0 rgb(29 91 96 / 18%), 0 15px 28px rgb(29 91 96 / 13%), 0 29px 47px rgb(29 91 96 / 9%);
+}
+.portfolio-art-frame[data-project="turquoise-jewelry-set"] {
+  background: radial-gradient(circle at 50% 38%, #faffff, #d6efeb 70%, #b8dedb);
+  border-color: rgb(40 126 133 / 32%);
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 80%), 0 3px 0 rgb(75 174 181 / 38%);
+}
+.portfolio-art-frame[data-project="turquoise-jewelry-set"]::before { background: #287e85; color: #f4ffff; }
+.portfolio-art-frame[data-project="turquoise-jewelry-set"]::after { inset: .42rem; border: 1px solid rgb(255 255 255 / 78%); }
+.portfolio-work-card:has([data-project="turquoise-jewelry-set"]) .portfolio-cover-trigger > .eyebrow,
+.portfolio-work-card:has([data-project="turquoise-jewelry-set"]) .mt-5 > .eyebrow { color: #287e85; }
+
+/* Turkish coffee packaging — ochre, ink and a compact packaging-label frame. */
+.portfolio-work-card:has([data-project="turkish-coffee-packaging"]) {
+  --cover-accent: #bd913c;
+  background: linear-gradient(145deg, #fffaf0 0%, #f3e7c9 57%, #e6d4a9 100%);
+  border-color: rgb(126 91 35 / 28%);
+  box-shadow: 0 2px 0 rgb(86 62 25 / 16%), 0 10px 22px rgb(86 62 25 / 9%), 0 22px 40px rgb(86 62 25 / 7%);
+}
+.portfolio-work-card:has([data-project="turkish-coffee-packaging"]):hover {
+  border-color: rgb(126 91 35 / 64%);
+  box-shadow: 0 3px 0 rgb(86 62 25 / 18%), 0 15px 28px rgb(86 62 25 / 13%), 0 29px 47px rgb(86 62 25 / 9%);
+}
+.portfolio-art-frame[data-project="turkish-coffee-packaging"] {
+  background: linear-gradient(145deg, #fbf1d9, #e9d8ae);
+  border-color: rgb(126 91 35 / 32%);
+  box-shadow: inset 0 0 0 1px rgb(255 251 240 / 78%), 0 3px 0 rgb(189 145 60 / 40%);
+}
+.portfolio-art-frame[data-project="turkish-coffee-packaging"]::before { background: #765323; color: #fff8e7; }
+.portfolio-art-frame[data-project="turkish-coffee-packaging"]::after { inset: .46rem; border: 1px solid rgb(118 83 35 / 30%); }
+.portfolio-work-card:has([data-project="turkish-coffee-packaging"]) .portfolio-cover-trigger > .eyebrow,
+.portfolio-work-card:has([data-project="turkish-coffee-packaging"]) .mt-5 > .eyebrow { color: #765323; }
+
+/* Nikmehr — confident publishing green with a clean editorial grid feel. */
+.portfolio-work-card:has([data-project="nikmehr"]) {
+  --cover-accent: #579b62;
+  background: linear-gradient(145deg, #f7fff7 0%, #e3f0df 57%, #cfe4cb 100%);
+  border-color: rgb(57 112 67 / 28%);
+  box-shadow: 0 2px 0 rgb(40 81 48 / 16%), 0 10px 22px rgb(40 81 48 / 9%), 0 22px 40px rgb(40 81 48 / 7%);
+}
+.portfolio-work-card:has([data-project="nikmehr"]):hover {
+  border-color: rgb(57 112 67 / 64%);
+  box-shadow: 0 3px 0 rgb(40 81 48 / 18%), 0 15px 28px rgb(40 81 48 / 13%), 0 29px 47px rgb(40 81 48 / 9%);
+}
+.portfolio-art-frame[data-project="nikmehr"] {
+  background: linear-gradient(145deg, #f1faed, #d5e9d1);
+  border-color: rgb(57 112 67 / 30%);
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 75%), 0 3px 0 rgb(87 155 98 / 38%);
+}
+.portfolio-art-frame[data-project="nikmehr"]::before { background: #356d42; color: #f7fff7; }
+.portfolio-art-frame[data-project="nikmehr"]::after { inset: .38rem; border: 1px solid rgb(53 109 66 / 25%); }
+.portfolio-work-card:has([data-project="nikmehr"]) .portfolio-cover-trigger > .eyebrow,
+.portfolio-work-card:has([data-project="nikmehr"]) .mt-5 > .eyebrow { color: #356d42; }
+
+/* Touch Ups — culinary editorial: tomato, herb and warm porcelain, not perfume pink. */
+.portfolio-work-card:has([data-project="touch-ups"]) {
+  --cover-accent: #b96f4c;
+  background: linear-gradient(145deg, #fffaf4 0%, #f3e8dc 56%, #e7d4c2 100%);
+  border-color: rgb(135 79 53 / 28%);
+  box-shadow: 0 2px 0 rgb(91 54 37 / 16%), 0 10px 22px rgb(91 54 37 / 9%), 0 22px 40px rgb(91 54 37 / 7%);
+}
+.portfolio-work-card:has([data-project="touch-ups"]):hover {
+  border-color: rgb(135 79 53 / 64%);
+  box-shadow: 0 3px 0 rgb(91 54 37 / 18%), 0 15px 28px rgb(91 54 37 / 13%), 0 29px 47px rgb(91 54 37 / 9%);
+}
+.portfolio-art-frame[data-project="touch-ups"] {
+  background: linear-gradient(145deg, #f9eee2, #e8d6c5);
+  border-color: rgb(135 79 53 / 30%);
+  box-shadow: inset 0 0 0 1px rgb(255 250 244 / 75%), 0 3px 0 rgb(185 111 76 / 38%);
+}
+.portfolio-art-frame[data-project="touch-ups"]::before { background: #89563e; color: #fffaf4; }
+.portfolio-art-frame[data-project="touch-ups"]::after { inset: .38rem; border: 1px solid rgb(255 250 244 / 72%); }
+.portfolio-work-card:has([data-project="touch-ups"]) .portfolio-cover-trigger > .eyebrow,
+.portfolio-work-card:has([data-project="touch-ups"]) .mt-5 > .eyebrow { color: #89563e; }
+
+/* STILLNESS — mineral aqua, soft spa-stone surface and a quieter lift. */
+.portfolio-work-card:has([data-project="stillness-wellness-spaces"]) {
+  --cover-accent: #5daeb0;
+  background: linear-gradient(150deg, #f6ffff 0%, #e4f2ef 58%, #cfe5e1 100%);
+  border-color: rgb(59 126 128 / 24%);
+  box-shadow: 0 2px 0 rgb(43 91 92 / 13%), 0 9px 20px rgb(43 91 92 / 7%), 0 20px 36px rgb(43 91 92 / 6%);
+}
+.portfolio-work-card:has([data-project="stillness-wellness-spaces"]):hover {
+  border-color: rgb(59 126 128 / 55%);
+  box-shadow: 0 3px 0 rgb(43 91 92 / 15%), 0 13px 25px rgb(43 91 92 / 10%), 0 25px 42px rgb(43 91 92 / 8%);
+}
+.portfolio-art-frame[data-project="stillness-wellness-spaces"] {
+  background: radial-gradient(ellipse at 50% 35%, #fafffd, #dceeea 78%);
+  border-color: rgb(59 126 128 / 26%);
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 78%), 0 3px 0 rgb(93 174 176 / 30%);
+}
+.portfolio-art-frame[data-project="stillness-wellness-spaces"]::before { background: #4d898b; color: #f6ffff; }
+.portfolio-art-frame[data-project="stillness-wellness-spaces"]::after { inset: .58rem; border: 1px solid rgb(255 255 255 / 72%); }
+.portfolio-work-card:has([data-project="stillness-wellness-spaces"]) .portfolio-cover-trigger > .eyebrow,
+.portfolio-work-card:has([data-project="stillness-wellness-spaces"]) .mt-5 > .eyebrow { color: #4d898b; }
+
+/* Shared tactile press response, with each card retaining its own palette. */
+@media (hover: none) {
+  .portfolio-work-card:active {
+    transform: translateY(2px) scale(.988);
+    filter: saturate(.98);
+  }
+}
