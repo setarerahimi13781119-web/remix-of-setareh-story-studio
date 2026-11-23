@@ -2982,3 +2982,31 @@ radial-gradient(ellipse 48% 38% at 70% 72%,rgb(24 31 22 / 12%),transparent 100%)
     filter: saturate(.98);
   }
 }
+
+
+/* Tiny liquid bead that tracks the user's finger in viewport space. */
+@layer components {
+  .pm-world__finger-drop {
+    position: fixed;
+    z-index: 2;
+    width: 15px;
+    height: 15px;
+    border-radius: 58% 42% 62% 38% / 42% 58% 42% 58%;
+    pointer-events: none;
+    transform: translate(-50%, -50%) rotate(35deg);
+    background: radial-gradient(circle at 30% 24%, #fff 0 9%, #fff4df 18%, #f18db8 52%, #b93678 100%);
+    box-shadow: 0 2px 5px rgb(90 48 68 / 20%), inset 0 1px 2px rgb(255 255 255 / 85%);
+    transition: opacity 180ms ease;
+    will-change: left, top;
+  }
+  .pm-world__finger-drop span {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    top: 3px;
+    left: 3px;
+    border-radius: 50%;
+    background: rgb(255 255 255 / 92%);
+    filter: blur(.2px);
+  }
+}
