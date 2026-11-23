@@ -2701,3 +2701,62 @@ radial-gradient(ellipse 48% 38% at 70% 72%,rgb(24 31 22 / 12%),transparent 100%)
     transition: none;
   }
 }
+
+
+/* Parla fragrance card — warm, editorial perfume styling */
+.portfolio-work-card:has(.portfolio-art-frame[data-project="parla-perfume-ad"]) {
+  --cover-accent: #ad7180;
+  border-color: color-mix(in srgb, #ad7180 28%, transparent);
+  background:
+    linear-gradient(145deg, #fffaf5 0%, #f6ece7 58%, #efe0dc 100%);
+  box-shadow:
+    0 2px 0 rgb(116 71 77 / 13%),
+    0 9px 20px rgb(116 71 77 / 8%),
+    0 20px 38px rgb(116 71 77 / 6%);
+}
+.portfolio-work-card:has(.portfolio-art-frame[data-project="parla-perfume-ad"]):hover {
+  border-color: rgb(173 113 128 / 58%);
+  box-shadow:
+    0 3px 0 rgb(116 71 77 / 15%),
+    0 13px 25px rgb(116 71 77 / 11%),
+    0 26px 44px rgb(116 71 77 / 8%);
+}
+.portfolio-art-frame[data-project="parla-perfume-ad"] {
+  aspect-ratio: 4 / 5;
+  background: linear-gradient(155deg, #f1e5df, #e5d2cc);
+  border-color: rgb(137 91 99 / 24%);
+  box-shadow:
+    inset 0 0 0 1px rgb(255 255 255 / 58%),
+    0 3px 0 rgb(173 113 128 / 28%);
+}
+.portfolio-art-frame[data-project="parla-perfume-ad"]::before {
+  color: #fffaf5;
+  background: #94616e;
+  letter-spacing: .15em;
+}
+.portfolio-art-frame[data-project="parla-perfume-ad"]::after {
+  inset: .48rem;
+  border-color: rgb(255 250 245 / 68%);
+}
+.portfolio-cover-trigger:hover .portfolio-art-frame[data-project="parla-perfume-ad"]::after {
+  inset: .68rem;
+  border-color: rgb(255 250 245 / 92%);
+}
+.portfolio-art-frame[data-project="parla-perfume-ad"] .portfolio-art-frame__motif {
+  color: #94616e;
+  background: rgb(255 250 245 / 94%);
+  border-color: rgb(148 97 110 / 28%);
+  box-shadow: 0 4px 14px rgb(116 71 77 / 14%);
+}
+.portfolio-work-card:has(.portfolio-art-frame[data-project="parla-perfume-ad"]) .portfolio-cover-trigger > .eyebrow {
+  color: #94616e;
+}
+.portfolio-work-card:has(.portfolio-art-frame[data-project="parla-perfume-ad"]) .portfolio-cover-trigger > span:last-child {
+  border-color: rgb(148 97 110 / 24%);
+}
+.portfolio-work-card:has(.portfolio-art-frame[data-project="parla-perfume-ad"]) .portfolio-cover-trigger > span:last-child svg {
+  color: #94616e;
+}
+.portfolio-work-card:has(.portfolio-art-frame[data-project="parla-perfume-ad"]) .mt-5 > .eyebrow {
+  color: #94616e;
+}
