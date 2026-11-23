@@ -119,69 +119,105 @@ export function ScrollWorld() {
             <feMerge><feMergeNode in="shade" /><feMergeNode in="SourceGraphic" /></feMerge>
           </filter>
 
-          <linearGradient id="pm-glass-pink" x1="0" y1="0" x2="0.9" y2="1">
-            <stop offset="0" stopColor="#fff7fb" stopOpacity=".94" />
-            <stop offset=".28" stopColor="#f6b4d0" stopOpacity=".78" />
-            <stop offset=".72" stopColor="#e987b5" stopOpacity=".64" />
-            <stop offset="1" stopColor="#c95d91" stopOpacity=".78" />
+          <linearGradient id="pm-glass-pink" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stopColor="#fff" stopOpacity="1" />
+            <stop offset=".12" stopColor="#ffe8f2" stopOpacity=".98" />
+            <stop offset=".3" stopColor="#f4a4c8" stopOpacity=".94" />
+            <stop offset=".58" stopColor="#df6da7" stopOpacity=".96" />
+            <stop offset=".82" stopColor="#a93c78" stopOpacity=".98" />
+            <stop offset="1" stopColor="#68284f" stopOpacity="1" />
           </linearGradient>
           <linearGradient id="pm-glass-lime" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stopColor="#fbffe9" stopOpacity=".94" />
-            <stop offset=".38" stopColor="#d9f29a" stopOpacity=".78" />
-            <stop offset=".78" stopColor="#acd65e" stopOpacity=".68" />
-            <stop offset="1" stopColor="#83b94b" stopOpacity=".78" />
+            <stop offset="0" stopColor="#fff" stopOpacity="1" />
+            <stop offset=".18" stopColor="#f7ffd9" stopOpacity=".98" />
+            <stop offset=".42" stopColor="#d6f18a" stopOpacity=".96" />
+            <stop offset=".72" stopColor="#9fc94b" stopOpacity=".98" />
+            <stop offset="1" stopColor="#4c7830" stopOpacity="1" />
           </linearGradient>
-          <linearGradient id="pm-glass-cream" x1="0" y1="0" x2="0.2" y2="1">
-            <stop offset="0" stopColor="#fffefa" stopOpacity=".96" />
-            <stop offset=".46" stopColor="#f7e8d7" stopOpacity=".82" />
-            <stop offset="1" stopColor="#e6cbb5" stopOpacity=".88" />
+          <linearGradient id="pm-glass-cream" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stopColor="#fff" stopOpacity="1" />
+            <stop offset=".22" stopColor="#fff8e9" stopOpacity=".98" />
+            <stop offset=".55" stopColor="#e9d1b6" stopOpacity=".96" />
+            <stop offset=".82" stopColor="#bd9478" stopOpacity=".98" />
+            <stop offset="1" stopColor="#80604f" stopOpacity="1" />
           </linearGradient>
-          <linearGradient id="pm-glass-reflection" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stopColor="#fff" stopOpacity=".88" />
-            <stop offset=".42" stopColor="#fff" stopOpacity=".12" />
+          <linearGradient id="pm-glass-rim" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stopColor="#fff" stopOpacity=".98" />
+            <stop offset=".22" stopColor="#fff" stopOpacity=".56" />
+            <stop offset=".58" stopColor="#fff" stopOpacity=".08" />
+            <stop offset=".82" stopColor="#6b4260" stopOpacity=".22" />
+            <stop offset="1" stopColor="#fff" stopOpacity=".72" />
+          </linearGradient>
+          <linearGradient id="pm-glass-core" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stopColor="#fff" stopOpacity=".9" />
+            <stop offset=".5" stopColor="#fff" stopOpacity=".06" />
+            <stop offset="1" stopColor="#fff" stopOpacity=".68" />
+          </linearGradient>
+          <radialGradient id="pm-glass-caustic" cx="35%" cy="24%" r="78%">
+            <stop offset="0" stopColor="#fff" stopOpacity=".98" />
+            <stop offset=".24" stopColor="#fff" stopOpacity=".45" />
             <stop offset="1" stopColor="#fff" stopOpacity="0" />
-          </linearGradient>
+          </radialGradient>
+          <filter id="pm-glass-shadow" x="-45%" y="-45%" width="190%" height="210%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="19" result="blur"/>
+            <feOffset in="blur" dx="5" dy="29" result="offset"/>
+            <feColorMatrix in="offset" type="matrix" values="0 0 0 0 .20  0 0 0 0 .13  0 0 0 0 .17  0 0 0 .32 0" result="shadow"/>
+            <feMerge><feMergeNode in="shadow"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <filter id="pm-glass-soft-highlight" x="-30%" y="-40%" width="160%" height="180%">
+            <feGaussianBlur stdDeviation="5" />
+          </filter>
         </defs>
 
         <g
           className="pm-world__liquid pm-world__glass-sculpture"
           transform={`translate(720 ${790 - progress * 115}) rotate(${-10 + progress * 22}) scale(${0.78 + progress * 0.2}) translate(-720 -790)`}
-          opacity={0.72 + progress * 0.24}
+          opacity={0.9 + progress * 0.1}
+          filter="url(#pm-glass-shadow)"
         >
-          {/* Three interwoven glass ribbons: the silhouette is visible immediately, then opens and lifts with scroll. */}
+          {/* A thick, folded glass loop: every ribbon has a dark underside, a refractive body and a polished rim. */}
           <g fill="none" strokeLinecap="round" strokeLinejoin="round">
-            <path
-              d="M500 760 C465 645 548 530 674 520 C812 508 925 608 918 720 C912 818 814 875 720 835 C638 800 603 713 650 645 C692 584 780 584 829 637 C870 682 855 741 813 770"
-              stroke="url(#pm-glass-pink)" strokeWidth={58} strokeOpacity=".86"
-            />
-            <path
-              d="M500 760 C465 645 548 530 674 520 C812 508 925 608 918 720 C912 818 814 875 720 835 C638 800 603 713 650 645 C692 584 780 584 829 637 C870 682 855 741 813 770"
-              stroke="#fff" strokeWidth="4" strokeOpacity=".78"
-            />
-            <path
-              d="M575 835 C650 900 780 900 870 818 C960 735 944 610 850 550 C770 500 660 530 620 602"
-              stroke="url(#pm-glass-lime)" strokeWidth="42" strokeOpacity=".78"
-            />
-            <path
-              d="M575 835 C650 900 780 900 870 818 C960 735 944 610 850 550 C770 500 660 530 620 602"
-              stroke="#fff" strokeWidth="3" strokeOpacity=".7"
-            />
-            <path
-              d="M610 570 C700 470 850 470 930 575 C1000 666 958 790 870 830"
-              stroke="url(#pm-glass-cream)" strokeWidth="30" strokeOpacity=".9"
-            />
-            <path
-              d="M610 570 C700 470 850 470 930 575 C1000 666 958 790 870 830"
-              stroke="#fff" strokeWidth="2.5" strokeOpacity=".8"
-            />
+            <path d="M500 760 C450 645 535 515 670 505 C820 493 942 600 930 728 C920 835 815 900 714 850 C625 805 590 710 646 635 C697 567 792 580 842 642 C886 696 862 760 812 786"
+              stroke="#63324f" strokeWidth="91" opacity=".34" transform="translate(0 13)"/>
+            <path d="M500 760 C450 645 535 515 670 505 C820 493 942 600 930 728 C920 835 815 900 714 850 C625 805 590 710 646 635 C697 567 792 580 842 642 C886 696 862 760 812 786"
+              stroke="url(#pm-glass-pink)" strokeWidth="78"/>
+            <path d="M500 760 C450 645 535 515 670 505 C820 493 942 600 930 728 C920 835 815 900 714 850 C625 805 590 710 646 635 C697 567 792 580 842 642 C886 696 862 760 812 786"
+              stroke="url(#pm-glass-rim)" strokeWidth="67" opacity=".82"/>
+            <path d="M500 760 C450 645 535 515 670 505 C820 493 942 600 930 728 C920 835 815 900 714 850 C625 805 590 710 646 635 C697 567 792 580 842 642 C886 696 862 760 812 786"
+              stroke="#fff" strokeWidth="5" opacity=".92" transform="translate(-4 -5)"/>
+
+            <path d="M565 827 C654 918 805 913 896 822 C990 728 967 596 866 536 C773 481 653 526 615 611"
+              stroke="#496b31" strokeWidth="76" opacity=".32" transform="translate(0 13)"/>
+            <path d="M565 827 C654 918 805 913 896 822 C990 728 967 596 866 536 C773 481 653 526 615 611"
+              stroke="url(#pm-glass-lime)" strokeWidth="65"/>
+            <path d="M565 827 C654 918 805 913 896 822 C990 728 967 596 866 536 C773 481 653 526 615 611"
+              stroke="url(#pm-glass-rim)" strokeWidth="54" opacity=".8"/>
+            <path d="M565 827 C654 918 805 913 896 822 C990 728 967 596 866 536 C773 481 653 526 615 611"
+              stroke="#fff" strokeWidth="4" opacity=".88" transform="translate(-3 -5)"/>
+
+            <path d="M610 570 C704 454 865 456 950 574 C1020 672 969 800 874 842"
+              stroke="#76533f" strokeWidth="59" opacity=".3" transform="translate(0 12)"/>
+            <path d="M610 570 C704 454 865 456 950 574 C1020 672 969 800 874 842"
+              stroke="url(#pm-glass-cream)" strokeWidth="49"/>
+            <path d="M610 570 C704 454 865 456 950 574 C1020 672 969 800 874 842"
+              stroke="url(#pm-glass-rim)" strokeWidth="39" opacity=".86"/>
+            <path d="M610 570 C704 454 865 456 950 574 C1020 672 969 800 874 842"
+              stroke="#fff" strokeWidth="3.5" opacity=".92" transform="translate(-3 -4)"/>
           </g>
-          {/* Refraction bands and small caustic highlights make the ribbons read as glass, not rubber. */}
-          <path d="M535 683 C550 590 630 548 705 548" fill="none" stroke="#fff" strokeWidth="11" strokeLinecap="round" opacity=".48" />
-          <path d="M685 853 C780 880 862 833 892 775" fill="none" stroke="#fff" strokeWidth="8" strokeLinecap="round" opacity=".42" />
-          <ellipse cx="718" cy="694" rx="118" ry="72" fill="url(#pm-glass-reflection)" opacity=".22" transform={`rotate(-24 718 694) scale(${0.92 + progress * 0.08})`} />
-          <circle cx="915" cy="596" r="8" fill="#fff" opacity=".88" />
-          <circle cx="915" cy="596" r="18" fill="#fff" opacity=".16" />
-          <circle cx="575" cy="835" r="5" fill="#fff" opacity=".8" />
+
+          {/* Broad specular streaks, internal caustics and bright edge glints. */}
+          <path d="M518 693 C526 599 599 536 699 526" fill="none" stroke="#fff" strokeWidth="17" strokeLinecap="round" opacity=".56" filter="url(#pm-glass-soft-highlight)"/>
+          <path d="M520 684 C536 601 605 548 695 539" fill="none" stroke="#fff" strokeWidth="6" strokeLinecap="round" opacity=".96"/>
+          <path d="M680 876 C770 912 864 861 910 790" fill="none" stroke="#fff" strokeWidth="8" strokeLinecap="round" opacity=".72"/>
+          <path d="M628 579 C698 503 793 493 865 531" fill="none" stroke="#fff" strokeWidth="5" strokeLinecap="round" opacity=".72"/>
+          <ellipse cx="715" cy="688" rx="145" ry="92" fill="url(#pm-glass-caustic)" opacity=".35" transform={`rotate(-25 715 688) scale(${0.9 + progress * 0.1})`}/>
+          <ellipse cx="914" cy="598" rx="25" ry="13" fill="#fff" opacity=".55" transform="rotate(-38 914 598)"/>
+          <circle cx="914" cy="598" r="7" fill="#fff" opacity=".98"/>
+          <circle cx="914" cy="598" r="20" fill="#fff" opacity=".22" filter="url(#pm-glass-soft-highlight)"/>
+          <circle cx="565" cy="827" r="7" fill="#fff" opacity=".92"/>
+          <path d="M746 498 C783 486 826 495 854 517" fill="none" stroke="#fff" strokeWidth="3" opacity=".76"/>
+        </g>
+
         </g>
 
         <g className="pm-world__glitter" pointerEvents="none" fill="#fff9e9">\n          <circle cx="155" cy="700" r="3"><animate attributeName="opacity" values=".15;.9;.3;.15" dur="5s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;-12 -22;8 -38;0 0" dur="9s" repeatCount="indefinite"/></circle>\n          <circle cx="285" cy="745" r="2"><animate attributeName="opacity" values=".2;.8;.2" dur="6s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;14 -18;-4 -34;0 0" dur="10s" repeatCount="indefinite"/></circle>\n          <circle cx="365" cy="650" r="2.5"><animate attributeName="opacity" values=".1;.9;.25;.1" dur="7s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;10 -20;-8 -36;0 0" dur="8s" repeatCount="indefinite"/></circle>\n          <circle cx="495" cy="760" r="2"><animate attributeName="opacity" values=".2;.85;.2" dur="5.8s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;-14 -16;5 -30;0 0" dur="11s" repeatCount="indefinite"/></circle>\n          <circle cx="585" cy="680" r="3"><animate attributeName="opacity" values=".15;.9;.15" dur="6.5s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;12 -24;-5 -40;0 0" dur="9.5s" repeatCount="indefinite"/></circle>\n          <circle cx="665" cy="735" r="2"><animate attributeName="opacity" values=".1;.8;.2" dur="5.4s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;-9 -18;8 -32;0 0" dur="8.5s" repeatCount="indefinite"/></circle>\n          <circle cx="790" cy="665" r="2.5"><animate attributeName="opacity" values=".15;.9;.15" dur="7.2s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;14 -20;-6 -36;0 0" dur="10.5s" repeatCount="indefinite"/></circle>\n          <circle cx="875" cy="745" r="3"><animate attributeName="opacity" values=".2;.85;.2" dur="6s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;-12 -22;7 -38;0 0" dur="9s" repeatCount="indefinite"/></circle>\n          <circle cx="980" cy="680" r="2"><animate attributeName="opacity" values=".1;.9;.2" dur="5.5s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;11 -17;-5 -31;0 0" dur="8s" repeatCount="indefinite"/></circle>\n          <circle cx="1090" cy="735" r="2.5"><animate attributeName="opacity" values=".15;.85;.15" dur="6.8s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;-13 -19;6 -35;0 0" dur="10s" repeatCount="indefinite"/></circle>\n          <circle cx="1190" cy="660" r="3"><animate attributeName="opacity" values=".1;.9;.2" dur="5.9s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;12 -21;-7 -37;0 0" dur="9.2s" repeatCount="indefinite"/></circle>\n          <circle cx="1310" cy="730" r="2"><animate attributeName="opacity" values=".2;.8;.2" dur="7s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;-10 -18;5 -32;0 0" dur="11s" repeatCount="indefinite"/></circle>\n          <path d="M0 -7L2 -2L7 0L2 2L0 7L-2 2L-7 0L-2 -2Z" transform="translate(555 705)"><animate attributeName="opacity" values=".2;.9;.2" dur="4.5s" repeatCount="indefinite"/><animateTransform attributeName="transform" additive="sum" type="translate" values="0 0;10 -22;0 0" dur="9s" repeatCount="indefinite"/></path>\n          <path d="M0 -5L1.5 -1.5L5 0L1.5 1.5L0 5L-1.5 1.5L-5 0L-1.5 -1.5Z" transform="translate(1135 690)"><animate attributeName="opacity" values=".15;.85;.15" dur="5.5s" repeatCount="indefinite"/><animateTransform attributeName="transform" additive="sum" type="translate" values="0 0;-12 -20;0 0" dur="11s" repeatCount="indefinite"/></path>\n        </g>\n\n        <g opacity={finale} transform={`translate(0 ${(1 - finale) * 34})`}>
