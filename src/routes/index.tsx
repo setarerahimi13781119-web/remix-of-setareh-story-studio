@@ -49,6 +49,7 @@ function Index() {
       frame = requestAnimationFrame(() => {
         const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
         const progress = Math.min(1, Math.max(0, window.scrollY / maxScroll));
+        root.style.setProperty("--scroll-progress", String(progress));
         const scaled = progress * (stops.length - 1);
         const index = Math.min(stops.length - 2, Math.floor(scaled));
         const mix = scaled - index;
@@ -59,6 +60,46 @@ function Index() {
       });
     };
 
+    const revealTargets = new Set<Element>();
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("scroll-in-view");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -6% 0px" },
+    );
+    const observeRevealTargets = (scope: ParentNode) => {
+      scope.querySelectorAll(".portfolio-category-section, .portfolio-work-item").forEach((element) => {
+        if (!revealTargets.has(element)) {
+          revealTargets.add(element);
+          revealObserver.observe(element);
+        }
+      });
+    };
+    root.classList.add("has-scroll-observer");
+    observeRevealTargets(document);
+    const mutationObserver = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        mutation.addedNodes.forEach((node) => {
+          if (node instanceof Element) {
+            if (node.matches(".portfolio-category-section, .portfolio-work-item")) {
+              observeRevealTargets(node.parentElement ?? document);
+            } else {
+              observeRevealTargets(node);
+            }
+          }
+        });
+      });
+    });
+    mutationObserver.observe(document.querySelector("main") ?? document.body, {
+      childList: true,
+      subtree: true,
+    });
+
     updateBackground();
     window.addEventListener("scroll", updateBackground, { passive: true });
     window.addEventListener("resize", updateBackground);
@@ -66,12 +107,17 @@ function Index() {
       cancelAnimationFrame(frame);
       window.removeEventListener("scroll", updateBackground);
       window.removeEventListener("resize", updateBackground);
+      mutationObserver.disconnect();
+      revealObserver.disconnect();
+      root.classList.remove("has-scroll-observer");
       root.style.removeProperty("--scroll-background");
+      root.style.removeProperty("--scroll-progress");
     };
   }, []);
 
   return (
     <div className="grain min-h-screen">
+      <div className="scroll-progress" aria-hidden="true" />
       <a
         href="#work"
         className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[70] focus:bg-primary focus:px-3 focus:py-2 focus:text-primary-foreground"
