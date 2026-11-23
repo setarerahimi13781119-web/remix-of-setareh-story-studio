@@ -63,6 +63,8 @@ function Index() {
         root.style.setProperty("--shape-c-y", `${lerp(24, -20)}vh`);
         root.style.setProperty("--shape-c-r", `${lerp(-8, 24)}deg`);
         root.style.setProperty("--shape-c-s", String(lerp(0.78, 1.12)));
+        root.style.setProperty("--orbit-r", `${lerp(-12, 16)}deg`);
+        root.style.setProperty("--orbit-s", String(lerp(1, 1.12)));
         const scaled = progress * (stops.length - 1);
         const index = Math.min(stops.length - 2, Math.floor(scaled));
         const mix = scaled - index;
@@ -143,7 +145,7 @@ function Index() {
         .scroll-art-shape-a { width: min(68vw, 880px); height: min(66vw, 820px); left: -23vw; top: -32vh; transform: translate3d(var(--shape-a-x),var(--shape-a-y),0) rotate(var(--shape-a-r)) scale(var(--shape-a-s)); background: radial-gradient(ellipse at 62% 60%,rgba(158,182,122,.78),rgba(158,182,122,.56) 48%,rgba(158,182,122,0) 73%); }
         .scroll-art-shape-b { width: min(76vw, 980px); height: min(70vw, 900px); right: -32vw; top: 8vh; transform: translate3d(var(--shape-b-x),var(--shape-b-y),0) rotate(var(--shape-b-r)) scale(var(--shape-b-s)); background: radial-gradient(ellipse at 42% 45%,rgba(193,40,100,.23),rgba(245,230,237,.9) 54%,rgba(245,230,237,0) 74%); }
         .scroll-art-shape-c { width: min(70vw, 850px); height: min(52vw, 660px); left: 24vw; bottom: -38vh; transform: translate3d(var(--shape-c-x),var(--shape-c-y),0) rotate(var(--shape-c-r)) scale(var(--shape-c-s)); background: radial-gradient(ellipse at 48% 38%,rgba(36,62,36,.22),rgba(158,182,122,.2) 53%,rgba(158,182,122,0) 75%); }
-        .scroll-art-orbit { position: absolute; width: 76vw; height: 48vw; min-height: 360px; left: 12vw; top: 28vh; border: 1px solid rgba(36,62,36,.13); border-radius: 50%; transform: rotate(calc(-12deg + var(--scroll-progress,0) * 28deg)) scale(calc(1 + var(--scroll-progress,0) * .12)); opacity: .7; }
+        .scroll-art-orbit { position: absolute; width: 76vw; height: 48vw; min-height: 360px; left: 12vw; top: 28vh; border: 1px solid rgba(36,62,36,.13); border-radius: 50%; transform: rotate(var(--orbit-r,-12deg)) scale(var(--orbit-s,1)); opacity: .7; }
         .grain > :not(.pm-world):not(.scroll-art-layer) { position: relative; z-index: 1; }
         @media (max-width:767px) { .scroll-art-shape-a { width: 105vw; height: 100vw; left:-48vw; top:-22vh; } .scroll-art-shape-b { width:110vw; height:105vw; right:-60vw; top:25vh; } .scroll-art-shape-c { width:110vw; height:95vw; left:8vw; bottom:-23vh; } .scroll-art-orbit { width:125vw; height:82vw; left:-12vw; top:34vh; } }
         @media (prefers-reduced-motion:reduce) { .scroll-art-shape,.scroll-art-orbit { transform:none !important; } }
