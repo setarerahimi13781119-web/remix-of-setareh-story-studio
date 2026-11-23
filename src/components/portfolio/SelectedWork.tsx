@@ -688,7 +688,7 @@ export function SelectedWork() {
               <article
                 className="portfolio-work-card flex h-full flex-col"
                 onPointerMove={(event) => {
-                  if (event.pointerType !== "mouse") return;
+                  if (event.pointerType !== "mouse" && !(event.pointerType === "touch" && event.buttons === 1)) return;
                   const card = event.currentTarget;
                   const rect = card.getBoundingClientRect();
                   const x = (event.clientX - rect.left) / rect.width;
@@ -698,6 +698,13 @@ export function SelectedWork() {
                   card.style.setProperty("--card-pointer-x", `${x * 100}%`);
                   card.style.setProperty("--card-pointer-y", `${y * 100}%`);
                   card.classList.add("is-3d-active");
+                }}
+                onPointerUp={(event) => {
+                  if (event.pointerType !== "touch") return;
+                  const card = event.currentTarget;
+                  card.classList.remove("is-3d-active");
+                  card.style.removeProperty("--card-rotate-x");
+                  card.style.removeProperty("--card-rotate-y");
                 }}
                 onPointerLeave={(event) => {
                   const card = event.currentTarget;
