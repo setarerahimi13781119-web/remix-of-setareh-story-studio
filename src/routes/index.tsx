@@ -50,8 +50,11 @@ function Index() {
         const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
         const progress = Math.min(1, Math.max(0, window.scrollY / maxScroll));
         root.style.setProperty("--scroll-progress", String(progress));
-        const hero = document.querySelector(".pm-hero--fullbleed");
-        if (hero) root.style.setProperty("--art-start-y", `${(hero as HTMLElement).offsetTop + (hero as HTMLElement).offsetHeight}px`);
+        const selectedWorkHeading = document.querySelector("#work");
+        if (selectedWorkHeading) {
+          const headingBottom = selectedWorkHeading.getBoundingClientRect().bottom + window.scrollY;
+          root.style.setProperty("--art-start-y", `${headingBottom}px`);
+        }
         const lerp = (a: number, b: number) => a + (b - a) * progress;
         root.style.setProperty("--shape-a-x", `${lerp(-19, 14)}vw`);
         root.style.setProperty("--shape-a-y", `${lerp(-18, 21)}vh`);
