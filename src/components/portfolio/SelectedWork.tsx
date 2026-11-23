@@ -701,7 +701,7 @@ export function SelectedWork() {
                     <span
                       className="portfolio-art-frame"
                       data-project={project.id}
-                      data-index={String(projectIndex + 1).padStart(2, "0")}
+                      data-index={`${String(projectIndex + 1).padStart(2, "0")} / 14`}
                       onPointerDown={(event) => {
                         if (project.id !== "stillness-wellness-spaces") return;
                         const frame = event.currentTarget;
