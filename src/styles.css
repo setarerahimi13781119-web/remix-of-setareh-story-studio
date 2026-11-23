@@ -3012,3 +3012,13 @@
     transform-box: view-box;
   }
 }
+
+
+/* Liquid glass test: preserve separate glass ribbons and crisp refraction edges. */
+@layer components {
+  .pm-world__glass-sculpture {
+    filter: drop-shadow(0 26px 34px rgb(75 57 63 / 18%)) !important;
+    isolation: isolate;
+    transform-box: view-box;
+  }
+}
