@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect } from "react";
 import {
   About,
   Capabilities,
@@ -32,6 +33,43 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  useEffect(() => {
+    const root = document.documentElement;
+    const stops = [
+      [244, 241, 234], // portfolio cream
+      [229, 236, 220], // softened portfolio sage
+      [245, 230, 237], // softened portfolio pink
+      [232, 238, 222], // softened portfolio sage
+      [244, 241, 234], // portfolio cream
+    ];
+    let frame = 0;
+
+    const updateBackground = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+        const progress = Math.min(1, Math.max(0, window.scrollY / maxScroll));
+        const scaled = progress * (stops.length - 1);
+        const index = Math.min(stops.length - 2, Math.floor(scaled));
+        const mix = scaled - index;
+        const color = stops[index].map((value, channel) =>
+          Math.round(value + (stops[index + 1][channel] - value) * mix)
+        );
+        root.style.setProperty("--scroll-background", `rgb(${color.join(" ")})`);
+      });
+    };
+
+    updateBackground();
+    window.addEventListener("scroll", updateBackground, { passive: true });
+    window.addEventListener("resize", updateBackground);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", updateBackground);
+      window.removeEventListener("resize", updateBackground);
+      root.style.removeProperty("--scroll-background");
+    };
+  }, []);
+
   return (
     <div className="grain min-h-screen">
       <a
