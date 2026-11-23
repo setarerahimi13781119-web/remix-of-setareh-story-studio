@@ -1023,6 +1023,7 @@
     display: block;
     pointer-events: none;
     will-change: transform;
+    touch-action: pan-y;
     box-shadow: 0 22px 32px rgb(64 54 47 / 13%), inset 0 2px 2px rgb(255 255 255 / 72%);
   }
   .pm-form--lime {
