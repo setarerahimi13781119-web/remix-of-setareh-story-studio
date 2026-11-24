@@ -190,21 +190,21 @@ export const projects: PortfolioProject[] = [
   },
   {
     id: "moodbean",
-    title: "Coffee Assets",
-    coverLabel: "Coffee visual collection",
+    title: "Coffee Rituals",
+    coverLabel: "Coffee in motion",
     category: "Coffee · Visual Assets",
     role: "Visual exploration & asset creation",
     summary:
-      "A growing collection of coffee-related visual assets, bringing together atmospheric imagery and creative explorations.",
+      "A visual exploration of coffee rituals, from bean preparation and grinding to the final espresso extraction.",
     context:
-      "An evolving visual collection focused on coffee, its rituals, textures and atmosphere. The gallery currently includes eight selected images and will be expanded as additional assets are added.",
+      "A collection exploring coffee through imagery and motion, including the espresso-making process from whole beans and grinding to the final extraction.",
     scope: [
-      "Coffee-themed visual asset collection",
-      "Atmospheric imagery and creative visual explorations",
-      "Ongoing gallery development",
+      "Coffee visual direction and atmospheric imagery",
+      "Espresso preparation film: beans, grinding and extraction",
+      "Visual storytelling around coffee rituals",
     ],
     status: "exploration",
-    note: "A growing visual collection. Additional assets will be added as the project develops.",
+    note: "Coffee imagery and process-led visual storytelling.",
   },
   {
     id: "turquoise-jewelry-set",
