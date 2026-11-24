@@ -924,7 +924,7 @@
     padding-block: 1.5rem;
   }
   .pm-hero-eyebrow {
-    color: #53634b;
+    color: var(--portfolio-dark-olive);
     font-size: .68rem;
     letter-spacing: .19em;
   }
@@ -932,8 +932,8 @@
     width: .58rem;
     height: .58rem;
     border-radius: 50%;
-    background: #83b83f;
-    box-shadow: 0 0 0 5px rgb(201 239 98 / 22%);
+    background: var(--portfolio-magenta);
+    box-shadow: 0 0 0 5px rgb(193 40 100 / 13%);
   }
   .pm-hero-title {
     display: grid;
@@ -943,14 +943,14 @@
     line-height: .79;
     letter-spacing: -.092em;
     font-weight: 800;
-    color: #243e24;
+    color: var(--portfolio-dark-olive);
     text-shadow: none;
   }
   .pm-hero-title > span { display: block; }
   .pm-hero-title-accent {
     margin-top: .1em;
     background: none;
-    color: #c12864;
+    color: var(--portfolio-magenta);
     -webkit-text-fill-color: currentColor;
   }
   .pm-hero-tagline {
@@ -959,16 +959,16 @@
     font-size: clamp(1.65rem, 2.7vw, 2.45rem);
     font-weight: 600;
     letter-spacing: -.045em;
-    color: #243e24;
+    color: var(--portfolio-dark-olive);
   }
   .pm-hero-roles {
     margin-top: .65rem;
     max-width: 34rem;
-    color: #66715e;
+    color: #657b59;
     font-size: clamp(.78rem, 1.2vw, .94rem);
     line-height: 1.8;
   }
-  .pm-hero-roles i { padding-inline: .18rem; color: #c12864; font-style: normal; }
+  .pm-hero-roles i { padding-inline: .18rem; color: var(--portfolio-magenta); font-style: normal; }
   .pm-hero-actions { margin-top: 2rem; }
   .pm-cta-primary {
     min-height: 3.15rem;
@@ -983,7 +983,7 @@
   .pm-hero-availability {
     margin-top: 2.2rem;
     max-width: 27rem;
-    color: #79816f;
+    color: #657b59;
     font-size: .72rem;
     line-height: 1.7;
   }
