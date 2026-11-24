@@ -35,6 +35,11 @@ export function Hero() {
           </a>
         </div>
 
+        <div className="mt-8 space-y-1">
+          <h2 className="font-display text-2xl md:text-3xl">{profile.headline}</h2>
+          <p className="text-sm md:text-base text-muted-foreground">{profile.intro}</p>
+        </div>
+
         <p className="pm-hero-availability">{profile.availability}</p>
       </Reveal>
 
