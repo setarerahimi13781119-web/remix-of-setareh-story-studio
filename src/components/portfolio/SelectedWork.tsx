@@ -563,7 +563,7 @@ function CoffeeAssetsGallery() {
             className="h-full w-full object-contain"
           >
             <source
-              src="https://drive.usercontent.google.com/download?id=1e-9Pfc_8yXCUF597HOg8Zyh4fvb5O_kH&export=download&confirm=t"
+              src="https://homqu9khvfmyilxi.public.blob.vercel-storage.com/espresso-process-rlSOdonrMIBODE2Q4ZmEcZvM0inTdT.mp4"
               type="video/mp4"
             />
             Your browser does not support HTML video playback.
