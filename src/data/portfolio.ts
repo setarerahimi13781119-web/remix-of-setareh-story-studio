@@ -23,7 +23,7 @@ export const profile = {
   linkedin: "https://linkedin.com/in/setare-rahimi-968a0a274",
   cv: "https://jobvision.ir/cv/setare-rahimi-174320",
   // Availability preference, not a credential — keep phrasing as a preference.
-  availability: "Currently open to conversations about freelance and in-house opportunities.",
+  availability: "Seeking a full-time, on-site role.",
 };
 
 export type WorkItem = {
