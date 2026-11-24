@@ -1,6 +1,6 @@
 # Setareh Rahimi — Portfolio
 
-A responsive editorial-style personal portfolio presenting Setareh Rahimi's experience in content coordination and publishing operations, alongside selected creative explorations and team-collaboration work. The site is intended for prospective employers and freelance clients.
+A responsive editorial-style personal portfolio presenting Setareh Rahimi's experience in content coordination and publishing operations, alongside selected creative explorations and team-collaboration work. The site is intended for prospective employers and full-time, on-site roles.
 
 ## Portfolio content
 
