@@ -495,14 +495,8 @@ function StillnessGallery() {
 const coffeeAssetsCover = "https://www.dropbox.com/scl/fi/niwau2i7okvwh0o2whh2v/ai-image-generator-1.jpg?rlkey=buddyp8xmtvpwkjzbutdnvd60&raw=1";
 
 const coffeeAssetImages = [
-  "/assets/portfolio/coffee-1.webp",
   "/assets/portfolio/coffee-2.webp",
-  "/assets/portfolio/coffee-3.webp",
-  "/assets/portfolio/coffee-4.webp",
-  "/assets/portfolio/coffee-5.webp",
-  "/assets/portfolio/coffee-6.webp",
-  "/assets/portfolio/coffee-7.webp",
-  "/assets/portfolio/coffee-8.webp"
+  "/assets/portfolio/coffee-3.webp"
 ];
 
 const randomPiecesImages = [
