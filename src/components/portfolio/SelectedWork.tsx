@@ -558,7 +558,7 @@ function CoffeeAssetsGallery() {
         </div>
         <div className="aspect-video w-full overflow-hidden bg-card">
           <iframe
-            src="https://drive.google.com/file/d/1e-9Pfc_8yXCUF597HOg8Zyh4fvb5O_kH/preview"
+            src="https://share.descript.com/embed/Nc677X87GQK"
             title="Espresso preparation from coffee beans to final extraction"
             allow="autoplay; fullscreen"
             allowFullScreen
