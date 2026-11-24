@@ -556,15 +556,16 @@ function CoffeeAssetsGallery() {
             A short film following the espresso process — from whole beans and grinding to the final extraction.
           </p>
         </div>
-        <video
-          controls
-          playsInline
-          preload="metadata"
-          className="max-h-[720px] w-full bg-card object-contain"
-          aria-label="Espresso preparation from coffee beans to final extraction"
-        >
-          <source src="https://drive.google.com/uc?export=download&id=1e-9Pfc_8yXCUF597HOg8Zyh4fvb5O_kH" type="video/mp4" />
-        </video>
+        <div className="aspect-video w-full overflow-hidden bg-card">
+          <iframe
+            src="https://drive.google.com/file/d/1e-9Pfc_8yXCUF597HOg8Zyh4fvb5O_kH/preview"
+            title="Espresso preparation from coffee beans to final extraction"
+            allow="autoplay; fullscreen"
+            allowFullScreen
+            loading="lazy"
+            className="h-full w-full border-0"
+          />
+        </div>
       </section>
       <figcaption className="mt-3 text-xs leading-relaxed text-muted-foreground">
         Coffee Rituals · Selected visual explorations and espresso process film
