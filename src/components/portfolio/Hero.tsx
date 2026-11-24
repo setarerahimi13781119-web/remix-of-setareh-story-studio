@@ -23,7 +23,8 @@ export function Hero() {
         </p>
 
         <h1 id="hero-title" className="pm-hero-title">
-          PLAYFUL MATTER
+          <span>PLAYFUL</span>
+          <span className="pm-hero-title-accent">MATTER</span>
         </h1>
 
         <p className="pm-hero-tagline">Ideas in motion.</p>
