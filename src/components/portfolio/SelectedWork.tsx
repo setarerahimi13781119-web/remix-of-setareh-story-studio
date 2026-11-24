@@ -247,7 +247,6 @@ const kmsSlides = [
   { src: assetUrl(kms4.url), alt: "Slide 04 of 05: The complete experience — full page layout" },
   { src: assetUrl(kms5.url), alt: "Slide 05 of 05: The final note — closing slide" },
 ];
-
 function KhanehModGallery() {
   return (
     <figure className="border-t border-rule pt-5">
@@ -498,7 +497,6 @@ const coffeeAssetImages = [
   "/assets/portfolio/coffee-2.webp",
   "/assets/portfolio/coffee-3.webp"
 ];
-
 const randomPiecesImages = [
   "/assets/portfolio/random-1.webp",
   "/assets/portfolio/random-2.webp",
@@ -557,14 +555,19 @@ function CoffeeAssetsGallery() {
           </p>
         </div>
         <div className="aspect-video w-full overflow-hidden bg-card">
-          <iframe
-            src="https://share.descript.com/embed/Nc677X87GQK"
-            title="Espresso preparation from coffee beans to final extraction"
-            allow="autoplay; fullscreen"
-            allowFullScreen
-            loading="lazy"
-            className="h-full w-full border-0"
-          />
+          <video
+            controls
+            playsInline
+            preload="metadata"
+            aria-label="Espresso preparation from coffee beans to final extraction"
+            className="h-full w-full object-contain"
+          >
+            <source
+              src="https://drive.usercontent.google.com/download?id=1e-9Pfc_8yXCUF597HOg8Zyh4fvb5O_kH&export=download&confirm=t"
+              type="video/mp4"
+            />
+            Your browser does not support HTML video playback.
+          </video>
         </div>
       </section>
       <figcaption className="mt-3 text-xs leading-relaxed text-muted-foreground">
@@ -747,8 +750,7 @@ export function SelectedWork() {
                 <DialogTrigger asChild>
                   <Button
                     variant="ghost"
-                    aria-label={`View ${project.title} project`}
-                    className="portfolio-cover-trigger group relative flex h-auto w-full flex-col items-stretch justify-between gap-4 whitespace-normal rounded-none bg-transparent p-0 text-left font-normal hover:bg-transparent"
+                    aria-label={`View ${project.title} project`}                    className="portfolio-cover-trigger group relative flex h-auto w-full flex-col items-stretch justify-between gap-4 whitespace-normal rounded-none bg-transparent p-0 text-left font-normal hover:bg-transparent"
                   >
                     <span className="eyebrow flex items-center justify-between gap-3">
                       <span>{project.coverLabel}</span>
@@ -997,8 +999,7 @@ export function SelectedWork() {
                     rel="noopener noreferrer"
                     className="inline-flex w-fit items-center gap-2 border border-foreground px-4 py-3 text-sm transition-colors hover:bg-foreground hover:text-background"
                   >
-                    View original LinkedIn case study
-                    <ArrowUpRight aria-hidden="true" className="size-4" />
+                    View original LinkedIn case study                    <ArrowUpRight aria-hidden="true" className="size-4" />
                   </a>
                 )}
                 {project.id === "turkish-coffee-packaging" && project.liveUrl && (
