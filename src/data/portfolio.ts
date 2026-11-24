@@ -298,28 +298,16 @@ export const projects: PortfolioProject[] = [
 
 export const capabilities = [
   {
-    name: "Content coordination & publishing",
-    note: "Coordinating and publishing posts and stories across social media channels, based on the verified Nikmehr role.",
+    name: "Creative concept development & art direction",
+    note: "Developing original ideas and visual directions for campaigns, products and digital experiences.",
   },
   {
-    name: "Video editing",
-    note: "End-to-end video editing, from timeline assembly through final export.",
+    name: "AI-driven visual creation",
+    note: "Using generative AI to explore concepts and create distinctive imagery, product visuals and creative assets.",
   },
   {
-    name: "Visual design exploration",
-    note: "Developing campaign, ecommerce and social visual directions through self-directed studies and recent team collaboration.",
-  },
-  {
-    name: "Image editing & social layouts",
-    note: "Editing cafe and restaurant imagery, adding illustrated accents and exploring 3:4 carousel compositions.",
-  },
-  {
-    name: "Production workflow support",
-    note: "Following up on assigned tasks and execution details while supporting content planning and production workflows.",
-  },
-  {
-    name: "Publishing operations & audience communication",
-    note: "Supporting day-to-day publishing operations, order follow-up and audience communication in a publishing-house environment.",
+    name: "Creative production & refinement",
+    note: "Turning concepts into polished visual and video work through editing, retouching and iterative refinement.",
   },
 ];
 
