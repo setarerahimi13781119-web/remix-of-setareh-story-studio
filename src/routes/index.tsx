@@ -10,9 +10,9 @@ import {
   Work,
 } from "@/components/portfolio/Portfolio";
 
-const title = "Setareh Rahimi | Creative Portfolio — Visual Design, Video & Content";
+const title = "Setareh Rahimi | AI Creative Lead — AI-Driven Creative Development";
 const description =
-  "Explore the portfolio of Setareh Rahimi: media content coordination, publishing operations, video editing and visual storytelling projects.";
+  "Explore the portfolio of Setareh Rahimi, AI Creative Lead focused on AI-driven creative development, visual design, video editing and content production.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
