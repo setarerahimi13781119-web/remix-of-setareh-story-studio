@@ -555,8 +555,25 @@ function CoffeeAssetsGallery() {
           />
         ))}
       </div>
+      <section className="mt-8 space-y-3">
+        <div>
+          <h3 className="font-display text-2xl">From Bean to Espresso</h3>
+          <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+            A short film following the espresso process — from whole beans and grinding to the final extraction.
+          </p>
+        </div>
+        <video
+          controls
+          playsInline
+          preload="metadata"
+          className="max-h-[720px] w-full bg-card object-contain"
+          aria-label="Espresso preparation from coffee beans to final extraction"
+        >
+          <source src="https://drive.google.com/uc?export=download&id=1e-9Pfc_8yXCUF597HOg8Zyh4fvb5O_kH" type="video/mp4" />
+        </video>
+      </section>
       <figcaption className="mt-3 text-xs leading-relaxed text-muted-foreground">
-        Coffee Assets · Selected visual explorations · Collection in progress
+        Coffee Rituals · Selected visual explorations and espresso process film
       </figcaption>
     </figure>
   );
