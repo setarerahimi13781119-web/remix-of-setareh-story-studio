@@ -16,6 +16,12 @@ export function Capabilities() {
   return (
     <section aria-labelledby="capabilities" className="mx-auto max-w-7xl px-5 pb-28 md:px-10">
       <SectionHead index="02" title="Areas of focus" id="capabilities" />
+      <div className="grid grid-cols-12 gap-x-6 mb-8">
+        <div className="col-span-12 md:col-start-4 md:col-span-9 space-y-1">
+          <h3 className="font-display text-2xl md:text-3xl">{profile.headline}</h3>
+          <p className="text-sm md:text-base text-muted-foreground">{profile.intro}</p>
+        </div>
+      </div>
       <ol className="grid grid-cols-12 gap-x-6">
         {capabilities.map((c, i) => (
           <li key={c.name} className="col-span-12 md:col-start-4 md:col-span-9">
