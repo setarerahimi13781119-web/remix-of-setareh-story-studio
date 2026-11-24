@@ -18,7 +18,7 @@ export const profile = {
   name: "Setareh Rahimi",
   headline: "AI Creative Lead",
   intro:
-    "Brand Strategy · Art Direction · AI-Driven Creative Development",
+    "AI-Driven Creative Development",
   email: "setarerahimi1119@gmail.com",
   linkedin: "https://linkedin.com/in/setare-rahimi-968a0a274",
   cv: "https://jobvision.ir/cv/setare-rahimi-174320",
