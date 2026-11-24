@@ -23,10 +23,10 @@ export function Hero() {
         </p>
 
         <h1 id="hero-title" className="pm-hero-title">
-          {profile.headline}
+          PLAYFUL MATTER
         </h1>
 
-        <p className="pm-hero-tagline">{profile.intro}</p>
+        <p className="pm-hero-tagline">Ideas in motion.</p>
 
         <div className="pm-hero-actions">
           <a href="#work" className="pm-cta-primary">
