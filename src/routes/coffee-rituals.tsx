@@ -64,21 +64,7 @@ function CoffeeRitualsPage() {
             </div>
           </section>
           <section className="mt-12 border-t border-rule pt-8">
-            <p className="eyebrow">01 / STILL IMAGERY</p>
-            <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3">
-              {["/assets/portfolio/coffee-2.webp", "/assets/portfolio/coffee-3.webp"].map((src, index) => (
-                <img
-                  key={src}
-                  src={src}
-                  alt={`Coffee visual asset ${index + 1}`}
-                  loading="lazy"
-                  className="aspect-[4/5] w-full bg-card object-cover"
-                />
-              ))}
-            </div>
-          </section>
-          <section className="mt-12 border-t border-rule pt-8">
-            <p className="eyebrow">02 / FROM BEAN TO ESPRESSO</p>
+            <p className="eyebrow">01 / FROM BEAN TO ESPRESSO</p>
             <h2 className="mt-3 font-display text-3xl md:text-4xl">The espresso process</h2>
             <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
               A short film following the process — from whole beans and grinding to the final extraction.
@@ -97,6 +83,20 @@ function CoffeeRitualsPage() {
                 />
                 Your browser does not support HTML video playback.
               </video>
+            </div>
+          </section>
+          <section className="mt-12 border-t border-rule pt-8">
+            <p className="eyebrow">02 / STILL IMAGERY</p>
+            <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3">
+              {["/assets/portfolio/coffee-2.webp", "/assets/portfolio/coffee-3.webp"].map((src, index) => (
+                <img
+                  key={src}
+                  src={src}
+                  alt={`Coffee visual asset ${index + 1}`}
+                  loading="lazy"
+                  className="aspect-[4/5] w-full bg-card object-cover"
+                />
+              ))}
             </div>
           </section>
           <div className="mt-14 border-t border-rule pt-6">
