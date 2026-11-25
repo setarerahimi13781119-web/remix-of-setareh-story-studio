@@ -717,7 +717,6 @@ export function SelectedWork() {
     const group = categoryGroups.find((item) => item.projectIds.includes(projectId));
     if (group) {
       setOpenCategory(group.id);
-      setDeepLinkedProject(projectId);
     }
   }, []);
 
@@ -726,7 +725,9 @@ export function SelectedWork() {
     if (!projectId) return;
     const group = categoryGroups.find((item) => item.projectIds.includes(projectId));
     if (group?.id !== openCategory) return;
+    // Let the selected category render its Dialog instances before opening one.
     requestAnimationFrame(() => {
+      setDeepLinkedProject(projectId);
       document.getElementById(`project-${projectId}`)?.scrollIntoView({ behavior: "smooth", block: "center" });
     });
   }, [openCategory]);
