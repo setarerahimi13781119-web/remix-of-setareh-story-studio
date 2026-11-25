@@ -709,12 +709,16 @@ const categoryGroups = [
 
 export function SelectedWork() {
   const [openCategory, setOpenCategory] = useState<string | null>(null);
+  const [deepLinkedProject, setDeepLinkedProject] = useState<string | null>(null);
 
   useEffect(() => {
     const projectId = window.location.hash.match(/^#project-(.+)$/)?.[1];
     if (!projectId) return;
     const group = categoryGroups.find((item) => item.projectIds.includes(projectId));
-    if (group) setOpenCategory(group.id);
+    if (group) {
+      setOpenCategory(group.id);
+      setDeepLinkedProject(projectId);
+    }
   }, []);
 
   useEffect(() => {
@@ -763,7 +767,10 @@ export function SelectedWork() {
                 <ol id={`projects-${group.id}`} className="portfolio-work-grid" tabIndex={0} aria-label={`${group.title} projects`}>
                 {groupedProjects.map((project, projectIndex) => (
           <li key={project.id} className={`portfolio-work-item portfolio-work-item--${(projectIndex % 6) + 1}`}>
-            <Dialog>
+            <Dialog
+              open={deepLinkedProject === project.id}
+              onOpenChange={(isOpen) => setDeepLinkedProject(isOpen ? project.id : null)}
+            >
               <article id={`project-${project.id}`} className="portfolio-work-card flex h-full flex-col">
                 <DialogTrigger asChild>
                   <Button
