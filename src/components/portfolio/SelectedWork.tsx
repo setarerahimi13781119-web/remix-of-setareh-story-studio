@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowUpRight, BookOpen, Coffee, Flower2, Gem, Play, Plus, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -709,6 +709,24 @@ const categoryGroups = [
 
 export function SelectedWork() {
   const [openCategory, setOpenCategory] = useState<string | null>(null);
+
+  useEffect(() => {
+    const projectId = window.location.hash.match(/^#project-(.+)$/)?.[1];
+    if (!projectId) return;
+    const group = categoryGroups.find((item) => item.projectIds.includes(projectId));
+    if (group) setOpenCategory(group.id);
+  }, []);
+
+  useEffect(() => {
+    const projectId = window.location.hash.match(/^#project-(.+)$/)?.[1];
+    if (!projectId) return;
+    const group = categoryGroups.find((item) => item.projectIds.includes(projectId));
+    if (group?.id !== openCategory) return;
+    requestAnimationFrame(() => {
+      document.getElementById(`project-${projectId}`)?.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+  }, [openCategory]);
+
   return (
     <>
       <div className="portfolio-work-stage">
@@ -746,7 +764,7 @@ export function SelectedWork() {
                 {groupedProjects.map((project, projectIndex) => (
           <li key={project.id} className={`portfolio-work-item portfolio-work-item--${(projectIndex % 6) + 1}`}>
             <Dialog>
-              <article className="portfolio-work-card flex h-full flex-col">
+              <article id={`project-${project.id}`} className="portfolio-work-card flex h-full flex-col">
                 <DialogTrigger asChild>
                   <Button
                     variant="ghost"
