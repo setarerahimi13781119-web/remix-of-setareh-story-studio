@@ -340,13 +340,13 @@ function KhanehShalvarGallery() {
 
 
 const chocolateImages = [
-  { src: "https://www.dropbox.com/scl/fi/89lcqdl54j4qzuiq3m15r/1064616093_1795681044849172.jpg?rlkey=7ty9h8v7z9z8ygtpbhcjqpfeg&raw=1", alt: "Handmade chocolate — selected product photograph 01" },
-  { src: "https://www.dropbox.com/scl/fi/5dahz5hhwivy7stfkh7ub/1795680433664.jpg?rlkey=xzpm7um2q1m9oeskxw803t8u5&raw=1", alt: "Handmade chocolate — selected product photograph 02" },
-  { src: "https://www.dropbox.com/scl/fi/17l26ue6q9chzc34fjtve/Duck-ai-image-2026-11-26-13-46-1.jpeg?rlkey=d6wahqp373m1yit8hnnsobx49&raw=1", alt: "Handmade chocolate — selected product photograph 03" },
-  { src: "https://www.dropbox.com/scl/fi/oi5cbwojxbjlwvpgfeqw1/Duck-ai-image-2026-11-26-13-53.jpeg?rlkey=l1xuo4h8jzxr1i5bmdfamiueu&raw=1", alt: "Handmade chocolate — selected product photograph 04" },
-  { src: "https://www.dropbox.com/scl/fi/epe4k2skhdv1baqqfeaac/Duck-ai-image-2026-11-26-14-12.jpeg?rlkey=qkp1ecw7poz017nwtt8dfmjao&raw=1", alt: "Handmade chocolate — selected product photograph 05" },
-  { src: "https://www.dropbox.com/scl/fi/nk2nmweew9v5iwykrjbd8/file_00000000264c81f4aefc614bce7f7e10.png?rlkey=qc4uglgogarwadhtjymornpis&raw=1", alt: "Handmade chocolate — selected product photograph 06" },
-  { src: "https://www.dropbox.com/scl/fi/bv08ydu8f5xgzm760wt9m/file_000000006dfc82109b955b91cec36289.png?rlkey=uzu7o0v2h1mpv76zqvgbr2zh6&raw=1", alt: "Handmade chocolate — selected product photograph 07" },
+  { src: "/assets/portfolio/chocolate/01.jpg", alt: "Handmade chocolate — selected product photograph 01" },
+  { src: "/assets/portfolio/chocolate/02.jpg", alt: "Handmade chocolate — selected product photograph 02" },
+  { src: "/assets/portfolio/chocolate/03.jpeg", alt: "Handmade chocolate — selected product photograph 03" },
+  { src: "/assets/portfolio/chocolate/04.jpeg", alt: "Handmade chocolate — selected product photograph 04" },
+  { src: "/assets/portfolio/chocolate/05.jpeg", alt: "Handmade chocolate — selected product photograph 05" },
+  { src: "/assets/portfolio/chocolate/06.png", alt: "Handmade chocolate — selected product photograph 06" },
+  { src: "/assets/portfolio/chocolate/07.png", alt: "Handmade chocolate — selected product photograph 07" },
 ];
 
 function ChocolateMakingGallery() {
