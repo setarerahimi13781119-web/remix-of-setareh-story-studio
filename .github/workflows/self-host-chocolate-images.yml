@@ -62,3 +62,5 @@ jobs:
           git add public/assets/portfolio/chocolate src/components/portfolio/SelectedWork.tsx
           git commit -m "Self-host Chocolate Making portfolio images"
           git push origin HEAD:main
+
+# Re-trigger asset sync after the initial workflow commit.
