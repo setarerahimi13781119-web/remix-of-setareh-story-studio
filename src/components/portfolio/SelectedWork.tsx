@@ -383,16 +383,24 @@ function ChocolateMakingGallery() {
         <video
           controls
           playsInline
-          preload="metadata"
+          preload="none"
           className="max-h-[720px] w-full bg-card object-contain"
           aria-label="Behind the process: making handmade chocolate"
         >
           <source
-            src="/assets/portfolio/chocolate/behind-the-process.mp4"
+            src="https://www.dropbox.com/scl/fi/qgoayvi0tbrq3um40gweb/lv_0_20261126205719.mp4?rlkey=zqfk82nbyrp90pa7i8wlm4io1&raw=1"
             type="video/mp4"
           />
           Your browser does not support HTML video playback.
         </video>
+        <a
+          href="https://www.dropbox.com/scl/fi/qgoayvi0tbrq3um40gweb/lv_0_20261126205719.mp4?rlkey=zqfk82nbyrp90pa7i8wlm4io1&dl=0"
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex text-sm underline underline-offset-4"
+        >
+          Open video in Dropbox
+        </a>
       </section>
       <figcaption className="text-xs leading-relaxed text-muted-foreground">
         Chocolate Making · Selected product imagery and process documentation
