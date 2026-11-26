@@ -262,7 +262,7 @@ export const projects: PortfolioProject[] = [
   },
   {
     id: "chocolate-making",
-    title: "Chocolate Making",
+    title: "The Art of Homemade Chocolate",
     coverLabel: "Handmade chocolate · Product imagery",
     category: "Food · Product Photography",
     role: "Visual documentation & process storytelling",
