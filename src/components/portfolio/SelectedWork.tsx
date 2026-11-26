@@ -388,7 +388,7 @@ function ChocolateMakingGallery() {
           aria-label="Behind the process: making handmade chocolate"
         >
           <source
-            src="https://www.dropbox.com/scl/fi/qgoayvi0tbrq3um40gweb/lv_0_20261126205719.mp4?rlkey=zqfk82nbyrp90pa7i8wlm4io1&raw=1"
+            src="/assets/portfolio/chocolate/behind-the-process.mp4"
             type="video/mp4"
           />
           Your browser does not support HTML video playback.
