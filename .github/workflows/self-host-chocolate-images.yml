@@ -50,7 +50,6 @@ jobs:
             "https://www.dropbox.com/scl/fi/epe4k2skhdv1baqqfeaac/Duck-ai-image-2026-11-26-14-12.jpeg?rlkey=qkp1ecw7poz017nwtt8dfmjao&raw=1": "/assets/portfolio/chocolate/05.jpeg",
             "https://www.dropbox.com/scl/fi/nk2nmweew9v5iwykrjbd8/file_00000000264c81f4aefc614bce7f7e10.png?rlkey=qc4uglgogarwadhtjymornpis&raw=1": "/assets/portfolio/chocolate/06.png",
             "https://www.dropbox.com/scl/fi/bv08ydu8f5xgzm760wt9m/file_000000006dfc82109b955b91cec36289.png?rlkey=uzu7o0v2h1mpv76zqvgbr2zh6&raw=1": "/assets/portfolio/chocolate/07.png",
-            "https://www.dropbox.com/scl/fi/qgoayvi0tbrq3um40gweb/lv_0_20261126205719.mp4?rlkey=zqfk82nbyrp90pa7i8wlm4io1&raw=1": "/assets/portfolio/chocolate/behind-the-process.mp4",
           }
           for old, new in replacements.items():
               if old not in s:
