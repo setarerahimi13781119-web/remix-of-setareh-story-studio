@@ -779,9 +779,14 @@ const categoryGroups = [
   },
 ];
 
+// Update this ID whenever a new portfolio post is published.
+const latestPostId = "chocolate-making";
+
 export function SelectedWork() {
   const [openCategory, setOpenCategory] = useState<string | null>(null);
   const [deepLinkedProject, setDeepLinkedProject] = useState<string | null>(null);
+  const latestPost = projects.find((project) => project.id === latestPostId);
+  const latestPostGroup = categoryGroups.find((group) => group.projectIds.includes(latestPostId));
 
   useEffect(() => {
     const projectId = window.location.hash.match(/^#project-(.+)$/)?.[1];
@@ -806,6 +811,50 @@ export function SelectedWork() {
 
   return (
     <>
+      {latestPost && latestPostGroup && (
+        <section className="mb-10 overflow-hidden border border-rule bg-card" aria-labelledby="latest-post-title">
+          <button
+            type="button"
+            onClick={() => {
+              window.history.replaceState(null, "", `#project-${latestPost.id}`);
+              setOpenCategory(latestPostGroup.id);
+              setDeepLinkedProject(latestPost.id);
+            }}
+            className="grid w-full text-left transition-transform duration-300 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent md:grid-cols-[1fr_0.9fr]"
+            aria-label={`Open latest project: ${latestPost.title}`}
+          >
+            <span className="flex flex-col justify-between gap-8 p-5 md:p-8">
+              <span>
+                <span className="flex flex-wrap items-center gap-3">
+                  <span className="inline-flex items-center gap-2 bg-accent px-3 py-1.5 text-xs font-semibold tracking-[0.16em] text-accent-foreground">
+                    <span className="size-1.5 rounded-full bg-current" aria-hidden="true" />
+                    NEW
+                  </span>
+                  <span className="eyebrow">JUST DROPPED · LATEST WORK</span>
+                </span>
+                <span id="latest-post-title" className="mt-6 block font-display text-3xl leading-tight md:text-5xl">
+                  {latestPost.title}
+                </span>
+                <span className="mt-4 block max-w-xl text-sm leading-relaxed text-muted-foreground">
+                  {latestPost.summary}
+                </span>
+              </span>
+              <span className="inline-flex items-center gap-2 border-b border-foreground pb-2 text-sm font-medium">
+                Explore the latest project <ArrowUpRight aria-hidden="true" className="size-4" />
+              </span>
+            </span>
+            <span className="relative block min-h-[240px] overflow-hidden bg-background md:min-h-[340px]">
+              <img
+                src={chocolateImages[0].src}
+                alt=""
+                aria-hidden="true"
+                loading="eager"
+                className="absolute inset-0 size-full object-contain p-4 transition-transform duration-500 hover:scale-[1.03] md:p-8"
+              />
+            </span>
+          </button>
+        </section>
+      )}
       <div className="portfolio-work-stage">
         
         {categoryGroups.map((group) => {
