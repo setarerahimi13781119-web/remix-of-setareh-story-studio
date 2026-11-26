@@ -1,0 +1,64 @@
+name: Self-host Chocolate Making portfolio images
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/self-host-chocolate-images.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  self-host-images:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Download the seven existing Dropbox images
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p public/assets/portfolio/chocolate
+          curl -fLsS --retry 3 'https://www.dropbox.com/scl/fi/89lcqdl54j4qzuiq3m15r/1064616093_1795681044849172.jpg?rlkey=7ty9h8v7z9z8ygtpbhcjqpfeg&raw=1' -o public/assets/portfolio/chocolate/01.jpg
+          curl -fLsS --retry 3 'https://www.dropbox.com/scl/fi/5dahz5hhwivy7stfkh7ub/1795680433664.jpg?rlkey=xzpm7um2q1m9oeskxw803t8u5&raw=1' -o public/assets/portfolio/chocolate/02.jpg
+          curl -fLsS --retry 3 'https://www.dropbox.com/scl/fi/17l26ue6q9chzc34fjtve/Duck-ai-image-2026-11-26-13-46-1.jpeg?rlkey=d6wahqp373m1yit8hnnsobx49&raw=1' -o public/assets/portfolio/chocolate/03.jpeg
+          curl -fLsS --retry 3 'https://www.dropbox.com/scl/fi/oi5cbwojxbjlwvpgfeqw1/Duck-ai-image-2026-11-26-13-53.jpeg?rlkey=l1xuo4h8jzxr1i5bmdfamiueu&raw=1' -o public/assets/portfolio/chocolate/04.jpeg
+          curl -fLsS --retry 3 'https://www.dropbox.com/scl/fi/epe4k2skhdv1baqqfeaac/Duck-ai-image-2026-11-26-14-12.jpeg?rlkey=qkp1ecw7poz017nwtt8dfmjao&raw=1' -o public/assets/portfolio/chocolate/05.jpeg
+          curl -fLsS --retry 3 'https://www.dropbox.com/scl/fi/nk2nmweew9v5iwykrjbd8/file_00000000264c81f4aefc614bce7f7e10.png?rlkey=qc4uglgogarwadhtjymornpis&raw=1' -o public/assets/portfolio/chocolate/06.png
+          curl -fLsS --retry 3 'https://www.dropbox.com/scl/fi/bv08ydu8f5xgzm760wt9m/file_000000006dfc82109b955b91cec36289.png?rlkey=uzu7o0v2h1mpv76zqvgbr2zh6&raw=1' -o public/assets/portfolio/chocolate/07.png
+          file public/assets/portfolio/chocolate/*
+          test "$(find public/assets/portfolio/chocolate -type f | wc -l)" -eq 7
+          test "$(find public/assets/portfolio/chocolate -type f -size +1k | wc -l)" -eq 7
+      - name: Point the gallery and cover to local assets
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path("src/components/portfolio/SelectedWork.tsx")
+          s = p.read_text()
+          replacements = {
+            "https://www.dropbox.com/scl/fi/89lcqdl54j4qzuiq3m15r/1064616093_1795681044849172.jpg?rlkey=7ty9h8v7z9z8ygtpbhcjqpfeg&raw=1": "/assets/portfolio/chocolate/01.jpg",
+            "https://www.dropbox.com/scl/fi/5dahz5hhwivy7stfkh7ub/1795680433664.jpg?rlkey=xzpm7um2q1m9oeskxw803t8u5&raw=1": "/assets/portfolio/chocolate/02.jpg",
+            "https://www.dropbox.com/scl/fi/17l26ue6q9chzc34fjtve/Duck-ai-image-2026-11-26-13-46-1.jpeg?rlkey=d6wahqp373m1yit8hnnsobx49&raw=1": "/assets/portfolio/chocolate/03.jpeg",
+            "https://www.dropbox.com/scl/fi/oi5cbwojxbjlwvpgfeqw1/Duck-ai-image-2026-11-26-13-53.jpeg?rlkey=l1xuo4h8jzxr1i5bmdfamiueu&raw=1": "/assets/portfolio/chocolate/04.jpeg",
+            "https://www.dropbox.com/scl/fi/epe4k2skhdv1baqqfeaac/Duck-ai-image-2026-11-26-14-12.jpeg?rlkey=qkp1ecw7poz017nwtt8dfmjao&raw=1": "/assets/portfolio/chocolate/05.jpeg",
+            "https://www.dropbox.com/scl/fi/nk2nmweew9v5iwykrjbd8/file_00000000264c81f4aefc614bce7f7e10.png?rlkey=qc4uglgogarwadhtjymornpis&raw=1": "/assets/portfolio/chocolate/06.png",
+            "https://www.dropbox.com/scl/fi/bv08ydu8f5xgzm760wt9m/file_000000006dfc82109b955b91cec36289.png?rlkey=uzu7o0v2h1mpv76zqvgbr2zh6&raw=1": "/assets/portfolio/chocolate/07.png",
+          }
+          for old, new in replacements.items():
+              if old not in s:
+                  raise SystemExit(f"Expected existing Dropbox URL not found: {old}")
+              s = s.replace(old, new)
+          p.write_text(s)
+          PY
+      - name: Commit local image assets and source update
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/assets/portfolio/chocolate src/components/portfolio/SelectedWork.tsx
+          git commit -m "Self-host Chocolate Making portfolio images"
+          git push origin HEAD:main
