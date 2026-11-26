@@ -338,6 +338,69 @@ function KhanehShalvarGallery() {
 }
 
 
+
+const chocolateImages = [
+  { src: "https://www.dropbox.com/scl/fi/89lcqdl54j4qzuiq3m15r/1064616093_1795681044849172.jpg?rlkey=7ty9h8v7z9z8ygtpbhcjqpfeg&raw=1", alt: "Handmade chocolate — selected product photograph 01" },
+  { src: "https://www.dropbox.com/scl/fi/5dahz5hhwivy7stfkh7ub/1795680433664.jpg?rlkey=xzpm7um2q1m9oeskxw803t8u5&raw=1", alt: "Handmade chocolate — selected product photograph 02" },
+  { src: "https://www.dropbox.com/scl/fi/17l26ue6q9chzc34fjtve/Duck-ai-image-2026-11-26-13-46-1.jpeg?rlkey=d6wahqp373m1yit8hnnsobx49&raw=1", alt: "Handmade chocolate — selected product photograph 03" },
+  { src: "https://www.dropbox.com/scl/fi/oi5cbwojxbjlwvpgfeqw1/Duck-ai-image-2026-11-26-13-53.jpeg?rlkey=l1xuo4h8jzxr1i5bmdfamiueu&raw=1", alt: "Handmade chocolate — selected product photograph 04" },
+  { src: "https://www.dropbox.com/scl/fi/epe4k2skhdv1baqqfeaac/Duck-ai-image-2026-11-26-14-12.jpeg?rlkey=qkp1ecw7poz017nwtt8dfmjao&raw=1", alt: "Handmade chocolate — selected product photograph 05" },
+  { src: "https://www.dropbox.com/scl/fi/nk2nmweew9v5iwykrjbd8/file_00000000264c81f4aefc614bce7f7e10.png?rlkey=qc4uglgogarwadhtjymornpis&raw=1", alt: "Handmade chocolate — selected product photograph 06" },
+  { src: "https://www.dropbox.com/scl/fi/bv08ydu8f5xgzm760wt9m/file_000000006dfc82109b955b91cec36289.png?rlkey=uzu7o0v2h1mpv76zqvgbr2zh6&raw=1", alt: "Handmade chocolate — selected product photograph 07" },
+];
+
+function ChocolateMakingGallery() {
+  return (
+    <figure className="space-y-8 border-t border-rule pt-6">
+      <section className="space-y-3">
+        <div>
+          <h3 className="font-display text-2xl">Selected Chocolate Imagery</h3>
+          <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+            Independent product and detail photographs · Seven selected images
+          </p>
+        </div>
+        <ol className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+          {chocolateImages.map((image, index) => (
+            <li key={image.src} className={index === 0 ? "col-span-2 sm:col-span-1" : ""}>
+              <img
+                src={image.src}
+                alt={image.alt}
+                loading="lazy"
+                className="max-h-[620px] w-full bg-card object-contain"
+              />
+            </li>
+          ))}
+        </ol>
+      </section>
+      <section className="space-y-3 border-t border-rule pt-6">
+        <div>
+          <p className="eyebrow">Behind the Process</p>
+          <h3 className="font-display text-2xl">Making the Chocolate</h3>
+          <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+            A video documenting the chocolate-making process
+          </p>
+        </div>
+        <video
+          controls
+          playsInline
+          preload="metadata"
+          className="max-h-[720px] w-full bg-card object-contain"
+          aria-label="Behind the process: making handmade chocolate"
+        >
+          <source
+            src="https://www.dropbox.com/scl/fi/qgoayvi0tbrq3um40gweb/lv_0_20261126205719.mp4?rlkey=zqfk82nbyrp90pa7i8wlm4io1&raw=1"
+            type="video/mp4"
+          />
+          Your browser does not support HTML video playback.
+        </video>
+      </section>
+      <figcaption className="text-xs leading-relaxed text-muted-foreground">
+        Chocolate Making · Selected product imagery and process documentation
+      </figcaption>
+    </figure>
+  );
+}
+
 const touchUpsPairs = [
   {
     title: "Food retouch 01",
@@ -702,6 +765,7 @@ const categoryGroups = [
       "setare-fashion-house-film",
       "khaneh-shalvar",
       "touch-ups",
+      "chocolate-making",
       "nikmehr",
     ],
   },
@@ -796,7 +860,15 @@ export function SelectedWork() {
                         void frame.offsetWidth;
                         frame.classList.add("is-rippling");
                       }}>
-                    {project.id === "touch-ups" ? (
+                    {project.id === "chocolate-making" ? (
+                      <img
+                        src={chocolateImages[0].src}
+                        alt=""
+                        aria-hidden="true"
+                        loading="lazy"
+                        className="min-h-0 flex-1 w-full bg-card object-contain"
+                      />
+                    ) : project.id === "touch-ups" ? (
                       <img
                         src={touchUpsCover}
                         alt=""
@@ -994,6 +1066,7 @@ export function SelectedWork() {
                     </p>
                   </section>
                 )}
+                {project.id === "chocolate-making" && <ChocolateMakingGallery />}
                 {project.id === "touch-ups" && <TouchUpsGallery />}
                 {project.id === "stillness-wellness-spaces" && <StillnessGallery />}
                 {project.id === "parla-perfume-ad" && <ParlaGallery />}
