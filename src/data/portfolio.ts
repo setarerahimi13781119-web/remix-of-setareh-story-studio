@@ -261,6 +261,24 @@ export const projects: PortfolioProject[] = [
     note: "The role was coordination and publishing, not authorship, copywriting, graphic design, video editing, strategy ownership or account ownership. The selected reels relate to this Nikmehr work overall and are not assigned to either page individually.",
   },
   {
+    id: "chocolate-making",
+    title: "Chocolate Making",
+    coverLabel: "Handmade chocolate · Product imagery",
+    category: "Food · Product Photography",
+    role: "Visual documentation & process storytelling",
+    summary:
+      "A visual collection of handmade chocolate, combining independent product and detail photographs with a video of the making process.",
+    context:
+      "A focused visual presentation of handmade chocolate. The still photographs are presented as individual product and detail images, while the video documents the process.",
+    scope: [
+      "Seven selected product and detail photographs",
+      "Behind-the-process video of chocolate making",
+    ],
+    status: "exploration",
+    note:
+      "The photographs are standalone product and detail shots, not sequential stages of the making process. The process itself is documented separately in the video.",
+  },
+  {
     id: "touch-ups",
     title: "Touch Ups",
     coverLabel: "Restaurant food retouching",
